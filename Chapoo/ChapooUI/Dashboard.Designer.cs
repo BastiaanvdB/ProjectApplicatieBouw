@@ -123,7 +123,7 @@ namespace ChapooUI
             // 
             this.UserFunctieLabel.AutoSize = true;
             this.UserFunctieLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UserFunctieLabel.ForeColor = System.Drawing.Color.White;
+            this.UserFunctieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
             this.UserFunctieLabel.Location = new System.Drawing.Point(66, 111);
             this.UserFunctieLabel.Name = "UserFunctieLabel";
             this.UserFunctieLabel.Size = new System.Drawing.Size(48, 17);
