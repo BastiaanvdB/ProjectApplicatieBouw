@@ -24,6 +24,16 @@ namespace ChapooUI
             int nHeightEllipse // height of ellipse
         );
 
+        private const int WM_NCHITTEST = 0x84;
+        private const int HT_CLIENT = 0x1;
+        private const int HT_CAPTION = 0x2; 
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            if (m.Msg == WM_NCHITTEST)
+                m.Result = (IntPtr)(HT_CAPTION);
+        }
+
         public Dashboard()
         {
             InitializeComponent();
@@ -31,5 +41,9 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
+        private void BtnAfmelden_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

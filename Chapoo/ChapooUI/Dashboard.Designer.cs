@@ -53,7 +53,7 @@ namespace ChapooUI
             this.MenuBarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuBarPanel.Location = new System.Drawing.Point(0, 0);
             this.MenuBarPanel.Name = "MenuBarPanel";
-            this.MenuBarPanel.Size = new System.Drawing.Size(190, 577);
+            this.MenuBarPanel.Size = new System.Drawing.Size(190, 699);
             this.MenuBarPanel.TabIndex = 0;
             // 
             // BtnAfmelden
@@ -64,12 +64,15 @@ namespace ChapooUI
             this.BtnAfmelden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAfmelden.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAfmelden.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnAfmelden.Image = ((System.Drawing.Image)(resources.GetObject("BtnAfmelden.Image")));
             this.BtnAfmelden.Location = new System.Drawing.Point(0, 244);
             this.BtnAfmelden.Name = "BtnAfmelden";
             this.BtnAfmelden.Size = new System.Drawing.Size(190, 50);
             this.BtnAfmelden.TabIndex = 4;
             this.BtnAfmelden.Text = "Afmelden";
+            this.BtnAfmelden.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnAfmelden.UseVisualStyleBackColor = true;
+            this.BtnAfmelden.Click += new System.EventHandler(this.BtnAfmelden_Click);
             // 
             // BtnAfrekenen
             // 
@@ -79,11 +82,13 @@ namespace ChapooUI
             this.BtnAfrekenen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAfrekenen.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAfrekenen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnAfrekenen.Image = ((System.Drawing.Image)(resources.GetObject("BtnAfrekenen.Image")));
             this.BtnAfrekenen.Location = new System.Drawing.Point(0, 194);
             this.BtnAfrekenen.Name = "BtnAfrekenen";
             this.BtnAfrekenen.Size = new System.Drawing.Size(190, 50);
             this.BtnAfrekenen.TabIndex = 2;
             this.BtnAfrekenen.Text = "Afrekenen";
+            this.BtnAfrekenen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnAfrekenen.UseVisualStyleBackColor = true;
             // 
             // BtnDashboard
@@ -94,11 +99,13 @@ namespace ChapooUI
             this.BtnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDashboard.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("BtnDashboard.Image")));
             this.BtnDashboard.Location = new System.Drawing.Point(0, 144);
             this.BtnDashboard.Name = "BtnDashboard";
             this.BtnDashboard.Size = new System.Drawing.Size(190, 50);
             this.BtnDashboard.TabIndex = 1;
             this.BtnDashboard.Text = "Dashboard";
+            this.BtnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnDashboard.UseVisualStyleBackColor = true;
             // 
             // MenuBarAccountPanel
@@ -149,7 +156,7 @@ namespace ChapooUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(951, 577);
+            this.ClientSize = new System.Drawing.Size(1399, 699);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
