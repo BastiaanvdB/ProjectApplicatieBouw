@@ -42,10 +42,10 @@ namespace ChapooUI
             this.TotaalprijsHeader = new System.Windows.Forms.ColumnHeader();
             this.BetaalstatusHeader = new System.Windows.Forms.ColumnHeader();
             this.PanelAfrekenOverzicht = new System.Windows.Forms.Panel();
+            this.labelOpenStaandeRekening = new System.Windows.Forms.Label();
             this.labelAfrekenen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AfrekenenButton = new System.Windows.Forms.Button();
-            this.labelOpenStaandeRekening = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -134,6 +134,7 @@ namespace ChapooUI
             this.TotaalprijsHeader,
             this.BetaalstatusHeader});
             this.AfrekeninglistView.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AfrekeninglistView.FullRowSelect = true;
             this.AfrekeninglistView.GridLines = true;
             this.AfrekeninglistView.HideSelection = false;
             this.AfrekeninglistView.Location = new System.Drawing.Point(41, 42);
@@ -174,6 +175,17 @@ namespace ChapooUI
             this.PanelAfrekenOverzicht.Size = new System.Drawing.Size(571, 593);
             this.PanelAfrekenOverzicht.TabIndex = 3;
             // 
+            // labelOpenStaandeRekening
+            // 
+            this.labelOpenStaandeRekening.AutoSize = true;
+            this.labelOpenStaandeRekening.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelOpenStaandeRekening.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.labelOpenStaandeRekening.Location = new System.Drawing.Point(41, 9);
+            this.labelOpenStaandeRekening.Name = "labelOpenStaandeRekening";
+            this.labelOpenStaandeRekening.Size = new System.Drawing.Size(202, 21);
+            this.labelOpenStaandeRekening.TabIndex = 3;
+            this.labelOpenStaandeRekening.Text = "Openstaande rekeningen";
+            // 
             // labelAfrekenen
             // 
             this.labelAfrekenen.AutoSize = true;
@@ -207,17 +219,6 @@ namespace ChapooUI
             this.AfrekenenButton.TabIndex = 0;
             this.AfrekenenButton.Text = "Afrekenen";
             this.AfrekenenButton.UseVisualStyleBackColor = false;
-            // 
-            // labelOpenStaandeRekening
-            // 
-            this.labelOpenStaandeRekening.AutoSize = true;
-            this.labelOpenStaandeRekening.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelOpenStaandeRekening.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.labelOpenStaandeRekening.Location = new System.Drawing.Point(41, 9);
-            this.labelOpenStaandeRekening.Name = "labelOpenStaandeRekening";
-            this.labelOpenStaandeRekening.Size = new System.Drawing.Size(202, 21);
-            this.labelOpenStaandeRekening.TabIndex = 3;
-            this.labelOpenStaandeRekening.Text = "Openstaande rekeningen";
             // 
             // BetaalOverzicht
             // 

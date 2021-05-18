@@ -9,6 +9,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapooModel;
+using ChapooLogic;
 
 namespace ChapooUI
 {
@@ -40,7 +42,26 @@ namespace ChapooUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            FillBillList();
         }
+
+        private void FillBillList()
+        {
+            AfrekeninglistView.Items.Clear();
+
+            // fill the students listview within the students panel with a list of students
+            ChapooLogic.Bill_Service billService = new ChapooLogic.Bill_Service();
+            List<Bill> billList = billService.DB_Get_All_Unpaid_Bills();
+            AfrekeninglistView.View = View.Details;
+            foreach (ChapooModel.Bill bill in billList)
+            {
+                AfrekeninglistView.Items.Add(new ListViewItem(new string[] { $"{bill.tableNumber}", $"{bill.orderNumber}", $"{bill.totalPrice.ToString("€ 0.00")}", $"{bill.payStatus.ToString()}"}));
+            }
+
+
+
+        }
+
 
         private void BtnTerug_Click(object sender, EventArgs e)
         {

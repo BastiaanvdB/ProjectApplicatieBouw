@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ChapooModel
 {
-    class MenuItems
+    public class DiningTable
     {
+        public int table_ID { get; set; }
+        public string table_Status { get; set; }
     }
 }
