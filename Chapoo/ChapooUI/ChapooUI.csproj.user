@@ -4,5 +4,8 @@
     <Compile Update="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BetaalOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ChapooUI
 {
-    public partial class Dashboard : Form
+    public partial class BetaalOverzicht : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -26,7 +26,7 @@ namespace ChapooUI
 
         private const int WM_NCHITTEST = 0x84;
         private const int HT_CLIENT = 0x1;
-        private const int HT_CAPTION = 0x2; 
+        private const int HT_CAPTION = 0x2;
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
@@ -34,41 +34,16 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public Dashboard()
+        public BetaalOverzicht()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-
-        // menu panel area
-        private void MenuPanel(string menuItem)
+        private void BetaalOverzicht_Load(object sender, EventArgs e)
         {
-            switch(menuItem)
-            {
-                case "Betaaloverzicht":
-                    BetaalOverzicht betaalOverzicht = new BetaalOverzicht();
-                    betaalOverzicht.Show();
-                    break;
-                case "Exit":
-                    Application.Exit();
-                    break;
-            }
-        }
-        // --------------------
 
-        // Button area
-        private void BtnAfmelden_Click(object sender, EventArgs e)
-        {
-            MenuPanel("Exit");
         }
-
-        private void BtnAfrekenen_Click(object sender, EventArgs e)
-        {
-            MenuPanel("Betaaloverzicht");
-        }
-
-        // ---------------------
     }
 }

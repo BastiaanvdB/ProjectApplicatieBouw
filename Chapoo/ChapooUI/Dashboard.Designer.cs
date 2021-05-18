@@ -90,6 +90,7 @@ namespace ChapooUI
             this.BtnAfrekenen.Text = "Afrekenen";
             this.BtnAfrekenen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnAfrekenen.UseVisualStyleBackColor = true;
+            this.BtnAfrekenen.Click += new System.EventHandler(this.BtnAfrekenen_Click);
             // 
             // BtnDashboard
             // 
