@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -41,9 +42,11 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void BetaalOverzicht_Load(object sender, EventArgs e)
+        private void BtnTerug_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
+
+        
     }
 }

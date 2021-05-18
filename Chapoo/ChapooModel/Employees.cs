@@ -2,7 +2,7 @@
 
 namespace ChapooModel
 {
-    public class Class1
+    public class Employees
     {
     }
 }
