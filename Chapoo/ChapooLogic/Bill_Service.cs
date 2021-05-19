@@ -7,7 +7,7 @@ namespace ChapooLogic
 {
     public class Bill_Service
     {
-        Bill_DAO bill_db = new Bill_DAO();
+        private Bill_DAO bill_db = new Bill_DAO();
 
         public List<Bill> DB_Get_All_Unpaid_Bills()
         {

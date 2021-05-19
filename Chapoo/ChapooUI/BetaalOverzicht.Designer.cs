@@ -144,6 +144,7 @@ namespace ChapooUI
             this.AfrekeninglistView.TabIndex = 2;
             this.AfrekeninglistView.UseCompatibleStateImageBehavior = false;
             this.AfrekeninglistView.View = System.Windows.Forms.View.Details;
+            this.AfrekeninglistView.SelectedIndexChanged += new System.EventHandler(this.AfrekeninglistView_SelectedIndexChanged);
             // 
             // TafelHeader
             // 

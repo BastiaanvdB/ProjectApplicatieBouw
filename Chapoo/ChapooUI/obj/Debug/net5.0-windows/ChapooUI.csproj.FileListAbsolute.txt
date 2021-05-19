@@ -53,3 +53,4 @@ C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooLogic.pdb
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooModel.pdb
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooDAL.pdb
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.BillDetails.resources
