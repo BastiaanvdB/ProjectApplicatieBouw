@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapooLogic;
+using ChapooModel;
 
 namespace ChapooUI
 {
@@ -35,13 +37,29 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public BillDetails(int tafelnummer)
+        public BillDetails(int tafelnummer, int ordernummer)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             LabelBonInputTafel.Text = tafelnummer.ToString();
+            FillBill(ordernummer);
         }
+
+        private void FillBill(int ordernummer)
+        {
+            listViewBonDetails.Items.Clear();
+
+            // fill the billlistview with bill details
+            ChapooLogic.BillDetail_Service billDetail_Service = new ChapooLogic.BillDetail_Service();
+            List<ChapooModel.BillDetail> billList = billDetail_Service.DB_Get_All_Bill_Details(ordernummer);
+            listViewBonDetails.View = View.Details;
+            foreach (ChapooModel.BillDetail bill in billList)
+            {
+                listViewBonDetails.Items.Add(new ListViewItem(new string[] { $"{bill.menuItem_Name}", $"{bill.quantity}", $"{bill.item_price.ToString("€ 0.00")}", $"{bill.totalPrice.ToString("€ 0.00")}" }));
+            }
+        }
+
 
         private void BillDetails_Load(object sender, EventArgs e)
         {

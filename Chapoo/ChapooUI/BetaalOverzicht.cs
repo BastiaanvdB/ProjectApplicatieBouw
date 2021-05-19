@@ -49,7 +49,7 @@ namespace ChapooUI
         {
             AfrekeninglistView.Items.Clear();
 
-            // fill the students listview within the students panel with a list of students
+            // fill the bill listview with unpaid bills
             ChapooLogic.Bill_Service billService = new ChapooLogic.Bill_Service();
             List<Bill> billList = billService.DB_Get_All_Unpaid_Bills();
             AfrekeninglistView.View = View.Details;
@@ -57,9 +57,6 @@ namespace ChapooUI
             {
                 AfrekeninglistView.Items.Add(new ListViewItem(new string[] { $"{bill.tableNumber}", $"{bill.orderNumber}", $"{bill.totalPrice.ToString("€ 0.00")}", $"{bill.payStatus.ToString()}"}));
             }
-
-
-
         }
 
 
@@ -70,9 +67,14 @@ namespace ChapooUI
 
         private void AfrekeninglistView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BillDetails billDetails = new BillDetails(1);
-            billDetails.Text = "Bon tafel 1";
-            billDetails.Show();
+
+            if (AfrekeninglistView.SelectedItems.Count != 0)
+            {
+                ListViewItem item = AfrekeninglistView.SelectedItems[0];
+                BillDetails billDetails = new BillDetails(int.Parse(item.SubItems[0].Text), int.Parse(item.SubItems[1].Text));
+                billDetails.Text = $"Bon tafel {int.Parse(item.SubItems[0].Text)}";
+                billDetails.Show();
+            }
         }
     }
 }

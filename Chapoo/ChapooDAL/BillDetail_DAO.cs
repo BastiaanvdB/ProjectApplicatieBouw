@@ -13,7 +13,7 @@ namespace ChapooDAL
     {
         public List<BillDetail> DB_Get_All_Ordered_Items(int order_ID)
         {
-            string query = "SELECT g.MenuGroup_Name, i.Item_ID, i.Item_Name, o.OrderDetails_Quantity, i.Item_Price, i.Item_Price*o.OrderDetails_Quantity as OrderDetails_Total FROM OrderDetails AS o INNER JOIN MenuItems AS i ON o.Item_ID = i.Item_ID INNER JOIN MenuGroup AS g ON i.MenuGroup_ID = g.MenuGroup_ID WHERE o.Order_ID = @id";
+            string query = "SELECT o.Order_ID, g.MenuGroup_Name, i.Item_ID, i.Item_Name, o.OrderDetails_Quantity, i.Item_Price, i.Item_Price*o.OrderDetails_Quantity as OrderDetails_Total FROM OrderDetails AS o INNER JOIN MenuItems AS i ON o.Item_ID = i.Item_ID INNER JOIN MenuGroup AS g ON i.MenuGroup_ID = g.MenuGroup_ID WHERE o.Order_ID = @id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = order_ID}
