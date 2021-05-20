@@ -74,6 +74,11 @@ namespace ChapooUI
                 BillDetails billDetails = new BillDetails(int.Parse(item.SubItems[0].Text), int.Parse(item.SubItems[1].Text));
                 billDetails.Text = $"Bon tafel {int.Parse(item.SubItems[0].Text)}";
                 billDetails.Show();
+
+
+
+
+
             }
         }
     }
