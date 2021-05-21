@@ -272,7 +272,7 @@ namespace ChapooUI
             this.numericUpDownFooi.DecimalPlaces = 2;
             this.numericUpDownFooi.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDownFooi.Increment = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             131072});
