@@ -45,15 +45,29 @@ namespace ChapooUI
             this.labelOpenStaandeRekening = new System.Windows.Forms.Label();
             this.labelAfrekenen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.labelfooi = new System.Windows.Forms.Label();
+            this.numericUpDownFooi = new System.Windows.Forms.NumericUpDown();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.labelBrutoInput = new System.Windows.Forms.Label();
+            this.labelBTWinput = new System.Windows.Forms.Label();
+            this.labelNettoinput = new System.Windows.Forms.Label();
+            this.labelNettoprijs = new System.Windows.Forms.Label();
+            this.labelBrutoprijs = new System.Windows.Forms.Label();
+            this.labelBTW = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTotaalprijsoutput = new System.Windows.Forms.Label();
+            this.labelTotaalprijstitle = new System.Windows.Forms.Label();
             this.AfrekenenButton = new System.Windows.Forms.Button();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelAfrekenOverzicht.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFooi)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuBarPanel
@@ -204,14 +218,171 @@ namespace ChapooUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.labelfooi);
+            this.panel1.Controls.Add(this.numericUpDownFooi);
+            this.panel1.Controls.Add(this.checkBox3);
+            this.panel1.Controls.Add(this.checkBox2);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.labelBrutoInput);
+            this.panel1.Controls.Add(this.labelBTWinput);
+            this.panel1.Controls.Add(this.labelNettoinput);
+            this.panel1.Controls.Add(this.labelNettoprijs);
+            this.panel1.Controls.Add(this.labelBrutoprijs);
+            this.panel1.Controls.Add(this.labelBTW);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelTotaalprijsoutput);
+            this.panel1.Controls.Add(this.labelTotaalprijstitle);
             this.panel1.Controls.Add(this.AfrekenenButton);
             this.panel1.Location = new System.Drawing.Point(829, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(530, 593);
             this.panel1.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.panel3.Location = new System.Drawing.Point(38, 311);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(446, 10);
+            this.panel3.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.panel4.Location = new System.Drawing.Point(38, 227);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(446, 10);
+            this.panel4.TabIndex = 9;
+            // 
+            // labelfooi
+            // 
+            this.labelfooi.AutoSize = true;
+            this.labelfooi.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelfooi.ForeColor = System.Drawing.Color.White;
+            this.labelfooi.Location = new System.Drawing.Point(38, 253);
+            this.labelfooi.Name = "labelfooi";
+            this.labelfooi.Size = new System.Drawing.Size(60, 32);
+            this.labelfooi.TabIndex = 18;
+            this.labelfooi.Text = "Fooi";
+            // 
+            // numericUpDownFooi
+            // 
+            this.numericUpDownFooi.DecimalPlaces = 2;
+            this.numericUpDownFooi.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericUpDownFooi.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDownFooi.Location = new System.Drawing.Point(165, 252);
+            this.numericUpDownFooi.Name = "numericUpDownFooi";
+            this.numericUpDownFooi.Size = new System.Drawing.Size(108, 33);
+            this.numericUpDownFooi.TabIndex = 17;
+            this.numericUpDownFooi.ValueChanged += new System.EventHandler(this.numericUpDownFooi_ValueChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox3.ForeColor = System.Drawing.Color.White;
+            this.checkBox3.Location = new System.Drawing.Point(355, 380);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(87, 29);
+            this.checkBox3.TabIndex = 16;
+            this.checkBox3.Text = "Pinpas";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(38, 380);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(98, 29);
+            this.checkBox2.TabIndex = 15;
+            this.checkBox2.Text = "Contant";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(184, 380);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(119, 29);
+            this.checkBox1.TabIndex = 14;
+            this.checkBox1.Text = "Creditcard";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // labelBrutoInput
+            // 
+            this.labelBrutoInput.AutoSize = true;
+            this.labelBrutoInput.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBrutoInput.ForeColor = System.Drawing.Color.White;
+            this.labelBrutoInput.Location = new System.Drawing.Point(165, 79);
+            this.labelBrutoInput.Name = "labelBrutoInput";
+            this.labelBrutoInput.Size = new System.Drawing.Size(34, 32);
+            this.labelBrutoInput.TabIndex = 13;
+            this.labelBrutoInput.Text = "....";
+            // 
+            // labelBTWinput
+            // 
+            this.labelBTWinput.AutoSize = true;
+            this.labelBTWinput.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBTWinput.ForeColor = System.Drawing.Color.White;
+            this.labelBTWinput.Location = new System.Drawing.Point(165, 127);
+            this.labelBTWinput.Name = "labelBTWinput";
+            this.labelBTWinput.Size = new System.Drawing.Size(34, 32);
+            this.labelBTWinput.TabIndex = 12;
+            this.labelBTWinput.Text = "....";
+            // 
+            // labelNettoinput
+            // 
+            this.labelNettoinput.AutoSize = true;
+            this.labelNettoinput.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelNettoinput.ForeColor = System.Drawing.Color.White;
+            this.labelNettoinput.Location = new System.Drawing.Point(165, 173);
+            this.labelNettoinput.Name = "labelNettoinput";
+            this.labelNettoinput.Size = new System.Drawing.Size(34, 32);
+            this.labelNettoinput.TabIndex = 11;
+            this.labelNettoinput.Text = "....";
+            // 
+            // labelNettoprijs
+            // 
+            this.labelNettoprijs.AutoSize = true;
+            this.labelNettoprijs.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelNettoprijs.ForeColor = System.Drawing.Color.White;
+            this.labelNettoprijs.Location = new System.Drawing.Point(38, 173);
+            this.labelNettoprijs.Name = "labelNettoprijs";
+            this.labelNettoprijs.Size = new System.Drawing.Size(119, 32);
+            this.labelNettoprijs.TabIndex = 10;
+            this.labelNettoprijs.Text = "Nettoprijs";
+            // 
+            // labelBrutoprijs
+            // 
+            this.labelBrutoprijs.AutoSize = true;
+            this.labelBrutoprijs.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBrutoprijs.ForeColor = System.Drawing.Color.White;
+            this.labelBrutoprijs.Location = new System.Drawing.Point(38, 79);
+            this.labelBrutoprijs.Name = "labelBrutoprijs";
+            this.labelBrutoprijs.Size = new System.Drawing.Size(116, 32);
+            this.labelBrutoprijs.TabIndex = 9;
+            this.labelBrutoprijs.Text = "Brutoprijs";
+            // 
+            // labelBTW
+            // 
+            this.labelBTW.AutoSize = true;
+            this.labelBTW.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBTW.ForeColor = System.Drawing.Color.White;
+            this.labelBTW.Location = new System.Drawing.Point(38, 127);
+            this.labelBTW.Name = "labelBTW";
+            this.labelBTW.Size = new System.Drawing.Size(62, 32);
+            this.labelBTW.TabIndex = 8;
+            this.labelBTW.Text = "BTW";
             // 
             // panel2
             // 
@@ -221,27 +392,27 @@ namespace ChapooUI
             this.panel2.Size = new System.Drawing.Size(446, 10);
             this.panel2.TabIndex = 7;
             // 
-            // label2
+            // labelTotaalprijsoutput
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(165, 510);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 32);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "....";
+            this.labelTotaalprijsoutput.AutoSize = true;
+            this.labelTotaalprijsoutput.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTotaalprijsoutput.ForeColor = System.Drawing.Color.White;
+            this.labelTotaalprijsoutput.Location = new System.Drawing.Point(165, 510);
+            this.labelTotaalprijsoutput.Name = "labelTotaalprijsoutput";
+            this.labelTotaalprijsoutput.Size = new System.Drawing.Size(34, 32);
+            this.labelTotaalprijsoutput.TabIndex = 6;
+            this.labelTotaalprijsoutput.Text = "....";
             // 
-            // label1
+            // labelTotaalprijstitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(38, 510);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 32);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Totaalprijs";
+            this.labelTotaalprijstitle.AutoSize = true;
+            this.labelTotaalprijstitle.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTotaalprijstitle.ForeColor = System.Drawing.Color.White;
+            this.labelTotaalprijstitle.Location = new System.Drawing.Point(38, 510);
+            this.labelTotaalprijstitle.Name = "labelTotaalprijstitle";
+            this.labelTotaalprijstitle.Size = new System.Drawing.Size(121, 32);
+            this.labelTotaalprijstitle.TabIndex = 5;
+            this.labelTotaalprijstitle.Text = "Totaalprijs";
             // 
             // AfrekenenButton
             // 
@@ -256,6 +427,7 @@ namespace ChapooUI
             this.AfrekenenButton.TabIndex = 0;
             this.AfrekenenButton.Text = "Afrekenen";
             this.AfrekenenButton.UseVisualStyleBackColor = false;
+            this.AfrekenenButton.Click += new System.EventHandler(this.AfrekenenButton_Click);
             // 
             // BetaalOverzicht
             // 
@@ -278,6 +450,7 @@ namespace ChapooUI
             this.PanelAfrekenOverzicht.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFooi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +475,20 @@ namespace ChapooUI
         private System.Windows.Forms.Button AfrekenenButton;
         private System.Windows.Forms.Label labelOpenStaandeRekening;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTotaalprijsoutput;
+        private System.Windows.Forms.Label labelTotaalprijstitle;
+        private System.Windows.Forms.Label labelBrutoInput;
+        private System.Windows.Forms.Label labelBTWinput;
+        private System.Windows.Forms.Label labelNettoinput;
+        private System.Windows.Forms.Label labelNettoprijs;
+        private System.Windows.Forms.Label labelBrutoprijs;
+        private System.Windows.Forms.Label labelBTW;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label labelfooi;
+        private System.Windows.Forms.NumericUpDown numericUpDownFooi;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

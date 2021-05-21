@@ -9,11 +9,13 @@ namespace ChapooModel
     public class BillDetail
     {
         public int order_ID { get; set; }
+        public int table_ID { get; set; }
         public string menuGroup { get; set; }
         public int menuItem_ID { get; set; }
         public string menuItem_Name { get; set; }
         public int quantity { get; set; }
         public decimal item_price { get; set; }
+        public int item_Taxpercentage { get; set; }
         public decimal totalPrice { get; set; }
     }
 }

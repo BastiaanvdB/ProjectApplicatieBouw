@@ -37,12 +37,11 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public BillDetails(int tafelnummer, int ordernummer)
+        public BillDetails(int ordernummer)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            LabelBonInputTafel.Text = tafelnummer.ToString();
             FillBill(ordernummer);
         }
 
@@ -57,13 +56,9 @@ namespace ChapooUI
             foreach (ChapooModel.BillDetail bill in billList)
             {
                 listViewBonDetails.Items.Add(new ListViewItem(new string[] { $"{bill.menuItem_Name}", $"{bill.quantity}", $"{bill.item_price.ToString("€ 0.00")}", $"{bill.totalPrice.ToString("€ 0.00")}" }));
+                LabelBonInputTafel.Text = bill.table_ID.ToString();
+                this.Text = $"Bon tafel {bill.table_ID}";
             }
-        }
-
-
-        private void BillDetails_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void BonSluitButton_Click(object sender, EventArgs e)

@@ -16,6 +16,9 @@ namespace ChapooUI
 {
     public partial class BetaalOverzicht : Form
     {
+        private decimal _totalPrice { get; set; }
+        private decimal _totalVAT { get; set; }
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -71,15 +74,60 @@ namespace ChapooUI
             if (AfrekeninglistView.SelectedItems.Count != 0)
             {
                 ListViewItem item = AfrekeninglistView.SelectedItems[0];
-                BillDetails billDetails = new BillDetails(int.Parse(item.SubItems[0].Text), int.Parse(item.SubItems[1].Text));
-                billDetails.Text = $"Bon tafel {int.Parse(item.SubItems[0].Text)}";
+                BillDetails billDetails = new BillDetails(int.Parse(item.SubItems[1].Text));
                 billDetails.Show();
-
-
-
-
-
+                CalculateBill(int.Parse(item.SubItems[1].Text));
             }
         }
+
+        private void AfrekenenButton_Click(object sender, EventArgs e)
+        {
+            //AfrekenMenu("GeneratePayment");
+        }
+
+        private void CalculateBill(int order_ID)
+        {
+            ChapooLogic.BillDetail_Service billDetail_Service = new ChapooLogic.BillDetail_Service();
+            List<ChapooModel.BillDetail> billList = billDetail_Service.DB_Get_All_Bill_Details(order_ID);
+
+            _totalPrice = 0;
+            _totalVAT = 0;
+
+            foreach (BillDetail bill in billList)
+            {
+                int taxpercentage = bill.item_Taxpercentage;
+                decimal price = bill.totalPrice;
+
+                _totalVAT += (price / 100) * taxpercentage;
+                _totalPrice += price;
+            }
+            UpdateBillPanel();
+        }
+
+        private void UpdateBillPanel()
+        {
+            labelBrutoInput.Text = (_totalPrice - _totalVAT).ToString("€ 0.00");
+            labelBTWinput.Text = _totalVAT.ToString("€ 0.00");
+            labelNettoinput.Text = (_totalPrice).ToString("€ 0.00");
+            ShowTotalPrice();
+        }
+
+        private void numericUpDownFooi_ValueChanged(object sender, EventArgs e)
+        {
+            ShowTotalPrice();
+        }
+
+        private void ShowTotalPrice()
+        {
+            labelTotaalprijsoutput.Text = (_totalPrice + numericUpDownFooi.Value).ToString("€ 0.00");
+        }
+
+        private void CreatePayment()
+        {
+            decimal totalTip = numericUpDownFooi.Value;
+
+
+        }
+
     }
 }

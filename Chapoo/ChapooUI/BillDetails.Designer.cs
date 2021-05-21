@@ -123,7 +123,6 @@ namespace ChapooUI
             this.Name = "BillDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill";
-            this.Load += new System.EventHandler(this.BillDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
