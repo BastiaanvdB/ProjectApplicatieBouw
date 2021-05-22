@@ -45,13 +45,14 @@ namespace ChapooUI
             this.labelOpenStaandeRekening = new System.Windows.Forms.Label();
             this.labelAfrekenen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelfooi = new System.Windows.Forms.Label();
             this.numericUpDownFooi = new System.Windows.Forms.NumericUpDown();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxPinpas = new System.Windows.Forms.CheckBox();
+            this.checkBoxContant = new System.Windows.Forms.CheckBox();
+            this.checkBoxCreditcard = new System.Windows.Forms.CheckBox();
             this.labelBrutoInput = new System.Windows.Forms.Label();
             this.labelBTWinput = new System.Windows.Forms.Label();
             this.labelNettoinput = new System.Windows.Forms.Label();
@@ -218,13 +219,14 @@ namespace ChapooUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.labelfooi);
             this.panel1.Controls.Add(this.numericUpDownFooi);
-            this.panel1.Controls.Add(this.checkBox3);
-            this.panel1.Controls.Add(this.checkBox2);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.checkBoxPinpas);
+            this.panel1.Controls.Add(this.checkBoxContant);
+            this.panel1.Controls.Add(this.checkBoxCreditcard);
             this.panel1.Controls.Add(this.labelBrutoInput);
             this.panel1.Controls.Add(this.labelBTWinput);
             this.panel1.Controls.Add(this.labelNettoinput);
@@ -240,6 +242,14 @@ namespace ChapooUI
             this.panel1.Size = new System.Drawing.Size(530, 593);
             this.panel1.TabIndex = 4;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.panel5.Location = new System.Drawing.Point(38, 64);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(446, 10);
+            this.panel5.TabIndex = 10;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
@@ -251,7 +261,7 @@ namespace ChapooUI
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.panel4.Location = new System.Drawing.Point(38, 227);
+            this.panel4.Location = new System.Drawing.Point(38, 226);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(446, 10);
             this.panel4.TabIndex = 9;
@@ -282,41 +292,44 @@ namespace ChapooUI
             this.numericUpDownFooi.TabIndex = 17;
             this.numericUpDownFooi.ValueChanged += new System.EventHandler(this.numericUpDownFooi_ValueChanged);
             // 
-            // checkBox3
+            // checkBoxPinpas
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox3.ForeColor = System.Drawing.Color.White;
-            this.checkBox3.Location = new System.Drawing.Point(355, 380);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(87, 29);
-            this.checkBox3.TabIndex = 16;
-            this.checkBox3.Text = "Pinpas";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxPinpas.AutoSize = true;
+            this.checkBoxPinpas.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxPinpas.ForeColor = System.Drawing.Color.White;
+            this.checkBoxPinpas.Location = new System.Drawing.Point(355, 380);
+            this.checkBoxPinpas.Name = "checkBoxPinpas";
+            this.checkBoxPinpas.Size = new System.Drawing.Size(87, 29);
+            this.checkBoxPinpas.TabIndex = 16;
+            this.checkBoxPinpas.Text = "Pinpas";
+            this.checkBoxPinpas.UseVisualStyleBackColor = true;
+            this.checkBoxPinpas.CheckedChanged += new System.EventHandler(this.checkBoxPinpas_CheckedChanged);
             // 
-            // checkBox2
+            // checkBoxContant
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(38, 380);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(98, 29);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "Contant";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxContant.AutoSize = true;
+            this.checkBoxContant.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxContant.ForeColor = System.Drawing.Color.White;
+            this.checkBoxContant.Location = new System.Drawing.Point(38, 380);
+            this.checkBoxContant.Name = "checkBoxContant";
+            this.checkBoxContant.Size = new System.Drawing.Size(98, 29);
+            this.checkBoxContant.TabIndex = 15;
+            this.checkBoxContant.Text = "Contant";
+            this.checkBoxContant.UseVisualStyleBackColor = true;
+            this.checkBoxContant.CheckedChanged += new System.EventHandler(this.checkBoxContant_CheckedChanged);
             // 
-            // checkBox1
+            // checkBoxCreditcard
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(184, 380);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(119, 29);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "Creditcard";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxCreditcard.AutoSize = true;
+            this.checkBoxCreditcard.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxCreditcard.ForeColor = System.Drawing.Color.White;
+            this.checkBoxCreditcard.Location = new System.Drawing.Point(184, 380);
+            this.checkBoxCreditcard.Name = "checkBoxCreditcard";
+            this.checkBoxCreditcard.Size = new System.Drawing.Size(119, 29);
+            this.checkBoxCreditcard.TabIndex = 14;
+            this.checkBoxCreditcard.Text = "Creditcard";
+            this.checkBoxCreditcard.UseVisualStyleBackColor = true;
+            this.checkBoxCreditcard.CheckedChanged += new System.EventHandler(this.checkBoxCreditcard_CheckedChanged);
             // 
             // labelBrutoInput
             // 
@@ -483,12 +496,13 @@ namespace ChapooUI
         private System.Windows.Forms.Label labelNettoprijs;
         private System.Windows.Forms.Label labelBrutoprijs;
         private System.Windows.Forms.Label labelBTW;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxCreditcard;
+        private System.Windows.Forms.CheckBox checkBoxPinpas;
+        private System.Windows.Forms.CheckBox checkBoxContant;
         private System.Windows.Forms.Label labelfooi;
         private System.Windows.Forms.NumericUpDown numericUpDownFooi;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

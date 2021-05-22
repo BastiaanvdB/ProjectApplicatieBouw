@@ -48,7 +48,6 @@ namespace ChapooUI
             this.PrijsTotalHeader});
             this.listViewBonDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listViewBonDetails.GridLines = true;
-            this.listViewBonDetails.HideSelection = false;
             this.listViewBonDetails.Location = new System.Drawing.Point(54, 85);
             this.listViewBonDetails.Name = "listViewBonDetails";
             this.listViewBonDetails.Size = new System.Drawing.Size(698, 529);

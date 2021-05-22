@@ -16,6 +16,8 @@ namespace ChapooUI
 {
     public partial class BetaalOverzicht : Form
     {
+        private int _Order_ID { get; set; }
+        private int _table_ID { get; set; }
         private decimal _totalPrice { get; set; }
         private decimal _totalVAT { get; set; }
 
@@ -70,11 +72,16 @@ namespace ChapooUI
 
         private void AfrekeninglistView_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (AfrekeninglistView.SelectedItems.Count != 0)
+            _totalPrice = 0;
+            _totalVAT = 0;
+            _Order_ID = 0;
+            _table_ID = 0;
+            if (AfrekeninglistView.SelectedItems.Count is not 0)
             {
                 ListViewItem item = AfrekeninglistView.SelectedItems[0];
-                BillDetails billDetails = new BillDetails(int.Parse(item.SubItems[1].Text));
+                _Order_ID = int.Parse(item.SubItems[1].Text);
+                _table_ID = int.Parse(item.SubItems[0].Text);
+                BillDetails billDetails = new BillDetails(_Order_ID);
                 billDetails.Show();
                 CalculateBill(int.Parse(item.SubItems[1].Text));
             }
@@ -82,7 +89,7 @@ namespace ChapooUI
 
         private void AfrekenenButton_Click(object sender, EventArgs e)
         {
-            //AfrekenMenu("GeneratePayment");
+            CreatePayment();
         }
 
         private void CalculateBill(int order_ID)
@@ -124,10 +131,66 @@ namespace ChapooUI
 
         private void CreatePayment()
         {
-            decimal totalTip = numericUpDownFooi.Value;
+            if (AfrekeninglistView.SelectedItems.Count is not 0)
+            {
+                if ((checkBoxContant.Checked is true) | (checkBoxCreditcard.Checked is true) | (checkBoxPinpas.Checked is true))
+                {
+                    int paymethod = 0;
+                    if(checkBoxContant.Checked is true)
+                    {
+                        paymethod = 1;
+                    }
+                    else if(checkBoxPinpas.Checked is true)
+                    {
+                        paymethod = 3;
+                    }
+                    else
+                    {
+                        paymethod = 2;
+                    }
 
-
+                    Payment payment = new Payment()
+                    {
+                        order_ID = _Order_ID,
+                        table_ID = _table_ID,
+                        payStatus_ID = 1,
+                        payMethod_ID = paymethod,
+                        employee_ID = 1, // employee hier nog in doen !!!
+                        totalPrice = _totalPrice + numericUpDownFooi.Value,
+                        tip = numericUpDownFooi.Value,
+                        totalVAT = _totalVAT,
+                        payment_DateTime = DateTime.Now
+                    };
+                }
+                else
+                {
+                    MessageBox.Show("Selecteer één betaalmethode", "Chapoo afrekenen",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecteer één openstaande rekening", "Chapoo afrekenen",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
+        private void checkBoxPinpas_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxContant.Checked = false;
+            checkBoxCreditcard.Checked = false;
+        }
+
+        private void checkBoxCreditcard_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxContant.Checked = false;
+            checkBoxPinpas.Checked = false;
+        }
+
+        private void checkBoxContant_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxPinpas.Checked = false;
+            checkBoxCreditcard.Checked = false;
+        }
     }
 }
