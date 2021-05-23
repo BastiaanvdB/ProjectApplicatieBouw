@@ -23,7 +23,7 @@ namespace ChapooDAL
 
         public void DB_Delete_All_Bill_Details(int Order_ID)
         {
-            string query = $"DELETE FROM OrderDetails AS o WHERE o.Order_ID = @order_id";
+            string query = $"DELETE FROM OrderDetails WHERE Order_ID = @order_id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@order_id", SqlDbType.Int) { Value = Order_ID }

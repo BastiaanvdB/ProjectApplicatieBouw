@@ -149,6 +149,7 @@ namespace ChapooUI
                         paymethod = 2;
                     }
 
+                    ChapooLogic.Payment_Service payment_Service = new Payment_Service();
                     Payment payment = new Payment()
                     {
                         order_ID = _Order_ID,
@@ -161,6 +162,10 @@ namespace ChapooUI
                         totalVAT = _totalVAT,
                         payment_DateTime = DateTime.Now
                     };
+                    payment_Service.DB_Create_New_Payment(payment);
+                    FillBillList();
+                    MessageBox.Show($"Betaling van tafelnummer {payment.table_ID} is afgerekend", "Chapoo afrekenen",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

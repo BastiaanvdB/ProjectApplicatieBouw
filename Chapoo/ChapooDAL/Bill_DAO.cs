@@ -19,7 +19,7 @@ namespace ChapooDAL
 
         public void DB_Set_Bill_To_Paid(int Order_ID)
         {
-            string query = $"UPDATE ";
+            string query = $"UPDATE Orders SET Order_PayStatus = 1 WHERE Order_ID = @order_id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@order_id", SqlDbType.Int) { Value = Order_ID }
