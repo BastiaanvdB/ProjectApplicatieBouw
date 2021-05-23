@@ -16,6 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="VoorraadOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="KeukenOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BarOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

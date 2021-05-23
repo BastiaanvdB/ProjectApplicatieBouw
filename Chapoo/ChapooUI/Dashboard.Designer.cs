@@ -93,7 +93,7 @@ namespace ChapooUI
             this.BtnVoorraad.Name = "BtnVoorraad";
             this.BtnVoorraad.Size = new System.Drawing.Size(190, 50);
             this.BtnVoorraad.TabIndex = 6;
-            this.BtnVoorraad.Text = "Voorraad";
+            this.BtnVoorraad.Text = "Voorraad overzicht";
             this.BtnVoorraad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnVoorraad.UseVisualStyleBackColor = true;
             this.BtnVoorraad.Click += new System.EventHandler(this.BtnVoorraad_Click);
