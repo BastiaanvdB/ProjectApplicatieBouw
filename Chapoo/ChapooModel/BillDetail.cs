@@ -14,6 +14,7 @@ namespace ChapooModel
         public int menuItem_ID { get; set; }
         public string menuItem_Name { get; set; }
         public int quantity { get; set; }
+        public string order_Comment { get; set; }
         public decimal item_price { get; set; }
         public int item_Taxpercentage { get; set; }
         public decimal totalPrice { get; set; }

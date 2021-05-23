@@ -32,6 +32,9 @@ namespace ChapooUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
+            this.BtnVoorraad = new System.Windows.Forms.Button();
+            this.BtnKeukenOverzicht = new System.Windows.Forms.Button();
+            this.BtnBarOverzicht = new System.Windows.Forms.Button();
             this.BtnAfrekenen = new System.Windows.Forms.Button();
             this.BtnDashboard = new System.Windows.Forms.Button();
             this.MenuBarAccountPanel = new System.Windows.Forms.Panel();
@@ -47,6 +50,9 @@ namespace ChapooUI
             // 
             this.MenuBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.MenuBarPanel.Controls.Add(this.BtnAfmelden);
+            this.MenuBarPanel.Controls.Add(this.BtnVoorraad);
+            this.MenuBarPanel.Controls.Add(this.BtnKeukenOverzicht);
+            this.MenuBarPanel.Controls.Add(this.BtnBarOverzicht);
             this.MenuBarPanel.Controls.Add(this.BtnAfrekenen);
             this.MenuBarPanel.Controls.Add(this.BtnDashboard);
             this.MenuBarPanel.Controls.Add(this.MenuBarAccountPanel);
@@ -65,14 +71,68 @@ namespace ChapooUI
             this.BtnAfmelden.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAfmelden.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnAfmelden.Image = ((System.Drawing.Image)(resources.GetObject("BtnAfmelden.Image")));
-            this.BtnAfmelden.Location = new System.Drawing.Point(0, 244);
+            this.BtnAfmelden.Location = new System.Drawing.Point(0, 394);
             this.BtnAfmelden.Name = "BtnAfmelden";
             this.BtnAfmelden.Size = new System.Drawing.Size(190, 50);
-            this.BtnAfmelden.TabIndex = 4;
+            this.BtnAfmelden.TabIndex = 7;
             this.BtnAfmelden.Text = "Afmelden";
             this.BtnAfmelden.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnAfmelden.UseVisualStyleBackColor = true;
             this.BtnAfmelden.Click += new System.EventHandler(this.BtnAfmelden_Click);
+            // 
+            // BtnVoorraad
+            // 
+            this.BtnVoorraad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnVoorraad.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnVoorraad.FlatAppearance.BorderSize = 0;
+            this.BtnVoorraad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVoorraad.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnVoorraad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnVoorraad.Image = ((System.Drawing.Image)(resources.GetObject("BtnVoorraad.Image")));
+            this.BtnVoorraad.Location = new System.Drawing.Point(0, 344);
+            this.BtnVoorraad.Name = "BtnVoorraad";
+            this.BtnVoorraad.Size = new System.Drawing.Size(190, 50);
+            this.BtnVoorraad.TabIndex = 6;
+            this.BtnVoorraad.Text = "Voorraad";
+            this.BtnVoorraad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnVoorraad.UseVisualStyleBackColor = true;
+            this.BtnVoorraad.Click += new System.EventHandler(this.BtnVoorraad_Click);
+            // 
+            // BtnKeukenOverzicht
+            // 
+            this.BtnKeukenOverzicht.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnKeukenOverzicht.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnKeukenOverzicht.FlatAppearance.BorderSize = 0;
+            this.BtnKeukenOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnKeukenOverzicht.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnKeukenOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnKeukenOverzicht.Image = ((System.Drawing.Image)(resources.GetObject("BtnKeukenOverzicht.Image")));
+            this.BtnKeukenOverzicht.Location = new System.Drawing.Point(0, 294);
+            this.BtnKeukenOverzicht.Name = "BtnKeukenOverzicht";
+            this.BtnKeukenOverzicht.Size = new System.Drawing.Size(190, 50);
+            this.BtnKeukenOverzicht.TabIndex = 5;
+            this.BtnKeukenOverzicht.Text = "Keuken overzicht";
+            this.BtnKeukenOverzicht.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnKeukenOverzicht.UseVisualStyleBackColor = true;
+            this.BtnKeukenOverzicht.Click += new System.EventHandler(this.BtnKeukenOverzicht_Click);
+            // 
+            // BtnBarOverzicht
+            // 
+            this.BtnBarOverzicht.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnBarOverzicht.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnBarOverzicht.FlatAppearance.BorderSize = 0;
+            this.BtnBarOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBarOverzicht.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnBarOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnBarOverzicht.Image = ((System.Drawing.Image)(resources.GetObject("BtnBarOverzicht.Image")));
+            this.BtnBarOverzicht.Location = new System.Drawing.Point(0, 244);
+            this.BtnBarOverzicht.Name = "BtnBarOverzicht";
+            this.BtnBarOverzicht.Size = new System.Drawing.Size(190, 50);
+            this.BtnBarOverzicht.TabIndex = 4;
+            this.BtnBarOverzicht.Text = "Bar overzicht";
+            this.BtnBarOverzicht.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnBarOverzicht.UseVisualStyleBackColor = true;
+            this.BtnBarOverzicht.Click += new System.EventHandler(this.BtnBarOverzicht_Click);
             // 
             // BtnAfrekenen
             // 
@@ -179,8 +239,11 @@ namespace ChapooUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label UserFunctieLabel;
         private System.Windows.Forms.Button BtnDashboard;
-        private System.Windows.Forms.Button BtnAfmelden;
+        private System.Windows.Forms.Button BtnBarOverzicht;
         private System.Windows.Forms.Button BtnAfrekenen;
+        private System.Windows.Forms.Button BtnKeukenOverzicht;
+        private System.Windows.Forms.Button BtnVoorraad;
+        private System.Windows.Forms.Button BtnAfmelden;
     }
 }
 

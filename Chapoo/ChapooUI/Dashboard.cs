@@ -59,14 +59,31 @@ namespace ChapooUI
         // --------------------
 
         // Button area
+       
+
+        private void BtnAfrekenen_Click(object sender, EventArgs e)
+        {
+            MenuPanel("Betaaloverzicht");
+        }
+
+        private void BtnKeukenOverzicht_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnBarOverzicht_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
             MenuPanel("Exit");
         }
 
-        private void BtnAfrekenen_Click(object sender, EventArgs e)
+        private void BtnVoorraad_Click(object sender, EventArgs e)
         {
-            MenuPanel("Betaaloverzicht");
+
         }
 
         // ---------------------
