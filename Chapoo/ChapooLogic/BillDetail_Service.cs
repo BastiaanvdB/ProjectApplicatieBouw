@@ -11,7 +11,7 @@ namespace ChapooLogic
     public class BillDetail_Service
     {
         private BillDetail_DAO BillDetail_DB = new BillDetail_DAO();
-
+        
         public List<BillDetail> DB_Get_All_Bill_Details(int order_ID)
         {
             try
@@ -24,6 +24,11 @@ namespace ChapooLogic
                 List<BillDetail> billDetails = new List<BillDetail>();
                 return billDetails;
             }
+        }
+
+        public void DB_Delete_All_Bill_Details(int Order_ID)
+        {
+            BillDetail_DB.DB_Delete_All_Bill_Details(Order_ID);
         }
     }
 }

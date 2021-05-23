@@ -21,6 +21,16 @@ namespace ChapooDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public void DB_Delete_All_Bill_Details(int Order_ID)
+        {
+            string query = $"DELETE FROM OrderDetails AS o WHERE o.Order_ID = @order_id";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@order_id", SqlDbType.Int) { Value = Order_ID }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
         private List<BillDetail> ReadTables(DataTable dataTable)
         {
             List<BillDetail> billDetails = new List<BillDetail>();

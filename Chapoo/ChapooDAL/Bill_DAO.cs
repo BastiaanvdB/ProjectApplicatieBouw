@@ -17,6 +17,16 @@ namespace ChapooDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public void DB_Set_Bill_To_Paid(int Order_ID)
+        {
+            string query = $"UPDATE ";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@order_id", SqlDbType.Int) { Value = Order_ID }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
         private List<Bill> ReadTables(DataTable dataTable)
         {
             List<Bill> bills = new List<Bill>();

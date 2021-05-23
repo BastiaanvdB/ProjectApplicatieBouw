@@ -27,6 +27,5 @@ namespace ChapooDAL
             };
             ExecuteEditQuery(query, sqlParameters);
         }
-
     }
 }

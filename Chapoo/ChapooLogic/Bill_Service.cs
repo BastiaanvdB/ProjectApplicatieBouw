@@ -23,5 +23,10 @@ namespace ChapooLogic
 
             }
         }
+
+        public void DB_Set_Bill_To_Paid(int Order_ID)
+        {
+            bill_db.DB_Set_Bill_To_Paid(Order_ID);
+        }
     }
 }
