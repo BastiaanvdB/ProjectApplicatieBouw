@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ChapooUI
 {
-    public partial class BarOverzicht : Form
+    public partial class KeukenBarOverzicht : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -34,7 +34,7 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public BarOverzicht()
+        public KeukenBarOverzicht()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

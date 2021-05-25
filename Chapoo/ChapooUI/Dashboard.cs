@@ -51,13 +51,9 @@ namespace ChapooUI
                     BetaalOverzicht betaalOverzicht = new BetaalOverzicht();
                     betaalOverzicht.Show();
                     break;
-                case "BarOverzicht":
-                    BarOverzicht barOverzicht = new BarOverzicht();
+                case "KeukenBarOverzicht":
+                    KeukenBarOverzicht barOverzicht = new KeukenBarOverzicht();
                     barOverzicht.Show();
-                    break;
-                case "KeukenOverzicht":
-                    KeukenOverzicht keukenOverzicht = new KeukenOverzicht();
-                    keukenOverzicht.Show();
                     break;
                 case "VoorraadOverzicht":
                     VoorraadOverzicht voorraadOverzicht = new VoorraadOverzicht();
@@ -78,14 +74,9 @@ namespace ChapooUI
             MenuPanel("Betaaloverzicht");
         }
 
-        private void BtnKeukenOverzicht_Click(object sender, EventArgs e)
-        {
-            MenuPanel("KeukenOverzicht");
-        }
-
         private void BtnBarOverzicht_Click(object sender, EventArgs e)
         {
-            MenuPanel("BarOverzicht");
+            MenuPanel("KeukenBarOverzicht");
         }
 
         private void BtnAfmelden_Click(object sender, EventArgs e)

@@ -33,7 +33,6 @@ namespace ChapooUI
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
             this.BtnVoorraad = new System.Windows.Forms.Button();
-            this.BtnKeukenOverzicht = new System.Windows.Forms.Button();
             this.BtnBarOverzicht = new System.Windows.Forms.Button();
             this.BtnAfrekenen = new System.Windows.Forms.Button();
             this.BtnDashboard = new System.Windows.Forms.Button();
@@ -51,7 +50,6 @@ namespace ChapooUI
             this.MenuBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.MenuBarPanel.Controls.Add(this.BtnAfmelden);
             this.MenuBarPanel.Controls.Add(this.BtnVoorraad);
-            this.MenuBarPanel.Controls.Add(this.BtnKeukenOverzicht);
             this.MenuBarPanel.Controls.Add(this.BtnBarOverzicht);
             this.MenuBarPanel.Controls.Add(this.BtnAfrekenen);
             this.MenuBarPanel.Controls.Add(this.BtnDashboard);
@@ -71,7 +69,7 @@ namespace ChapooUI
             this.BtnAfmelden.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAfmelden.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnAfmelden.Image = ((System.Drawing.Image)(resources.GetObject("BtnAfmelden.Image")));
-            this.BtnAfmelden.Location = new System.Drawing.Point(0, 394);
+            this.BtnAfmelden.Location = new System.Drawing.Point(0, 344);
             this.BtnAfmelden.Name = "BtnAfmelden";
             this.BtnAfmelden.Size = new System.Drawing.Size(190, 50);
             this.BtnAfmelden.TabIndex = 7;
@@ -89,7 +87,7 @@ namespace ChapooUI
             this.BtnVoorraad.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnVoorraad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnVoorraad.Image = ((System.Drawing.Image)(resources.GetObject("BtnVoorraad.Image")));
-            this.BtnVoorraad.Location = new System.Drawing.Point(0, 344);
+            this.BtnVoorraad.Location = new System.Drawing.Point(0, 294);
             this.BtnVoorraad.Name = "BtnVoorraad";
             this.BtnVoorraad.Size = new System.Drawing.Size(190, 50);
             this.BtnVoorraad.TabIndex = 6;
@@ -97,24 +95,6 @@ namespace ChapooUI
             this.BtnVoorraad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnVoorraad.UseVisualStyleBackColor = true;
             this.BtnVoorraad.Click += new System.EventHandler(this.BtnVoorraad_Click);
-            // 
-            // BtnKeukenOverzicht
-            // 
-            this.BtnKeukenOverzicht.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnKeukenOverzicht.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnKeukenOverzicht.FlatAppearance.BorderSize = 0;
-            this.BtnKeukenOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnKeukenOverzicht.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnKeukenOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BtnKeukenOverzicht.Image = ((System.Drawing.Image)(resources.GetObject("BtnKeukenOverzicht.Image")));
-            this.BtnKeukenOverzicht.Location = new System.Drawing.Point(0, 294);
-            this.BtnKeukenOverzicht.Name = "BtnKeukenOverzicht";
-            this.BtnKeukenOverzicht.Size = new System.Drawing.Size(190, 50);
-            this.BtnKeukenOverzicht.TabIndex = 5;
-            this.BtnKeukenOverzicht.Text = "Keuken overzicht";
-            this.BtnKeukenOverzicht.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.BtnKeukenOverzicht.UseVisualStyleBackColor = true;
-            this.BtnKeukenOverzicht.Click += new System.EventHandler(this.BtnKeukenOverzicht_Click);
             // 
             // BtnBarOverzicht
             // 
@@ -220,6 +200,7 @@ namespace ChapooUI
             this.ClientSize = new System.Drawing.Size(1399, 699);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chapoo Dashboard";
@@ -241,7 +222,6 @@ namespace ChapooUI
         private System.Windows.Forms.Button BtnDashboard;
         private System.Windows.Forms.Button BtnBarOverzicht;
         private System.Windows.Forms.Button BtnAfrekenen;
-        private System.Windows.Forms.Button BtnKeukenOverzicht;
         private System.Windows.Forms.Button BtnVoorraad;
         private System.Windows.Forms.Button BtnAfmelden;
     }

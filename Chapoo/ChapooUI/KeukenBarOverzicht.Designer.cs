@@ -1,7 +1,7 @@
 ﻿
 namespace ChapooUI
 {
-    partial class KeukenOverzicht
+    partial class KeukenBarOverzicht
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace ChapooUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeukenOverzicht));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeukenBarOverzicht));
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
             this.MenuBarAccountPanel = new System.Windows.Forms.Panel();
@@ -113,7 +113,7 @@ namespace ChapooUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // KeukenOverzicht
+            // BarOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,9 +121,9 @@ namespace ChapooUI
             this.ClientSize = new System.Drawing.Size(1399, 699);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "KeukenOverzicht";
+            this.Name = "BarOverzicht";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chapoo Keuken overzicht";
+            this.Text = "Chapoo Bar overzicht";
             this.MenuBarPanel.ResumeLayout(false);
             this.MenuBarAccountPanel.ResumeLayout(false);
             this.MenuBarAccountPanel.PerformLayout();
