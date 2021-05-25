@@ -1,24 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj": {}
+    "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj": {}
   },
   "projects": {
-    "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj": {
+    "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj",
+        "projectUniqueName": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj",
         "projectName": "ChapooDAL",
-        "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj",
-        "packagesPath": "C:\\Users\\Jelle\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\obj\\",
+        "projectPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj",
+        "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -31,8 +34,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
-                "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj"
+              "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
+                "projectPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj"
               }
             }
           }
@@ -71,25 +74,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj": {
+    "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj",
+        "projectUniqueName": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj",
         "projectName": "ChapooLogic",
-        "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj",
-        "packagesPath": "C:\\Users\\Jelle\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\obj\\",
+        "projectPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj",
+        "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -102,11 +108,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj": {
-                "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj"
+              "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj": {
+                "projectPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooDAL\\ChapooDAL.csproj"
               },
-              "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
-                "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj"
+              "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
+                "projectPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj"
               }
             }
           }
@@ -135,25 +141,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
+    "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
+        "projectUniqueName": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
         "projectName": "ChapooModel",
-        "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
-        "packagesPath": "C:\\Users\\Jelle\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\obj\\",
+        "projectPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
+        "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -192,7 +201,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
