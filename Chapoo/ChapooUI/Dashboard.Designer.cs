@@ -32,6 +32,7 @@ namespace ChapooUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
+            this.BtnBestellen = new System.Windows.Forms.Button();
             this.BtnVoorraad = new System.Windows.Forms.Button();
             this.BtnBarOverzicht = new System.Windows.Forms.Button();
             this.BtnAfrekenen = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@ namespace ChapooUI
             // 
             this.MenuBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.MenuBarPanel.Controls.Add(this.BtnAfmelden);
+            this.MenuBarPanel.Controls.Add(this.BtnBestellen);
             this.MenuBarPanel.Controls.Add(this.BtnVoorraad);
             this.MenuBarPanel.Controls.Add(this.BtnBarOverzicht);
             this.MenuBarPanel.Controls.Add(this.BtnAfrekenen);
@@ -69,14 +71,32 @@ namespace ChapooUI
             this.BtnAfmelden.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAfmelden.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnAfmelden.Image = ((System.Drawing.Image)(resources.GetObject("BtnAfmelden.Image")));
-            this.BtnAfmelden.Location = new System.Drawing.Point(0, 344);
+            this.BtnAfmelden.Location = new System.Drawing.Point(0, 394);
             this.BtnAfmelden.Name = "BtnAfmelden";
             this.BtnAfmelden.Size = new System.Drawing.Size(190, 50);
-            this.BtnAfmelden.TabIndex = 7;
+            this.BtnAfmelden.TabIndex = 8;
             this.BtnAfmelden.Text = "Afmelden";
             this.BtnAfmelden.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnAfmelden.UseVisualStyleBackColor = true;
             this.BtnAfmelden.Click += new System.EventHandler(this.BtnAfmelden_Click);
+            // 
+            // BtnBestellen
+            // 
+            this.BtnBestellen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnBestellen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnBestellen.FlatAppearance.BorderSize = 0;
+            this.BtnBestellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBestellen.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnBestellen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnBestellen.Image = ((System.Drawing.Image)(resources.GetObject("BtnBestellen.Image")));
+            this.BtnBestellen.Location = new System.Drawing.Point(0, 344);
+            this.BtnBestellen.Name = "BtnBestellen";
+            this.BtnBestellen.Size = new System.Drawing.Size(190, 50);
+            this.BtnBestellen.TabIndex = 7;
+            this.BtnBestellen.Text = "Besteloverzicht";
+            this.BtnBestellen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnBestellen.UseVisualStyleBackColor = true;
+            this.BtnBestellen.Click += new System.EventHandler(this.BtnBestellen_Click);
             // 
             // BtnVoorraad
             // 
@@ -223,6 +243,7 @@ namespace ChapooUI
         private System.Windows.Forms.Button BtnBarOverzicht;
         private System.Windows.Forms.Button BtnAfrekenen;
         private System.Windows.Forms.Button BtnVoorraad;
+        private System.Windows.Forms.Button BtnBestellen;
         private System.Windows.Forms.Button BtnAfmelden;
     }
 }
