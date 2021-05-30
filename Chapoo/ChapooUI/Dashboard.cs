@@ -63,6 +63,10 @@ namespace ChapooUI
                     BestelOverzicht bestelOverzicht = new BestelOverzicht();
                     bestelOverzicht.Show();
                     break;
+                case "TafelOverzicht":
+                    TafelOverzicht tafelOverzicht = new TafelOverzicht();
+                    tafelOverzicht.Show();
+                    break;
                 case "Exit":
                     Application.Exit();
                     break;
@@ -88,14 +92,20 @@ namespace ChapooUI
             MenuPanel("VoorraadOverzicht");
         }
 
-        private void BtnAfmelden_Click(object sender, EventArgs e)
-        {
-            MenuPanel("Exit");
-        }
 
         private void BtnBestellen_Click(object sender, EventArgs e)
         {
             MenuPanel("Besteloverzicht");
+        }
+
+        private void BtnTafelOverzicht_Click(object sender, EventArgs e)
+        {
+            MenuPanel("TafelOverzicht");
+        }
+
+        private void BtnAfmelden_Click(object sender, EventArgs e)
+        {
+            MenuPanel("Exit");
         }
 
         // ---------------------

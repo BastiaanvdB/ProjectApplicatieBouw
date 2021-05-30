@@ -32,6 +32,7 @@ namespace ChapooUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
+            this.BtnTafelOverzicht = new System.Windows.Forms.Button();
             this.BtnBestellen = new System.Windows.Forms.Button();
             this.BtnVoorraad = new System.Windows.Forms.Button();
             this.BtnBarOverzicht = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@ namespace ChapooUI
             // 
             this.MenuBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.MenuBarPanel.Controls.Add(this.BtnAfmelden);
+            this.MenuBarPanel.Controls.Add(this.BtnTafelOverzicht);
             this.MenuBarPanel.Controls.Add(this.BtnBestellen);
             this.MenuBarPanel.Controls.Add(this.BtnVoorraad);
             this.MenuBarPanel.Controls.Add(this.BtnBarOverzicht);
@@ -71,14 +73,32 @@ namespace ChapooUI
             this.BtnAfmelden.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAfmelden.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnAfmelden.Image = ((System.Drawing.Image)(resources.GetObject("BtnAfmelden.Image")));
-            this.BtnAfmelden.Location = new System.Drawing.Point(0, 394);
+            this.BtnAfmelden.Location = new System.Drawing.Point(0, 444);
             this.BtnAfmelden.Name = "BtnAfmelden";
             this.BtnAfmelden.Size = new System.Drawing.Size(190, 50);
-            this.BtnAfmelden.TabIndex = 8;
+            this.BtnAfmelden.TabIndex = 9;
             this.BtnAfmelden.Text = "Afmelden";
             this.BtnAfmelden.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnAfmelden.UseVisualStyleBackColor = true;
             this.BtnAfmelden.Click += new System.EventHandler(this.BtnAfmelden_Click);
+            // 
+            // BtnTafelOverzicht
+            // 
+            this.BtnTafelOverzicht.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnTafelOverzicht.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnTafelOverzicht.FlatAppearance.BorderSize = 0;
+            this.BtnTafelOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTafelOverzicht.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnTafelOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnTafelOverzicht.Image = ((System.Drawing.Image)(resources.GetObject("BtnTafelOverzicht.Image")));
+            this.BtnTafelOverzicht.Location = new System.Drawing.Point(0, 394);
+            this.BtnTafelOverzicht.Name = "BtnTafelOverzicht";
+            this.BtnTafelOverzicht.Size = new System.Drawing.Size(190, 50);
+            this.BtnTafelOverzicht.TabIndex = 8;
+            this.BtnTafelOverzicht.Text = "Tafel Overzicht";
+            this.BtnTafelOverzicht.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnTafelOverzicht.UseVisualStyleBackColor = true;
+            this.BtnTafelOverzicht.Click += new System.EventHandler(this.BtnTafelOverzicht_Click);
             // 
             // BtnBestellen
             // 
@@ -244,6 +264,7 @@ namespace ChapooUI
         private System.Windows.Forms.Button BtnAfrekenen;
         private System.Windows.Forms.Button BtnVoorraad;
         private System.Windows.Forms.Button BtnBestellen;
+        private System.Windows.Forms.Button BtnTafelOverzicht;
         private System.Windows.Forms.Button BtnAfmelden;
     }
 }

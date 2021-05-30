@@ -6,7 +6,6 @@ C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooModel.dll
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooDAL.pdb
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooModel.pdb
-C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csprojAssemblyReference.cache
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.AssemblyInfoInputs.cache
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.AssemblyInfo.cs
@@ -32,3 +31,4 @@ C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\o
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.dll
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ref\ChapooLogic.dll
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.pdb
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csproj.AssemblyReference.cache
