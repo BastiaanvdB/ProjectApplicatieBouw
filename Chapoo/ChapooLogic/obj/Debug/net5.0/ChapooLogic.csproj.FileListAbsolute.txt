@@ -32,3 +32,20 @@ C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\o
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ref\ChapooLogic.dll
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.pdb
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csproj.AssemblyReference.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csprojAssemblyReference.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.AssemblyInfoInputs.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.AssemblyInfo.cs
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csproj.CoreCompileInputs.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ref\ChapooLogic.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.pdb
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooLogic.deps.json
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooLogic.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ref\ChapooLogic.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooLogic.pdb
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooDAL.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooModel.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooDAL.pdb
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooModel.pdb
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csproj.CopyComplete
