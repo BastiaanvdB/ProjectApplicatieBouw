@@ -14,7 +14,7 @@ namespace ChapooModel
         public int quantity { get; set; }
         public decimal price { get; set; }
         public string comment { get; set; }
-        public string employee_ID { get; set; }
+        public int employee_ID { get; set; }
         public DateTime ordered_DateTime { get; set; }
         public DateTime preparing_DateTime { get; set; }
         public DateTime finished_DateTime { get; set; }

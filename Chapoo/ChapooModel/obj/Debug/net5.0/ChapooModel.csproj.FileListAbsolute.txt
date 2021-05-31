@@ -22,3 +22,15 @@ C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooModel\o
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ref\ChapooModel.dll
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.pdb
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.csproj.AssemblyReference.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\bin\Debug\net5.0\ChapooModel.deps.json
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\bin\Debug\net5.0\ChapooModel.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\bin\Debug\net5.0\ref\ChapooModel.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\bin\Debug\net5.0\ChapooModel.pdb
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.csprojAssemblyReference.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.AssemblyInfoInputs.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.AssemblyInfo.cs
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.csproj.CoreCompileInputs.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ref\ChapooModel.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.pdb

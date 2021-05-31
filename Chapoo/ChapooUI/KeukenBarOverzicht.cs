@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapooModel;
 
 namespace ChapooUI
 {
@@ -41,15 +42,37 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
+        private void ShowPanels(string PanelName)
+        {
+            if (PanelName == "BarOverzicht")
+            {
+                Pnl_Baroverzicht.Show();
+                //andere hiden
+                ChapooLogic.MenuItem_Service Menuservice = new ChapooLogic.MenuItem_Service();
+                List<MenuItem> itemlist = Menuservice.DB_Get_All_MenuItems();
+                listView_Baroverzicht.Clear();
 
-
+                foreach (ChapooModel.MenuItem item in itemlist)
+                {
+                    ListViewItem li = new ListViewItem((item.orderDetails_ID).ToString());
+                    listView_Baroverzicht.Items.Add(li);
+                }
+            }
+        }
         // Button area
-       
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void Btn_BarOverzicht_Click_1(object sender, EventArgs e)
+        {
+            ShowPanels("BarOverzicht");
+        }
 
+        private void Btn_KeukenOverzicht_Click_1(object sender, EventArgs e)
+        {
+
+        }
         // ---------------------
     }
 }

@@ -28,3 +28,18 @@ C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ref\ChapooDAL.dll
 C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.pdb
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.csproj.AssemblyReference.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.csprojAssemblyReference.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.AssemblyInfoInputs.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.AssemblyInfo.cs
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.csproj.CoreCompileInputs.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ref\ChapooDAL.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.pdb
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooDAL.deps.json
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooDAL.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ref\ChapooDAL.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooDAL.pdb
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooModel.dll
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooModel.pdb
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.csproj.CopyComplete
