@@ -177,3 +177,4 @@ C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooU
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ref\ChapooUI.dll
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.pdb
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.genruntimeconfig.cache
+C:\Users\basti\Desktop\project chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.TafelOverzicht.resources

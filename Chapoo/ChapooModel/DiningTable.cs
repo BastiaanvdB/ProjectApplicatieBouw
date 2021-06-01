@@ -8,7 +8,7 @@ namespace ChapooModel
 {
     public class DiningTable
     {
-        public int table_ID { get; set; }
+        public int table_ID { get; }
         public string table_Status { get; set; }
     }
 }

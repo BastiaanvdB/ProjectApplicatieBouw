@@ -16,7 +16,7 @@ namespace ChapooLogic
                 List<Bill> billList = bill_db.Db_Get_All_Unpaid_Bills();
                 return billList;
             }
-            catch (Exception)
+            catch (Exception )
             {
                 List<Bill> billList = new List<Bill>();
                 return billList;
