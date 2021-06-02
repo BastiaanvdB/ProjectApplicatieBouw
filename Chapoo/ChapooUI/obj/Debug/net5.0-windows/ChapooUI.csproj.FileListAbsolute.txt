@@ -158,7 +158,6 @@ C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooM
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooLogic.pdb
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooModel.pdb
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooDAL.pdb
-C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.csprojAssemblyReference.cache
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.BestelOverzicht.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.BetaalOverzicht.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.BillDetails.resources
@@ -238,3 +237,4 @@ C:\Users\basti\Desktop\Chapoo test\ChapooUI\bin\Debug\net5.0-windows\ChapooModel
 C:\Users\basti\Desktop\Chapoo test\ChapooUI\bin\Debug\net5.0-windows\ChapooDAL.pdb
 C:\Users\basti\Desktop\Chapoo test\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.csproj.CopyComplete
 C:\Users\basti\Desktop\Chapoo test\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.genruntimeconfig.cache
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.csproj.AssemblyReference.cache
