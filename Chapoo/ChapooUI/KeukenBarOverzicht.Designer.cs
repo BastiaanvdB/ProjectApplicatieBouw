@@ -166,6 +166,7 @@ namespace ChapooUI
             this.Controls.Add(this.listView_Baroverzicht);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KeukenBarOverzicht";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chapoo Bar overzicht";

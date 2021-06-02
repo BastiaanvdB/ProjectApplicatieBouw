@@ -29,6 +29,7 @@ namespace ChapooUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillDetails));
             this.listViewBonDetails = new System.Windows.Forms.ListView();
             this.GerechtHeader = new System.Windows.Forms.ColumnHeader();
             this.AantalHeader = new System.Windows.Forms.ColumnHeader();
@@ -48,6 +49,7 @@ namespace ChapooUI
             this.PrijsTotalHeader});
             this.listViewBonDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listViewBonDetails.GridLines = true;
+            this.listViewBonDetails.HideSelection = false;
             this.listViewBonDetails.Location = new System.Drawing.Point(54, 85);
             this.listViewBonDetails.Name = "listViewBonDetails";
             this.listViewBonDetails.Size = new System.Drawing.Size(698, 529);
@@ -119,6 +121,7 @@ namespace ChapooUI
             this.Controls.Add(this.LabelBonTafelTitel);
             this.Controls.Add(this.listViewBonDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BillDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill";

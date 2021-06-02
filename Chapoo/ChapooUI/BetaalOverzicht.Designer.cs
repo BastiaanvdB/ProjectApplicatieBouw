@@ -453,6 +453,7 @@ namespace ChapooUI
             this.Controls.Add(this.PanelAfrekenOverzicht);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BetaalOverzicht";
             this.Text = "Chapoo Betaaloverzicht";
             this.MenuBarPanel.ResumeLayout(false);

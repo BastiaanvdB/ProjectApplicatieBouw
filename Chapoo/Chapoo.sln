@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapooUI", "ChapooUI\ChapooUI.csproj", "{90F32522-4F2A-4602-9DB7-D6953C57B959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapooUI", "ChapooUI\ChapooUI.csproj", "{90F32522-4F2A-4602-9DB7-D6953C57B959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapooDAL", "ChapooDAL\ChapooDAL.csproj", "{6E172F7E-408F-4D3F-BE13-2E001DD5B6F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapooDAL", "ChapooDAL\ChapooDAL.csproj", "{6E172F7E-408F-4D3F-BE13-2E001DD5B6F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapooLogic", "ChapooLogic\ChapooLogic.csproj", "{CAF44D25-2830-404C-B4B9-82322FB52E3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapooLogic", "ChapooLogic\ChapooLogic.csproj", "{CAF44D25-2830-404C-B4B9-82322FB52E3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapooModel", "ChapooModel\ChapooModel.csproj", "{6C1DD8D9-40E2-4953-A538-6800BCC80AE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapooModel", "ChapooModel\ChapooModel.csproj", "{6C1DD8D9-40E2-4953-A538-6800BCC80AE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

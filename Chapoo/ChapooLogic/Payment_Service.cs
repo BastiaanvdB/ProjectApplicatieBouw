@@ -17,8 +17,8 @@ namespace ChapooLogic
         public void DB_Create_New_Payment(Payment payment)
         {
             Payment_DB.DB_Create_Payment(payment);
-            Bill_DB.DB_Set_Bill_To_Paid(payment.order_ID);
-            BillDetail_DB.DB_Delete_All_Bill_Details(payment.order_ID);
+            Bill_DB.DB_Set_Bill_To_Paid(payment.order.order_ID);
+            BillDetail_DB.DB_Delete_All_Bill_Details(payment.order.order_ID);
         }
     }
 }

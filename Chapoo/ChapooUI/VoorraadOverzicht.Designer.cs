@@ -121,6 +121,7 @@ namespace ChapooUI
             this.ClientSize = new System.Drawing.Size(1399, 699);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VoorraadOverzicht";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chapoo Voorraad overzicht";

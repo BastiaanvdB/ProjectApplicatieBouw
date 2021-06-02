@@ -113,7 +113,7 @@ namespace ChapooUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // VoorraadOverzicht
+            // BestelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +121,8 @@ namespace ChapooUI
             this.ClientSize = new System.Drawing.Size(1399, 699);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VoorraadOverzicht";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "BestelOverzicht";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chapoo Voorraad overzicht";
             this.MenuBarPanel.ResumeLayout(false);

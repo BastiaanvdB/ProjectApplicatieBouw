@@ -152,6 +152,18 @@ namespace ChapooUI
                     paymethod = PayMethod.Creditcard;
                 }
 
+                // tijdelijk override employee met fokke !!!!
+                Employee employee = new Employee()
+                {
+                    employee_id = 2,
+                    postion = Position.Bediening,
+                    name = "Fokke Modder",
+                    phone = "+31035542534",
+                    adres = "Haarlem",
+                    pin = "0000"
+                };
+                // Verwijder!!!!
+
                 ChapooLogic.Payment_Service payment_Service = new Payment_Service();
                 Payment payment = new Payment()
                 {
@@ -159,7 +171,7 @@ namespace ChapooUI
                     table = _currentBill.Table,
                     payStatus = PayStatus.Betaald,
                     payMethod = paymethod,
-                    //employee_ID = 1, // employee hier nog in doen !!!
+                    employee = employee, // employee hier nog in doen !!!
                     totalPrice = _currentBill.totalPrice + numericUpDownFooi.Value,
                     tip = numericUpDownFooi.Value,
                     totalVAT = _currentBill.totalVAT,
@@ -167,6 +179,7 @@ namespace ChapooUI
                 };
                 payment_Service.DB_Create_New_Payment(payment);
                 FillBillList();
+                FillListview();
                 MessageBox.Show($"Betaling van tafelnummer {_currentBill.Table.table_ID} is afgerekend", "Chapoo afrekenen",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
