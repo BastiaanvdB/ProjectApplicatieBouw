@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ChapooModel
 {
-    public class DiningTable
+    public enum OrderStatus
     {
-        public int table_ID { get; set; }
-        public TableStatus table_Status { get; set; }
+        Besteld = 1, Klaarmaken, Afhalen, Opgediend, Geannuleerd = 5
     }
 }

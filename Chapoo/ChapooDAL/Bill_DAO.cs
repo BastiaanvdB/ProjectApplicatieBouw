@@ -12,7 +12,7 @@ namespace ChapooDAL
     {
         public List<Bill> Db_Get_All_Unpaid_Bills()
         {
-            string query = "SELECT MAX(o.Table_ID) AS tafelnummer, o.Order_ID, SUM(d.orderdetails_quantity*p.Item_Price) as totalprice, MAX(s.PayStatus_Status) AS paystatus FROM Orders AS o INNER JOIN OrderDetails AS d ON d.order_id = o.order_id INNER JOIN MenuItems AS p ON d.Item_ID = p.Item_ID INNER JOIN PayStatus AS s On o.Order_PayStatus = s.PayStatus_ID WHERE o.Order_PayStatus = 0 GROUP BY o.Order_ID";
+            string query = "SELECT Orders.Table_ID, Orders.Order_ID, Orders.Order_PayStatus, Orders.Order_Status FROM Orders WHERE Orders.Order_PayStatus = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -29,15 +29,18 @@ namespace ChapooDAL
 
         private List<Bill> ReadTables(DataTable dataTable)
         {
+            BillDetail_DAO billDetail_DAO = new BillDetail_DAO();
+            DiningTable_DAO diningTable_DAO = new DiningTable_DAO();
             List<Bill> bills = new List<Bill>();
             foreach (DataRow dr in dataTable.Rows)
             {
                 Bill bill = new Bill()
                 {
-                    tableNumber = (int)dr["tafelnummer"],
-                    orderNumber = (int)dr["Order_ID"],
-                    totalPrice = (decimal)dr["totalprice"],
-                    payStatus = (string)dr["paystatus"]
+                    order_ID = (int)dr["Order_ID"],
+                    Table = diningTable_DAO.DB_Get_Dining_Table((int)dr["Table_ID"]),
+                    OrderDetails = billDetail_DAO.DB_Get_All_Ordered_Items((int)dr["Order_ID"]),
+                    paystatus = (PayStatus)((int)dr["Order_PayStatus"]),
+                    orderStatus = (OrderStatus)((int)dr["Order_Status"])
                 };
                 bills.Add(bill);
             }

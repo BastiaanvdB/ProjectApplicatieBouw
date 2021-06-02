@@ -11,17 +11,17 @@ namespace ChapooLogic
 
         public List<Bill> DB_Get_All_Unpaid_Bills()
         {
-            try
-            {
+            //try
+            //{
                 List<Bill> billList = bill_db.Db_Get_All_Unpaid_Bills();
                 return billList;
-            }
-            catch (Exception )
-            {
-                List<Bill> billList = new List<Bill>();
-                return billList;
+            //}
+            //catch (Exception )
+            //{
+            //    List<Bill> billList = new List<Bill>();
+            //    return billList;
 
-            }
+            //}
         }
 
         public void DB_Set_Bill_To_Paid(int Order_ID)

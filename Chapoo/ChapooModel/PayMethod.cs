@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ChapooModel
 {
-    public class DiningTable
+    public enum PayMethod
     {
-        public int table_ID { get; set; }
-        public TableStatus table_Status { get; set; }
+        Contant = 1, Creditcard, Pinpas, Coupon = 4
     }
 }

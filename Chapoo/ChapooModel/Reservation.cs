@@ -8,11 +8,9 @@ namespace ChapooModel
 {
     public class Reservation
     {
-        public int reservation_ID { get; set; }
-        public int table_ID { get; set; }
-        public int customer_ID { get; set; }
-        public string customer_Name { get; set; }
-        public int customer_Phone { get; set; }
+        public int reservation_ID { get; }
+        public DiningTable table { get; set; }
+        public Customer customer { get; set; }
         public DateTime reservation_DateTime { get; set; }
     }
 }

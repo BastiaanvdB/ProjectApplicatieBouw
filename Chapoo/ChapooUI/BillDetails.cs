@@ -15,6 +15,9 @@ namespace ChapooUI
 {
     public partial class BillDetails : Form
     {
+        private Bill _bill;
+
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -37,27 +40,23 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public BillDetails(int ordernummer)
+        public BillDetails(Bill bill)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            FillBill(ordernummer);
+            _bill = bill;
+            FillBill();
         }
 
-        private void FillBill(int ordernummer)
+        private void FillBill()
         {
             listViewBonDetails.Items.Clear();
-
-            // fill the billlistview with bill details
-            ChapooLogic.BillDetail_Service billDetail_Service = new ChapooLogic.BillDetail_Service();
-            List<ChapooModel.BillDetail> billList = billDetail_Service.DB_Get_All_Bill_Details(ordernummer);
-            listViewBonDetails.View = View.Details;
-            foreach (ChapooModel.BillDetail bill in billList)
+            foreach (ChapooModel.OrderDetail orderItem in _bill.OrderDetails)
             {
-                listViewBonDetails.Items.Add(new ListViewItem(new string[] { $"{bill.menuItem_Name}", $"{bill.quantity}", $"{bill.item_price.ToString("€ 0.00")}", $"{bill.totalPrice.ToString("€ 0.00")}" }));
-                LabelBonInputTafel.Text = bill.table_ID.ToString();
-                this.Text = $"Bon tafel {bill.table_ID}";
+                listViewBonDetails.Items.Add(new ListViewItem(new string[] { $"{orderItem.item.item_Name}", $"{orderItem.quantity}", $"{orderItem.item.item_Price.ToString("€ 0.00")}", $"{(orderItem.item.item_Price * orderItem.quantity).ToString("€ 0.00")}" }));
+                LabelBonInputTafel.Text = _bill.Table.table_ID.ToString();
+                this.Text = $"Bon tafel {_bill.Table.table_ID}";
             }
         }
 

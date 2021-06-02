@@ -8,15 +8,13 @@ namespace ChapooModel
 {
     public class MenuItem
     {
-        public int orderDetails_ID { get; }
-        public string menuGroup { get; set; }
         public int item_ID { get; set; }
-        public int quantity { get; set; }
-        public decimal price { get; set; }
-        public string comment { get; set; }
-        public int employee_ID { get; set; }
-        public DateTime ordered_DateTime { get; set; }
-        public DateTime preparing_DateTime { get; set; }
-        public DateTime finished_DateTime { get; set; }
+        public string MenuGroup { get; set; }
+        public string item_Name { get; set; }
+        public decimal item_Price { get; set; }
+        public int item_Taxpercentage { get; set; }
+        public int item_Stock { get; set; }
+        public int item_Restock { get; set; }
+        public bool Alcohol_Check { get; set; }
     }
 }

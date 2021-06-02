@@ -56,8 +56,8 @@ namespace ChapooUI
 
                 foreach (ChapooModel.MenuItem item in itemlist)
                 {
-                    ListViewItem li = new ListViewItem((item.orderDetails_ID).ToString());
-                    listView_Baroverzicht.Items.Add(li);
+                    //ListViewItem li = new ListViewItem((item.orderDetails_ID).ToString());
+                    //listView_Baroverzicht.Items.Add(li);
                 }
             //}
         }

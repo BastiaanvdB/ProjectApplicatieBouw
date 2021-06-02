@@ -16,10 +16,8 @@ namespace ChapooUI
 {
     public partial class BetaalOverzicht : Form
     {
-        private int _Order_ID { get; set; }
-        private int _table_ID { get; set; }
-        private decimal _totalPrice { get; set; }
-        private decimal _totalVAT { get; set; }
+        private Bill _currentBill;
+        private List<Bill> _ListOfBills;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -47,23 +45,29 @@ namespace ChapooUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            _currentBill = new Bill();
+            _ListOfBills = new List<Bill>();
             FillBillList();
+            FillListview();
         }
 
         private void FillBillList()
         {
-            AfrekeninglistView.Items.Clear();
-
-            // fill the bill listview with unpaid bills
+            // fill the billList with unpaid bills
             ChapooLogic.Bill_Service billService = new ChapooLogic.Bill_Service();
-            List<Bill> billList = billService.DB_Get_All_Unpaid_Bills();
-            AfrekeninglistView.View = View.Details;
-            foreach (ChapooModel.Bill bill in billList)
-            {
-                AfrekeninglistView.Items.Add(new ListViewItem(new string[] { $"{bill.tableNumber}", $"{bill.orderNumber}", $"{bill.totalPrice.ToString("€ 0.00")}", $"{bill.payStatus.ToString()}"}));
-            }
+            _ListOfBills = billService.DB_Get_All_Unpaid_Bills();
+            
         }
 
+        private void FillListview()
+        {
+            // fill listview with unpaid bills
+            AfrekeninglistView.Items.Clear();
+            foreach (ChapooModel.Bill bill in _ListOfBills)
+            {
+                AfrekeninglistView.Items.Add(new ListViewItem(new string[] { $"{bill.Table.table_ID}", $"{bill.order_ID}", $"{bill.totalPrice.ToString("€ 0.00")}", $"{bill.paystatus.ToString()}" }));
+            }
+        }
 
         private void BtnTerug_Click(object sender, EventArgs e)
         {
@@ -72,18 +76,12 @@ namespace ChapooUI
 
         private void AfrekeninglistView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _totalPrice = 0;
-            _totalVAT = 0;
-            _Order_ID = 0;
-            _table_ID = 0;
             if (AfrekeninglistView.SelectedItems.Count is not 0)
             {
-                ListViewItem item = AfrekeninglistView.SelectedItems[0];
-                _Order_ID = int.Parse(item.SubItems[1].Text);
-                _table_ID = int.Parse(item.SubItems[0].Text);
-                BillDetails billDetails = new BillDetails(_Order_ID);
+                _currentBill = _ListOfBills[AfrekeninglistView.SelectedIndices[0]];
+                BillDetails billDetails = new BillDetails(_currentBill);
                 billDetails.Show();
-                CalculateBill(int.Parse(item.SubItems[1].Text));
+                UpdateBillPanel();
             }
         }
 
@@ -92,30 +90,11 @@ namespace ChapooUI
             CreatePayment();
         }
 
-        private void CalculateBill(int order_ID)
-        {
-            ChapooLogic.BillDetail_Service billDetail_Service = new ChapooLogic.BillDetail_Service();
-            List<ChapooModel.BillDetail> billList = billDetail_Service.DB_Get_All_Bill_Details(order_ID);
-
-            _totalPrice = 0;
-            _totalVAT = 0;
-
-            foreach (BillDetail bill in billList)
-            {
-                int taxpercentage = bill.item_Taxpercentage;
-                decimal price = bill.totalPrice;
-
-                _totalVAT += (price / 100) * taxpercentage;
-                _totalPrice += price;
-            }
-            UpdateBillPanel();
-        }
-
         private void UpdateBillPanel()
         {
-            labelBrutoInput.Text = (_totalPrice - _totalVAT).ToString("€ 0.00");
-            labelBTWinput.Text = _totalVAT.ToString("€ 0.00");
-            labelNettoinput.Text = (_totalPrice).ToString("€ 0.00");
+            labelBrutoInput.Text = (_currentBill.totalPrice - _currentBill.totalVAT).ToString("€ 0.00");
+            labelBTWinput.Text = _currentBill.totalVAT.ToString("€ 0.00");
+            labelNettoinput.Text = (_currentBill.totalPrice).ToString("€ 0.00");
             ShowTotalPrice();
         }
 
@@ -126,7 +105,7 @@ namespace ChapooUI
 
         private void ShowTotalPrice()
         {
-            labelTotaalprijsoutput.Text = (_totalPrice + numericUpDownFooi.Value).ToString("€ 0.00");
+            labelTotaalprijsoutput.Text = (_currentBill.totalPrice + numericUpDownFooi.Value).ToString("€ 0.00");
         }
 
         private void CreatePayment()
@@ -135,36 +114,36 @@ namespace ChapooUI
             {
                 if ((checkBoxContant.Checked is true) | (checkBoxCreditcard.Checked is true) | (checkBoxPinpas.Checked is true))
                 {
-                    int paymethod = 0;
+                    PayMethod paymethod;
                     if(checkBoxContant.Checked is true)
                     {
-                        paymethod = 1;
+                        paymethod = PayMethod.Contant;
                     }
                     else if(checkBoxPinpas.Checked is true)
                     {
-                        paymethod = 3;
+                        paymethod = PayMethod.Pinpas;
                     }
                     else
                     {
-                        paymethod = 2;
+                        paymethod = PayMethod.Creditcard;
                     }
 
                     ChapooLogic.Payment_Service payment_Service = new Payment_Service();
                     Payment payment = new Payment()
                     {
-                        order_ID = _Order_ID,
-                        table_ID = _table_ID,
-                        payStatus_ID = 1,
-                        payMethod_ID = paymethod,
-                        employee_ID = 1, // employee hier nog in doen !!!
-                        totalPrice = _totalPrice + numericUpDownFooi.Value,
+                        order = _currentBill,
+                        table = _currentBill.Table,
+                        payStatus = PayStatus.Betaald,
+                        payMethod = paymethod,
+                        //employee_ID = 1, // employee hier nog in doen !!!
+                        totalPrice = _currentBill.totalPrice + numericUpDownFooi.Value,
                         tip = numericUpDownFooi.Value,
-                        totalVAT = _totalVAT,
+                        totalVAT = _currentBill.totalVAT,
                         payment_DateTime = DateTime.Now
                     };
                     payment_Service.DB_Create_New_Payment(payment);
                     FillBillList();
-                    MessageBox.Show($"Betaling van tafelnummer {payment.table_ID} is afgerekend", "Chapoo afrekenen",
+                    MessageBox.Show($"Betaling van tafelnummer {_currentBill.Table.table_ID} is afgerekend", "Chapoo afrekenen",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
