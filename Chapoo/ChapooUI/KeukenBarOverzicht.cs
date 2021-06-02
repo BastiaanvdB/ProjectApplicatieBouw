@@ -44,22 +44,19 @@ namespace ChapooUI
 
         private void ShowPanels(string PanelName)
         {
-            //if (PanelName == "BarOverzicht")
-            //{
-                //panel van baroverzicht laten zien
-                //Pnl_Baroverzicht.Show();
-                
-                //de listview van de bestellingen vullen met een lijst van menuitems
-                ChapooLogic.MenuItem_Service Menuservice = new ChapooLogic.MenuItem_Service();
-                List<MenuItem> itemlist = Menuservice.DB_Get_All_MenuItems();
-                listView_Baroverzicht.Clear();
+            switch (PanelName)
+            {
+                case "BarOverzicht":
 
-                foreach (ChapooModel.MenuItem item in itemlist)
-                {
-                    //ListViewItem li = new ListViewItem((item.orderDetails_ID).ToString());
-                    //listView_Baroverzicht.Items.Add(li);
-                }
-            //}
+                    pnl_Baroverzicht.Show();
+                    
+                    break;
+                case "Keukenoverzicht":
+
+                    pnl_Baroverzicht.Hide();
+
+                    break;
+            }
         }
         // Button area
         private void BtnAfmelden_Click(object sender, EventArgs e)
@@ -73,7 +70,7 @@ namespace ChapooUI
 
         private void Btn_KeukenOverzicht_Click_1(object sender, EventArgs e)
         {
-
+            ShowPanels("Keukenoverzicht");
         }
         // ---------------------
     }
