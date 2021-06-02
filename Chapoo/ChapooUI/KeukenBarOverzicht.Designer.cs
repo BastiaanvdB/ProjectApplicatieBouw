@@ -54,7 +54,7 @@ namespace ChapooUI
             this.MenuBarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuBarPanel.Location = new System.Drawing.Point(0, 0);
             this.MenuBarPanel.Name = "MenuBarPanel";
-            this.MenuBarPanel.Size = new System.Drawing.Size(190, 699);
+            this.MenuBarPanel.Size = new System.Drawing.Size(190, 839);
             this.MenuBarPanel.TabIndex = 0;
             // 
             // Btn_KeukenOverzicht
@@ -153,7 +153,7 @@ namespace ChapooUI
             this.listView_Baroverzicht.HideSelection = false;
             this.listView_Baroverzicht.Location = new System.Drawing.Point(258, 52);
             this.listView_Baroverzicht.Name = "listView_Baroverzicht";
-            this.listView_Baroverzicht.Size = new System.Drawing.Size(922, 549);
+            this.listView_Baroverzicht.Size = new System.Drawing.Size(540, 732);
             this.listView_Baroverzicht.TabIndex = 1;
             this.listView_Baroverzicht.UseCompatibleStateImageBehavior = false;
             // 
@@ -162,7 +162,7 @@ namespace ChapooUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1399, 699);
+            this.ClientSize = new System.Drawing.Size(1596, 839);
             this.Controls.Add(this.listView_Baroverzicht);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
