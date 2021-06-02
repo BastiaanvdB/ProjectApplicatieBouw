@@ -47,6 +47,11 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             _currentBill = new Bill();
             _ListOfBills = new List<Bill>();
+            AfrekenenButton.Enabled = false;
+            numericUpDownFooi.Enabled = false;
+            checkBoxContant.Enabled = false;
+            checkBoxCreditcard.Enabled = false;
+            checkBoxPinpas.Enabled = false;
             FillBillList();
             FillListview();
         }
@@ -82,6 +87,26 @@ namespace ChapooUI
                 BillDetails billDetails = new BillDetails(_currentBill);
                 billDetails.Show();
                 UpdateBillPanel();
+                AfrekenenButton.Enabled = true;
+                numericUpDownFooi.Enabled = true;
+                checkBoxContant.Enabled = true;
+                checkBoxCreditcard.Enabled = true;
+                checkBoxPinpas.Enabled = true;
+                numericUpDownFooi.Value = 0;
+            }
+            else
+            {
+                _currentBill = null;
+                AfrekenenButton.Enabled = false;
+                numericUpDownFooi.Enabled = false;
+                checkBoxContant.Enabled = false;
+                checkBoxCreditcard.Enabled = false;
+                checkBoxPinpas.Enabled = false;
+                numericUpDownFooi.Value = 0;
+                labelBrutoInput.Text = "....";
+                labelBTWinput.Text = "....";
+                labelNettoinput.Text = "....";
+                labelTotaalprijsoutput.Text = "....";
             }
         }
 
@@ -110,51 +135,44 @@ namespace ChapooUI
 
         private void CreatePayment()
         {
-            if (AfrekeninglistView.SelectedItems.Count is not 0)
-            {
-                if ((checkBoxContant.Checked is true) | (checkBoxCreditcard.Checked is true) | (checkBoxPinpas.Checked is true))
-                {
-                    PayMethod paymethod;
-                    if(checkBoxContant.Checked is true)
-                    {
-                        paymethod = PayMethod.Contant;
-                    }
-                    else if(checkBoxPinpas.Checked is true)
-                    {
-                        paymethod = PayMethod.Pinpas;
-                    }
-                    else
-                    {
-                        paymethod = PayMethod.Creditcard;
-                    }
 
-                    ChapooLogic.Payment_Service payment_Service = new Payment_Service();
-                    Payment payment = new Payment()
-                    {
-                        order = _currentBill,
-                        table = _currentBill.Table,
-                        payStatus = PayStatus.Betaald,
-                        payMethod = paymethod,
-                        //employee_ID = 1, // employee hier nog in doen !!!
-                        totalPrice = _currentBill.totalPrice + numericUpDownFooi.Value,
-                        tip = numericUpDownFooi.Value,
-                        totalVAT = _currentBill.totalVAT,
-                        payment_DateTime = DateTime.Now
-                    };
-                    payment_Service.DB_Create_New_Payment(payment);
-                    FillBillList();
-                    MessageBox.Show($"Betaling van tafelnummer {_currentBill.Table.table_ID} is afgerekend", "Chapoo afrekenen",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if ((checkBoxContant.Checked is true) | (checkBoxCreditcard.Checked is true) | (checkBoxPinpas.Checked is true))
+            {
+                PayMethod paymethod;
+                if (checkBoxContant.Checked is true)
+                {
+                    paymethod = PayMethod.Contant;
+                }
+                else if (checkBoxPinpas.Checked is true)
+                {
+                    paymethod = PayMethod.Pinpas;
                 }
                 else
                 {
-                    MessageBox.Show("Selecteer één betaalmethode", "Chapoo afrekenen",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    paymethod = PayMethod.Creditcard;
                 }
+
+                ChapooLogic.Payment_Service payment_Service = new Payment_Service();
+                Payment payment = new Payment()
+                {
+                    order = _currentBill,
+                    table = _currentBill.Table,
+                    payStatus = PayStatus.Betaald,
+                    payMethod = paymethod,
+                    //employee_ID = 1, // employee hier nog in doen !!!
+                    totalPrice = _currentBill.totalPrice + numericUpDownFooi.Value,
+                    tip = numericUpDownFooi.Value,
+                    totalVAT = _currentBill.totalVAT,
+                    payment_DateTime = DateTime.Now
+                };
+                payment_Service.DB_Create_New_Payment(payment);
+                FillBillList();
+                MessageBox.Show($"Betaling van tafelnummer {_currentBill.Table.table_ID} is afgerekend", "Chapoo afrekenen",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Selecteer één openstaande rekening", "Chapoo afrekenen",
+                MessageBox.Show("Selecteer één betaalmethode", "Chapoo afrekenen",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
