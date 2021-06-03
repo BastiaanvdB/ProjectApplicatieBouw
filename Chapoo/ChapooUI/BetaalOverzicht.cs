@@ -52,6 +52,9 @@ namespace ChapooUI
             checkBoxContant.Enabled = false;
             checkBoxCreditcard.Enabled = false;
             checkBoxPinpas.Enabled = false;
+            buttonOpmerking.Enabled = false;
+            TextBoxOpmerking.Clear();
+            panelOpmerking.Hide();
             FillBillList();
             FillListview();
         }
@@ -87,21 +90,26 @@ namespace ChapooUI
                 BillDetails billDetails = new BillDetails(_currentBill);
                 billDetails.Show();
                 UpdateBillPanel();
+                panelOpmerking.Hide();
                 AfrekenenButton.Enabled = true;
                 numericUpDownFooi.Enabled = true;
                 checkBoxContant.Enabled = true;
                 checkBoxCreditcard.Enabled = true;
                 checkBoxPinpas.Enabled = true;
+                buttonOpmerking.Enabled = true;
                 numericUpDownFooi.Value = 0;
             }
             else
             {
+                panelOpmerking.Hide();
                 _currentBill = null;
                 AfrekenenButton.Enabled = false;
                 numericUpDownFooi.Enabled = false;
                 checkBoxContant.Enabled = false;
                 checkBoxCreditcard.Enabled = false;
                 checkBoxPinpas.Enabled = false;
+                buttonOpmerking.Enabled = false;
+                TextBoxOpmerking.Clear();
                 numericUpDownFooi.Value = 0;
                 labelBrutoInput.Text = "....";
                 labelBTWinput.Text = "....";
@@ -156,7 +164,7 @@ namespace ChapooUI
                 Employee employee = new Employee()
                 {
                     employee_id = 2,
-                    postion = Position.Bediening,
+                    position = Position.Bediening,
                     name = "Fokke Modder",
                     phone = "+31035542534",
                     adres = "Haarlem",
@@ -171,6 +179,7 @@ namespace ChapooUI
                     table = _currentBill.Table,
                     payStatus = PayStatus.Betaald,
                     payMethod = paymethod,
+                    comment = TextBoxOpmerking.Text,
                     employee = employee, // employee hier nog in doen !!!
                     totalPrice = _currentBill.totalPrice + numericUpDownFooi.Value,
                     tip = numericUpDownFooi.Value,
@@ -206,6 +215,16 @@ namespace ChapooUI
         {
             checkBoxPinpas.Checked = false;
             checkBoxCreditcard.Checked = false;
+        }
+
+        private void buttonOpmerking_Click(object sender, EventArgs e)
+        {
+            panelOpmerking.Show();
+        }
+
+        private void buttonToevoegenOpmerking_Click(object sender, EventArgs e)
+        {
+            panelOpmerking.Hide();
         }
     }
 }

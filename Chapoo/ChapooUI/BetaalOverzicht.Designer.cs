@@ -45,6 +45,10 @@ namespace ChapooUI
             this.labelOpenStaandeRekening = new System.Windows.Forms.Label();
             this.labelAfrekenen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelOpmerking = new System.Windows.Forms.Panel();
+            this.buttonToevoegenOpmerking = new System.Windows.Forms.Button();
+            this.buttonOpmerking = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -63,11 +67,13 @@ namespace ChapooUI
             this.labelTotaalprijsoutput = new System.Windows.Forms.Label();
             this.labelTotaalprijstitle = new System.Windows.Forms.Label();
             this.AfrekenenButton = new System.Windows.Forms.Button();
+            this.TextBoxOpmerking = new System.Windows.Forms.RichTextBox();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelAfrekenOverzicht.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelOpmerking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFooi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,6 +225,9 @@ namespace ChapooUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.panelOpmerking);
+            this.panel1.Controls.Add(this.buttonOpmerking);
+            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel4);
@@ -241,6 +250,53 @@ namespace ChapooUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(530, 593);
             this.panel1.TabIndex = 4;
+            // 
+            // panelOpmerking
+            // 
+            this.panelOpmerking.Controls.Add(this.TextBoxOpmerking);
+            this.panelOpmerking.Controls.Add(this.buttonToevoegenOpmerking);
+            this.panelOpmerking.Location = new System.Drawing.Point(15, 20);
+            this.panelOpmerking.Name = "panelOpmerking";
+            this.panelOpmerking.Size = new System.Drawing.Size(497, 550);
+            this.panelOpmerking.TabIndex = 20;
+            // 
+            // buttonToevoegenOpmerking
+            // 
+            this.buttonToevoegenOpmerking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.buttonToevoegenOpmerking.FlatAppearance.BorderSize = 0;
+            this.buttonToevoegenOpmerking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonToevoegenOpmerking.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonToevoegenOpmerking.ForeColor = System.Drawing.Color.White;
+            this.buttonToevoegenOpmerking.Location = new System.Drawing.Point(165, 470);
+            this.buttonToevoegenOpmerking.Name = "buttonToevoegenOpmerking";
+            this.buttonToevoegenOpmerking.Size = new System.Drawing.Size(153, 48);
+            this.buttonToevoegenOpmerking.TabIndex = 1;
+            this.buttonToevoegenOpmerking.Text = "Toevoegen";
+            this.buttonToevoegenOpmerking.UseVisualStyleBackColor = false;
+            this.buttonToevoegenOpmerking.Click += new System.EventHandler(this.buttonToevoegenOpmerking_Click);
+            // 
+            // buttonOpmerking
+            // 
+            this.buttonOpmerking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.buttonOpmerking.FlatAppearance.BorderSize = 0;
+            this.buttonOpmerking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpmerking.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonOpmerking.ForeColor = System.Drawing.Color.White;
+            this.buttonOpmerking.Location = new System.Drawing.Point(137, 415);
+            this.buttonOpmerking.Name = "buttonOpmerking";
+            this.buttonOpmerking.Size = new System.Drawing.Size(242, 37);
+            this.buttonOpmerking.TabIndex = 19;
+            this.buttonOpmerking.Text = "Opmerking toevoegen";
+            this.buttonOpmerking.UseVisualStyleBackColor = false;
+            this.buttonOpmerking.Click += new System.EventHandler(this.buttonOpmerking_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.panel6.Location = new System.Drawing.Point(38, 383);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(446, 10);
+            this.panel6.TabIndex = 8;
             // 
             // panel5
             // 
@@ -297,7 +353,7 @@ namespace ChapooUI
             this.checkBoxPinpas.AutoSize = true;
             this.checkBoxPinpas.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxPinpas.ForeColor = System.Drawing.Color.White;
-            this.checkBoxPinpas.Location = new System.Drawing.Point(355, 380);
+            this.checkBoxPinpas.Location = new System.Drawing.Point(353, 339);
             this.checkBoxPinpas.Name = "checkBoxPinpas";
             this.checkBoxPinpas.Size = new System.Drawing.Size(87, 29);
             this.checkBoxPinpas.TabIndex = 16;
@@ -310,7 +366,7 @@ namespace ChapooUI
             this.checkBoxContant.AutoSize = true;
             this.checkBoxContant.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxContant.ForeColor = System.Drawing.Color.White;
-            this.checkBoxContant.Location = new System.Drawing.Point(38, 380);
+            this.checkBoxContant.Location = new System.Drawing.Point(38, 339);
             this.checkBoxContant.Name = "checkBoxContant";
             this.checkBoxContant.Size = new System.Drawing.Size(98, 29);
             this.checkBoxContant.TabIndex = 15;
@@ -323,7 +379,7 @@ namespace ChapooUI
             this.checkBoxCreditcard.AutoSize = true;
             this.checkBoxCreditcard.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxCreditcard.ForeColor = System.Drawing.Color.White;
-            this.checkBoxCreditcard.Location = new System.Drawing.Point(184, 380);
+            this.checkBoxCreditcard.Location = new System.Drawing.Point(184, 339);
             this.checkBoxCreditcard.Name = "checkBoxCreditcard";
             this.checkBoxCreditcard.Size = new System.Drawing.Size(119, 29);
             this.checkBoxCreditcard.TabIndex = 14;
@@ -442,6 +498,14 @@ namespace ChapooUI
             this.AfrekenenButton.UseVisualStyleBackColor = false;
             this.AfrekenenButton.Click += new System.EventHandler(this.AfrekenenButton_Click);
             // 
+            // TextBoxOpmerking
+            // 
+            this.TextBoxOpmerking.Location = new System.Drawing.Point(26, 22);
+            this.TextBoxOpmerking.Name = "TextBoxOpmerking";
+            this.TextBoxOpmerking.Size = new System.Drawing.Size(446, 431);
+            this.TextBoxOpmerking.TabIndex = 2;
+            this.TextBoxOpmerking.Text = "";
+            // 
             // BetaalOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -464,6 +528,7 @@ namespace ChapooUI
             this.PanelAfrekenOverzicht.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelOpmerking.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFooi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -505,5 +570,10 @@ namespace ChapooUI
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button buttonOpmerking;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelOpmerking;
+        private System.Windows.Forms.Button buttonToevoegenOpmerking;
+        private System.Windows.Forms.RichTextBox TextBoxOpmerking;
     }
 }

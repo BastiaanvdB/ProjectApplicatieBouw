@@ -20,6 +20,7 @@ namespace ChapooDAL
                 new SqlParameter("@table_id", SqlDbType.Int) { Value = payment.table.table_ID },
                 new SqlParameter("@payMethod_ID", SqlDbType.Int) { Value = ((int)payment.payMethod) },
                 new SqlParameter("@employee_ID", SqlDbType.Int) { Value = payment.employee.employee_id },
+                new SqlParameter("@comment", SqlDbType.NVarChar) {Value = payment.comment },
                 new SqlParameter("@payStatus_ID", SqlDbType.Int) { Value = ((int)payment.payStatus) },
                 new SqlParameter("@totalprice", SqlDbType.Money) { Value = payment.totalPrice },
                 new SqlParameter("@totalvat", SqlDbType.Money) { Value = payment.totalVAT },
