@@ -15,7 +15,7 @@ namespace ChapooUI
 {
     public partial class BillDetails : Form
     {
-        private Bill _bill;
+        private Order _bill;
 
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -40,7 +40,7 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public BillDetails(Bill bill)
+        public BillDetails(Order bill)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

@@ -9,7 +9,7 @@ namespace ChapooModel
     public class Payment
     {
         public int payment_ID { get; set; }
-        public Bill order { get; set; }
+        public Order order { get; set; }
         public DiningTable table { get; set; }
         public PayMethod payMethod { get; set; }
         public Employee employee { get; set; }

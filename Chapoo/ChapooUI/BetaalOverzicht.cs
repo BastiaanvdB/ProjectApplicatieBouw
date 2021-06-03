@@ -16,8 +16,8 @@ namespace ChapooUI
 {
     public partial class BetaalOverzicht : Form
     {
-        private Bill _currentBill;
-        private List<Bill> _ListOfBills;
+        private Order _currentBill;
+        private List<Order> _ListOfBills;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -45,8 +45,8 @@ namespace ChapooUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            _currentBill = new Bill();
-            _ListOfBills = new List<Bill>();
+            _currentBill = new Order();
+            _ListOfBills = new List<Order>();
             AfrekenenButton.Enabled = false;
             numericUpDownFooi.Enabled = false;
             checkBoxContant.Enabled = false;
@@ -59,7 +59,7 @@ namespace ChapooUI
         private void FillBillList()
         {
             // fill the billList with unpaid bills
-            ChapooLogic.Bill_Service billService = new ChapooLogic.Bill_Service();
+            ChapooLogic.Order_Service billService = new ChapooLogic.Order_Service();
             _ListOfBills = billService.DB_Get_All_Unpaid_Bills();
             
         }
@@ -68,7 +68,7 @@ namespace ChapooUI
         {
             // fill listview with unpaid bills
             AfrekeninglistView.Items.Clear();
-            foreach (ChapooModel.Bill bill in _ListOfBills)
+            foreach (ChapooModel.Order bill in _ListOfBills)
             {
                 AfrekeninglistView.Items.Add(new ListViewItem(new string[] { $"{bill.Table.table_ID}", $"{bill.order_ID}", $"{bill.totalPrice.ToString("€ 0.00")}", $"{bill.paystatus.ToString()}" }));
             }

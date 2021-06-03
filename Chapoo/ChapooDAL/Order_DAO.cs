@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using ChapooModel;
 namespace ChapooDAL
 {
-    public class Bill_DAO : Base
+    public class Order_DAO : Base
     {
-        public List<Bill> Db_Get_All_Unpaid_Bills()
+        public List<Order> Db_Get_All_Unpaid_Bills()
         {
             string query = "SELECT Orders.Table_ID, Orders.Order_ID, Orders.Order_PayStatus, Orders.Order_Status FROM Orders WHERE Orders.Order_PayStatus = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];
@@ -27,14 +27,14 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        private List<Bill> ReadTables(DataTable dataTable)
+        private List<Order> ReadTables(DataTable dataTable)
         {
-            BillDetail_DAO billDetail_DAO = new BillDetail_DAO();
+            OrderDetail_DAO billDetail_DAO = new OrderDetail_DAO();
             DiningTable_DAO diningTable_DAO = new DiningTable_DAO();
-            List<Bill> bills = new List<Bill>();
+            List<Order> bills = new List<Order>();
             foreach (DataRow dr in dataTable.Rows)
             {
-                Bill bill = new Bill()
+                Order bill = new Order()
                 {
                     order_ID = (int)dr["Order_ID"],
                     Table = diningTable_DAO.DB_Get_Dining_Table((int)dr["Table_ID"]),

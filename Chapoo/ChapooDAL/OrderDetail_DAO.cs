@@ -9,7 +9,7 @@ using ChapooModel;
 
 namespace ChapooDAL
 {
-    public class BillDetail_DAO : Base
+    public class OrderDetail_DAO : Base
     {
         public List<OrderDetail> DB_Get_All_Ordered_Items(int order_ID)
         {

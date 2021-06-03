@@ -8,9 +8,9 @@ using ChapooModel;
 
 namespace ChapooLogic
 {
-    public class BillDetail_Service
+    public class OrderDetail_Service
     {
-        private BillDetail_DAO BillDetail_DB = new BillDetail_DAO();
+        private OrderDetail_DAO BillDetail_DB = new OrderDetail_DAO();
 
         public List<OrderDetail> DB_Get_All_Bill_Details(int order_ID)
         {

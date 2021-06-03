@@ -11,8 +11,8 @@ namespace ChapooLogic
     public class Payment_Service
     {
         private Payment_DAO Payment_DB = new Payment_DAO();
-        private BillDetail_DAO BillDetail_DB = new BillDetail_DAO();
-        private Bill_DAO Bill_DB = new Bill_DAO();
+        private OrderDetail_DAO BillDetail_DB = new OrderDetail_DAO();
+        private Order_DAO Bill_DB = new Order_DAO();
 
         public void DB_Create_New_Payment(Payment payment)
         {
