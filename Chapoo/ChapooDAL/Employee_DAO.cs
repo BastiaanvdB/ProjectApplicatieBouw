@@ -38,7 +38,7 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public void DB_Remove_Employee(MenuItem menuItem)
+        public void DB_Delete_Employee(MenuItem menuItem)
         {
             string query = "DELETE FROM MenuItems WHERE MenuItems.Item_ID = @id";
             SqlParameter[] sqlParameters =
