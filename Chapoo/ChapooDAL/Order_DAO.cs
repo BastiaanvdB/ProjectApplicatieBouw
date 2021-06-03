@@ -43,7 +43,7 @@ namespace ChapooDAL
                 Order bill = new Order()
                 {
                     order_ID = (int)dr["Order_ID"],
-                    Table = diningTable_DAO.DB_Get_Dining_Table((int)dr["Table_ID"]),
+                    Table = diningTable_DAO.DB_Get_DiningTable((int)dr["Table_ID"]),
                     OrderDetails = billDetail_DAO.DB_Get_All_Ordered_Items((int)dr["Order_ID"]),
                     paystatus = (PayStatus)((int)dr["Order_PayStatus"])
                 };

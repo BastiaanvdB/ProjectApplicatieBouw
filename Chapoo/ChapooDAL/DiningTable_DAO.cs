@@ -11,17 +11,17 @@ namespace ChapooDAL
 {
     public class DiningTable_DAO : Base
     {
-        public DiningTable DB_Get_Dining_Table(int tableNumber)
+        public DiningTable DB_Get_DiningTable(int tableNumber)
         {
             string query = "SELECT DiningTables.Table_ID, DiningTables.Table_Status FROM DiningTables WHERE DiningTables.Table_ID = @id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = tableNumber}
             };
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private DiningTable ReadTables(DataTable dataTable)
+        private DiningTable ReadTable(DataTable dataTable)
         {
             DiningTable diningTable = new DiningTable();
 
