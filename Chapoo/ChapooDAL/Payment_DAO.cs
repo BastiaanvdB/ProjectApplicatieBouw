@@ -13,7 +13,7 @@ namespace ChapooDAL
     {
         public void DB_Create_Payment(Payment payment)
         {
-            string query = $"INSERT INTO Payment VALUES (@order_id, @table_id, @payMethod_ID, @employee_ID, @payStatus_ID, @payment_time, @totalprice, @totalvat, @tip)";
+            string query = $"INSERT INTO Payment VALUES (@order_id, @table_id, @payMethod_ID, @employee_ID, @comment, @payStatus_ID, @payment_time, @totalprice, @totalvat, @tip)";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@order_id", SqlDbType.Int) { Value = payment.order.order_ID },
