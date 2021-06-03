@@ -21,6 +21,43 @@ namespace ChapooDAL
             return ReadEmployee(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public List<Employee> DB_Get_Employees()
+        {
+            string query = "SELECT Employees.Employee_ID, Employees.Position_ID, Employees.Employee_Name, Employees.Employee_Address, Employees.Employee_Phone, Employees.Employee_Pincode FROM Employees WHERE Employee_ID = @id";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadEmployees(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public void DB_Add_Employee(MenuItem menuItem)
+        {
+            string query = "INSERT";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id", SqlDbType.Int) { Value = menuItem.item_ID }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void DB_Remove_Employee(MenuItem menuItem)
+        {
+            string query = "DELETE FROM MenuItems WHERE MenuItems.Item_ID = @id";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id", SqlDbType.Int) { Value = menuItem.item_ID }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void DB_Update_Employee(MenuItem menuItem)
+        {
+            string query = "UPDATE";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id", SqlDbType.Int) { Value = menuItem.item_ID }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
         private Employee ReadEmployee(DataTable dataTable)
         {
             Employee employee = new Employee();
@@ -35,6 +72,25 @@ namespace ChapooDAL
                 //employee.pin = (string)dr["Employee_Pincode"]; // later als employees pincodes hebben en login form aanwezig is
             }
             return employee;
+        }
+
+        private List<Employee> ReadEmployees(DataTable dataTable)
+        {
+            List<Employee> employees = new List<Employee>();
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                Employee employee = new Employee()
+                {
+                    employee_id = (int)dr["Employee_ID"],
+                    position = (Position)((int)dr["Position_ID"]),
+                    name = (string)dr["Employee_Name"],
+                    adres = (string)dr["Employee_Address"],
+                    phone = (string)dr["Employee_Phone"],
+                    //pin = (string)dr["Employee_Pincode"] // later als employees pincodes hebben en login form aanwezig is
+                };
+                employees.Add(employee);
+            }
+            return employees;
         }
     }
 
