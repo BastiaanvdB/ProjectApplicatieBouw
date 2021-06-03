@@ -13,7 +13,7 @@ namespace ChapooLogic
         Item_DAO Item_db = new Item_DAO();
         public List<MenuItem> DB_Get_All_New_Bills()
         {
-            List<MenuItem> items = Item_db.DB_Get_All_Items();
+            List<MenuItem> items = Item_db.DB_Get_All_MenuItems();
             return items;
         }
     }

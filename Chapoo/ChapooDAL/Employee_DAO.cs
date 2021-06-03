@@ -18,10 +18,10 @@ namespace ChapooDAL
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = employee_id}
             };
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadEmployee(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private Employee ReadTables(DataTable dataTable)
+        private Employee ReadEmployee(DataTable dataTable)
         {
             Employee employee = new Employee();
 
@@ -32,7 +32,7 @@ namespace ChapooDAL
                 employee.name = (string)dr["Employee_Name"];
                 employee.adres = (string)dr["Employee_Address"];
                 employee.phone = (string)dr["Employee_Phone"];
-                //employee.pin = (string)dr["Employee_Pincode"];
+                //employee.pin = (string)dr["Employee_Pincode"]; // later als employees pincodes hebben en login form aanwezig is
             }
             return employee;
         }

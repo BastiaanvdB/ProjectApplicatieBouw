@@ -7,14 +7,14 @@ namespace ChapooLogic
 {
     public class Order_Service
     {
-        private Order_DAO bill_db = new Order_DAO();
+        private Order_DAO Order_db = new Order_DAO();
 
-        public List<Order> DB_Get_All_Unpaid_Bills()
+        public List<Order> DB_Get_All_Unpaid_Orders()
         {
             //try
             //{
-                List<Order> billList = bill_db.Db_Get_All_Unpaid_Bills();
-                return billList;
+                List<Order> UnpaidOrderList = Order_db.Db_Get_All_Unpaid_Orders();
+                return UnpaidOrderList;
             //}
             //catch (Exception )
             //{
@@ -24,9 +24,9 @@ namespace ChapooLogic
             //}
         }
 
-        public void DB_Set_Bill_To_Paid(int Order_ID)
+        public void DB_Set_Order_To_Paid(int Order_ID)
         {
-            bill_db.DB_Set_Bill_To_Paid(Order_ID);
+            Order_db.DB_Set_Order_To_Paid(Order_ID);
         }
     }
 }

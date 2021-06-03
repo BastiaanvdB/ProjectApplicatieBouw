@@ -21,7 +21,7 @@ namespace ChapooDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public void DB_Delete_All_Bill_Details(int Order_ID)
+        public void DB_Delete_All_Order_Details(int Order_ID)
         {
             string query = $"DELETE FROM OrderDetails WHERE Order_ID = @order_id";
             SqlParameter[] sqlParameters =
@@ -39,7 +39,7 @@ namespace ChapooDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 OrderDetail orderDetail = new OrderDetail();
-                orderDetail.item = item_DAO.DB_Get_Item((int)dr["Item_ID"]);
+                orderDetail.item = item_DAO.DB_Get_MenuItem((int)dr["Item_ID"]);
                 orderDetail.quantity = (int)dr["OrderDetails_Quantity"];
                 orderDetail.comment = (string)dr["OrderDetails_Comment"];
                 orderDetail.employee = employee_DAO.DB_Get_Employee((int)dr["Employee_ID"]);

@@ -10,7 +10,7 @@ namespace ChapooDAL
 {
     public class Order_DAO : Base
     {
-        public List<Order> Db_Get_All_Unpaid_Bills()
+        public List<Order> Db_Get_All_Unpaid_Orders()
         {
             string query = "SELECT Orders.Table_ID, Orders.Order_ID, Orders.Order_PayStatus FROM Orders WHERE Orders.Order_PayStatus = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];
@@ -23,7 +23,7 @@ namespace ChapooDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public void DB_Set_Bill_To_Paid(int Order_ID)
+        public void DB_Set_Order_To_Paid(int Order_ID)
         {
             string query = $"UPDATE Orders SET Order_PayStatus = 1 WHERE Order_ID = @order_id";
             SqlParameter[] sqlParameters =
@@ -35,7 +35,7 @@ namespace ChapooDAL
 
         private List<Order> ReadTables(DataTable dataTable)
         {
-            OrderDetail_DAO billDetail_DAO = new OrderDetail_DAO();
+            OrderDetail_DAO orderDetail_DAO = new OrderDetail_DAO();
             DiningTable_DAO diningTable_DAO = new DiningTable_DAO();
             List<Order> bills = new List<Order>();
             foreach (DataRow dr in dataTable.Rows)
@@ -44,7 +44,7 @@ namespace ChapooDAL
                 {
                     order_ID = (int)dr["Order_ID"],
                     Table = diningTable_DAO.DB_Get_DiningTable((int)dr["Table_ID"]),
-                    OrderDetails = billDetail_DAO.DB_Get_All_Ordered_Items((int)dr["Order_ID"]),
+                    OrderDetails = orderDetail_DAO.DB_Get_All_Ordered_Items((int)dr["Order_ID"]),
                     paystatus = (PayStatus)((int)dr["Order_PayStatus"])
                 };
                 bills.Add(bill);

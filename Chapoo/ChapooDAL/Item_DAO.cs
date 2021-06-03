@@ -11,7 +11,7 @@ namespace ChapooDAL
 {
     public class Item_DAO : Base
     {
-        public List<MenuItem> DB_Get_All_Items()
+        public List<MenuItem> DB_Get_All_MenuItems()
         {
             string query = "SELECT Item_ID FROM OrderDetails";
             //string query = "SELECT Item_ID, Order_ID, OrderDetails_Quantity, OrderDetails_Comment, Employee_ID, OrderDetails_Ordered_DateTime, OrderDetails_Preparing_DateTime, OrderDetails_Finished_DateTime FROM OrderDetails";
@@ -23,17 +23,17 @@ namespace ChapooDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public MenuItem DB_Get_Item(int item_id)
+        public MenuItem DB_Get_MenuItem(int item_id)
         {
             string query = "SELECT MenuItems.Item_ID, MenuGroup.MenuGroup_Name, MenuItems.Item_Name, MenuItems.Item_Price, MenuItems.Item_Taxpercentage, MenuItems.Item_Stock, MenuItems.Item_Restock, MenuItems.Alcohol_Check FROM MenuItems INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID WHERE MenuItems.Item_ID = @id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = item_id}
             };
-            return ReadItem(ExecuteSelectQuery(query, sqlParameters));
+            return ReadMenuItem(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private MenuItem ReadItem(DataTable dataTable)
+        private MenuItem ReadMenuItem(DataTable dataTable)
         {
             MenuItem menuItem = new MenuItem();
             foreach (DataRow dr in dataTable.Rows)

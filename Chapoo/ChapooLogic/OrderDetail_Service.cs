@@ -10,13 +10,13 @@ namespace ChapooLogic
 {
     public class OrderDetail_Service
     {
-        private OrderDetail_DAO BillDetail_DB = new OrderDetail_DAO();
+        private OrderDetail_DAO OrderDetail_DB = new OrderDetail_DAO();
 
         public List<OrderDetail> DB_Get_All_Bill_Details(int order_ID)
         {
             try
             {
-                List<OrderDetail> billDetails = BillDetail_DB.DB_Get_All_Ordered_Items(order_ID);
+                List<OrderDetail> billDetails = OrderDetail_DB.DB_Get_All_Ordered_Items(order_ID);
                 return billDetails;
             }
             catch (Exception)
@@ -26,9 +26,9 @@ namespace ChapooLogic
             }
         }
 
-        public void DB_Delete_All_Bill_Details(int Order_ID)
+        public void DB_Delete_All_Order_Details(int Order_ID)
         {
-            BillDetail_DB.DB_Delete_All_Bill_Details(Order_ID);
+            OrderDetail_DB.DB_Delete_All_Order_Details(Order_ID);
         }
     }
 }
