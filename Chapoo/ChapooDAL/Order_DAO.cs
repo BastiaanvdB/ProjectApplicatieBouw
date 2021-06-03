@@ -16,7 +16,7 @@ namespace ChapooDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
-        public List<Bill> Db_Get_All_Orders()
+        public List<Order> Db_Get_All_Orders()
         {
             string query = "SELECT Orders.Table_ID, Orders.Order_ID, Orders.Order_PayStatus, Orders.Order_Status FROM Orders WHERE Orders.Order_PayStatus = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];

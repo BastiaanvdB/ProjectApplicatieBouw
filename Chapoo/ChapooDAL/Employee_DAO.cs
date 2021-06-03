@@ -28,7 +28,7 @@ namespace ChapooDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 employee.employee_id = (int)dr["Employee_ID"]; 
-                employee.postion = (Position)((int)dr["Position_ID"]);
+                employee.position = (Position)((int)dr["Position_ID"]);
                 employee.name = (string)dr["Employee_Name"];
                 employee.adres = (string)dr["Employee_Address"];
                 employee.phone = (string)dr["Employee_Phone"];
