@@ -18,10 +18,10 @@ namespace ChapooDAL
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = tableNumber}
             };
-            return ReadTable(ExecuteSelectQuery(query, sqlParameters));
+            return ReadDiningTable(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private DiningTable ReadTable(DataTable dataTable)
+        private DiningTable ReadDiningTable(DataTable dataTable)
         {
             DiningTable diningTable = new DiningTable();
 

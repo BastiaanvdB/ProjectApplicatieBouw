@@ -20,7 +20,7 @@ namespace ChapooDAL
             //    new SqlParameter("@id", SqlDbType.Int) {Value = Order_ID}
             //};
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadMenuItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public MenuItem DB_Get_MenuItem(int item_id)
@@ -50,24 +50,7 @@ namespace ChapooDAL
             return menuItem;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private List<MenuItem> ReadTables(DataTable dataTable)
+        private List<MenuItem> ReadMenuItems(DataTable dataTable)
         {
             List<MenuItem> Items = new List<MenuItem>();
             foreach (DataRow dr in dataTable.Rows)
