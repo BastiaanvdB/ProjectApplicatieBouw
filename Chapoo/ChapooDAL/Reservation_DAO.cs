@@ -11,6 +11,63 @@ namespace ChapooDAL
 {
     public class Reservation_DAO : Base
     {
-       
+        public List<Reservation> DB_Get_Reservations()
+        {
+            string query = "SELECT FROM Reservation";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadReservations(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public void DB_Add_Reservation(Reservation reservation)
+        {
+            string query = "INSERT";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id", SqlDbType.Int) { Value = menuItem.item_ID }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void DB_Remove_Reservation(Reservation reservation)
+        {
+            string query = "DELETE FROM MenuItems WHERE MenuItems.Item_ID = @id";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id", SqlDbType.Int) { Value = reservation.reservation_ID }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void DB_Update_Reservation(Reservation reservation)
+        {
+            string query = "UPDATE";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@reservation_id", SqlDbType.Int) { Value = reservation.reservation_ID },
+                new SqlParameter("@table_id", SqlDbType.Int) { Value = reservation.table.table_ID },
+                new SqlParameter("@customer_id", SqlDbType.Int) { Value = reservation.customer.customer_ID },
+                new SqlParameter("@reservation_datetime", SqlDbType.Int) { Value = reservation.reservation_DateTime }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        private List<Reservation> ReadReservations(DataTable dataTable)
+        {
+            DiningTable_DAO diningTable_DB = new DiningTable_DAO();
+            Customer_DAO customer_DB = new Customer_DAO();
+            List<Reservation> reservations = new List<Reservation>();
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                Reservation reservation = new Reservation()
+                {
+                    reservation_ID = (int)dr["Reservation_ID"],
+                    table = diningTable_DB.DB_Get_DiningTable((int)dr["Table_ID"]),
+                    customer = customer_DB.DB_Get_Customer((int)dr["Customer_ID"]),
+                    reservation_DateTime = (DateTime)dr["Reservation_DateTime"]
+                };
+                reservations.Add(reservation);
+            }
+            return reservations;
+        }
     }
 }

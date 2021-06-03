@@ -28,6 +28,17 @@ namespace ChapooDAL
             return ReadDiningTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public void DB_Update_DiningTable(DiningTable diningTable)
+        {
+            string query = $"INSERT INTO DiningTables VALUES (@table_id, @table_status)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@table_id", SqlDbType.Int) { Value = diningTable.table_ID},
+                new SqlParameter("@table_status", SqlDbType.Int) { Value = ((int)diningTable.table_Status)}
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
         private List<DiningTable> ReadDiningTables(DataTable dataTable)
         {
             List<DiningTable> diningTables = new List<DiningTable>();

@@ -68,11 +68,5 @@ namespace ChapooDAL
             }
             return Items;
         }
-
-
-
-
-
-
     }
 }

@@ -11,14 +11,10 @@ namespace ChapooDAL
 {
     public class Item_DAO : Base
     {
+        
         public List<MenuItem> DB_Get_All_MenuItems()
         {
-            string query = "SELECT Item_ID FROM OrderDetails";
-            //string query = "SELECT Item_ID, Order_ID, OrderDetails_Quantity, OrderDetails_Comment, Employee_ID, OrderDetails_Ordered_DateTime, OrderDetails_Preparing_DateTime, OrderDetails_Finished_DateTime FROM OrderDetails";
-            //SqlParameter[] sqlParameters =
-            //{
-            //    new SqlParameter("@id", SqlDbType.Int) {Value = Order_ID}
-            //};
+            string query = "SELECT MenuItems.Item_ID, MenuGroup.MenuGroup_Name, MenuItems.Item_Name, MenuItems.Item_Price, MenuItems.Item_Taxpercentage, MenuItems.Item_Stock, MenuItems.Item_Restock, MenuItems.Alcohol_Check FROM MenuItems INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadMenuItems(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -52,23 +48,23 @@ namespace ChapooDAL
 
         private List<MenuItem> ReadMenuItems(DataTable dataTable)
         {
-            List<MenuItem> Items = new List<MenuItem>();
+            List<MenuItem> menuItems = new List<MenuItem>();
             foreach (DataRow dr in dataTable.Rows)
             {
-                MenuItem item = new MenuItem()
+                MenuItem MenuItem = new MenuItem()
                 {
-                    //item_ID = (int)dr["Item_ID"],
-                    //orderDetails_ID = (int)dr["Order_ID"],
-                    //quantity = (int)dr["OrderDetails_Quantity"],
-                    //comment = (string)(dr["OrderDetails_Comment"].ToString()),
-                    //employee_ID = (int)dr["Employee_ID"],
-                    //ordered_DateTime = (DateTime)dr["OrderDetails_Ordered_DateTime"],
-                    //preparing_DateTime = (DateTime)dr["OrderDetails_Preparing_DateTime"],
-                    //finished_DateTime = (DateTime)dr["OrderDetails_Finished_DateTime"],
+                    item_ID = (int)dr["Item_ID"],
+                    MenuGroup = (string)dr["MenuGroup_Name"],
+                    item_Name = (string)dr["Item_Name"],
+                    item_Price = (decimal)dr["Item_Price"],
+                    item_Taxpercentage = (int)dr["Item_Taxpercentage"],
+                    item_Stock = (int)dr["Item_Stock"],
+                    item_Restock = (int)dr["Item_Restock"],
+                    Alcohol_Check = (bool)dr["Alcohol_Check"],
                 };
-                Items.Add(item);
+                menuItems.Add(MenuItem);
             }
-            return Items;
+            return menuItems;
         }
     }
 }

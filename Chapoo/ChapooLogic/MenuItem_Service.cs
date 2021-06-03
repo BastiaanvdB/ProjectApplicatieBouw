@@ -10,11 +10,16 @@ namespace ChapooLogic
 {
     public class MenuItem_Service
     {
-        Item_DAO Item_db = new Item_DAO();
-        public List<MenuItem> DB_Get_All_New_Bills()
+        private Item_DAO Item_DB = new Item_DAO();
+        
+        public List<MenuItem> DB_Get_All_MenuItems()
         {
-            List<MenuItem> items = Item_db.DB_Get_All_MenuItems();
-            return items;
+            return Item_DB.DB_Get_All_MenuItems();
+        }
+
+        public MenuItem DB_Get_MenuItem(int item_id)
+        {
+            return Item_DB.DB_Get_MenuItem(item_id);
         }
     }
 }
