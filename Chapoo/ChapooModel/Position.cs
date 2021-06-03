@@ -8,6 +8,6 @@ namespace ChapooModel
 {
     public enum Position
     {
-        Kok = 1, Bediening,
+        Kok = 1, Bediening, Bardienst, Leidinggevende
     }
 }

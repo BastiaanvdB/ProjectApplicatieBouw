@@ -13,6 +13,7 @@ namespace ChapooModel
         public DiningTable table { get; set; }
         public PayMethod payMethod { get; set; }
         public Employee employee { get; set; }
+        public string comment { get; set; }
         public PayStatus payStatus { get; set; }
         public decimal totalPrice { get; set; }
         public decimal totalVAT { get; set; }
