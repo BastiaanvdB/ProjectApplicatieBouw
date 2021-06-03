@@ -13,7 +13,7 @@ namespace ChapooDAL
     {
         public List<OrderDetail> DB_Get_All_Ordered_Items(int order_ID)
         {
-            string query = "SELECT o.Item_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime FROM OrderDetails AS o WHERE o.Order_ID = @id";
+            string query = "SELECT o.Item_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_OrderStatus, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime FROM OrderDetails AS o WHERE o.Order_ID = @id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = order_ID}
@@ -43,6 +43,7 @@ namespace ChapooDAL
                 orderDetail.quantity = (int)dr["OrderDetails_Quantity"];
                 orderDetail.comment = (string)dr["OrderDetails_Comment"];
                 orderDetail.employee = employee_DAO.DB_Get_Employee((int)dr["Employee_ID"]);
+                orderDetail.orderStatus = (OrderStatus)((int)dr["OrderDetails_OrderStatus"]);
                 orderDetail.ordered_DateTime = (DateTime)dr["OrderDetails_Ordered_DateTime"];
                 orderDetail.preparing_DateTime = (DateTime)dr["OrderDetails_Preparing_DateTime"];
                 orderDetail.finished_DateTime = (DateTime)dr["OrderDetails_Finished_DateTime"];

@@ -12,7 +12,7 @@ namespace ChapooDAL
     {
         public List<Order> Db_Get_All_Unpaid_Bills()
         {
-            string query = "SELECT Orders.Table_ID, Orders.Order_ID, Orders.Order_PayStatus, Orders.Order_Status FROM Orders WHERE Orders.Order_PayStatus = 0";
+            string query = "SELECT Orders.Table_ID, Orders.Order_ID, Orders.Order_PayStatus FROM Orders WHERE Orders.Order_PayStatus = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -45,8 +45,7 @@ namespace ChapooDAL
                     order_ID = (int)dr["Order_ID"],
                     Table = diningTable_DAO.DB_Get_Dining_Table((int)dr["Table_ID"]),
                     OrderDetails = billDetail_DAO.DB_Get_All_Ordered_Items((int)dr["Order_ID"]),
-                    paystatus = (PayStatus)((int)dr["Order_PayStatus"]),
-                    orderStatus = (OrderStatus)((int)dr["Order_Status"])
+                    paystatus = (PayStatus)((int)dr["Order_PayStatus"])
                 };
                 bills.Add(bill);
             }

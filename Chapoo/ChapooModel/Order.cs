@@ -36,6 +36,5 @@ namespace ChapooModel
             } 
         }
         public PayStatus paystatus { get; set; }
-        public OrderStatus orderStatus { get; set; }
     }
 }
