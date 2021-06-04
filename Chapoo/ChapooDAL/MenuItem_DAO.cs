@@ -9,7 +9,7 @@ using ChapooModel;
 
 namespace ChapooDAL
 {
-    public class Item_DAO : Base
+    public class MenuItem_DAO : Base
     {
         
         public List<MenuItem> DB_Get_All_MenuItems()

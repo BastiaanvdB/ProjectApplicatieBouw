@@ -17,19 +17,19 @@ namespace ChapooLogic
             return Stock_DB.DB_Get_Stock();
         }
 
-        public void DB_Add_MenuItem(MenuItem menuItem)
+        public void DB_Add_MenuItem(MenuItem menuItem, int MenuGroupcode)
         {
-            Stock_DB.DB_Add_MenuItem(menuItem);
+            Stock_DB.DB_Add_Stock(menuItem, MenuGroupcode);
         }
 
         public void DB_Remove_MenuItem(MenuItem menuItem)
         {
-            Stock_DB.DB_Remove_MenuItem(menuItem);
+            Stock_DB.DB_Remove_Stock(menuItem);
         }
 
-        public void DB_Update_MenuItem(MenuItem menuItem)
+        public void DB_Update_MenuItem(MenuItem menuItem, int MenuGroupcode)
         {
-            Stock_DB.DB_Update_MenuItem(menuItem);
+            Stock_DB.DB_Update_Stock(menuItem, MenuGroupcode);
         }
     }
 }

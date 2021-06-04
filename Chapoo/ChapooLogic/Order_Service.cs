@@ -9,14 +9,14 @@ namespace ChapooLogic
     {
         private Order_DAO Order_DB = new Order_DAO();
 
+        public List<Order> Db_Get_All_Orders()
+        {
+            return Order_DB.Db_Get_All_Orders();
+        }
+
         public List<Order> DB_Get_All_Unpaid_Orders()
         {
             return Order_DB.Db_Get_All_Unpaid_Orders();
-        }
-
-        List<Order> DB_Get_All_Orders_By_MenuName_And_OrderStatus(string MenuName, string OrderStatus)
-        {
-            return Order_DB.DB_Get_All_Orders_By_MenuName_And_OrderStatus(MenuName, OrderStatus);
         }
 
         public void DB_Set_Order_To_Paid(int Order_ID)

@@ -13,34 +13,36 @@ namespace ChapooDAL
     {
         public List<Reservation> DB_Get_Reservations()
         {
-            string query = "SELECT FROM Reservation";
+            string query = "SELECT Reservation.Reservation_ID, Reservation.Table_ID, Reservation.Customer_ID, Reservation.Reservation_DateTime FROM Reservation";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadReservations(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public void DB_Add_Reservation(Reservation reservation)
         {
-            string query = "INSERT";
+            string query = "INSERT INTO Reservation VALUES (@reservation_table_id, @reservation_customer_id, @reservation_datetime)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@id", SqlDbType.Int) { Value = menuItem.item_ID }
+                new SqlParameter("@reservation_table_id", SqlDbType.Int) { Value = reservation.table.table_ID },
+                new SqlParameter("@reservation_customer_id", SqlDbType.Int) { Value = reservation.customer.customer_ID },
+                new SqlParameter("@reservation_datetime", SqlDbType.Int) { Value = reservation.reservation_DateTime }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
 
         public void DB_Remove_Reservation(Reservation reservation)
         {
-            string query = "DELETE FROM MenuItems WHERE MenuItems.Item_ID = @id";
+            string query = "DELETE FROM Reser WHERE MenuItems.Item_ID = @reservation_id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@id", SqlDbType.Int) { Value = reservation.reservation_ID }
+                new SqlParameter("@reservation_id", SqlDbType.Int) { Value = reservation.reservation_ID }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
 
         public void DB_Update_Reservation(Reservation reservation)
         {
-            string query = "UPDATE";
+            string query = "UPDATE Reservation SET Reservation.Table_ID = @table_id, Reservation.Customer_ID = @customer_id, Reservation.Reservation_DateTime = @reservation_datetime WHERE Reservation.Reservation_ID = @reservation_id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@reservation_id", SqlDbType.Int) { Value = reservation.reservation_ID },

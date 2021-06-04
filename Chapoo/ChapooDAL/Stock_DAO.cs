@@ -18,32 +18,45 @@ namespace ChapooDAL
             return ReadStock(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public void DB_Add_MenuItem(MenuItem menuItem)
+        public void DB_Add_Stock(MenuItem menuItem, int MenuGroupcode)
         {
-            string query = "INSERT";
+            string query = "INSERT INTO MenuItem (@menugroup, @item_name, @price, @tax, @stock, @restock, @alcoholcheck)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@id", SqlDbType.Int) { Value = menuItem.item_ID }
+                new SqlParameter("@menugroup", SqlDbType.Int) { Value = MenuGroupcode },
+                new SqlParameter("@item_name", SqlDbType.NVarChar) { Value = menuItem.item_Name },
+                new SqlParameter("@price", SqlDbType.Money) { Value = menuItem.item_Price },
+                new SqlParameter("@tax", SqlDbType.Int) { Value = menuItem.item_Taxpercentage },
+                new SqlParameter("@stock", SqlDbType.Int) { Value = menuItem.item_Stock },
+                new SqlParameter("@restock", SqlDbType.Int) { Value = menuItem.item_Restock },
+                new SqlParameter("@alcoholcheck", SqlDbType.Bit) { Value = menuItem.Alcohol_Check }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public void DB_Remove_MenuItem(MenuItem menuItem)
+        public void DB_Remove_Stock(MenuItem menuItem)
         {
-            string query = "DELETE FROM MenuItems WHERE MenuItems.Item_ID = @id";
+            string query = "DELETE FROM MenuItems WHERE MenuItems.Item_ID = @item_id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@id", SqlDbType.Int) { Value = menuItem.item_ID }
+                new SqlParameter("@item_id", SqlDbType.Int) { Value = menuItem.item_ID }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public void DB_Update_MenuItem(MenuItem menuItem)
+        public void DB_Update_Stock(MenuItem menuItem, int MenuGroupcode)
         {
-            string query = "UPDATE";
+            string query = "UPDATE MenuItems SET MenuGroup_ID = @menugroup, Item_Name = @item_name, Item_Price = @price, Item_Taxpercentage = @tax, Item_Stock = @stock, Item_Restock = @restock, Alcohol_Check = @alcoholcheck WHERE MenuItems.Item_ID = @item_id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@id", SqlDbType.Int) { Value = menuItem.item_ID }
+                new SqlParameter("@item_id", SqlDbType.Int) { Value = menuItem.item_ID },
+                new SqlParameter("@menugroup", SqlDbType.Int) { Value = MenuGroupcode },
+                new SqlParameter("@item_name", SqlDbType.NVarChar) { Value = menuItem.item_Name },
+                new SqlParameter("@price", SqlDbType.Money) { Value = menuItem.item_Price },
+                new SqlParameter("@tax", SqlDbType.Int) { Value = menuItem.item_Taxpercentage },
+                new SqlParameter("@stock", SqlDbType.Int) { Value = menuItem.item_Stock },
+                new SqlParameter("@restock", SqlDbType.Int) { Value = menuItem.item_Restock },
+                new SqlParameter("@alcoholcheck", SqlDbType.Bit) { Value = menuItem.Alcohol_Check }
             };
             ExecuteEditQuery(query, sqlParameters);
         }

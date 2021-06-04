@@ -14,13 +14,14 @@ namespace ChapooDAL
         {
             string query = "SELECT Orders.Table_ID, Orders.Order_ID, Orders.Order_PayStatus FROM Orders WHERE Orders.Order_PayStatus = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadOrders(ExecuteSelectQuery(query, sqlParameters));
         }
+
         public List<Order> Db_Get_All_Orders()
         {
             string query = "SELECT Orders.Table_ID, Orders.Order_ID, Orders.Order_PayStatus, Orders.Order_Status FROM Orders WHERE Orders.Order_PayStatus = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadOrders(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public void DB_Set_Order_To_Paid(int Order_ID)
@@ -33,18 +34,7 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public List<Order> DB_Get_All_Orders_By_MenuName_And_OrderStatus(string MenuName, string OrderStatus)
-        {
-            string query = "SELECT Orders.Table_ID AS Voor_Tafel, MenuGroup.MenuGroup_Name, MenuItems.Item_Name AS Bestelde_Drank, OrderDetails.OrderDetails_Quantity AS Aantal, OrderStatus.OrderStatus_status AS Status FROM OrderDetails INNER JOIN Orders ON OrderDetails.Order_ID = Orders.Order_ID INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID INNER JOIN MenuItems ON OrderDetails.Item_ID = MenuItems.Item_ID INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID WHERE Menu.Menu_Name = @MenuName AND OrderStatus.OrderStatus_status = @OrderStatus";
-            SqlParameter[] sqlParameters =
-            {
-                new SqlParameter("@MenuName", SqlDbType.NVarChar) { Value = MenuName },
-                new SqlParameter("@OrderStatus", SqlDbType.NVarChar) { Value = OrderStatus }
-            };
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
-        }
-
-        private List<Order> ReadTables(DataTable dataTable)
+        private List<Order> ReadOrders(DataTable dataTable)
         {
             OrderDetail_DAO orderDetail_DAO = new OrderDetail_DAO();
             DiningTable_DAO diningTable_DAO = new DiningTable_DAO();

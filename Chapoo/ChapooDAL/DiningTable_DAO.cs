@@ -30,7 +30,7 @@ namespace ChapooDAL
 
         public void DB_Update_DiningTable(DiningTable diningTable)
         {
-            string query = $"INSERT INTO DiningTables VALUES (@table_id, @table_status)";
+            string query = $"UPDATE DiningTables SET DiningTables.TableStatus = @table_status WHERE DiningTables.Table_ID = @table_id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@table_id", SqlDbType.Int) { Value = diningTable.table_ID},

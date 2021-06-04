@@ -8,9 +8,9 @@ namespace ChapooModel
 {
     public class Customer
     {
-        public int customer_ID { get; }
-        public string customer_Name { get; }
-        public string phone_Number { get; }
-        public string address { get; }
+        public int customer_ID { get; set; }
+        public string customer_Name { get; set; }
+        public string phone_Number { get; set; }
+        public string address { get; set; }
     }
 }

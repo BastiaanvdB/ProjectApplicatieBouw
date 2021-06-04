@@ -13,7 +13,7 @@ namespace ChapooDAL
     {
         public Employee DB_Get_Employee(int employee_id)
         {
-            string query = "SELECT Employees.Employee_ID, Employees.Position_ID, Employees.Employee_Name, Employees.Employee_Address, Employees.Employee_Phone, Employees.Employee_Pincode FROM Employees WHERE Employee_ID = @id";
+            string query = "SELECT Employees.Employee_ID, Employees.Position_ID, Employees.Employee_Name, Employees.Employee_Address, Employees.Employee_Phone, Employees.Employee_Pincode FROM Employees WHERE Employees.Employee_ID = @id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = employee_id}
@@ -30,11 +30,10 @@ namespace ChapooDAL
 
         public void DB_Add_Employee(Employee employee)
         {
-            string query = "INSERT INTO Employees VALUES (@Employee_ID, @Position_ID, @Employee_Name, @Employee_Address, @Employee_Phone, @Employee_Pincode)";
+            string query = "INSERT INTO Employees VALUES (@Position_ID, @Employee_Name, @Employee_Address, @Employee_Phone, @Employee_Pincode)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@Employee_ID", SqlDbType.Int) { Value = employee.employee_id },
-                new SqlParameter("@Position_ID", SqlDbType.Int) { Value = employee.position },
+                new SqlParameter("@Position_ID", SqlDbType.Int) { Value = ((int)employee.position) },
                 new SqlParameter("@Employee_Name", SqlDbType.Int) { Value = employee.name },
                 new SqlParameter("@Employee_Address", SqlDbType.Int) { Value = employee.adres },
                 new SqlParameter("@Employee_Phone", SqlDbType.Int) { Value = employee.phone },
@@ -55,7 +54,7 @@ namespace ChapooDAL
 
         public void DB_Update_Employee(Employee employee)
         {
-            string query = "UPDATE Employees SET Employee_ID = @Employee_ID, Position_ID = @Position_ID, Employee_Name = @Employee_Name, Employee_Address = @Employee_Address, Employee_Phone = @Employee_Phone, Employee_Pincode = @Employee_Pincode)";
+            string query = "UPDATE Employees SET Employees.Position_ID = @Position_ID, Employees.Employee_Name = @Employee_Name, Employees.Employee_Address = @Employee_Address, Employees.Employee_Phone = @Employee_Phone, Employees.Employee_Pincode = @Employee_Pincode WHERE Employees.Employee_ID = @Employee_ID)";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@Employee_ID", SqlDbType.Int) { Value = employee.employee_id },
