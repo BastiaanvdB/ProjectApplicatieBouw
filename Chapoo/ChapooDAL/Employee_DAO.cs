@@ -67,6 +67,16 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        public Employee DB_Login_Employee(Employee employee)
+        {
+            return new Employee();
+        }
+
+        private bool DB_Check_Employee_Login()
+        {
+            return false;
+        }
+
         private Employee ReadEmployee(DataTable dataTable)
         {
             Employee employee = new Employee();

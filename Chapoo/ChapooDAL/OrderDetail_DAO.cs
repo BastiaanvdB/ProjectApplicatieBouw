@@ -13,15 +13,33 @@ namespace ChapooDAL
     {
         public List<OrderDetail> DB_Get_All_Ordered_Items(int order_id)
         {
-            string query = "SELECT o.Item_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_OrderStatus, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime FROM OrderDetails AS o WHERE o.Order_ID = @id";
+            string query = "SELECT o.Item_ID, o.Order_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_OrderStatus, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime FROM OrderDetails AS o WHERE o.Order_ID = @id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = order_id}
             };
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadOrderDetails(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public void DB_Delete_All_Order_Details(Order order)
+        public void DB_Add_OrderDetails(OrderDetail orderDetail)
+        {
+            string query = "INSERT INTO OrderDetails VALUES (@item_ID, @order_id, @quantity, @comment, @employee_id, @ordered_datetime, @preparing_datetime, @finished_datetime, @orderstatus)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.item.item_ID },
+                new SqlParameter("@order_id", SqlDbType.Int) { Value = orderDetail.order_ID },
+                new SqlParameter("@quantity", SqlDbType.Int) { Value = orderDetail.quantity },
+                new SqlParameter("@comment", SqlDbType.NVarChar) { Value = orderDetail.comment },
+                new SqlParameter("@employee_id", SqlDbType.Int) { Value = orderDetail.employee.employee_id },
+                new SqlParameter("@ordered_datetime", SqlDbType.DateTime) { Value = orderDetail.ordered_DateTime },
+                new SqlParameter("@preparing_datetime", SqlDbType.DateTime) { Value = orderDetail.preparing_DateTime },
+                new SqlParameter("@finished_datetime", SqlDbType.DateTime) { Value = orderDetail.finished_DateTime },
+                new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.orderStatus) }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void DB_Delete_All_OrderDetails(Order order)
         {
             string query = $"DELETE FROM OrderDetails WHERE Order_ID = @order_id";
             SqlParameter[] sqlParameters =
@@ -39,10 +57,10 @@ namespace ChapooDAL
                 new SqlParameter("@MenuName", SqlDbType.NVarChar) { Value = MenuName },
                 new SqlParameter("@OrderStatus", SqlDbType.NVarChar) { Value = OrderStatus }
             };
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadOrderDetails(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private List<OrderDetail> ReadTables(DataTable dataTable)
+        private List<OrderDetail> ReadOrderDetails(DataTable dataTable)
         {
             Employee_DAO employee_DAO = new Employee_DAO();
             MenuItem_DAO Menuitem_DAO = new MenuItem_DAO();
@@ -52,6 +70,7 @@ namespace ChapooDAL
                 OrderDetail orderDetail = new OrderDetail();
                 orderDetail.orderDetails_ID = (int)dr["OrderDetails_ID"];
                 orderDetail.item = Menuitem_DAO.DB_Get_MenuItem((int)dr["Item_ID"]);
+                orderDetail.order_ID = (int)dr["Order_ID"];
                 orderDetail.quantity = (int)dr["OrderDetails_Quantity"];
                 orderDetail.comment = (string)dr["OrderDetails_Comment"];
                 orderDetail.employee = employee_DAO.DB_Get_Employee((int)dr["Employee_ID"]);

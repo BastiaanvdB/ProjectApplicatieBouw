@@ -17,6 +17,11 @@ namespace ChapooLogic
             return OrderDetail_DB.DB_Get_All_Ordered_Items(order.order_ID);
         }
 
+        public void DB_Add_OrderDetails(OrderDetail orderDetail)
+        {
+            OrderDetail_DB.DB_Add_OrderDetails(orderDetail);
+        }
+
         public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus(string MenuName, string OrderStatus)
         {
             return OrderDetail_DB.DB_Get_All_Orders_By_MenuName_And_OrderStatus(MenuName, OrderStatus);
@@ -24,7 +29,7 @@ namespace ChapooLogic
 
         public void DB_Delete_All_OrderDetails(Order order)
         {
-            OrderDetail_DB.DB_Delete_All_Order_Details(order);
+            OrderDetail_DB.DB_Delete_All_OrderDetails(order);
         }
     }
 }

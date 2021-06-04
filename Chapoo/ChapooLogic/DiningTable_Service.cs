@@ -17,7 +17,7 @@ namespace ChapooLogic
             return DiningTable_DB.DB_Get_All_DiningTables();
         }
 
-        public DiningTable DB_Get_All_DiningTable(int tableNumber)
+        public DiningTable DB_Get_DiningTable(int tableNumber)
         {
             return DiningTable_DB.DB_Get_DiningTable(tableNumber);
         }

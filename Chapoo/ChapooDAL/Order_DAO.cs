@@ -34,6 +34,17 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        public void DB_Add_Order(Order order)
+        {
+            string query = "INSERT INTO Orders VALUES (@Table_ID, @Paystatus)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Table_ID", SqlDbType.Int) { Value = order.Table.table_ID },
+                new SqlParameter("@Paystatus", SqlDbType.Int) { Value = ((int)order.paystatus) },
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
         private List<Order> ReadOrders(DataTable dataTable)
         {
             OrderDetail_DAO orderDetail_DAO = new OrderDetail_DAO();
