@@ -64,7 +64,6 @@ namespace ChapooUI
             // fill the billList with unpaid bills
             ChapooLogic.Order_Service OrderService = new ChapooLogic.Order_Service();
             _ListOfOrders = OrderService.DB_Get_All_Unpaid_Orders();
-            
         }
 
         private void FillListview()
