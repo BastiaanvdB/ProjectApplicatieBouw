@@ -14,6 +14,8 @@ namespace ChapooUI
 {
     public partial class KeukenBarOverzicht : Form
     {
+        private List<OrderDetail> _ListOfOrders;
+        OrderDetail orderDetail = new OrderDetail();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -40,6 +42,38 @@ namespace ChapooUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            FillBarOpenOrderList();
+            FillListview();
+        }
+        private void FillBarOpenOrderList()
+        {
+            // fill the the order list with open/bestelde orders
+            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
+            _ListOfOrders = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Besteld");
+        }
+        private void FillListview()
+        {
+            // fill the the order list with open/bestelde orders
+            Listview_Bar_OpenOrder.Items.Clear();
+            foreach (ChapooModel.OrderDetail order in _ListOfOrders)
+            {
+                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{order.order_ID}", $"{order.item.item_Name}", $"{order.quantity}", $"{order.orderStatus.ToString()}" }));
+            }
+        }
+        private void Fillbarfinishedlist()
+        {
+            // fill the the order list with finished/gereed orders
+            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
+            _ListOfOrders = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Besteld");
+        }
+        private void Fillfinishedlistview()
+        {
+            // fill the the order list with finished/gereed orders
+            Listview_Bar_OpenOrder.Items.Clear();
+            foreach (ChapooModel.OrderDetail order in _ListOfOrders)
+            {
+                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{order.order_ID}", $"{order.item.item_Name}", $"{order.quantity}", $"{order.orderStatus.ToString()}" }));
+            }
         }
 
         private void ShowPanels(string PanelName)
@@ -71,6 +105,11 @@ namespace ChapooUI
         private void Btn_KeukenOverzicht_Click_1(object sender, EventArgs e)
         {
             ShowPanels("Keukenoverzicht");
+        }
+
+        private void btn_Gereed_Click(object sender, EventArgs e)
+        {
+
         }
         // ---------------------
     }

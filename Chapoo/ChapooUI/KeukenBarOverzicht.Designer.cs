@@ -39,10 +39,18 @@ namespace ChapooUI
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_Baroverzicht = new System.Windows.Forms.Panel();
+            this.lbl_Baroverzicht = new System.Windows.Forms.Label();
             this.btn_Gereed = new System.Windows.Forms.Button();
             this.Listview_Order_finished = new System.Windows.Forms.ListView();
+            this.TafelnrHeader = new System.Windows.Forms.ColumnHeader();
+            this.Bestellingheader = new System.Windows.Forms.ColumnHeader();
+            this.Headerhoeveelheid = new System.Windows.Forms.ColumnHeader();
+            this.Statusheader = new System.Windows.Forms.ColumnHeader();
             this.Listview_Bar_OpenOrder = new System.Windows.Forms.ListView();
-            this.lbl_Baroverzicht = new System.Windows.Forms.Label();
+            this.TafelnummerHeader = new System.Windows.Forms.ColumnHeader();
+            this.Drankheader = new System.Windows.Forms.ColumnHeader();
+            this.hoeveelheidheader = new System.Windows.Forms.ColumnHeader();
+            this.HeaderStatus = new System.Windows.Forms.ColumnHeader();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -164,33 +172,6 @@ namespace ChapooUI
             this.pnl_Baroverzicht.Size = new System.Drawing.Size(1315, 731);
             this.pnl_Baroverzicht.TabIndex = 1;
             // 
-            // btn_Gereed
-            // 
-            this.btn_Gereed.Location = new System.Drawing.Point(573, 306);
-            this.btn_Gereed.Name = "btn_Gereed";
-            this.btn_Gereed.Size = new System.Drawing.Size(168, 55);
-            this.btn_Gereed.TabIndex = 2;
-            this.btn_Gereed.Text = "Gereed";
-            this.btn_Gereed.UseVisualStyleBackColor = true;
-            // 
-            // Listview_Order_finished
-            // 
-            this.Listview_Order_finished.HideSelection = false;
-            this.Listview_Order_finished.Location = new System.Drawing.Point(787, 67);
-            this.Listview_Order_finished.Name = "Listview_Order_finished";
-            this.Listview_Order_finished.Size = new System.Drawing.Size(489, 643);
-            this.Listview_Order_finished.TabIndex = 1;
-            this.Listview_Order_finished.UseCompatibleStateImageBehavior = false;
-            // 
-            // Listview_Bar_OpenOrder
-            // 
-            this.Listview_Bar_OpenOrder.HideSelection = false;
-            this.Listview_Bar_OpenOrder.Location = new System.Drawing.Point(40, 67);
-            this.Listview_Bar_OpenOrder.Name = "Listview_Bar_OpenOrder";
-            this.Listview_Bar_OpenOrder.Size = new System.Drawing.Size(481, 643);
-            this.Listview_Bar_OpenOrder.TabIndex = 0;
-            this.Listview_Bar_OpenOrder.UseCompatibleStateImageBehavior = false;
-            // 
             // lbl_Baroverzicht
             // 
             this.lbl_Baroverzicht.AutoSize = true;
@@ -201,6 +182,89 @@ namespace ChapooUI
             this.lbl_Baroverzicht.Size = new System.Drawing.Size(132, 28);
             this.lbl_Baroverzicht.TabIndex = 3;
             this.lbl_Baroverzicht.Text = "Baroverzicht";
+            // 
+            // btn_Gereed
+            // 
+            this.btn_Gereed.Location = new System.Drawing.Point(573, 306);
+            this.btn_Gereed.Name = "btn_Gereed";
+            this.btn_Gereed.Size = new System.Drawing.Size(168, 55);
+            this.btn_Gereed.TabIndex = 2;
+            this.btn_Gereed.Text = "Gereed";
+            this.btn_Gereed.UseVisualStyleBackColor = true;
+            this.btn_Gereed.Click += new System.EventHandler(this.btn_Gereed_Click);
+            // 
+            // Listview_Order_finished
+            // 
+            this.Listview_Order_finished.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.TafelnrHeader,
+            this.Bestellingheader,
+            this.Headerhoeveelheid,
+            this.Statusheader});
+            this.Listview_Order_finished.GridLines = true;
+            this.Listview_Order_finished.HideSelection = false;
+            this.Listview_Order_finished.Location = new System.Drawing.Point(787, 67);
+            this.Listview_Order_finished.Name = "Listview_Order_finished";
+            this.Listview_Order_finished.Size = new System.Drawing.Size(489, 643);
+            this.Listview_Order_finished.TabIndex = 1;
+            this.Listview_Order_finished.UseCompatibleStateImageBehavior = false;
+            this.Listview_Order_finished.View = System.Windows.Forms.View.Details;
+            // 
+            // TafelnrHeader
+            // 
+            this.TafelnrHeader.Text = "Tafelnummer";
+            this.TafelnrHeader.Width = 100;
+            // 
+            // Bestellingheader
+            // 
+            this.Bestellingheader.Text = "Bestelde drank";
+            this.Bestellingheader.Width = 200;
+            // 
+            // Headerhoeveelheid
+            // 
+            this.Headerhoeveelheid.Text = "Hoeveelheid";
+            this.Headerhoeveelheid.Width = 100;
+            // 
+            // Statusheader
+            // 
+            this.Statusheader.Text = "Status";
+            this.Statusheader.Width = 75;
+            // 
+            // Listview_Bar_OpenOrder
+            // 
+            this.Listview_Bar_OpenOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.TafelnummerHeader,
+            this.Drankheader,
+            this.hoeveelheidheader,
+            this.HeaderStatus});
+            this.Listview_Bar_OpenOrder.FullRowSelect = true;
+            this.Listview_Bar_OpenOrder.GridLines = true;
+            this.Listview_Bar_OpenOrder.HideSelection = false;
+            this.Listview_Bar_OpenOrder.Location = new System.Drawing.Point(40, 67);
+            this.Listview_Bar_OpenOrder.Name = "Listview_Bar_OpenOrder";
+            this.Listview_Bar_OpenOrder.Size = new System.Drawing.Size(481, 643);
+            this.Listview_Bar_OpenOrder.TabIndex = 0;
+            this.Listview_Bar_OpenOrder.UseCompatibleStateImageBehavior = false;
+            this.Listview_Bar_OpenOrder.View = System.Windows.Forms.View.Details;
+            // 
+            // TafelnummerHeader
+            // 
+            this.TafelnummerHeader.Text = "Tafelnummer";
+            this.TafelnummerHeader.Width = 100;
+            // 
+            // Drankheader
+            // 
+            this.Drankheader.Text = "Bestelde drank";
+            this.Drankheader.Width = 200;
+            // 
+            // hoeveelheidheader
+            // 
+            this.hoeveelheidheader.Text = "Hoeveelheid";
+            this.hoeveelheidheader.Width = 100;
+            // 
+            // HeaderStatus
+            // 
+            this.HeaderStatus.Text = "Status";
+            this.HeaderStatus.Width = 70;
             // 
             // KeukenBarOverzicht
             // 
@@ -241,6 +305,14 @@ namespace ChapooUI
         private System.Windows.Forms.ListView Listview_Order_finished;
         private System.Windows.Forms.ListView Listview_Bar_OpenOrder;
         private System.Windows.Forms.Label lbl_Baroverzicht;
+        private System.Windows.Forms.ColumnHeader TafelnummerHeader;
+        private System.Windows.Forms.ColumnHeader Drankheader;
+        private System.Windows.Forms.ColumnHeader hoeveelheidheader;
+        private System.Windows.Forms.ColumnHeader HeaderStatus;
+        private System.Windows.Forms.ColumnHeader TafelnrHeader;
+        private System.Windows.Forms.ColumnHeader Bestellingheader;
+        private System.Windows.Forms.ColumnHeader Headerhoeveelheid;
+        private System.Windows.Forms.ColumnHeader Statusheader;
     }
 }
 
