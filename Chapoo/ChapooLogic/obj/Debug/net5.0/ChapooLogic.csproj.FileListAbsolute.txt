@@ -57,20 +57,3 @@ C:\Users\basti\Desktop\Chapoo test\ChapooLogic\obj\Debug\net5.0\ChapooLogic.dll
 C:\Users\basti\Desktop\Chapoo test\ChapooLogic\obj\Debug\net5.0\ref\ChapooLogic.dll
 C:\Users\basti\Desktop\Chapoo test\ChapooLogic\obj\Debug\net5.0\ChapooLogic.pdb
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csproj.AssemblyReference.cache
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooLogic.deps.json
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooLogic.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ref\ChapooLogic.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooLogic.pdb
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooDAL.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooModel.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooDAL.pdb
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Debug\net5.0\ChapooModel.pdb
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csproj.AssemblyReference.cache
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.GeneratedMSBuildEditorConfig.editorconfig
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.AssemblyInfoInputs.cache
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.AssemblyInfo.cs
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csproj.CoreCompileInputs.cache
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.csproj.CopyComplete
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ref\ChapooLogic.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Debug\net5.0\ChapooLogic.pdb

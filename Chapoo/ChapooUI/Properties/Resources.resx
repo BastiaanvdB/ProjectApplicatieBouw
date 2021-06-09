@@ -118,55 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tafel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="legenda1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\legenda1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="legenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\legenda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafel4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafel4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafelbezet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafelbezet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafelGereed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafelGereed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafelRes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafelRes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tafelwachten" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tafelwachten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

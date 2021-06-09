@@ -46,15 +46,3 @@ C:\Users\basti\Desktop\Chapoo test\ChapooModel\obj\Debug\net5.0\ref\ChapooModel.
 C:\Users\basti\Desktop\Chapoo test\ChapooModel\obj\Debug\net5.0\ChapooModel.pdb
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.csproj.AssemblyReference.cache
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.csproj.AssemblyReference.cache
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\bin\Debug\net5.0\ChapooModel.deps.json
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\bin\Debug\net5.0\ChapooModel.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\bin\Debug\net5.0\ref\ChapooModel.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\bin\Debug\net5.0\ChapooModel.pdb
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.csproj.AssemblyReference.cache
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.GeneratedMSBuildEditorConfig.editorconfig
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.AssemblyInfoInputs.cache
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.AssemblyInfo.cs
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.csproj.CoreCompileInputs.cache
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ref\ChapooModel.dll
-D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooModel\obj\Debug\net5.0\ChapooModel.pdb

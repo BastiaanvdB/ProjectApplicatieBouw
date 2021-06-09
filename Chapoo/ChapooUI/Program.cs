@@ -8,7 +8,6 @@ namespace ChapooUI
 {
     static class Program
     {
-        public static int ActieveTafel;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
