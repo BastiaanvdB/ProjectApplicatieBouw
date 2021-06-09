@@ -14,6 +14,10 @@ namespace ChapooUI
 {
     public partial class KeukenBarOverzicht : Form
     {
+        private List<OrderDetail> _ListOfFinnishedOrderDetails;
+        private List<OrderDetail> _ListOfNewOrderDetails;
+        private OrderDetail _CurrentOrderDetail;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -40,7 +44,73 @@ namespace ChapooUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            _CurrentOrderDetail = new OrderDetail();
+            btn_Gereed.Enabled = false;
+            UpdateAllLists();
         }
+
+        private void UpdateAllLists()
+        {
+            FillBarOpenOrderList();
+            FillListview();
+            Fillbarfinishedlist();
+            Fillfinishedlistview();
+        }
+
+        private void FillBarOpenOrderList()
+        {
+            // fill the the order list with open/bestelde orders
+            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
+            _ListOfNewOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Besteld");
+        }
+        private void FillListview()
+        {
+            // fill the the order list with open/bestelde orders
+            Listview_Bar_OpenOrder.Items.Clear();
+            foreach (ChapooModel.OrderDetail orderdetail in _ListOfNewOrderDetails)
+            {
+                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}" }));
+            }
+        }
+        private void Fillbarfinishedlist()
+        {
+            // fill the the order list with finished/gereed orders
+            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
+            _ListOfFinnishedOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Opgediend");
+        }
+        private void Fillfinishedlistview()
+        {
+            // fill the the order list with finished/gereed orders
+            Listview_Order_finished.Items.Clear();
+            foreach (ChapooModel.OrderDetail orderdetail in _ListOfFinnishedOrderDetails)
+            {
+                Listview_Order_finished.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}" }));
+            }
+        }
+
+        private void Listview_Bar_OpenOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Listview_Bar_OpenOrder.SelectedItems.Count is not 0)
+            {
+                _CurrentOrderDetail = _ListOfNewOrderDetails[Listview_Bar_OpenOrder.SelectedIndices[0]];
+                btn_Gereed.Enabled = true;
+            }
+            else
+            {
+                _CurrentOrderDetail = null;
+                btn_Gereed.Enabled = false;
+            }
+        }
+
+        public void UpdateCurrentOrder()
+        {
+            _CurrentOrderDetail.orderStatus = OrderStatus.Opgediend;
+            _CurrentOrderDetail.finished_DateTime = DateTime.Now;
+
+
+            UpdateAllLists();
+        }
+
 
         private void ShowPanels(string PanelName)
         {
@@ -72,6 +142,13 @@ namespace ChapooUI
         {
             ShowPanels("Keukenoverzicht");
         }
+
+        private void btn_Gereed_Click(object sender, EventArgs e)
+        {
+            UpdateCurrentOrder();
+        }
+
+        
         // ---------------------
     }
 }

@@ -21,6 +21,25 @@ namespace ChapooDAL
             return ReadOrderDetails(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public void DB_Update_OrderDetails(OrderDetail orderDetail)
+        {
+            string query = "UPDATE OrderDetails SET OrderDetails.Item_ID = @item_ID, OrderDetails.Order_ID = @order_id, OrderDetails.OrderDetails_Quantity = @quantity, OrderDetails.OrderDetails_Comment = @comment, OrderDetails.Employee_ID = @employee_id, OrderDetails.OrderDetails_Ordered_DateTime = @ordered_datetime, OrderDetails.OrderDetails_Preparing_DateTime = @preparing_datetime, OrderDetails.OrderDetails_Finished_DateTime = @finished_datetime, OrderDetails.OrderDetails_OrderStatus = @orderstatus WHERE OrderDetails.OrderDetails_ID = @orderdetail_ID";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@orderdetail_ID", SqlDbType.Int) { Value = orderDetail.orderDetails_ID },
+                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.item.item_ID },
+                new SqlParameter("@order_id", SqlDbType.Int) { Value = orderDetail.order_ID },
+                new SqlParameter("@quantity", SqlDbType.Int) { Value = orderDetail.quantity },
+                new SqlParameter("@comment", SqlDbType.NVarChar) { Value = orderDetail.comment },
+                new SqlParameter("@employee_id", SqlDbType.Int) { Value = orderDetail.employee.employee_id },
+                new SqlParameter("@ordered_datetime", SqlDbType.DateTime) { Value = orderDetail.ordered_DateTime },
+                new SqlParameter("@preparing_datetime", SqlDbType.DateTime) { Value = orderDetail.preparing_DateTime },
+                new SqlParameter("@finished_datetime", SqlDbType.DateTime) { Value = orderDetail.finished_DateTime },
+                new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.orderStatus) }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
         public void DB_Add_OrderDetails(OrderDetail orderDetail)
         {
             string query = "INSERT INTO OrderDetails VALUES (@item_ID, @order_id, @quantity, @comment, @employee_id, @ordered_datetime, @preparing_datetime, @finished_datetime, @orderstatus)";

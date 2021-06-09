@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {}
+    "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
+    "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
+        "projectUniqueName": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
         "projectName": "ChapooModel",
-        "projectPath": "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
-        "packagesPath": "C:\\Users\\degro\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\obj\\",
+        "projectPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
+        "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\degro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
