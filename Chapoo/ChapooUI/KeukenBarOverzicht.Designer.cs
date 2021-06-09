@@ -245,6 +245,7 @@ namespace ChapooUI
             this.Listview_Bar_OpenOrder.TabIndex = 0;
             this.Listview_Bar_OpenOrder.UseCompatibleStateImageBehavior = false;
             this.Listview_Bar_OpenOrder.View = System.Windows.Forms.View.Details;
+            this.Listview_Bar_OpenOrder.SelectedIndexChanged += new System.EventHandler(this.Listview_Bar_OpenOrder_SelectedIndexChanged);
             // 
             // TafelnummerHeader
             // 
