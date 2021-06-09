@@ -1427,26 +1427,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jelle\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\degro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooUI\\ChapooUI.csproj",
+      "projectUniqueName": "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooUI\\ChapooUI.csproj",
       "projectName": "ChapooUI",
-      "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooUI\\ChapooUI.csproj",
-      "packagesPath": "C:\\Users\\Jelle\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooUI\\obj\\",
+      "projectPath": "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooUI\\ChapooUI.csproj",
+      "packagesPath": "C:\\Users\\degro\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooUI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Jelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\degro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1460,11 +1453,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj": {
-              "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj"
+            "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj": {
+              "projectPath": "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj"
             },
-            "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
-              "projectPath": "C:\\Github\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj"
+            "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj": {
+              "projectPath": "D:\\Documents\\PERIODE 4\\Project Applicatiebouw\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj"
             }
           }
         }

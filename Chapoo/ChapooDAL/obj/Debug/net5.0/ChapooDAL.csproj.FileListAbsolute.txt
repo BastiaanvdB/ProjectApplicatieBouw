@@ -58,3 +58,18 @@ C:\Users\basti\Desktop\Chapoo test\ChapooDAL\obj\Debug\net5.0\ChapooDAL.dll
 C:\Users\basti\Desktop\Chapoo test\ChapooDAL\obj\Debug\net5.0\ref\ChapooDAL.dll
 C:\Users\basti\Desktop\Chapoo test\ChapooDAL\obj\Debug\net5.0\ChapooDAL.pdb
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.csproj.AssemblyReference.cache
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooDAL.deps.json
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooDAL.dll
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ref\ChapooDAL.dll
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooDAL.pdb
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooModel.dll
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Debug\net5.0\ChapooModel.pdb
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.csproj.AssemblyReference.cache
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.AssemblyInfoInputs.cache
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.AssemblyInfo.cs
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.csproj.CoreCompileInputs.cache
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.csproj.CopyComplete
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.dll
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ref\ChapooDAL.dll
+D:\Documents\PERIODE 4\Project Applicatiebouw\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Debug\net5.0\ChapooDAL.pdb

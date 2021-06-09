@@ -39,15 +39,29 @@ namespace ChapooUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            pnl_Reserveringen.Hide();
+            pnl_Tafeloverzicht.Hide();
         }
 
-
+        
 
         // Button area
-       
+
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Btn_Reserveringen_Click(object sender, EventArgs e)
+        {
+            pnl_Reserveringen.Show();
+            pnl_Tafeloverzicht.Hide();
+        }
+
+        private void Btn_TafelOverzicht_Click(object sender, EventArgs e)
+        {
+            pnl_Tafeloverzicht.Show();
+            pnl_Reserveringen.Hide();
         }
 
         // ---------------------
