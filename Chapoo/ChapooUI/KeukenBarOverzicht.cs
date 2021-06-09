@@ -44,6 +44,8 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             FillBarOpenOrderList();
             FillListview();
+            Fillbarfinishedlist();
+            Fillfinishedlistview();
         }
         private void FillBarOpenOrderList()
         {
@@ -64,15 +66,15 @@ namespace ChapooUI
         {
             // fill the the order list with finished/gereed orders
             ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _ListOfOrders = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Besteld");
+            _ListOfOrders = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Opgediend");
         }
         private void Fillfinishedlistview()
         {
             // fill the the order list with finished/gereed orders
-            Listview_Bar_OpenOrder.Items.Clear();
+            Listview_Order_finished.Items.Clear();
             foreach (ChapooModel.OrderDetail order in _ListOfOrders)
             {
-                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{order.order_ID}", $"{order.item.item_Name}", $"{order.quantity}", $"{order.orderStatus.ToString()}" }));
+                Listview_Order_finished.Items.Add(new ListViewItem(new string[] { $"{order.order_ID}", $"{order.item.item_Name}", $"{order.quantity}", $"{order.orderStatus.ToString()}" }));
             }
         }
 
