@@ -124,6 +124,18 @@
   <data name="cook_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cook-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tafelBezet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tafelBezet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tafelGereed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tafelGereed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tafelVrij" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tafelVrij.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tafelWachten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tafelWachten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -129,8 +129,9 @@ namespace ChapooUI
                     bestelOverzicht.Show();
                     break;
                 case "TafelOverzicht":
-                    TafelOverzicht tafelOverzicht = new TafelOverzicht();
+                    TafelOverzicht tafelOverzicht = new TafelOverzicht(_CurrentEmployee, this);
                     tafelOverzicht.Show();
+                    this.Hide();
                     break;
                 case "Exit":
                     this.Hide();
