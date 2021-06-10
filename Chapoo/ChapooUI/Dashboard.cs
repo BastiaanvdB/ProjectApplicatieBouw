@@ -99,7 +99,6 @@ namespace ChapooUI
 
                     // disabled buttons
                     BtnBarOverzicht.Hide();
-                    BtnTafelOverzicht.Hide();
                     BtnBestellen.Hide();
                     BtnVoorraad.Hide();
                     break;
