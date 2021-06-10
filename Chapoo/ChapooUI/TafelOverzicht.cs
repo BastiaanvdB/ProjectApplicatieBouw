@@ -49,6 +49,10 @@ namespace ChapooUI
             _DiningTablesList = new List<DiningTable>();
             _CurrentEmployee = currentEmployee;
             _Dashboard = dashboard;
+            buttonBezet.Enabled = false;
+            buttonGereed.Enabled = false;
+            buttonVrij.Enabled = false;
+            buttonWachten.Enabled = false;
             CurrentUserProfile();
             LoadDiningTableList();
             LoadDiningtableLabels();
@@ -58,6 +62,14 @@ namespace ChapooUI
         {
             UsernameLabel.Text = _CurrentEmployee.name;
             UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+        }
+
+        private void EnableButtons()
+        {
+            buttonBezet.Enabled = true;
+            buttonGereed.Enabled = true;
+            buttonVrij.Enabled = true;
+            buttonWachten.Enabled = true;
         }
 
         private void LoadDiningTableList()
@@ -339,8 +351,6 @@ namespace ChapooUI
             }
         }
 
-
-
         // Button area
 
         private void BtnAfmelden_Click(object sender, EventArgs e)
@@ -371,52 +381,168 @@ namespace ChapooUI
 
         private void pictureTafel1_Click(object sender, EventArgs e)
         {
+            pictureTafel1.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[0];
+            EnableButtons();
         }
 
         private void pictureTafel2_Click(object sender, EventArgs e)
         {
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[1];
+            EnableButtons();
         }
 
         private void pictureTafel3_Click(object sender, EventArgs e)
         {
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[2];
+            EnableButtons();
         }
 
         private void pictureTafel4_Click(object sender, EventArgs e)
         {
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[3];
+            EnableButtons();
         }
 
         private void pictureTafel5_Click(object sender, EventArgs e)
         {
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[4];
+            EnableButtons();
         }
 
         private void pictureTafel6_Click(object sender, EventArgs e)
         {
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[5];
+            EnableButtons();
         }
 
         private void pictureTafel7_Click(object sender, EventArgs e)
         {
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[6];
+            EnableButtons();
         }
 
         private void pictureTafel8_Click(object sender, EventArgs e)
         {
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[7];
+            EnableButtons();
         }
 
         private void pictureTafel9_Click(object sender, EventArgs e)
         {
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.Fixed3D;
+            pictureTafel10.BorderStyle = BorderStyle.None;
             _CurrentDiningTable = _DiningTablesList[8];
+            EnableButtons();
         }
 
         private void pictureTafel10_Click(object sender, EventArgs e)
         {
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel1.BorderStyle = BorderStyle.None;
+            pictureTafel2.BorderStyle = BorderStyle.None;
+            pictureTafel3.BorderStyle = BorderStyle.None;
+            pictureTafel4.BorderStyle = BorderStyle.None;
+            pictureTafel5.BorderStyle = BorderStyle.None;
+            pictureTafel6.BorderStyle = BorderStyle.None;
+            pictureTafel7.BorderStyle = BorderStyle.None;
+            pictureTafel8.BorderStyle = BorderStyle.None;
+            pictureTafel9.BorderStyle = BorderStyle.None;
+            pictureTafel10.BorderStyle = BorderStyle.Fixed3D;
             _CurrentDiningTable = _DiningTablesList[9];
+            EnableButtons();
         }
 
 

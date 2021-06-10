@@ -164,6 +164,7 @@ namespace ChapooUI
             // 
             // pictureTafel1
             // 
+            this.pictureTafel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.pictureTafel1.Image = global::ChapooUI.Properties.Resources.tafelVrij;
             this.pictureTafel1.Location = new System.Drawing.Point(325, 159);
             this.pictureTafel1.Name = "pictureTafel1";
