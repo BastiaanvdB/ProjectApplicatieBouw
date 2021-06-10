@@ -46,6 +46,7 @@ namespace ChapooUI
             this.labelAfrekenen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelOpmerking = new System.Windows.Forms.Panel();
+            this.TextBoxOpmerking = new System.Windows.Forms.RichTextBox();
             this.buttonToevoegenOpmerking = new System.Windows.Forms.Button();
             this.buttonOpmerking = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -67,7 +68,6 @@ namespace ChapooUI
             this.labelTotaalprijsoutput = new System.Windows.Forms.Label();
             this.labelTotaalprijstitle = new System.Windows.Forms.Label();
             this.AfrekenenButton = new System.Windows.Forms.Button();
-            this.TextBoxOpmerking = new System.Windows.Forms.RichTextBox();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -119,25 +119,25 @@ namespace ChapooUI
             // 
             // UserFunctieLabel
             // 
-            this.UserFunctieLabel.AutoSize = true;
             this.UserFunctieLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UserFunctieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.UserFunctieLabel.Location = new System.Drawing.Point(66, 111);
+            this.UserFunctieLabel.Location = new System.Drawing.Point(3, 112);
             this.UserFunctieLabel.Name = "UserFunctieLabel";
-            this.UserFunctieLabel.Size = new System.Drawing.Size(48, 17);
+            this.UserFunctieLabel.Size = new System.Drawing.Size(184, 16);
             this.UserFunctieLabel.TabIndex = 2;
             this.UserFunctieLabel.Text = "Functie";
+            this.UserFunctieLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UsernameLabel
             // 
-            this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.UsernameLabel.Location = new System.Drawing.Point(54, 90);
+            this.UsernameLabel.Location = new System.Drawing.Point(3, 90);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(81, 21);
+            this.UsernameLabel.Size = new System.Drawing.Size(184, 21);
             this.UsernameLabel.TabIndex = 1;
             this.UsernameLabel.Text = "Username";
+            this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -259,6 +259,14 @@ namespace ChapooUI
             this.panelOpmerking.Name = "panelOpmerking";
             this.panelOpmerking.Size = new System.Drawing.Size(497, 550);
             this.panelOpmerking.TabIndex = 20;
+            // 
+            // TextBoxOpmerking
+            // 
+            this.TextBoxOpmerking.Location = new System.Drawing.Point(26, 22);
+            this.TextBoxOpmerking.Name = "TextBoxOpmerking";
+            this.TextBoxOpmerking.Size = new System.Drawing.Size(446, 431);
+            this.TextBoxOpmerking.TabIndex = 2;
+            this.TextBoxOpmerking.Text = "";
             // 
             // buttonToevoegenOpmerking
             // 
@@ -498,14 +506,6 @@ namespace ChapooUI
             this.AfrekenenButton.UseVisualStyleBackColor = false;
             this.AfrekenenButton.Click += new System.EventHandler(this.AfrekenenButton_Click);
             // 
-            // TextBoxOpmerking
-            // 
-            this.TextBoxOpmerking.Location = new System.Drawing.Point(26, 22);
-            this.TextBoxOpmerking.Name = "TextBoxOpmerking";
-            this.TextBoxOpmerking.Size = new System.Drawing.Size(446, 431);
-            this.TextBoxOpmerking.TabIndex = 2;
-            this.TextBoxOpmerking.Text = "";
-            // 
             // BetaalOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -522,7 +522,6 @@ namespace ChapooUI
             this.Text = "Chapoo Betaaloverzicht";
             this.MenuBarPanel.ResumeLayout(false);
             this.MenuBarAccountPanel.ResumeLayout(false);
-            this.MenuBarAccountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelAfrekenOverzicht.ResumeLayout(false);
             this.PanelAfrekenOverzicht.PerformLayout();

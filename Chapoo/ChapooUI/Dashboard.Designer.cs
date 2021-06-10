@@ -144,7 +144,6 @@ namespace ChapooUI
             this.BtnBarOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBarOverzicht.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnBarOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BtnBarOverzicht.Image = ((System.Drawing.Image)(resources.GetObject("BtnBarOverzicht.Image")));
             this.BtnBarOverzicht.Location = new System.Drawing.Point(0, 244);
             this.BtnBarOverzicht.Name = "BtnBarOverzicht";
             this.BtnBarOverzicht.Size = new System.Drawing.Size(190, 50);
@@ -202,27 +201,25 @@ namespace ChapooUI
             // 
             // UserFunctieLabel
             // 
-            this.UserFunctieLabel.AutoSize = true;
             this.UserFunctieLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UserFunctieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.UserFunctieLabel.Location = new System.Drawing.Point(66, 111);
+            this.UserFunctieLabel.Location = new System.Drawing.Point(3, 111);
             this.UserFunctieLabel.Name = "UserFunctieLabel";
-            this.UserFunctieLabel.Size = new System.Drawing.Size(48, 17);
+            this.UserFunctieLabel.Size = new System.Drawing.Size(184, 14);
             this.UserFunctieLabel.TabIndex = 2;
             this.UserFunctieLabel.Text = "Functie";
-            this.UserFunctieLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.UserFunctieLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UsernameLabel
             // 
-            this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.UsernameLabel.Location = new System.Drawing.Point(54, 90);
+            this.UsernameLabel.Location = new System.Drawing.Point(0, 90);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(81, 21);
+            this.UsernameLabel.Size = new System.Drawing.Size(187, 21);
             this.UsernameLabel.TabIndex = 1;
             this.UsernameLabel.Text = "Username";
-            this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -248,7 +245,6 @@ namespace ChapooUI
             this.Text = "Chapoo Dashboard";
             this.MenuBarPanel.ResumeLayout(false);
             this.MenuBarAccountPanel.ResumeLayout(false);
-            this.MenuBarAccountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

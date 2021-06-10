@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapooModel;
+using ChapooUI.Properties;
 
 namespace ChapooUI
 {
@@ -44,6 +45,7 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             _CurrentEmployee = CurrentEmployee;
             CurrentUserProfile();
+            CorrectMenuForUser();
         }
 
         private void CurrentUserProfile()
@@ -51,6 +53,59 @@ namespace ChapooUI
             UsernameLabel.Text = _CurrentEmployee.name;
             UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
         }
+
+        private void CorrectMenuForUser()
+        {
+            switch(_CurrentEmployee.position)
+            {
+                case Position.Kok:
+                    // enabled buttons
+                    BtnBarOverzicht.Text = "Keuken overzicht";
+                    BtnBarOverzicht.Image = Resources.cook_24;
+                    BtnBarOverzicht.Show();
+
+                    // disabled buttons
+                    BtnAfrekenen.Hide();
+                    BtnTafelOverzicht.Hide();
+                    BtnBestellen.Hide();
+                    BtnVoorraad.Hide();
+                    break;
+                case Position.Bardienst:
+                    // enabled buttons
+                    BtnBarOverzicht.Text = "Bar overzicht";
+                    BtnBarOverzicht.Image = Resources.bar_24;
+                    BtnBarOverzicht.Show();
+
+                    // disabled buttons
+                    BtnAfrekenen.Hide();
+                    BtnTafelOverzicht.Hide();
+                    BtnBestellen.Hide();
+                    BtnVoorraad.Hide();
+                    break;
+                case Position.Leidinggevende:
+                    // enabled buttons
+                    BtnBarOverzicht.Show();
+
+                    // disabled buttons
+                    BtnAfrekenen.Hide();
+                    BtnTafelOverzicht.Hide();
+                    BtnBestellen.Hide();
+                    BtnVoorraad.Hide();
+                    break;
+                case Position.Bediening:
+                    // enabled buttons
+                    BtnAfrekenen.Show();
+                    BtnTafelOverzicht.Show();
+
+                    // disabled buttons
+                    BtnBarOverzicht.Hide();
+                    BtnTafelOverzicht.Hide();
+                    BtnBestellen.Hide();
+                    BtnVoorraad.Hide();
+                    break;
+            }
+        }
+
 
         // menu panel area
         private void MenuPanel(string menuItem)
