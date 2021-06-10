@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using ChapooModel;
@@ -67,16 +69,6 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public Employee DB_Login_Employee(Employee employee)
-        {
-            return new Employee();
-        }
-
-        private bool DB_Check_Employee_Login()
-        {
-            return false;
-        }
-
         private Employee ReadEmployee(DataTable dataTable)
         {
             Employee employee = new Employee();
@@ -88,7 +80,7 @@ namespace ChapooDAL
                 employee.name = (string)dr["Employee_Name"];
                 employee.adres = (string)dr["Employee_Address"];
                 employee.phone = (string)dr["Employee_Phone"];
-                //employee.pin = (string)dr["Employee_Pincode"]; // later als employees pincodes hebben en login form aanwezig is
+                employee.pin = (string)dr["Employee_Pincode"];
             }
             return employee;
         }
@@ -105,7 +97,7 @@ namespace ChapooDAL
                     name = (string)dr["Employee_Name"],
                     adres = (string)dr["Employee_Address"],
                     phone = (string)dr["Employee_Phone"],
-                    //pin = (string)dr["Employee_Pincode"] // later als employees pincodes hebben en login form aanwezig is
+                    pin = (string)dr["Employee_Pincode"]
                 };
                 employees.Add(employee);
             }

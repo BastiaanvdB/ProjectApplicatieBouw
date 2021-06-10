@@ -8,11 +8,14 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapooModel;
 
 namespace ChapooUI
 {
     public partial class Dashboard : Form
     {
+        private Employee _CurrentEmployee;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -34,13 +37,20 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public Dashboard()
+        public Dashboard(Employee CurrentEmployee)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            _CurrentEmployee = CurrentEmployee;
+            CurrentUserProfile();
         }
 
+        private void CurrentUserProfile()
+        {
+            UsernameLabel.Text = _CurrentEmployee.name;
+            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+        }
 
         // menu panel area
         private void MenuPanel(string menuItem)
@@ -48,8 +58,9 @@ namespace ChapooUI
             switch(menuItem)
             {
                 case "Betaaloverzicht":
-                    BetaalOverzicht betaalOverzicht = new BetaalOverzicht();
+                    BetaalOverzicht betaalOverzicht = new BetaalOverzicht(_CurrentEmployee, this);
                     betaalOverzicht.Show();
+                    this.Hide();
                     break;
                 case "KeukenBarOverzicht":
                     KeukenBarOverzicht barOverzicht = new KeukenBarOverzicht();
@@ -68,7 +79,9 @@ namespace ChapooUI
                     tafelOverzicht.Show();
                     break;
                 case "Exit":
-                    Application.Exit();
+                    this.Hide();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
                     break;
             }
         }
@@ -107,6 +120,7 @@ namespace ChapooUI
         {
             MenuPanel("Exit");
         }
+
 
         // ---------------------
     }

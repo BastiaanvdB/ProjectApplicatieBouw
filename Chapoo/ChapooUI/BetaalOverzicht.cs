@@ -18,6 +18,8 @@ namespace ChapooUI
     {
         private Order _currentOrder;
         private List<Order> _ListOfOrders;
+        private Employee _CurrentEmployee;
+        private Dashboard _Dashboard;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -40,13 +42,15 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public BetaalOverzicht()
+        public BetaalOverzicht(Employee currentEmployee, Dashboard dashboard)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             _currentOrder = new Order();
             _ListOfOrders = new List<Order>();
+            _CurrentEmployee = currentEmployee;
+            _Dashboard = dashboard;
             AfrekenenButton.Enabled = false;
             numericUpDownFooi.Enabled = false;
             checkBoxContant.Enabled = false;
@@ -57,6 +61,13 @@ namespace ChapooUI
             panelOpmerking.Hide();
             FillBillList();
             FillListview();
+            CurrentUserProfile();
+        }
+
+        private void CurrentUserProfile()
+        {
+            UsernameLabel.Text = _CurrentEmployee.name;
+            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
         }
 
         private void FillBillList()
@@ -79,6 +90,7 @@ namespace ChapooUI
         private void BtnTerug_Click(object sender, EventArgs e)
         {
             this.Close();
+            _Dashboard.Show();
         }
 
         private void AfrekeninglistView_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,18 +171,6 @@ namespace ChapooUI
                     paymethod = PayMethod.Creditcard;
                 }
 
-                // tijdelijk override employee met fokke !!!!
-                Employee employee = new Employee()
-                {
-                    employee_id = 2,
-                    position = Position.Bediening,
-                    name = "Fokke Modder",
-                    phone = "+31035542534",
-                    adres = "Haarlem",
-                    pin = "0000"
-                };
-                // Verwijder!!!!
-
                 ChapooLogic.Payment_Service payment_Service = new Payment_Service();
                 Payment payment = new Payment()
                 {
@@ -179,7 +179,7 @@ namespace ChapooUI
                     payStatus = PayStatus.Betaald,
                     payMethod = paymethod,
                     comment = TextBoxOpmerking.Text,
-                    employee = employee, // employee hier nog in doen !!!
+                    employee = _CurrentEmployee,
                     totalPrice = _currentOrder.totalPrice + numericUpDownFooi.Value,
                     tip = numericUpDownFooi.Value,
                     totalVAT = _currentOrder.totalVAT,

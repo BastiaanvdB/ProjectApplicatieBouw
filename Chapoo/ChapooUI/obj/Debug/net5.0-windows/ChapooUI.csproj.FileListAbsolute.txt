@@ -238,3 +238,4 @@ C:\Users\basti\Desktop\Chapoo test\ChapooUI\bin\Debug\net5.0-windows\ChapooDAL.p
 C:\Users\basti\Desktop\Chapoo test\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.csproj.CopyComplete
 C:\Users\basti\Desktop\Chapoo test\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.genruntimeconfig.cache
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.csproj.AssemblyReference.cache
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.LoginForm.resources

@@ -22,11 +22,6 @@ namespace ChapooLogic
             return Employee_DB.DB_Get_Employees();
         }
 
-        public Employee DB_Login_Employee(Employee employee)
-        {
-            return Employee_DB.DB_Login_Employee(employee);
-        }
-
         public void DB_Update_Employee(Employee employee)
         {
             Employee_DB.DB_Update_Employee(employee);
