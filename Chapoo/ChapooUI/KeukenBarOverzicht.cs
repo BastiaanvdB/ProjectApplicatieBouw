@@ -14,7 +14,9 @@ namespace ChapooUI
 {
     public partial class KeukenBarOverzicht : Form
     {
+        //List of bar_orders_finished
         private List<OrderDetail> _ListOfFinnishedOrderDetails;
+        //List of bar orders_open
         private List<OrderDetail> _ListOfNewOrderDetails;
         private OrderDetail _CurrentOrderDetail;
 
@@ -48,7 +50,7 @@ namespace ChapooUI
             btn_Gereed.Enabled = false;
             UpdateAllLists();
         }
-
+        //method for updating all the listview
         private void UpdateAllLists()
         {
             FillBarOpenOrderList();
@@ -56,35 +58,38 @@ namespace ChapooUI
             Fillbarfinishedlist();
             Fillfinishedlistview();
         }
-
+        //method for filling the list for the openorders
         private void FillBarOpenOrderList()
         {
             // fill the the order list with open/bestelde orders
             ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
             _ListOfNewOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Besteld");
         }
+        //filling the bar list view with open/bestelde orders
         private void FillListview()
         {
             // fill the the order list with open/bestelde orders
             Listview_Bar_OpenOrder.Items.Clear();
             foreach (ChapooModel.OrderDetail orderdetail in _ListOfNewOrderDetails)
             {
-                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}" }));
+                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}", $"{orderdetail.ordered_DateTime}" }));
             }
         }
+        //Method for filling the list with finished/opgediend orders
         private void Fillbarfinishedlist()
         {
             // fill the the order list with finished/gereed orders
             ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
             _ListOfFinnishedOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Opgediend");
         }
+        //Mehtod for filling the bar listview with the finished/Opgediend orders
         private void Fillfinishedlistview()
         {
-            // fill the the order list with finished/gereed orders
+            // fill the the order list with finished/opgediend orders
             Listview_Order_finished.Items.Clear();
             foreach (ChapooModel.OrderDetail orderdetail in _ListOfFinnishedOrderDetails)
             {
-                Listview_Order_finished.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}" }));
+                Listview_Order_finished.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}", $"{orderdetail.finished_DateTime}" }));
             }
         }
 
