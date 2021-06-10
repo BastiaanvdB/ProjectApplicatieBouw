@@ -125,6 +125,7 @@ namespace ChapooUI
             if (_EmployeeList.Count > 0)
             {
                 _CurrentEmployee = _EmployeeList[EmployeeCombobox.SelectedIndex];
+                _CurrentPincode = "";
             }
         }
 

@@ -210,6 +210,7 @@ namespace ChapooUI
             this.UserFunctieLabel.Size = new System.Drawing.Size(48, 17);
             this.UserFunctieLabel.TabIndex = 2;
             this.UserFunctieLabel.Text = "Functie";
+            this.UserFunctieLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // UsernameLabel
             // 
@@ -221,6 +222,7 @@ namespace ChapooUI
             this.UsernameLabel.Size = new System.Drawing.Size(81, 21);
             this.UsernameLabel.TabIndex = 1;
             this.UsernameLabel.Text = "Username";
+            this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox1
             // 
