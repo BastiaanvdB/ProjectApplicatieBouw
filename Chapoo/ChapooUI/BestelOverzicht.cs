@@ -16,7 +16,10 @@ namespace ChapooUI
     {
         private Employee CurrentEmployee;
         private Dashboard Dashboard;
+        private List<OrderDetail> _CurrentOrderDetails;
+        private Order _CurrentOrder;
 
+        private List<MenuItem> MenuItemsList;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -44,6 +47,7 @@ namespace ChapooUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            MenuItemsList = new List<MenuItem>();
             CurrentEmployee = employee;
             Dashboard = dashboard;
             CurrentUserProfile();
@@ -54,6 +58,15 @@ namespace ChapooUI
             UsernameLabel.Text = CurrentEmployee.name;
             UserFunctieLabel.Text = CurrentEmployee.position.ToString();
         }
+
+        private void GetSpecificMenuItemsList(int MenuID, int MenuGroupID)
+        {
+            ChapooLogic.MenuItem_Service menuItem_Service = new ChapooLogic.MenuItem_Service();
+            MenuItemsList = menuItem_Service.DB_Get_Specific_MenuItems(MenuID, MenuGroupID);
+        }
+
+
+
 
         // Button area
 

@@ -17,6 +17,11 @@ namespace ChapooLogic
             return MenuItem_DB.DB_Get_All_MenuItems();
         }
 
+        public List<MenuItem> DB_Get_Specific_MenuItems(int MenuID, int MenuGroupID)
+        {
+            return MenuItem_DB.DB_Get_Specific_MenuItems(MenuID, MenuGroupID);
+        }
+
         public MenuItem DB_Get_MenuItem(int item_id)
         {
             return MenuItem_DB.DB_Get_MenuItem(item_id);
