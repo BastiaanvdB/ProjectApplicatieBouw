@@ -46,12 +46,17 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             CurrentEmployee = employee;
             Dashboard = dashboard;
+            CurrentUserProfile();
         }
 
-
+        private void CurrentUserProfile()
+        {
+            UsernameLabel.Text = CurrentEmployee.name;
+            UserFunctieLabel.Text = CurrentEmployee.position.ToString();
+        }
 
         // Button area
-       
+
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
             this.Close();

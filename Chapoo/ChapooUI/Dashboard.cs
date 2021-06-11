@@ -69,6 +69,7 @@ namespace ChapooUI
                     BtnTafelOverzicht.Hide();
                     BtnBestellen.Hide();
                     BtnManagement.Hide();
+                    BtnBestellen.Hide();
                     break;
                 case Position.Bardienst:
                     // enabled buttons
@@ -81,6 +82,7 @@ namespace ChapooUI
                     BtnTafelOverzicht.Hide();
                     BtnBestellen.Hide();
                     BtnManagement.Hide();
+                    BtnBestellen.Hide();
                     break;
                 case Position.Leidinggevende:
                     // enabled buttons
@@ -91,15 +93,16 @@ namespace ChapooUI
                     BtnAfrekenen.Hide();
                     BtnTafelOverzicht.Hide();
                     BtnBestellen.Hide();
+                    BtnBestellen.Hide();
                     break;
                 case Position.Bediening:
                     // enabled buttons
                     BtnAfrekenen.Show();
                     BtnTafelOverzicht.Show();
+                    BtnBestellen.Show();
 
                     // disabled buttons
                     BtnBarOverzicht.Hide();
-                    BtnBestellen.Hide();
                     BtnManagement.Hide();
                     break;
             }
