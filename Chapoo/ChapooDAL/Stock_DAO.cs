@@ -78,13 +78,13 @@ namespace ChapooDAL
                 MenuItem item = new MenuItem()
                 {
                     item_ID = (int)dr["Item_ID"],
-                    MenuGroup = (string)dr[""],
-                    item_Name = (string)dr[""],
-                    item_Price = (decimal)dr[""],
-                    item_Taxpercentage = (int)dr[""],
-                    item_Stock = (int)dr[""],
-                    item_Restock = (int)dr[""],
-                    Alcohol_Check = (bool)dr[""]
+                    MenuGroup = (string)dr["MenuGroup_Name"],
+                    item_Name = (string)dr["Item_Name"],
+                    item_Price = (decimal)dr["Item_Price"],
+                    item_Taxpercentage = (int)dr["Item_Taxpercentage"],
+                    item_Stock = (int)dr["Item_Stock"],
+                    item_Restock = (int)dr["Item_Restock"],
+                    Alcohol_Check = (bool)dr["Alcohol_Check"]
                 };
                 Items.Add(item);
             }
