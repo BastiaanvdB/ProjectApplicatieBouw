@@ -12,11 +12,12 @@ using ChapooModel;
 
 namespace ChapooUI
 {
-    public partial class BestelOverzicht : Form
+    public partial class x : Form
     {
         private Employee CurrentEmployee;
         private Dashboard Dashboard;
-        private List<OrderDetail> _CurrentOrderDetails;
+        private ChapooLogic.Order_Service Order_Service;
+
         private Order _CurrentOrder;
 
         private List<MenuItem> MenuItemsList;
@@ -42,12 +43,14 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public BestelOverzicht(Employee employee, Dashboard dashboard)
+        public x(Employee employee, Dashboard dashboard)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             MenuItemsList = new List<MenuItem>();
+            _CurrentOrder = new Order();
+            Order_Service = new ChapooLogic.Order_Service();
             CurrentEmployee = employee;
             Dashboard = dashboard;
             CurrentUserProfile();
@@ -65,13 +68,17 @@ namespace ChapooUI
             MenuItemsList = menuItem_Service.DB_Get_Specific_MenuItems(MenuID, MenuGroupID);
         }
 
-
+        private void CheckExistingOrder(int TableNumber)
+        {
+            _CurrentOrder.order_ID = Order_Service.DB_Add_Order(TableNumber);
+        }
 
 
         // Button area
 
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
+            Dashboard.Show();
             this.Close();
         }
 
