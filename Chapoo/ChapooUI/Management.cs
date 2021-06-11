@@ -16,7 +16,7 @@ namespace ChapooUI
     {
         private MenuItem CurrentItem;
         private List<MenuItem> StockList;
-        private int CurrentMenuCode;
+        private int CurrentMenuCode = 0;
         private ChapooLogic.Stock_Service Stock_Service;
 
         private Employee _CurrentEmployee;
@@ -303,12 +303,69 @@ namespace ChapooUI
             {
                 case "Delete":
                     ButtonModifyConfirm.Text = ("Verwijderen");
+                    textBoxItemNaam.Enabled = false;
+                    numericBTW.Enabled = false;
+                    textBoxItemPrice.Enabled = false;
+                    numericRestock.Enabled = false;
+                    numericStock.Enabled = false;
+                    radioButtonNeedID.Enabled = false;
+                    radioButtonNoID.Enabled = false;
+                    radioButtonLunchVoorgerecht.Enabled = false;
+                    radioButtonLunchHoofdgerecht.Enabled = false;
+                    radioButtonNaVoorgerecht.Enabled = false;
+                    radioButtonDinerVoorgerecht.Enabled = false;
+                    radioButtonDinerTussengerecht.Enabled = false;
+                    radioButtonDinerHoofdgerecht.Enabled = false;
+                    radioButtonDinerNagerecht.Enabled = false;
+                    radioButtonDrankenFris.Enabled = false;
+                    radioButtonDrankenBier.Enabled = false;
+                    radioButtonDrankenWijn.Enabled = false;
+                    radioButtonDrankenGedistilleerde.Enabled = false;
+                    radioButtonDrankenWarme.Enabled = false;
                     break;
                 case "Add":
                     ButtonModifyConfirm.Text = ("Toevoegen");
+                    textBoxItemNaam.Enabled = true;
+                    numericBTW.Enabled = true;
+                    textBoxItemPrice.Enabled = true;
+                    numericRestock.Enabled = true;
+                    numericStock.Enabled = true;
+                    radioButtonNeedID.Enabled = true;
+                    radioButtonNoID.Enabled = true;
+                    radioButtonLunchVoorgerecht.Enabled = true;
+                    radioButtonLunchHoofdgerecht.Enabled = true;
+                    radioButtonNaVoorgerecht.Enabled = true;
+                    radioButtonDinerVoorgerecht.Enabled = true;
+                    radioButtonDinerTussengerecht.Enabled = true;
+                    radioButtonDinerHoofdgerecht.Enabled = true;
+                    radioButtonDinerNagerecht.Enabled = true;
+                    radioButtonDrankenFris.Enabled = true;
+                    radioButtonDrankenBier.Enabled = true;
+                    radioButtonDrankenWijn.Enabled = true;
+                    radioButtonDrankenGedistilleerde.Enabled = true;
+                    radioButtonDrankenWarme.Enabled = true;
                     break;
                 case "Update":
                     ButtonModifyConfirm.Text = ("Wijzigen");
+                    textBoxItemNaam.Enabled = true;
+                    numericBTW.Enabled = true;
+                    textBoxItemPrice.Enabled = true;
+                    numericRestock.Enabled = true;
+                    numericStock.Enabled = true;
+                    radioButtonNeedID.Enabled = true;
+                    radioButtonNoID.Enabled = true;
+                    radioButtonLunchVoorgerecht.Enabled = true;
+                    radioButtonLunchHoofdgerecht.Enabled = true;
+                    radioButtonNaVoorgerecht.Enabled = true;
+                    radioButtonDinerVoorgerecht.Enabled = true;
+                    radioButtonDinerTussengerecht.Enabled = true;
+                    radioButtonDinerHoofdgerecht.Enabled = true;
+                    radioButtonDinerNagerecht.Enabled = true;
+                    radioButtonDrankenFris.Enabled = true;
+                    radioButtonDrankenBier.Enabled = true;
+                    radioButtonDrankenWijn.Enabled = true;
+                    radioButtonDrankenGedistilleerde.Enabled = true;
+                    radioButtonDrankenWarme.Enabled = true;
                     break;
             }
         }
@@ -337,63 +394,84 @@ namespace ChapooUI
 
         private void AddMenuItem()
         {
-            DialogResult dialogResult = MessageBox.Show("U gaat iets toevoegen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            if ((textBoxItemNaam.Text.Length > 0) && (textBoxItemPrice.Text.Replace("€", String.Empty).Length > 0))
             {
-                MenuItem item = new MenuItem()
+                DialogResult dialogResult = MessageBox.Show("U gaat iets toevoegen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MenuGroup = CheckMenuGroup().ToString(),
-                    item_Name = textBoxItemNaam.Text,
-                    item_Price = decimal.Parse(textBoxItemPrice.Text.Replace("€", String.Empty)),
-                    item_Taxpercentage = int.Parse(numericBTW.Value.ToString()),
-                    item_Stock = int.Parse(numericStock.Value.ToString()),
-                    item_Restock = int.Parse(numericRestock.Value.ToString()),
-                    Alcohol_Check = CheckAge(),
-                };
-                Stock_Service.DB_Add_Stock(item);
-                UpdateStockList();
-                UpdateStockViewList();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
+                    MenuItem item = new MenuItem()
+                    {
+                        MenuGroup = CheckMenuGroup().ToString(),
+                        item_Name = textBoxItemNaam.Text,
+                        item_Price = decimal.Parse(textBoxItemPrice.Text.Replace("€", String.Empty)),
+                        item_Taxpercentage = int.Parse(numericBTW.Value.ToString()),
+                        item_Stock = int.Parse(numericStock.Value.ToString()),
+                        item_Restock = int.Parse(numericRestock.Value.ToString()),
+                        Alcohol_Check = CheckAge(),
+                    };
+                    Stock_Service.DB_Add_Stock(item);
+                    UpdateStockList();
+                    UpdateStockViewList();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
 
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Vul alle velden in", "Voorraadbeheer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void RemoveMenuItem()
         {
-            DialogResult dialogResult = MessageBox.Show("U gaat iets verwijderen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            if (listViewStockManagement.SelectedItems.Count is not 0)
             {
-                Stock_Service.DB_Remove_Stock(CurrentItem);
-                UpdateStockList();
-                UpdateStockViewList();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
+                DialogResult dialogResult = MessageBox.Show("U gaat iets verwijderen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Stock_Service.DB_Remove_Stock(CurrentItem);
+                    UpdateStockList();
+                    UpdateStockViewList();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
 
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Selecteer één item om te verwijderen", "Voorraadbeheer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void UpdateMenuItem()
         {
-            DialogResult dialogResult = MessageBox.Show("U gaat iets aanpassen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            if ((textBoxItemNaam.Text.Length > 0) && (textBoxItemPrice.Text.Replace("€", String.Empty).Length > 0))
             {
-                CurrentItem.MenuGroup = CheckMenuGroup().ToString();
-                CurrentItem.item_Name = textBoxItemNaam.Text;
-                CurrentItem.item_Price = decimal.Parse(textBoxItemPrice.Text.Replace("€", String.Empty));
-                CurrentItem.item_Taxpercentage = int.Parse(numericBTW.Value.ToString());
-                CurrentItem.item_Stock = int.Parse(numericStock.Value.ToString());
-                CurrentItem.item_Restock = int.Parse(numericRestock.Value.ToString());
-                CurrentItem.Alcohol_Check = CheckAge();
-                Stock_Service.DB_Update_Stock(CurrentItem);
-                UpdateStockList();
-                UpdateStockViewList();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
+                DialogResult dialogResult = MessageBox.Show("U gaat iets aanpassen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    CurrentItem.MenuGroup = CheckMenuGroup().ToString();
+                    CurrentItem.item_Name = textBoxItemNaam.Text;
+                    CurrentItem.item_Price = decimal.Parse(textBoxItemPrice.Text.Replace("€", String.Empty));
+                    CurrentItem.item_Taxpercentage = int.Parse(numericBTW.Value.ToString());
+                    CurrentItem.item_Stock = int.Parse(numericStock.Value.ToString());
+                    CurrentItem.item_Restock = int.Parse(numericRestock.Value.ToString());
+                    CurrentItem.Alcohol_Check = CheckAge();
+                    Stock_Service.DB_Update_Stock(CurrentItem);
+                    UpdateStockList();
+                    UpdateStockViewList();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
 
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Selecteer één item om te verwijderen", "Voorraadbeheer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -470,6 +548,7 @@ namespace ChapooUI
         {
             panelModifyControls.Show();
             AdjustModifyControls("Delete");
+
         }
 
 
