@@ -45,22 +45,22 @@ namespace ChapooUI
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBoxAlcohol = new System.Windows.Forms.GroupBox();
-            this.radioButtonNeedID = new System.Windows.Forms.RadioButton();
-            this.radioButtonNoID = new System.Windows.Forms.RadioButton();
-            this.ButtonModifyConfirm = new System.Windows.Forms.Button();
+            this.panelLunchSetting = new System.Windows.Forms.Panel();
+            this.radioButtonNaVoorgerecht = new System.Windows.Forms.RadioButton();
+            this.radioButtonLunchHoofdgerecht = new System.Windows.Forms.RadioButton();
+            this.radioButtonLunchVoorgerecht = new System.Windows.Forms.RadioButton();
             this.panelDrankSetting = new System.Windows.Forms.Panel();
             this.radioButtonDrankenWarme = new System.Windows.Forms.RadioButton();
             this.radioButtonDrankenGedistilleerde = new System.Windows.Forms.RadioButton();
             this.radioButtonDrankenWijn = new System.Windows.Forms.RadioButton();
             this.radioButtonDrankenBier = new System.Windows.Forms.RadioButton();
             this.radioButtonDrankenFris = new System.Windows.Forms.RadioButton();
-            this.panelLunchSetting = new System.Windows.Forms.Panel();
-            this.radioButtonNaVoorgerecht = new System.Windows.Forms.RadioButton();
-            this.radioButtonLunchHoofdgerecht = new System.Windows.Forms.RadioButton();
-            this.radioButtonLunchVoorgerecht = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBoxAlcohol = new System.Windows.Forms.GroupBox();
+            this.radioButtonNeedID = new System.Windows.Forms.RadioButton();
+            this.radioButtonNoID = new System.Windows.Forms.RadioButton();
+            this.ButtonModifyConfirm = new System.Windows.Forms.Button();
             this.numericBTW = new System.Windows.Forms.NumericUpDown();
             this.numericStock = new System.Windows.Forms.NumericUpDown();
             this.numericRestock = new System.Windows.Forms.NumericUpDown();
@@ -94,9 +94,9 @@ namespace ChapooUI
             this.panelStockManagement.SuspendLayout();
             this.panelVoorraadbeheer.SuspendLayout();
             this.panelModifyControls.SuspendLayout();
-            this.groupBoxAlcohol.SuspendLayout();
-            this.panelDrankSetting.SuspendLayout();
             this.panelLunchSetting.SuspendLayout();
+            this.panelDrankSetting.SuspendLayout();
+            this.groupBoxAlcohol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBTW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRestock)).BeginInit();
@@ -310,77 +310,52 @@ namespace ChapooUI
             this.label3.TabIndex = 19;
             this.label3.Text = "Item prijs";
             // 
-            // label2
+            // panelLunchSetting
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(32, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 17);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "BTW %";
+            this.panelLunchSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(59)))));
+            this.panelLunchSetting.Controls.Add(this.radioButtonNaVoorgerecht);
+            this.panelLunchSetting.Controls.Add(this.radioButtonLunchHoofdgerecht);
+            this.panelLunchSetting.Controls.Add(this.radioButtonLunchVoorgerecht);
+            this.panelLunchSetting.Controls.Add(this.panelDrankSetting);
+            this.panelLunchSetting.Location = new System.Drawing.Point(308, 68);
+            this.panelLunchSetting.Name = "panelLunchSetting";
+            this.panelLunchSetting.Size = new System.Drawing.Size(133, 141);
+            this.panelLunchSetting.TabIndex = 10;
             // 
-            // label1
+            // radioButtonNaVoorgerecht
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Item naam";
+            this.radioButtonNaVoorgerecht.AutoSize = true;
+            this.radioButtonNaVoorgerecht.ForeColor = System.Drawing.Color.White;
+            this.radioButtonNaVoorgerecht.Location = new System.Drawing.Point(20, 72);
+            this.radioButtonNaVoorgerecht.Name = "radioButtonNaVoorgerecht";
+            this.radioButtonNaVoorgerecht.Size = new System.Drawing.Size(80, 19);
+            this.radioButtonNaVoorgerecht.TabIndex = 9;
+            this.radioButtonNaVoorgerecht.Text = "Nagerecht";
+            this.radioButtonNaVoorgerecht.UseVisualStyleBackColor = true;
             // 
-            // groupBoxAlcohol
+            // radioButtonLunchHoofdgerecht
             // 
-            this.groupBoxAlcohol.Controls.Add(this.radioButtonNeedID);
-            this.groupBoxAlcohol.Controls.Add(this.radioButtonNoID);
-            this.groupBoxAlcohol.ForeColor = System.Drawing.Color.White;
-            this.groupBoxAlcohol.Location = new System.Drawing.Point(186, 90);
-            this.groupBoxAlcohol.Name = "groupBoxAlcohol";
-            this.groupBoxAlcohol.Size = new System.Drawing.Size(103, 127);
-            this.groupBoxAlcohol.TabIndex = 16;
-            this.groupBoxAlcohol.TabStop = false;
-            this.groupBoxAlcohol.Text = "Alcohol check";
+            this.radioButtonLunchHoofdgerecht.AutoSize = true;
+            this.radioButtonLunchHoofdgerecht.ForeColor = System.Drawing.Color.White;
+            this.radioButtonLunchHoofdgerecht.Location = new System.Drawing.Point(20, 44);
+            this.radioButtonLunchHoofdgerecht.Name = "radioButtonLunchHoofdgerecht";
+            this.radioButtonLunchHoofdgerecht.Size = new System.Drawing.Size(99, 19);
+            this.radioButtonLunchHoofdgerecht.TabIndex = 8;
+            this.radioButtonLunchHoofdgerecht.Text = "Hoofdgerecht";
+            this.radioButtonLunchHoofdgerecht.UseVisualStyleBackColor = true;
             // 
-            // radioButtonNeedID
+            // radioButtonLunchVoorgerecht
             // 
-            this.radioButtonNeedID.AutoSize = true;
-            this.radioButtonNeedID.Checked = true;
-            this.radioButtonNeedID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonNeedID.Location = new System.Drawing.Point(25, 32);
-            this.radioButtonNeedID.Name = "radioButtonNeedID";
-            this.radioButtonNeedID.Size = new System.Drawing.Size(53, 24);
-            this.radioButtonNeedID.TabIndex = 16;
-            this.radioButtonNeedID.TabStop = true;
-            this.radioButtonNeedID.Text = ">18";
-            this.radioButtonNeedID.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonNoID
-            // 
-            this.radioButtonNoID.AutoSize = true;
-            this.radioButtonNoID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonNoID.Location = new System.Drawing.Point(25, 71);
-            this.radioButtonNoID.Name = "radioButtonNoID";
-            this.radioButtonNoID.Size = new System.Drawing.Size(53, 24);
-            this.radioButtonNoID.TabIndex = 15;
-            this.radioButtonNoID.Text = "<18";
-            this.radioButtonNoID.UseVisualStyleBackColor = true;
-            // 
-            // ButtonModifyConfirm
-            // 
-            this.ButtonModifyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.ButtonModifyConfirm.FlatAppearance.BorderSize = 0;
-            this.ButtonModifyConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonModifyConfirm.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ButtonModifyConfirm.ForeColor = System.Drawing.Color.White;
-            this.ButtonModifyConfirm.Location = new System.Drawing.Point(308, 342);
-            this.ButtonModifyConfirm.Name = "ButtonModifyConfirm";
-            this.ButtonModifyConfirm.Size = new System.Drawing.Size(153, 48);
-            this.ButtonModifyConfirm.TabIndex = 14;
-            this.ButtonModifyConfirm.UseVisualStyleBackColor = false;
-            this.ButtonModifyConfirm.Click += new System.EventHandler(this.ButtonModifyConfirm_Click);
+            this.radioButtonLunchVoorgerecht.AutoSize = true;
+            this.radioButtonLunchVoorgerecht.Checked = true;
+            this.radioButtonLunchVoorgerecht.ForeColor = System.Drawing.Color.White;
+            this.radioButtonLunchVoorgerecht.Location = new System.Drawing.Point(20, 17);
+            this.radioButtonLunchVoorgerecht.Name = "radioButtonLunchVoorgerecht";
+            this.radioButtonLunchVoorgerecht.Size = new System.Drawing.Size(89, 19);
+            this.radioButtonLunchVoorgerecht.TabIndex = 6;
+            this.radioButtonLunchVoorgerecht.TabStop = true;
+            this.radioButtonLunchVoorgerecht.Text = "Voorgerecht";
+            this.radioButtonLunchVoorgerecht.UseVisualStyleBackColor = true;
             // 
             // panelDrankSetting
             // 
@@ -452,52 +427,77 @@ namespace ChapooUI
             this.radioButtonDrankenFris.Text = "Frisdrank";
             this.radioButtonDrankenFris.UseVisualStyleBackColor = true;
             // 
-            // panelLunchSetting
+            // label2
             // 
-            this.panelLunchSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(59)))));
-            this.panelLunchSetting.Controls.Add(this.radioButtonNaVoorgerecht);
-            this.panelLunchSetting.Controls.Add(this.radioButtonLunchHoofdgerecht);
-            this.panelLunchSetting.Controls.Add(this.radioButtonLunchVoorgerecht);
-            this.panelLunchSetting.Controls.Add(this.panelDrankSetting);
-            this.panelLunchSetting.Location = new System.Drawing.Point(308, 68);
-            this.panelLunchSetting.Name = "panelLunchSetting";
-            this.panelLunchSetting.Size = new System.Drawing.Size(133, 141);
-            this.panelLunchSetting.TabIndex = 10;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(32, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "BTW %";
             // 
-            // radioButtonNaVoorgerecht
+            // label1
             // 
-            this.radioButtonNaVoorgerecht.AutoSize = true;
-            this.radioButtonNaVoorgerecht.ForeColor = System.Drawing.Color.White;
-            this.radioButtonNaVoorgerecht.Location = new System.Drawing.Point(20, 72);
-            this.radioButtonNaVoorgerecht.Name = "radioButtonNaVoorgerecht";
-            this.radioButtonNaVoorgerecht.Size = new System.Drawing.Size(80, 19);
-            this.radioButtonNaVoorgerecht.TabIndex = 9;
-            this.radioButtonNaVoorgerecht.Text = "Nagerecht";
-            this.radioButtonNaVoorgerecht.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Item naam";
             // 
-            // radioButtonLunchHoofdgerecht
+            // groupBoxAlcohol
             // 
-            this.radioButtonLunchHoofdgerecht.AutoSize = true;
-            this.radioButtonLunchHoofdgerecht.ForeColor = System.Drawing.Color.White;
-            this.radioButtonLunchHoofdgerecht.Location = new System.Drawing.Point(20, 44);
-            this.radioButtonLunchHoofdgerecht.Name = "radioButtonLunchHoofdgerecht";
-            this.radioButtonLunchHoofdgerecht.Size = new System.Drawing.Size(99, 19);
-            this.radioButtonLunchHoofdgerecht.TabIndex = 8;
-            this.radioButtonLunchHoofdgerecht.Text = "Hoofdgerecht";
-            this.radioButtonLunchHoofdgerecht.UseVisualStyleBackColor = true;
+            this.groupBoxAlcohol.Controls.Add(this.radioButtonNeedID);
+            this.groupBoxAlcohol.Controls.Add(this.radioButtonNoID);
+            this.groupBoxAlcohol.ForeColor = System.Drawing.Color.White;
+            this.groupBoxAlcohol.Location = new System.Drawing.Point(186, 90);
+            this.groupBoxAlcohol.Name = "groupBoxAlcohol";
+            this.groupBoxAlcohol.Size = new System.Drawing.Size(103, 127);
+            this.groupBoxAlcohol.TabIndex = 16;
+            this.groupBoxAlcohol.TabStop = false;
+            this.groupBoxAlcohol.Text = "Alcohol check";
             // 
-            // radioButtonLunchVoorgerecht
+            // radioButtonNeedID
             // 
-            this.radioButtonLunchVoorgerecht.AutoSize = true;
-            this.radioButtonLunchVoorgerecht.Checked = true;
-            this.radioButtonLunchVoorgerecht.ForeColor = System.Drawing.Color.White;
-            this.radioButtonLunchVoorgerecht.Location = new System.Drawing.Point(20, 17);
-            this.radioButtonLunchVoorgerecht.Name = "radioButtonLunchVoorgerecht";
-            this.radioButtonLunchVoorgerecht.Size = new System.Drawing.Size(89, 19);
-            this.radioButtonLunchVoorgerecht.TabIndex = 6;
-            this.radioButtonLunchVoorgerecht.TabStop = true;
-            this.radioButtonLunchVoorgerecht.Text = "Voorgerecht";
-            this.radioButtonLunchVoorgerecht.UseVisualStyleBackColor = true;
+            this.radioButtonNeedID.AutoSize = true;
+            this.radioButtonNeedID.Checked = true;
+            this.radioButtonNeedID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonNeedID.Location = new System.Drawing.Point(25, 32);
+            this.radioButtonNeedID.Name = "radioButtonNeedID";
+            this.radioButtonNeedID.Size = new System.Drawing.Size(53, 24);
+            this.radioButtonNeedID.TabIndex = 16;
+            this.radioButtonNeedID.TabStop = true;
+            this.radioButtonNeedID.Text = ">18";
+            this.radioButtonNeedID.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNoID
+            // 
+            this.radioButtonNoID.AutoSize = true;
+            this.radioButtonNoID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonNoID.Location = new System.Drawing.Point(25, 71);
+            this.radioButtonNoID.Name = "radioButtonNoID";
+            this.radioButtonNoID.Size = new System.Drawing.Size(53, 24);
+            this.radioButtonNoID.TabIndex = 15;
+            this.radioButtonNoID.Text = "<18";
+            this.radioButtonNoID.UseVisualStyleBackColor = true;
+            // 
+            // ButtonModifyConfirm
+            // 
+            this.ButtonModifyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.ButtonModifyConfirm.FlatAppearance.BorderSize = 0;
+            this.ButtonModifyConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonModifyConfirm.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ButtonModifyConfirm.ForeColor = System.Drawing.Color.White;
+            this.ButtonModifyConfirm.Location = new System.Drawing.Point(308, 342);
+            this.ButtonModifyConfirm.Name = "ButtonModifyConfirm";
+            this.ButtonModifyConfirm.Size = new System.Drawing.Size(153, 48);
+            this.ButtonModifyConfirm.TabIndex = 14;
+            this.ButtonModifyConfirm.UseVisualStyleBackColor = false;
+            this.ButtonModifyConfirm.Click += new System.EventHandler(this.ButtonModifyConfirm_Click);
             // 
             // numericBTW
             // 
@@ -782,12 +782,12 @@ namespace ChapooUI
             this.panelVoorraadbeheer.ResumeLayout(false);
             this.panelModifyControls.ResumeLayout(false);
             this.panelModifyControls.PerformLayout();
-            this.groupBoxAlcohol.ResumeLayout(false);
-            this.groupBoxAlcohol.PerformLayout();
-            this.panelDrankSetting.ResumeLayout(false);
-            this.panelDrankSetting.PerformLayout();
             this.panelLunchSetting.ResumeLayout(false);
             this.panelLunchSetting.PerformLayout();
+            this.panelDrankSetting.ResumeLayout(false);
+            this.panelDrankSetting.PerformLayout();
+            this.groupBoxAlcohol.ResumeLayout(false);
+            this.groupBoxAlcohol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBTW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRestock)).EndInit();
