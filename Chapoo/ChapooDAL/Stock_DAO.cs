@@ -33,6 +33,15 @@ namespace ChapooDAL
             };
             ExecuteEditQuery(query, sqlParameters);
         }
+        public List<MenuItem> DB_Get_Specific_Stock(int Menucode)
+        {
+            string query = "SELECT MenuGroup.MenuGroup_Name, Item_ID, Item_Name, Item_Price, Item_Taxpercentage, Alcohol_Check, Item_Stock, Item_Restock FROM MenuItems INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID WHERE Menu.Menu_ID = @Menucode";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Menucode", SqlDbType.Int) { Value = Menucode },
+            };
+            return ReadStock(ExecuteSelectQuery(query, sqlParameters));
+        }
 
         public void DB_Remove_Stock(MenuItem menuItem)
         {

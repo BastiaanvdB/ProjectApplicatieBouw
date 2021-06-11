@@ -17,6 +17,10 @@ namespace ChapooLogic
             return Stock_DB.DB_Get_Stock();
         }
 
+        public List<MenuItem> DB_Get_Specific_Stock(int Menucode)
+        {
+            return Stock_DB.DB_Get_Specific_Stock(Menucode);
+        }
         public void DB_Add_Stock(MenuItem menuItem, int MenuGroupcode)
         {
             Stock_DB.DB_Add_Stock(menuItem, MenuGroupcode);
