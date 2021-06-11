@@ -14,9 +14,9 @@ namespace ChapooLogic
             return Order_DB.Db_Get_All_Orders();
         }
 
-        public void DB_Add_Order(Order order)
+        public int DB_Add_Order(int TableNumber)
         {
-            Order_DB.DB_Add_Order(order);
+            return Order_DB.DB_Add_Order(TableNumber);
         }
 
         public List<Order> DB_Get_All_Unpaid_Orders()

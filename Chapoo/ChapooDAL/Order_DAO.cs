@@ -34,15 +34,71 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public void DB_Add_Order(Order order)
+        public int DB_Add_Order(int TableNumber)
+        {
+            bool OpenOrder = DB_Check_If_Table_Has_Open_Order(TableNumber);
+
+            if(OpenOrder == true)
+            {
+                return DB_Get_Order_ID_FROM_Table(TableNumber);
+            }
+            else
+            {
+                DB_Create_Order(TableNumber);
+                return DB_Get_Order_ID_FROM_Table(TableNumber);
+            }
+        }
+
+        private int DB_Get_Order_ID_FROM_Table(int TableNumber)
+        {
+            string query = "SELECT Orders.Order_ID FROM Orders WHERE Table_ID = @Table";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Table", SqlDbType.Int) { Value = TableNumber }
+            };
+            return ReadOrderID(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private void DB_Create_Order(int TableNumber)
         {
             string query = "INSERT INTO Orders VALUES (@Table_ID, @Paystatus)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@Table_ID", SqlDbType.Int) { Value = order.Table.table_ID },
-                new SqlParameter("@Paystatus", SqlDbType.Int) { Value = ((int)order.paystatus) },
+                new SqlParameter("@Table_ID", SqlDbType.Int) { Value = TableNumber },
+                new SqlParameter("@Paystatus", SqlDbType.Int) { Value = 0 },
             };
             ExecuteEditQuery(query, sqlParameters);
+        }
+
+        private bool DB_Check_If_Table_Has_Open_Order(int TableNumber)
+        {
+            string query = "SELECT CASE WHEN EXISTS (SELECT Order_ID, Table_ID, Order_PayStatus FROM Orders WHERE Order_PayStatus = 0 AND Table_ID = @table) THEN 'True' ELSE 'False' END AS OpenOrder";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@table", SqlDbType.Int) { Value = TableNumber }
+            };
+            return ReadOpenOrder(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private bool ReadOpenOrder(DataTable dataTable)
+        {
+            bool OpenOrder = false;
+            foreach (DataRow dr in dataTable.Rows)
+            {
+
+                OpenOrder = (bool)dr["OpenOrder"];
+            }  
+            return OpenOrder;
+        }
+
+        private int ReadOrderID(DataTable dataTable)
+        {
+            int OrderID = 0;
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                OrderID = (int)dr["Order_ID"];
+            }
+            return OrderID;
         }
 
         private List<Order> ReadOrders(DataTable dataTable)
