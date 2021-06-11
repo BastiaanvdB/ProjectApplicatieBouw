@@ -55,9 +55,6 @@ namespace ChapooUI
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelfooi = new System.Windows.Forms.Label();
             this.numericUpDownFooi = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxPinpas = new System.Windows.Forms.CheckBox();
-            this.checkBoxContant = new System.Windows.Forms.CheckBox();
-            this.checkBoxCreditcard = new System.Windows.Forms.CheckBox();
             this.labelBrutoInput = new System.Windows.Forms.Label();
             this.labelBTWinput = new System.Windows.Forms.Label();
             this.labelNettoinput = new System.Windows.Forms.Label();
@@ -68,6 +65,9 @@ namespace ChapooUI
             this.labelTotaalprijsoutput = new System.Windows.Forms.Label();
             this.labelTotaalprijstitle = new System.Windows.Forms.Label();
             this.AfrekenenButton = new System.Windows.Forms.Button();
+            this.RadioContant = new System.Windows.Forms.RadioButton();
+            this.radioCreditcard = new System.Windows.Forms.RadioButton();
+            this.radioPinpas = new System.Windows.Forms.RadioButton();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -226,6 +226,9 @@ namespace ChapooUI
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.panelOpmerking);
+            this.panel1.Controls.Add(this.radioPinpas);
+            this.panel1.Controls.Add(this.radioCreditcard);
+            this.panel1.Controls.Add(this.RadioContant);
             this.panel1.Controls.Add(this.buttonOpmerking);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
@@ -233,9 +236,6 @@ namespace ChapooUI
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.labelfooi);
             this.panel1.Controls.Add(this.numericUpDownFooi);
-            this.panel1.Controls.Add(this.checkBoxPinpas);
-            this.panel1.Controls.Add(this.checkBoxContant);
-            this.panel1.Controls.Add(this.checkBoxCreditcard);
             this.panel1.Controls.Add(this.labelBrutoInput);
             this.panel1.Controls.Add(this.labelBTWinput);
             this.panel1.Controls.Add(this.labelNettoinput);
@@ -356,45 +356,6 @@ namespace ChapooUI
             this.numericUpDownFooi.TabIndex = 17;
             this.numericUpDownFooi.ValueChanged += new System.EventHandler(this.numericUpDownFooi_ValueChanged);
             // 
-            // checkBoxPinpas
-            // 
-            this.checkBoxPinpas.AutoSize = true;
-            this.checkBoxPinpas.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxPinpas.ForeColor = System.Drawing.Color.White;
-            this.checkBoxPinpas.Location = new System.Drawing.Point(353, 339);
-            this.checkBoxPinpas.Name = "checkBoxPinpas";
-            this.checkBoxPinpas.Size = new System.Drawing.Size(87, 29);
-            this.checkBoxPinpas.TabIndex = 16;
-            this.checkBoxPinpas.Text = "Pinpas";
-            this.checkBoxPinpas.UseVisualStyleBackColor = true;
-            this.checkBoxPinpas.CheckedChanged += new System.EventHandler(this.checkBoxPinpas_CheckedChanged);
-            // 
-            // checkBoxContant
-            // 
-            this.checkBoxContant.AutoSize = true;
-            this.checkBoxContant.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxContant.ForeColor = System.Drawing.Color.White;
-            this.checkBoxContant.Location = new System.Drawing.Point(38, 339);
-            this.checkBoxContant.Name = "checkBoxContant";
-            this.checkBoxContant.Size = new System.Drawing.Size(98, 29);
-            this.checkBoxContant.TabIndex = 15;
-            this.checkBoxContant.Text = "Contant";
-            this.checkBoxContant.UseVisualStyleBackColor = true;
-            this.checkBoxContant.CheckedChanged += new System.EventHandler(this.checkBoxContant_CheckedChanged);
-            // 
-            // checkBoxCreditcard
-            // 
-            this.checkBoxCreditcard.AutoSize = true;
-            this.checkBoxCreditcard.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxCreditcard.ForeColor = System.Drawing.Color.White;
-            this.checkBoxCreditcard.Location = new System.Drawing.Point(184, 339);
-            this.checkBoxCreditcard.Name = "checkBoxCreditcard";
-            this.checkBoxCreditcard.Size = new System.Drawing.Size(119, 29);
-            this.checkBoxCreditcard.TabIndex = 14;
-            this.checkBoxCreditcard.Text = "Creditcard";
-            this.checkBoxCreditcard.UseVisualStyleBackColor = true;
-            this.checkBoxCreditcard.CheckedChanged += new System.EventHandler(this.checkBoxCreditcard_CheckedChanged);
-            // 
             // labelBrutoInput
             // 
             this.labelBrutoInput.AutoSize = true;
@@ -506,6 +467,45 @@ namespace ChapooUI
             this.AfrekenenButton.UseVisualStyleBackColor = false;
             this.AfrekenenButton.Click += new System.EventHandler(this.AfrekenenButton_Click);
             // 
+            // RadioContant
+            // 
+            this.RadioContant.AutoSize = true;
+            this.RadioContant.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RadioContant.ForeColor = System.Drawing.Color.White;
+            this.RadioContant.Location = new System.Drawing.Point(57, 339);
+            this.RadioContant.Name = "RadioContant";
+            this.RadioContant.Size = new System.Drawing.Size(97, 29);
+            this.RadioContant.TabIndex = 20;
+            this.RadioContant.TabStop = true;
+            this.RadioContant.Text = "Contant";
+            this.RadioContant.UseVisualStyleBackColor = true;
+            // 
+            // radioCreditcard
+            // 
+            this.radioCreditcard.AutoSize = true;
+            this.radioCreditcard.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioCreditcard.ForeColor = System.Drawing.Color.White;
+            this.radioCreditcard.Location = new System.Drawing.Point(198, 339);
+            this.radioCreditcard.Name = "radioCreditcard";
+            this.radioCreditcard.Size = new System.Drawing.Size(118, 29);
+            this.radioCreditcard.TabIndex = 21;
+            this.radioCreditcard.TabStop = true;
+            this.radioCreditcard.Text = "Creditcard";
+            this.radioCreditcard.UseVisualStyleBackColor = true;
+            // 
+            // radioPinpas
+            // 
+            this.radioPinpas.AutoSize = true;
+            this.radioPinpas.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioPinpas.ForeColor = System.Drawing.Color.White;
+            this.radioPinpas.Location = new System.Drawing.Point(366, 339);
+            this.radioPinpas.Name = "radioPinpas";
+            this.radioPinpas.Size = new System.Drawing.Size(86, 29);
+            this.radioPinpas.TabIndex = 22;
+            this.radioPinpas.TabStop = true;
+            this.radioPinpas.Text = "Pinpas";
+            this.radioPinpas.UseVisualStyleBackColor = true;
+            // 
             // BetaalOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -561,9 +561,6 @@ namespace ChapooUI
         private System.Windows.Forms.Label labelNettoprijs;
         private System.Windows.Forms.Label labelBrutoprijs;
         private System.Windows.Forms.Label labelBTW;
-        private System.Windows.Forms.CheckBox checkBoxCreditcard;
-        private System.Windows.Forms.CheckBox checkBoxPinpas;
-        private System.Windows.Forms.CheckBox checkBoxContant;
         private System.Windows.Forms.Label labelfooi;
         private System.Windows.Forms.NumericUpDown numericUpDownFooi;
         private System.Windows.Forms.Panel panel3;
@@ -574,5 +571,8 @@ namespace ChapooUI
         private System.Windows.Forms.Panel panelOpmerking;
         private System.Windows.Forms.Button buttonToevoegenOpmerking;
         private System.Windows.Forms.RichTextBox TextBoxOpmerking;
+        private System.Windows.Forms.RadioButton RadioContant;
+        private System.Windows.Forms.RadioButton radioPinpas;
+        private System.Windows.Forms.RadioButton radioCreditcard;
     }
 }

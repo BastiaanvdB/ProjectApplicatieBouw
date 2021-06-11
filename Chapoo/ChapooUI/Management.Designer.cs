@@ -42,7 +42,10 @@ namespace ChapooUI
             this.panelStockManagement = new System.Windows.Forms.Panel();
             this.panelVoorraadbeheer = new System.Windows.Forms.Panel();
             this.panelModifyControls = new System.Windows.Forms.Panel();
-            this.buttonToevoegenOpmerking = new System.Windows.Forms.Button();
+            this.groupBoxAlcohol = new System.Windows.Forms.GroupBox();
+            this.radioButtonNeedID = new System.Windows.Forms.RadioButton();
+            this.radioButtonNoID = new System.Windows.Forms.RadioButton();
+            this.ButtonModifyConfirm = new System.Windows.Forms.Button();
             this.panelDrankSetting = new System.Windows.Forms.Panel();
             this.radioButtonDrankenWarme = new System.Windows.Forms.RadioButton();
             this.radioButtonDrankenGedistilleerde = new System.Windows.Forms.RadioButton();
@@ -80,12 +83,18 @@ namespace ChapooUI
             this.Restock = new System.Windows.Forms.ColumnHeader();
             this.CurrentStock = new System.Windows.Forms.ColumnHeader();
             this.AlcholCheck = new System.Windows.Forms.ColumnHeader();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelStockManagement.SuspendLayout();
             this.panelVoorraadbeheer.SuspendLayout();
             this.panelModifyControls.SuspendLayout();
+            this.groupBoxAlcohol.SuspendLayout();
             this.panelDrankSetting.SuspendLayout();
             this.panelLunchSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBTW)).BeginInit();
@@ -249,7 +258,13 @@ namespace ChapooUI
             // panelModifyControls
             // 
             this.panelModifyControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(59)))));
-            this.panelModifyControls.Controls.Add(this.buttonToevoegenOpmerking);
+            this.panelModifyControls.Controls.Add(this.label5);
+            this.panelModifyControls.Controls.Add(this.label4);
+            this.panelModifyControls.Controls.Add(this.label3);
+            this.panelModifyControls.Controls.Add(this.label2);
+            this.panelModifyControls.Controls.Add(this.label1);
+            this.panelModifyControls.Controls.Add(this.groupBoxAlcohol);
+            this.panelModifyControls.Controls.Add(this.ButtonModifyConfirm);
             this.panelModifyControls.Controls.Add(this.panelDrankSetting);
             this.panelModifyControls.Controls.Add(this.panelLunchSetting);
             this.panelModifyControls.Controls.Add(this.numericBTW);
@@ -263,18 +278,55 @@ namespace ChapooUI
             this.panelModifyControls.Size = new System.Drawing.Size(469, 403);
             this.panelModifyControls.TabIndex = 9;
             // 
-            // buttonToevoegenOpmerking
+            // groupBoxAlcohol
             // 
-            this.buttonToevoegenOpmerking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.buttonToevoegenOpmerking.FlatAppearance.BorderSize = 0;
-            this.buttonToevoegenOpmerking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonToevoegenOpmerking.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonToevoegenOpmerking.ForeColor = System.Drawing.Color.White;
-            this.buttonToevoegenOpmerking.Location = new System.Drawing.Point(308, 342);
-            this.buttonToevoegenOpmerking.Name = "buttonToevoegenOpmerking";
-            this.buttonToevoegenOpmerking.Size = new System.Drawing.Size(153, 48);
-            this.buttonToevoegenOpmerking.TabIndex = 14;
-            this.buttonToevoegenOpmerking.UseVisualStyleBackColor = false;
+            this.groupBoxAlcohol.Controls.Add(this.radioButtonNeedID);
+            this.groupBoxAlcohol.Controls.Add(this.radioButtonNoID);
+            this.groupBoxAlcohol.ForeColor = System.Drawing.Color.White;
+            this.groupBoxAlcohol.Location = new System.Drawing.Point(186, 90);
+            this.groupBoxAlcohol.Name = "groupBoxAlcohol";
+            this.groupBoxAlcohol.Size = new System.Drawing.Size(103, 127);
+            this.groupBoxAlcohol.TabIndex = 16;
+            this.groupBoxAlcohol.TabStop = false;
+            this.groupBoxAlcohol.Text = "Alcohol check";
+            // 
+            // radioButtonNeedID
+            // 
+            this.radioButtonNeedID.AutoSize = true;
+            this.radioButtonNeedID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonNeedID.Location = new System.Drawing.Point(25, 32);
+            this.radioButtonNeedID.Name = "radioButtonNeedID";
+            this.radioButtonNeedID.Size = new System.Drawing.Size(53, 24);
+            this.radioButtonNeedID.TabIndex = 16;
+            this.radioButtonNeedID.TabStop = true;
+            this.radioButtonNeedID.Text = ">18";
+            this.radioButtonNeedID.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNoID
+            // 
+            this.radioButtonNoID.AutoSize = true;
+            this.radioButtonNoID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonNoID.Location = new System.Drawing.Point(25, 71);
+            this.radioButtonNoID.Name = "radioButtonNoID";
+            this.radioButtonNoID.Size = new System.Drawing.Size(53, 24);
+            this.radioButtonNoID.TabIndex = 15;
+            this.radioButtonNoID.TabStop = true;
+            this.radioButtonNoID.Text = "<18";
+            this.radioButtonNoID.UseVisualStyleBackColor = true;
+            // 
+            // ButtonModifyConfirm
+            // 
+            this.ButtonModifyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.ButtonModifyConfirm.FlatAppearance.BorderSize = 0;
+            this.ButtonModifyConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonModifyConfirm.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ButtonModifyConfirm.ForeColor = System.Drawing.Color.White;
+            this.ButtonModifyConfirm.Location = new System.Drawing.Point(308, 342);
+            this.ButtonModifyConfirm.Name = "ButtonModifyConfirm";
+            this.ButtonModifyConfirm.Size = new System.Drawing.Size(153, 48);
+            this.ButtonModifyConfirm.TabIndex = 14;
+            this.ButtonModifyConfirm.UseVisualStyleBackColor = false;
+            this.ButtonModifyConfirm.Click += new System.EventHandler(this.ButtonModifyConfirm_Click);
             // 
             // panelDrankSetting
             // 
@@ -398,28 +450,28 @@ namespace ChapooUI
             // 
             // numericBTW
             // 
-            this.numericBTW.Location = new System.Drawing.Point(32, 104);
+            this.numericBTW.Location = new System.Drawing.Point(32, 149);
             this.numericBTW.Name = "numericBTW";
             this.numericBTW.Size = new System.Drawing.Size(123, 23);
             this.numericBTW.TabIndex = 13;
             // 
             // numericStock
             // 
-            this.numericStock.Location = new System.Drawing.Point(32, 224);
+            this.numericStock.Location = new System.Drawing.Point(32, 265);
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(123, 23);
             this.numericStock.TabIndex = 12;
             // 
             // numericRestock
             // 
-            this.numericRestock.Location = new System.Drawing.Point(32, 195);
+            this.numericRestock.Location = new System.Drawing.Point(32, 204);
             this.numericRestock.Name = "numericRestock";
             this.numericRestock.Size = new System.Drawing.Size(123, 23);
             this.numericRestock.TabIndex = 11;
             // 
             // textBoxItemPrice
             // 
-            this.textBoxItemPrice.Location = new System.Drawing.Point(32, 149);
+            this.textBoxItemPrice.Location = new System.Drawing.Point(32, 90);
             this.textBoxItemPrice.Name = "textBoxItemPrice";
             this.textBoxItemPrice.Size = new System.Drawing.Size(123, 23);
             this.textBoxItemPrice.TabIndex = 10;
@@ -486,9 +538,9 @@ namespace ChapooUI
             // 
             // textBoxItemNaam
             // 
-            this.textBoxItemNaam.Location = new System.Drawing.Point(32, 50);
+            this.textBoxItemNaam.Location = new System.Drawing.Point(32, 39);
             this.textBoxItemNaam.Name = "textBoxItemNaam";
-            this.textBoxItemNaam.Size = new System.Drawing.Size(123, 23);
+            this.textBoxItemNaam.Size = new System.Drawing.Size(273, 23);
             this.textBoxItemNaam.TabIndex = 0;
             // 
             // panelModifySelection
@@ -622,6 +674,7 @@ namespace ChapooUI
             this.listViewStockManagement.TabIndex = 0;
             this.listViewStockManagement.UseCompatibleStateImageBehavior = false;
             this.listViewStockManagement.View = System.Windows.Forms.View.Details;
+            this.listViewStockManagement.SelectedIndexChanged += new System.EventHandler(this.listViewStockManagement_SelectedIndexChanged);
             // 
             // MenuGroep
             // 
@@ -658,6 +711,61 @@ namespace ChapooUI
             this.AlcholCheck.Text = "AlcholCheck";
             this.AlcholCheck.Width = 80;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Item naam";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(32, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "BTW %";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(32, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 17);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Item prijs";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(32, 184);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 17);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Restock level";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(32, 245);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 17);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Stock level";
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -680,6 +788,8 @@ namespace ChapooUI
             this.panelVoorraadbeheer.ResumeLayout(false);
             this.panelModifyControls.ResumeLayout(false);
             this.panelModifyControls.PerformLayout();
+            this.groupBoxAlcohol.ResumeLayout(false);
+            this.groupBoxAlcohol.PerformLayout();
             this.panelDrankSetting.ResumeLayout(false);
             this.panelDrankSetting.PerformLayout();
             this.panelLunchSetting.ResumeLayout(false);
@@ -748,7 +858,15 @@ namespace ChapooUI
         private System.Windows.Forms.RadioButton radioButtonDrankenWijn;
         private System.Windows.Forms.RadioButton radioButtonDrankenBier;
         private System.Windows.Forms.RadioButton radioButtonDrankenFris;
-        private System.Windows.Forms.Button buttonToevoegenOpmerking;
+        private System.Windows.Forms.Button ButtonModifyConfirm;
+        private System.Windows.Forms.GroupBox groupBoxAlcohol;
+        private System.Windows.Forms.RadioButton radioButtonNoID;
+        private System.Windows.Forms.RadioButton radioButtonNeedID;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

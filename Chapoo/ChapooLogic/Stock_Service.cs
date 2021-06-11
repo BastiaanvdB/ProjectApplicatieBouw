@@ -21,9 +21,9 @@ namespace ChapooLogic
         {
             return Stock_DB.DB_Get_Specific_Stock(Menucode);
         }
-        public void DB_Add_Stock(MenuItem menuItem, int MenuGroupcode)
+        public void DB_Add_Stock(MenuItem menuItem)
         {
-            Stock_DB.DB_Add_Stock(menuItem, MenuGroupcode);
+            Stock_DB.DB_Add_Stock(menuItem);
         }
 
         public void DB_Remove_Stock(MenuItem menuItem)
@@ -31,9 +31,9 @@ namespace ChapooLogic
             Stock_DB.DB_Remove_Stock(menuItem);
         }
 
-        public void DB_Update_Stock(MenuItem menuItem, int MenuGroupcode)
+        public void DB_Update_Stock(MenuItem menuItem)
         {
-            Stock_DB.DB_Update_Stock(menuItem, MenuGroupcode);
+            Stock_DB.DB_Update_Stock(menuItem);
         }
     }
 }

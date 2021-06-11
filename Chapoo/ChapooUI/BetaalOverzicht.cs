@@ -53,9 +53,9 @@ namespace ChapooUI
             _Dashboard = dashboard;
             AfrekenenButton.Enabled = false;
             numericUpDownFooi.Enabled = false;
-            checkBoxContant.Enabled = false;
-            checkBoxCreditcard.Enabled = false;
-            checkBoxPinpas.Enabled = false;
+            RadioContant.Enabled = false;
+            radioCreditcard.Enabled = false;
+            radioPinpas.Enabled = false;
             buttonOpmerking.Enabled = false;
             TextBoxOpmerking.Clear();
             panelOpmerking.Hide();
@@ -104,9 +104,9 @@ namespace ChapooUI
                 panelOpmerking.Hide();
                 AfrekenenButton.Enabled = true;
                 numericUpDownFooi.Enabled = true;
-                checkBoxContant.Enabled = true;
-                checkBoxCreditcard.Enabled = true;
-                checkBoxPinpas.Enabled = true;
+                RadioContant.Enabled = true;
+                radioCreditcard.Enabled = true;
+                radioPinpas.Enabled = true;
                 buttonOpmerking.Enabled = true;
                 numericUpDownFooi.Value = 0;
             }
@@ -116,9 +116,9 @@ namespace ChapooUI
                 _currentOrder = null;
                 AfrekenenButton.Enabled = false;
                 numericUpDownFooi.Enabled = false;
-                checkBoxContant.Enabled = false;
-                checkBoxCreditcard.Enabled = false;
-                checkBoxPinpas.Enabled = false;
+                RadioContant.Enabled = false;
+                radioCreditcard.Enabled = false;
+                radioPinpas.Enabled = false;
                 buttonOpmerking.Enabled = false;
                 TextBoxOpmerking.Clear();
                 numericUpDownFooi.Value = 0;
@@ -155,14 +155,14 @@ namespace ChapooUI
         private void CreatePayment()
         {
 
-            if ((checkBoxContant.Checked is true) | (checkBoxCreditcard.Checked is true) | (checkBoxPinpas.Checked is true))
+            if ((RadioContant.Checked is true) | (radioCreditcard.Checked is true) | (radioPinpas.Checked is true))
             {
                 PayMethod paymethod;
-                if (checkBoxContant.Checked is true)
+                if (RadioContant.Checked is true)
                 {
                     paymethod = PayMethod.Contant;
                 }
-                else if (checkBoxPinpas.Checked is true)
+                else if (radioPinpas.Checked is true)
                 {
                     paymethod = PayMethod.Pinpas;
                 }
@@ -196,24 +196,6 @@ namespace ChapooUI
                 MessageBox.Show("Selecteer één betaalmethode", "Chapoo afrekenen",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void checkBoxPinpas_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBoxContant.Checked = false;
-            checkBoxCreditcard.Checked = false;
-        }
-
-        private void checkBoxCreditcard_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBoxContant.Checked = false;
-            checkBoxPinpas.Checked = false;
-        }
-
-        private void checkBoxContant_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBoxPinpas.Checked = false;
-            checkBoxCreditcard.Checked = false;
         }
 
         private void buttonOpmerking_Click(object sender, EventArgs e)
