@@ -66,21 +66,33 @@ namespace ChapooUI
         {
             UsernameLabel.Text = _CurrentEmployee.name;
             UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+
+            if(_CurrentEmployee.position == Position.Kok)
+            {
+                Pnl_keukenoverzicht.Show();
+                pnl_Baroverzicht.Hide();
+            }
+            else if(_CurrentEmployee.position == Position.Bardienst)
+            {
+                Pnl_keukenoverzicht.Hide();
+                pnl_Baroverzicht.Show();
+            }
+
         }
 
         //method for updating all the listview
         private void UpdateAllLists()
         {
             FillBarOpenOrderList();
-            FillListview();
             Fillbarfinishedlist();
+            FillListview();
             Fillfinishedlistview();
         }
         private void UpdateKicthenlists()
         {
             FillKeukenOpenOrderList();
-            FillKeukenOpenListview();
             FillKeukenOpgediendOrderList();
+            FillKeukenOpenListview();
             FillKeukenOpgediendListview();
         }
 
@@ -154,11 +166,11 @@ namespace ChapooUI
             _ListOfNewkitchenOrderDetails = new List<OrderDetail>();
             if ((RBtn_Diner.Checked == true) && (RBtn_Lunch.Checked == false))
             {
-                orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Diner", "Besteld");
+                _ListOfNewkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Diner", "Besteld");
             }
             else if ((RBtn_Diner.Checked == false) && (RBtn_Lunch.Checked == true))
             {
-                orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Lunch", "Besteld");
+                _ListOfNewkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Lunch", "Besteld");
             }
         }
         //filling the bar list view with open/bestelde orders
@@ -178,11 +190,11 @@ namespace ChapooUI
             _ListOfFinnishedkitchenOrderDetails = new List<OrderDetail>();
             if ((RBtn_Diner.Checked == true) && (RBtn_Lunch.Checked == false))
             {
-                orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Diner", "Opgediend");
+                _ListOfFinnishedkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Diner", "Opgediend");
             }
             else if ((RBtn_Diner.Checked == false) && (RBtn_Lunch.Checked == true))
             {
-                orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Lunch", "Opgediend");
+                _ListOfFinnishedkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Lunch", "Opgediend");
             }
         }
         //filling the bar list view with open/bestelde orders
@@ -221,38 +233,11 @@ namespace ChapooUI
         }
 
 
-        private void ShowPanels(string PanelName)
-        {
-            switch (PanelName)
-            {
-                case "BarOverzicht":
-
-                    pnl_Baroverzicht.Show();
-                    Pnl_keukenoverzicht.Hide();
-                    
-                    break;
-                case "Keukenoverzicht":
-
-                    Pnl_keukenoverzicht.Show();
-                    pnl_Baroverzicht.Hide();
-
-                    break;
-            }
-        }
         // Button area
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
             _Dashboard.Show();
             this.Close();
-        }
-        private void Btn_BarOverzicht_Click_1(object sender, EventArgs e)
-        {
-            ShowPanels("BarOverzicht");
-        }
-
-        private void Btn_KeukenOverzicht_Click_1(object sender, EventArgs e)
-        {
-            ShowPanels("Keukenoverzicht");
         }
 
         private void btn_Gereed_Click(object sender, EventArgs e)

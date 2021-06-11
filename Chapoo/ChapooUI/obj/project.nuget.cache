@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6sJ6YOLjRE2i830ca6Hbk7lFBJL3eAorBnz/0Xs5BeV/cn61/oHKT30Jeg/dJ6irwOjtEOb0jdpppqCJF84lYA==",
+  "dgSpecHash": "MJDj6ajp8F2e2aO+X7uA4mGfqfbiuXv+Hon569HT9afxedBmTV1ViawnAqyVbs0ZnXuBLH+kT3nBXr/J0zVC9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\basti\\Desktop\\Mijn chapoo\\Chapoo\\ChapooUI\\ChapooUI.csproj",
+  "projectFilePath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooUI\\ChapooUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\basti\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.0\\microsoft.aspnetcore.authorization.5.0.0.nupkg.sha512",
     "C:\\Users\\basti\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.0\\microsoft.aspnetcore.components.5.0.0.nupkg.sha512",
