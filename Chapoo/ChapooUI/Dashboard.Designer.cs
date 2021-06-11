@@ -34,7 +34,7 @@ namespace ChapooUI
             this.BtnAfmelden = new System.Windows.Forms.Button();
             this.BtnTafelOverzicht = new System.Windows.Forms.Button();
             this.BtnBestellen = new System.Windows.Forms.Button();
-            this.BtnVoorraad = new System.Windows.Forms.Button();
+            this.BtnManagement = new System.Windows.Forms.Button();
             this.BtnBarOverzicht = new System.Windows.Forms.Button();
             this.BtnAfrekenen = new System.Windows.Forms.Button();
             this.BtnDashboard = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@ namespace ChapooUI
             this.MenuBarPanel.Controls.Add(this.BtnAfmelden);
             this.MenuBarPanel.Controls.Add(this.BtnTafelOverzicht);
             this.MenuBarPanel.Controls.Add(this.BtnBestellen);
-            this.MenuBarPanel.Controls.Add(this.BtnVoorraad);
+            this.MenuBarPanel.Controls.Add(this.BtnManagement);
             this.MenuBarPanel.Controls.Add(this.BtnBarOverzicht);
             this.MenuBarPanel.Controls.Add(this.BtnAfrekenen);
             this.MenuBarPanel.Controls.Add(this.BtnDashboard);
@@ -118,23 +118,23 @@ namespace ChapooUI
             this.BtnBestellen.UseVisualStyleBackColor = true;
             this.BtnBestellen.Click += new System.EventHandler(this.BtnBestellen_Click);
             // 
-            // BtnVoorraad
+            // BtnManagement
             // 
-            this.BtnVoorraad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnVoorraad.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnVoorraad.FlatAppearance.BorderSize = 0;
-            this.BtnVoorraad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVoorraad.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnVoorraad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BtnVoorraad.Image = ((System.Drawing.Image)(resources.GetObject("BtnVoorraad.Image")));
-            this.BtnVoorraad.Location = new System.Drawing.Point(0, 294);
-            this.BtnVoorraad.Name = "BtnVoorraad";
-            this.BtnVoorraad.Size = new System.Drawing.Size(190, 50);
-            this.BtnVoorraad.TabIndex = 6;
-            this.BtnVoorraad.Text = "Voorraad overzicht";
-            this.BtnVoorraad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.BtnVoorraad.UseVisualStyleBackColor = true;
-            this.BtnVoorraad.Click += new System.EventHandler(this.BtnVoorraad_Click);
+            this.BtnManagement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnManagement.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnManagement.FlatAppearance.BorderSize = 0;
+            this.BtnManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnManagement.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BtnManagement.Image = ((System.Drawing.Image)(resources.GetObject("BtnManagement.Image")));
+            this.BtnManagement.Location = new System.Drawing.Point(0, 294);
+            this.BtnManagement.Name = "BtnManagement";
+            this.BtnManagement.Size = new System.Drawing.Size(190, 50);
+            this.BtnManagement.TabIndex = 6;
+            this.BtnManagement.Text = "Management";
+            this.BtnManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnManagement.UseVisualStyleBackColor = true;
+            this.BtnManagement.Click += new System.EventHandler(this.BtnManagement_Click);
             // 
             // BtnBarOverzicht
             // 
@@ -260,7 +260,7 @@ namespace ChapooUI
         private System.Windows.Forms.Button BtnDashboard;
         private System.Windows.Forms.Button BtnBarOverzicht;
         private System.Windows.Forms.Button BtnAfrekenen;
-        private System.Windows.Forms.Button BtnVoorraad;
+        private System.Windows.Forms.Button BtnManagement;
         private System.Windows.Forms.Button BtnBestellen;
         private System.Windows.Forms.Button BtnTafelOverzicht;
         private System.Windows.Forms.Button BtnAfmelden;

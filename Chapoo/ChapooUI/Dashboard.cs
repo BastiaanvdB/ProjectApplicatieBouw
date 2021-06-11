@@ -68,7 +68,7 @@ namespace ChapooUI
                     BtnAfrekenen.Hide();
                     BtnTafelOverzicht.Hide();
                     BtnBestellen.Hide();
-                    BtnVoorraad.Hide();
+                    BtnManagement.Hide();
                     break;
                 case Position.Bardienst:
                     // enabled buttons
@@ -80,17 +80,17 @@ namespace ChapooUI
                     BtnAfrekenen.Hide();
                     BtnTafelOverzicht.Hide();
                     BtnBestellen.Hide();
-                    BtnVoorraad.Hide();
+                    BtnManagement.Hide();
                     break;
                 case Position.Leidinggevende:
                     // enabled buttons
-                    BtnBarOverzicht.Show();
+                    BtnManagement.Show();
 
                     // disabled buttons
+                    BtnBarOverzicht.Hide();
                     BtnAfrekenen.Hide();
                     BtnTafelOverzicht.Hide();
                     BtnBestellen.Hide();
-                    BtnVoorraad.Hide();
                     break;
                 case Position.Bediening:
                     // enabled buttons
@@ -100,7 +100,7 @@ namespace ChapooUI
                     // disabled buttons
                     BtnBarOverzicht.Hide();
                     BtnBestellen.Hide();
-                    BtnVoorraad.Hide();
+                    BtnManagement.Hide();
                     break;
             }
         }
@@ -117,12 +117,14 @@ namespace ChapooUI
                     this.Hide();
                     break;
                 case "KeukenBarOverzicht":
-                    KeukenBarOverzicht barOverzicht = new KeukenBarOverzicht();
+                    KeukenBarOverzicht barOverzicht = new KeukenBarOverzicht(_CurrentEmployee, this);
                     barOverzicht.Show();
+                    this.Hide();
                     break;
-                case "VoorraadOverzicht":
-                    VoorraadOverzicht voorraadOverzicht = new VoorraadOverzicht();
-                    voorraadOverzicht.Show();
+                case "Management":
+                    Management management = new Management(_CurrentEmployee, this);
+                    management.Show();
+                    this.Hide();
                     break;
                 case "Besteloverzicht":
                     BestelOverzicht bestelOverzicht = new BestelOverzicht();
@@ -155,12 +157,6 @@ namespace ChapooUI
             MenuPanel("KeukenBarOverzicht");
         }
 
-        private void BtnVoorraad_Click(object sender, EventArgs e)
-        {
-            MenuPanel("VoorraadOverzicht");
-        }
-
-
         private void BtnBestellen_Click(object sender, EventArgs e)
         {
             MenuPanel("Besteloverzicht");
@@ -174,6 +170,11 @@ namespace ChapooUI
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
             MenuPanel("Exit");
+        }
+
+        private void BtnManagement_Click(object sender, EventArgs e)
+        {
+            MenuPanel("Management");
         }
 
 

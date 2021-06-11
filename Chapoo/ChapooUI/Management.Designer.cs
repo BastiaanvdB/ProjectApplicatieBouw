@@ -1,7 +1,7 @@
 ﻿
 namespace ChapooUI
 {
-    partial class VoorraadOverzicht
+    partial class Management
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace ChapooUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoorraadOverzicht));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Management));
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
             this.MenuBarAccountPanel = new System.Windows.Forms.Panel();

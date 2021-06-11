@@ -25,6 +25,9 @@ namespace ChapooUI
         //object for storing the curront order
         private OrderDetail _CurrentOrderDetail;
 
+        private Employee _CurrentEmployee;
+        private Dashboard _Dashboard;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -46,14 +49,23 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public KeukenBarOverzicht()
+        public KeukenBarOverzicht(Employee currentEmployee, Dashboard dashboard)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            _CurrentEmployee = currentEmployee;
+            _Dashboard = dashboard;
             _CurrentOrderDetail = new OrderDetail();
             btn_Gereed.Enabled = false;
             UpdateAllLists();
+            CurrentUserProfile();
+        }
+
+        private void CurrentUserProfile()
+        {
+            UsernameLabel.Text = _CurrentEmployee.name;
+            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
         }
 
         //method for updating all the listview
@@ -230,6 +242,7 @@ namespace ChapooUI
         // Button area
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
+            _Dashboard.Show();
             this.Close();
         }
         private void Btn_BarOverzicht_Click_1(object sender, EventArgs e)

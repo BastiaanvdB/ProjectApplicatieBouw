@@ -8,11 +8,15 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapooModel;
 
 namespace ChapooUI
 {
-    public partial class VoorraadOverzicht : Form
+    public partial class Management : Form
     {
+        private Employee _CurrentEmployee;
+        private Dashboard _Dashboard;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -34,19 +38,27 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public VoorraadOverzicht()
+        public Management(Employee currentEmployee, Dashboard dashboard)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            _CurrentEmployee = currentEmployee;
+            _Dashboard = dashboard;
+            CurrentUserProfile();
         }
 
-
+        private void CurrentUserProfile()
+        {
+            UsernameLabel.Text = _CurrentEmployee.name;
+            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+        }
 
         // Button area
-       
+
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
+            _Dashboard.Show();
             this.Close();
         }
 
