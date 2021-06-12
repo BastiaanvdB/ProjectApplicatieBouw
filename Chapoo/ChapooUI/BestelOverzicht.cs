@@ -23,6 +23,8 @@ namespace ChapooUI
         private OrderDetail _CurrentSelectedOrderDetail;
         private int _CurrentOrderID;
 
+        private string _CurrentTable;
+
         private List<MenuItem> MenuItemsList;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -53,6 +55,7 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             MenuItemsList = new List<MenuItem>();
             _CurrentOrderID = 0;
+            _CurrentTable = "";
             _CurrentOrderList = new List<OrderDetail>();
             Order_Service = new ChapooLogic.Order_Service();
             CurrentEmployee = employee;
@@ -64,6 +67,7 @@ namespace ChapooUI
             buttonBestelBewerk.Enabled = false;
             buttonBestelOrder.Enabled = false;
             panelWijzigOrder.Hide();
+            DisableOrder();
         }
 
         private void CurrentUserProfile()
@@ -153,6 +157,7 @@ namespace ChapooUI
 
         private void FillCurrentOrderListOverview()
         {
+            labelAantalItemsInput.Text = _CurrentOrderList.Count.ToString();
             listViewCurrentOrderList.Items.Clear();
             foreach (ChapooModel.OrderDetail orderDetail in _CurrentOrderList)
             {
@@ -246,6 +251,95 @@ namespace ChapooUI
         {
             _CurrentSelectedOrderDetail.quantity = (int)numericUpDownWijzigHoeveelheid.Value;
             _CurrentSelectedOrderDetail.comment = richTextBoxWijzigCommentaar.Text;
+        }
+
+        private void BestelOrder()
+        {
+            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
+
+            foreach (OrderDetail orderDetail in _CurrentOrderList)
+            {
+                orderDetail.order_ID = _CurrentOrderID;
+                orderDetail.employee = CurrentEmployee;
+                orderDetail_Service.DB_Add_OrderDetails(orderDetail);
+            }
+        }
+
+        private void Numpad(int number)
+        {
+            if (_CurrentTable.Length < 2)
+            {
+                _CurrentTable += number;
+                switch(_CurrentTable)
+                {
+                    case "0":
+                        _CurrentTable = "1";
+                        break;
+                    case "00":
+                        _CurrentTable = "1";
+                        break;
+                    case "01":
+                        _CurrentTable = "1";
+                        break;
+                    case "02":
+                        _CurrentTable = "2";
+                        break;
+                    case "03":
+                        _CurrentTable = "3";
+                        break;
+                    case "04":
+                        _CurrentTable = "4";
+                        break;
+                    case "05":
+                        _CurrentTable = "5";
+                        break;
+                    case "06":
+                        _CurrentTable = "6";
+                        break;
+                    case "07":
+                        _CurrentTable = "7";
+                        break;
+                    case "08":
+                        _CurrentTable = "8";
+                        break;
+                    case "09":
+                        _CurrentTable = "9";
+                        break;
+                }
+                if(int.Parse(_CurrentTable) > 10)
+                {
+                    _CurrentTable = "10";
+                }
+
+                labelTableInvoer.Text = _CurrentTable;
+            }
+        }
+
+
+        private void AllowOrder()
+        {
+            buttonLunchMenu.Enabled = true;
+            ButtonDinnerMenu.Enabled = true;
+            buttonDrankenMenu.Enabled = true;
+        }
+
+        private void DisableOrder()
+        {
+            buttonLunchMenu.Enabled = false;
+            ButtonDinnerMenu.Enabled = false;
+            buttonDrankenMenu.Enabled = false;
+        }
+
+        private void ResetOrder()
+        {
+            DisableOrder();
+            _CurrentOrderID = 0;
+            labelBonnummerinput.Text = "....";
+            labelTafelnummerInput.Text = "....";
+            _CurrentTable = "";
+            labelTableInvoer.Text = _CurrentTable;
+            _CurrentOrderList = new List<OrderDetail>();
+            FillCurrentOrderListOverview();
         }
 
         // Button area
@@ -401,12 +495,92 @@ namespace ChapooUI
 
         private void buttonBestelOrder_Click(object sender, EventArgs e)
         {
-
+            if (_CurrentOrderList.Count > 0)
+            {
+                BestelOrder();
+                ResetOrder();
+                DialogResult result = MessageBox.Show("Bestelling is succesvol geplaatst!", "Chapoo Besteloverzicht", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
+        private void buttonNumber1_Click(object sender, EventArgs e)
+        {
+            Numpad(1);
+        }
 
+        private void buttonNumber2_Click(object sender, EventArgs e)
+        {
+            Numpad(2);
+        }
 
+        private void buttonNumber3_Click(object sender, EventArgs e)
+        {
+            Numpad(3);
+        }
 
+        private void buttonNumber4_Click(object sender, EventArgs e)
+        {
+            Numpad(4);
+        }
+
+        private void buttonNumber5_Click(object sender, EventArgs e)
+        {
+            Numpad(5);
+        }
+
+        private void buttonNumber6_Click(object sender, EventArgs e)
+        {
+            Numpad(6);
+        }
+
+        private void buttonNumber7_Click(object sender, EventArgs e)
+        {
+            Numpad(7);
+        }
+
+        private void buttonNumber8_Click(object sender, EventArgs e)
+        {
+            Numpad(8);
+        }
+
+        private void buttonNumber9_Click(object sender, EventArgs e)
+        {
+            Numpad(9);
+        }
+
+        private void buttonNumber0_Click(object sender, EventArgs e)
+        {
+            Numpad(0);
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            if (_CurrentTable.Length > 0)
+            {
+                _CurrentTable = _CurrentTable.Remove(_CurrentTable.Length - 1);
+                labelTableInvoer.Text = _CurrentTable;
+            }
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            if (_CurrentTable.Length > 0)
+            {
+                _CurrentOrderID = Order_Service.DB_Add_Order(int.Parse(_CurrentTable));
+                labelBonnummerinput.Text = _CurrentOrderID.ToString();
+                labelTafelnummerInput.Text = _CurrentTable;
+                AllowOrder();
+            }
+            else if((_CurrentTable.Length <= 0) && (_CurrentOrderID <= 0))
+            {
+                DisableOrder();
+            }
+        }
+
+        private void buttonResetOrder_Click(object sender, EventArgs e)
+        {
+            ResetOrder();
+        }
 
         // ---------------------
     }

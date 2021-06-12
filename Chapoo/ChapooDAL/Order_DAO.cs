@@ -36,9 +36,9 @@ namespace ChapooDAL
 
         public int DB_Add_Order(int TableNumber)
         {
-            bool OpenOrder = DB_Check_If_Table_Has_Open_Order(TableNumber);
+            string OpenOrder = DB_Check_If_Table_Has_Open_Order(TableNumber);
 
-            if(OpenOrder == true)
+            if(OpenOrder == "True")
             {
                 return DB_Get_Order_ID_FROM_Table(TableNumber);
             }
@@ -70,7 +70,7 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        private bool DB_Check_If_Table_Has_Open_Order(int TableNumber)
+        private string DB_Check_If_Table_Has_Open_Order(int TableNumber)
         {
             string query = "SELECT CASE WHEN EXISTS (SELECT Order_ID, Table_ID, Order_PayStatus FROM Orders WHERE Order_PayStatus = 0 AND Table_ID = @table) THEN 'True' ELSE 'False' END AS OpenOrder";
             SqlParameter[] sqlParameters =
@@ -80,13 +80,13 @@ namespace ChapooDAL
             return ReadOpenOrder(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private bool ReadOpenOrder(DataTable dataTable)
+        private string ReadOpenOrder(DataTable dataTable)
         {
-            bool OpenOrder = false;
+            string OpenOrder = "False";
             foreach (DataRow dr in dataTable.Rows)
             {
 
-                OpenOrder = (bool)dr["OpenOrder"];
+                OpenOrder = (string)dr["OpenOrder"];
             }  
             return OpenOrder;
         }
