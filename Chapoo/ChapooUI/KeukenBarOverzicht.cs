@@ -260,6 +260,11 @@ namespace ChapooUI
             UpdateKicthenlists();
         }
 
+        private void Btn_Keuken_gereed_Click(object sender, EventArgs e)
+        {
+            UpdateCurrentOrder();
+        }
+
 
 
 

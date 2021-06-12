@@ -98,14 +98,12 @@ C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooM
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooLogic.pdb
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooModel.pdb
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ChapooDAL.pdb
-C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.BestelOverzicht.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.BetaalOverzicht.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.BillDetails.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.Dashboard.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.KeukenBarOverzicht.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.Properties.Resources.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.TafelOverzicht.resources
-C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.VoorraadOverzicht.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.csproj.GenerateResource.cache
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.AssemblyInfoInputs.cache
@@ -301,3 +299,5 @@ C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooU
 C:\Users\basti\Desktop\Mijn chapoo\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.Management.resources
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.Management.resources
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.x.resources
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.x.resources
+C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.Management.resources

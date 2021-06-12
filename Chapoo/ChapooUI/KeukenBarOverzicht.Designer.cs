@@ -37,6 +37,21 @@ namespace ChapooUI
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_Baroverzicht = new System.Windows.Forms.Panel();
+            this.Btn_update_bar = new System.Windows.Forms.Button();
+            this.lbl_Baroverzicht = new System.Windows.Forms.Label();
+            this.btn_Gereed = new System.Windows.Forms.Button();
+            this.Listview_Order_finished = new System.Windows.Forms.ListView();
+            this.TafelnrHeader = new System.Windows.Forms.ColumnHeader();
+            this.Bestellingheader = new System.Windows.Forms.ColumnHeader();
+            this.Headerhoeveelheid = new System.Windows.Forms.ColumnHeader();
+            this.Statusheader = new System.Windows.Forms.ColumnHeader();
+            this.HeaderTijdOpgediend = new System.Windows.Forms.ColumnHeader();
+            this.Listview_Bar_OpenOrder = new System.Windows.Forms.ListView();
+            this.TafelnummerHeader = new System.Windows.Forms.ColumnHeader();
+            this.Drankheader = new System.Windows.Forms.ColumnHeader();
+            this.hoeveelheidheader = new System.Windows.Forms.ColumnHeader();
+            this.HeaderStatus = new System.Windows.Forms.ColumnHeader();
+            this.HeaderTijdBesteld = new System.Windows.Forms.ColumnHeader();
             this.Pnl_keukenoverzicht = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.RBtn_Diner = new System.Windows.Forms.RadioButton();
@@ -56,21 +71,6 @@ namespace ChapooUI
             this.headerhoeveelheidKeuken = new System.Windows.Forms.ColumnHeader();
             this.headerstatuskeuken = new System.Windows.Forms.ColumnHeader();
             this.Headertijdvanbestellingkeuken = new System.Windows.Forms.ColumnHeader();
-            this.Btn_update_bar = new System.Windows.Forms.Button();
-            this.lbl_Baroverzicht = new System.Windows.Forms.Label();
-            this.btn_Gereed = new System.Windows.Forms.Button();
-            this.Listview_Order_finished = new System.Windows.Forms.ListView();
-            this.TafelnrHeader = new System.Windows.Forms.ColumnHeader();
-            this.Bestellingheader = new System.Windows.Forms.ColumnHeader();
-            this.Headerhoeveelheid = new System.Windows.Forms.ColumnHeader();
-            this.Statusheader = new System.Windows.Forms.ColumnHeader();
-            this.HeaderTijdOpgediend = new System.Windows.Forms.ColumnHeader();
-            this.Listview_Bar_OpenOrder = new System.Windows.Forms.ListView();
-            this.TafelnummerHeader = new System.Windows.Forms.ColumnHeader();
-            this.Drankheader = new System.Windows.Forms.ColumnHeader();
-            this.hoeveelheidheader = new System.Windows.Forms.ColumnHeader();
-            this.HeaderStatus = new System.Windows.Forms.ColumnHeader();
-            this.HeaderTijdBesteld = new System.Windows.Forms.ColumnHeader();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -161,175 +161,6 @@ namespace ChapooUI
             this.pnl_Baroverzicht.Name = "pnl_Baroverzicht";
             this.pnl_Baroverzicht.Size = new System.Drawing.Size(1434, 731);
             this.pnl_Baroverzicht.TabIndex = 1;
-            // 
-            // Pnl_keukenoverzicht
-            // 
-            this.Pnl_keukenoverzicht.Controls.Add(this.label1);
-            this.Pnl_keukenoverzicht.Controls.Add(this.RBtn_Diner);
-            this.Pnl_keukenoverzicht.Controls.Add(this.RBtn_Lunch);
-            this.Pnl_keukenoverzicht.Controls.Add(this.Btn_Update_keuken);
-            this.Pnl_keukenoverzicht.Controls.Add(this.lblKeukenoverzicht);
-            this.Pnl_keukenoverzicht.Controls.Add(this.Btn_Keuken_gereed);
-            this.Pnl_keukenoverzicht.Controls.Add(this.listView_keuken_Opgediend);
-            this.Pnl_keukenoverzicht.Controls.Add(this.listView_Keuken_besteld);
-            this.Pnl_keukenoverzicht.Location = new System.Drawing.Point(222, 44);
-            this.Pnl_keukenoverzicht.Name = "Pnl_keukenoverzicht";
-            this.Pnl_keukenoverzicht.Size = new System.Drawing.Size(1431, 728);
-            this.Pnl_keukenoverzicht.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label1.Location = new System.Drawing.Point(645, 234);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 28);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Selecteer menu";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // RBtn_Diner
-            // 
-            this.RBtn_Diner.AutoSize = true;
-            this.RBtn_Diner.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.RBtn_Diner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.RBtn_Diner.Location = new System.Drawing.Point(645, 324);
-            this.RBtn_Diner.Name = "RBtn_Diner";
-            this.RBtn_Diner.Size = new System.Drawing.Size(82, 32);
-            this.RBtn_Diner.TabIndex = 6;
-            this.RBtn_Diner.TabStop = true;
-            this.RBtn_Diner.Text = "Diner";
-            this.RBtn_Diner.UseVisualStyleBackColor = true;
-            // 
-            // RBtn_Lunch
-            // 
-            this.RBtn_Lunch.AutoSize = true;
-            this.RBtn_Lunch.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.RBtn_Lunch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.RBtn_Lunch.Location = new System.Drawing.Point(645, 279);
-            this.RBtn_Lunch.Name = "RBtn_Lunch";
-            this.RBtn_Lunch.Size = new System.Drawing.Size(86, 32);
-            this.RBtn_Lunch.TabIndex = 5;
-            this.RBtn_Lunch.TabStop = true;
-            this.RBtn_Lunch.Text = "Lunch";
-            this.RBtn_Lunch.UseVisualStyleBackColor = true;
-            // 
-            // Btn_Update_keuken
-            // 
-            this.Btn_Update_keuken.Location = new System.Drawing.Point(645, 67);
-            this.Btn_Update_keuken.Name = "Btn_Update_keuken";
-            this.Btn_Update_keuken.Size = new System.Drawing.Size(168, 55);
-            this.Btn_Update_keuken.TabIndex = 4;
-            this.Btn_Update_keuken.Text = "Update";
-            this.Btn_Update_keuken.UseVisualStyleBackColor = true;
-            this.Btn_Update_keuken.Click += new System.EventHandler(this.Btn_Update_keuken_Click);
-            // 
-            // lblKeukenoverzicht
-            // 
-            this.lblKeukenoverzicht.AutoSize = true;
-            this.lblKeukenoverzicht.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblKeukenoverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.lblKeukenoverzicht.Location = new System.Drawing.Point(40, 28);
-            this.lblKeukenoverzicht.Name = "lblKeukenoverzicht";
-            this.lblKeukenoverzicht.Size = new System.Drawing.Size(170, 28);
-            this.lblKeukenoverzicht.TabIndex = 3;
-            this.lblKeukenoverzicht.Text = "Keukenoverzicht";
-            // 
-            // Btn_Keuken_gereed
-            // 
-            this.Btn_Keuken_gereed.Location = new System.Drawing.Point(645, 472);
-            this.Btn_Keuken_gereed.Name = "Btn_Keuken_gereed";
-            this.Btn_Keuken_gereed.Size = new System.Drawing.Size(168, 55);
-            this.Btn_Keuken_gereed.TabIndex = 2;
-            this.Btn_Keuken_gereed.Text = "Gereed";
-            this.Btn_Keuken_gereed.UseVisualStyleBackColor = true;
-            // 
-            // listView_keuken_Opgediend
-            // 
-            this.listView_keuken_Opgediend.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Headerfinshed,
-            this.HeaderFinItem,
-            this.headerfinhoeveelheid,
-            this.headerfinstatus,
-            this.fintijdvanopdieningheader});
-            this.listView_keuken_Opgediend.GridLines = true;
-            this.listView_keuken_Opgediend.HideSelection = false;
-            this.listView_keuken_Opgediend.Location = new System.Drawing.Point(846, 67);
-            this.listView_keuken_Opgediend.Name = "listView_keuken_Opgediend";
-            this.listView_keuken_Opgediend.Size = new System.Drawing.Size(568, 643);
-            this.listView_keuken_Opgediend.TabIndex = 1;
-            this.listView_keuken_Opgediend.UseCompatibleStateImageBehavior = false;
-            this.listView_keuken_Opgediend.View = System.Windows.Forms.View.Details;
-            // 
-            // Headerfinshed
-            // 
-            this.Headerfinshed.Text = "Tafelnummer";
-            this.Headerfinshed.Width = 100;
-            // 
-            // HeaderFinItem
-            // 
-            this.HeaderFinItem.Text = "Bestelde gerecht";
-            this.HeaderFinItem.Width = 150;
-            // 
-            // headerfinhoeveelheid
-            // 
-            this.headerfinhoeveelheid.Text = "Hoeveelheid";
-            this.headerfinhoeveelheid.Width = 100;
-            // 
-            // headerfinstatus
-            // 
-            this.headerfinstatus.Text = "Status";
-            this.headerfinstatus.Width = 75;
-            // 
-            // fintijdvanopdieningheader
-            // 
-            this.fintijdvanopdieningheader.Text = "Tijd van opdiening";
-            this.fintijdvanopdieningheader.Width = 150;
-            // 
-            // listView_Keuken_besteld
-            // 
-            this.listView_Keuken_besteld.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.TafelHeader,
-            this.ItemHeader,
-            this.headerhoeveelheidKeuken,
-            this.headerstatuskeuken,
-            this.Headertijdvanbestellingkeuken});
-            this.listView_Keuken_besteld.FullRowSelect = true;
-            this.listView_Keuken_besteld.GridLines = true;
-            this.listView_Keuken_besteld.HideSelection = false;
-            this.listView_Keuken_besteld.Location = new System.Drawing.Point(40, 67);
-            this.listView_Keuken_besteld.Name = "listView_Keuken_besteld";
-            this.listView_Keuken_besteld.Size = new System.Drawing.Size(568, 643);
-            this.listView_Keuken_besteld.TabIndex = 0;
-            this.listView_Keuken_besteld.UseCompatibleStateImageBehavior = false;
-            this.listView_Keuken_besteld.View = System.Windows.Forms.View.Details;
-            this.listView_Keuken_besteld.SelectedIndexChanged += new System.EventHandler(this.listView_Keuken_besteld_SelectedIndexChanged);
-            // 
-            // TafelHeader
-            // 
-            this.TafelHeader.Text = "Tafelnummer";
-            this.TafelHeader.Width = 100;
-            // 
-            // ItemHeader
-            // 
-            this.ItemHeader.Text = "Bestelde gerecht";
-            this.ItemHeader.Width = 150;
-            // 
-            // headerhoeveelheidKeuken
-            // 
-            this.headerhoeveelheidKeuken.Text = "Hoeveelheid";
-            this.headerhoeveelheidKeuken.Width = 100;
-            // 
-            // headerstatuskeuken
-            // 
-            this.headerstatuskeuken.Text = "Status";
-            this.headerstatuskeuken.Width = 70;
-            // 
-            // Headertijdvanbestellingkeuken
-            // 
-            this.Headertijdvanbestellingkeuken.Text = "Tijd van bestelling";
-            this.Headertijdvanbestellingkeuken.Width = 150;
             // 
             // Btn_update_bar
             // 
@@ -447,6 +278,176 @@ namespace ChapooUI
             // 
             this.HeaderTijdBesteld.Text = "Tijd van bestelling";
             this.HeaderTijdBesteld.Width = 150;
+            // 
+            // Pnl_keukenoverzicht
+            // 
+            this.Pnl_keukenoverzicht.Controls.Add(this.label1);
+            this.Pnl_keukenoverzicht.Controls.Add(this.RBtn_Diner);
+            this.Pnl_keukenoverzicht.Controls.Add(this.RBtn_Lunch);
+            this.Pnl_keukenoverzicht.Controls.Add(this.Btn_Update_keuken);
+            this.Pnl_keukenoverzicht.Controls.Add(this.lblKeukenoverzicht);
+            this.Pnl_keukenoverzicht.Controls.Add(this.Btn_Keuken_gereed);
+            this.Pnl_keukenoverzicht.Controls.Add(this.listView_keuken_Opgediend);
+            this.Pnl_keukenoverzicht.Controls.Add(this.listView_Keuken_besteld);
+            this.Pnl_keukenoverzicht.Location = new System.Drawing.Point(222, 44);
+            this.Pnl_keukenoverzicht.Name = "Pnl_keukenoverzicht";
+            this.Pnl_keukenoverzicht.Size = new System.Drawing.Size(1431, 728);
+            this.Pnl_keukenoverzicht.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.label1.Location = new System.Drawing.Point(645, 234);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 28);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Selecteer menu";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // RBtn_Diner
+            // 
+            this.RBtn_Diner.AutoSize = true;
+            this.RBtn_Diner.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RBtn_Diner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.RBtn_Diner.Location = new System.Drawing.Point(645, 324);
+            this.RBtn_Diner.Name = "RBtn_Diner";
+            this.RBtn_Diner.Size = new System.Drawing.Size(82, 32);
+            this.RBtn_Diner.TabIndex = 6;
+            this.RBtn_Diner.TabStop = true;
+            this.RBtn_Diner.Text = "Diner";
+            this.RBtn_Diner.UseVisualStyleBackColor = true;
+            // 
+            // RBtn_Lunch
+            // 
+            this.RBtn_Lunch.AutoSize = true;
+            this.RBtn_Lunch.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RBtn_Lunch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.RBtn_Lunch.Location = new System.Drawing.Point(645, 279);
+            this.RBtn_Lunch.Name = "RBtn_Lunch";
+            this.RBtn_Lunch.Size = new System.Drawing.Size(86, 32);
+            this.RBtn_Lunch.TabIndex = 5;
+            this.RBtn_Lunch.TabStop = true;
+            this.RBtn_Lunch.Text = "Lunch";
+            this.RBtn_Lunch.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Update_keuken
+            // 
+            this.Btn_Update_keuken.Location = new System.Drawing.Point(645, 67);
+            this.Btn_Update_keuken.Name = "Btn_Update_keuken";
+            this.Btn_Update_keuken.Size = new System.Drawing.Size(168, 55);
+            this.Btn_Update_keuken.TabIndex = 4;
+            this.Btn_Update_keuken.Text = "Update";
+            this.Btn_Update_keuken.UseVisualStyleBackColor = true;
+            this.Btn_Update_keuken.Click += new System.EventHandler(this.Btn_Update_keuken_Click);
+            // 
+            // lblKeukenoverzicht
+            // 
+            this.lblKeukenoverzicht.AutoSize = true;
+            this.lblKeukenoverzicht.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblKeukenoverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.lblKeukenoverzicht.Location = new System.Drawing.Point(40, 28);
+            this.lblKeukenoverzicht.Name = "lblKeukenoverzicht";
+            this.lblKeukenoverzicht.Size = new System.Drawing.Size(170, 28);
+            this.lblKeukenoverzicht.TabIndex = 3;
+            this.lblKeukenoverzicht.Text = "Keukenoverzicht";
+            // 
+            // Btn_Keuken_gereed
+            // 
+            this.Btn_Keuken_gereed.Location = new System.Drawing.Point(645, 472);
+            this.Btn_Keuken_gereed.Name = "Btn_Keuken_gereed";
+            this.Btn_Keuken_gereed.Size = new System.Drawing.Size(168, 55);
+            this.Btn_Keuken_gereed.TabIndex = 2;
+            this.Btn_Keuken_gereed.Text = "Gereed";
+            this.Btn_Keuken_gereed.UseVisualStyleBackColor = true;
+            this.Btn_Keuken_gereed.Click += new System.EventHandler(this.Btn_Keuken_gereed_Click);
+            // 
+            // listView_keuken_Opgediend
+            // 
+            this.listView_keuken_Opgediend.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Headerfinshed,
+            this.HeaderFinItem,
+            this.headerfinhoeveelheid,
+            this.headerfinstatus,
+            this.fintijdvanopdieningheader});
+            this.listView_keuken_Opgediend.GridLines = true;
+            this.listView_keuken_Opgediend.HideSelection = false;
+            this.listView_keuken_Opgediend.Location = new System.Drawing.Point(846, 67);
+            this.listView_keuken_Opgediend.Name = "listView_keuken_Opgediend";
+            this.listView_keuken_Opgediend.Size = new System.Drawing.Size(568, 643);
+            this.listView_keuken_Opgediend.TabIndex = 1;
+            this.listView_keuken_Opgediend.UseCompatibleStateImageBehavior = false;
+            this.listView_keuken_Opgediend.View = System.Windows.Forms.View.Details;
+            // 
+            // Headerfinshed
+            // 
+            this.Headerfinshed.Text = "Tafelnummer";
+            this.Headerfinshed.Width = 100;
+            // 
+            // HeaderFinItem
+            // 
+            this.HeaderFinItem.Text = "Bestelde gerecht";
+            this.HeaderFinItem.Width = 150;
+            // 
+            // headerfinhoeveelheid
+            // 
+            this.headerfinhoeveelheid.Text = "Hoeveelheid";
+            this.headerfinhoeveelheid.Width = 100;
+            // 
+            // headerfinstatus
+            // 
+            this.headerfinstatus.Text = "Status";
+            this.headerfinstatus.Width = 75;
+            // 
+            // fintijdvanopdieningheader
+            // 
+            this.fintijdvanopdieningheader.Text = "Tijd van opdiening";
+            this.fintijdvanopdieningheader.Width = 150;
+            // 
+            // listView_Keuken_besteld
+            // 
+            this.listView_Keuken_besteld.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.TafelHeader,
+            this.ItemHeader,
+            this.headerhoeveelheidKeuken,
+            this.headerstatuskeuken,
+            this.Headertijdvanbestellingkeuken});
+            this.listView_Keuken_besteld.FullRowSelect = true;
+            this.listView_Keuken_besteld.GridLines = true;
+            this.listView_Keuken_besteld.HideSelection = false;
+            this.listView_Keuken_besteld.Location = new System.Drawing.Point(40, 67);
+            this.listView_Keuken_besteld.Name = "listView_Keuken_besteld";
+            this.listView_Keuken_besteld.Size = new System.Drawing.Size(568, 643);
+            this.listView_Keuken_besteld.TabIndex = 0;
+            this.listView_Keuken_besteld.UseCompatibleStateImageBehavior = false;
+            this.listView_Keuken_besteld.View = System.Windows.Forms.View.Details;
+            this.listView_Keuken_besteld.SelectedIndexChanged += new System.EventHandler(this.listView_Keuken_besteld_SelectedIndexChanged);
+            // 
+            // TafelHeader
+            // 
+            this.TafelHeader.Text = "Tafelnummer";
+            this.TafelHeader.Width = 100;
+            // 
+            // ItemHeader
+            // 
+            this.ItemHeader.Text = "Bestelde gerecht";
+            this.ItemHeader.Width = 150;
+            // 
+            // headerhoeveelheidKeuken
+            // 
+            this.headerhoeveelheidKeuken.Text = "Hoeveelheid";
+            this.headerhoeveelheidKeuken.Width = 100;
+            // 
+            // headerstatuskeuken
+            // 
+            this.headerstatuskeuken.Text = "Status";
+            this.headerstatuskeuken.Width = 70;
+            // 
+            // Headertijdvanbestellingkeuken
+            // 
+            this.Headertijdvanbestellingkeuken.Text = "Tijd van bestelling";
+            this.Headertijdvanbestellingkeuken.Width = 150;
             // 
             // KeukenBarOverzicht
             // 
