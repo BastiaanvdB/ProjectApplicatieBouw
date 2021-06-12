@@ -88,6 +88,35 @@ namespace ChapooUI
             this.Restock = new System.Windows.Forms.ColumnHeader();
             this.CurrentStock = new System.Windows.Forms.ColumnHeader();
             this.AlcholCheck = new System.Windows.Forms.ColumnHeader();
+            this.panelPersoneelbeheer = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxFuncties = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxPincodeHerhaal = new System.Windows.Forms.TextBox();
+            this.textBoxPincode = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBoxpersoonsgegevens = new System.Windows.Forms.GroupBox();
+            this.textBoxNaamInput = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxAdresInput = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxTelefoonInput = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonUserButton = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.radioButtonVerwijderUser = new System.Windows.Forms.RadioButton();
+            this.radioButtonAddUser = new System.Windows.Forms.RadioButton();
+            this.radioButtonWijzigUser = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.listViewWerknemers = new System.Windows.Forms.ListView();
+            this.werknemersnummer = new System.Windows.Forms.ColumnHeader();
+            this.werknemerNaam = new System.Windows.Forms.ColumnHeader();
+            this.werknemersAdres = new System.Windows.Forms.ColumnHeader();
+            this.werknemersTelefoon = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,6 +132,12 @@ namespace ChapooUI
             this.panelDinerSetting.SuspendLayout();
             this.panelModifySelection.SuspendLayout();
             this.panelItemSorteerMenu.SuspendLayout();
+            this.panelPersoneelbeheer.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBoxpersoonsgegevens.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBarPanel
@@ -239,9 +274,9 @@ namespace ChapooUI
             this.panelStockManagement.Controls.Add(this.panelVoorraadbeheer);
             this.panelStockManagement.Controls.Add(this.labelVoorraadbeheer);
             this.panelStockManagement.Controls.Add(this.listViewStockManagement);
-            this.panelStockManagement.Location = new System.Drawing.Point(196, 3);
+            this.panelStockManagement.Location = new System.Drawing.Point(211, 12);
             this.panelStockManagement.Name = "panelStockManagement";
-            this.panelStockManagement.Size = new System.Drawing.Size(1203, 696);
+            this.panelStockManagement.Size = new System.Drawing.Size(1188, 687);
             this.panelStockManagement.TabIndex = 1;
             // 
             // panelVoorraadbeheer
@@ -760,12 +795,305 @@ namespace ChapooUI
             this.AlcholCheck.Text = "AlcholCheck";
             this.AlcholCheck.Width = 80;
             // 
+            // panelPersoneelbeheer
+            // 
+            this.panelPersoneelbeheer.Controls.Add(this.panel2);
+            this.panelPersoneelbeheer.Controls.Add(this.label11);
+            this.panelPersoneelbeheer.Controls.Add(this.listViewWerknemers);
+            this.panelPersoneelbeheer.Location = new System.Drawing.Point(196, 15);
+            this.panelPersoneelbeheer.Name = "panelPersoneelbeheer";
+            this.panelPersoneelbeheer.Size = new System.Drawing.Size(1191, 672);
+            this.panelPersoneelbeheer.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Location = new System.Drawing.Point(795, 31);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(337, 637);
+            this.panel2.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(59)))));
+            this.panel3.Controls.Add(this.comboBoxFuncties);
+            this.panel3.Controls.Add(this.groupBox1);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.groupBoxpersoonsgegevens);
+            this.panel3.Controls.Add(this.buttonUserButton);
+            this.panel3.Location = new System.Drawing.Point(12, 89);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(301, 523);
+            this.panel3.TabIndex = 9;
+            // 
+            // comboBoxFuncties
+            // 
+            this.comboBoxFuncties.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFuncties.FormattingEnabled = true;
+            this.comboBoxFuncties.Location = new System.Drawing.Point(35, 241);
+            this.comboBoxFuncties.Name = "comboBoxFuncties";
+            this.comboBoxFuncties.Size = new System.Drawing.Size(156, 23);
+            this.comboBoxFuncties.TabIndex = 22;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.textBoxPincodeHerhaal);
+            this.groupBox1.Controls.Add(this.textBoxPincode);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(14, 283);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(252, 154);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Account Pincode";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(21, 83);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(122, 17);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Herhaaling pincode";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(21, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 17);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Pincode";
+            // 
+            // textBoxPincodeHerhaal
+            // 
+            this.textBoxPincodeHerhaal.Location = new System.Drawing.Point(19, 103);
+            this.textBoxPincodeHerhaal.Name = "textBoxPincodeHerhaal";
+            this.textBoxPincodeHerhaal.Size = new System.Drawing.Size(219, 23);
+            this.textBoxPincodeHerhaal.TabIndex = 23;
+            // 
+            // textBoxPincode
+            // 
+            this.textBoxPincode.Location = new System.Drawing.Point(21, 48);
+            this.textBoxPincode.Name = "textBoxPincode";
+            this.textBoxPincode.Size = new System.Drawing.Size(219, 23);
+            this.textBoxPincode.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(35, 221);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 17);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Functie";
+            // 
+            // groupBoxpersoonsgegevens
+            // 
+            this.groupBoxpersoonsgegevens.Controls.Add(this.textBoxNaamInput);
+            this.groupBoxpersoonsgegevens.Controls.Add(this.label10);
+            this.groupBoxpersoonsgegevens.Controls.Add(this.textBoxAdresInput);
+            this.groupBoxpersoonsgegevens.Controls.Add(this.label7);
+            this.groupBoxpersoonsgegevens.Controls.Add(this.textBoxTelefoonInput);
+            this.groupBoxpersoonsgegevens.Controls.Add(this.label6);
+            this.groupBoxpersoonsgegevens.ForeColor = System.Drawing.Color.White;
+            this.groupBoxpersoonsgegevens.Location = new System.Drawing.Point(15, 11);
+            this.groupBoxpersoonsgegevens.Name = "groupBoxpersoonsgegevens";
+            this.groupBoxpersoonsgegevens.Size = new System.Drawing.Size(257, 192);
+            this.groupBoxpersoonsgegevens.TabIndex = 24;
+            this.groupBoxpersoonsgegevens.TabStop = false;
+            this.groupBoxpersoonsgegevens.Text = "Persoonsgegevens";
+            // 
+            // textBoxNaamInput
+            // 
+            this.textBoxNaamInput.Location = new System.Drawing.Point(18, 39);
+            this.textBoxNaamInput.Name = "textBoxNaamInput";
+            this.textBoxNaamInput.Size = new System.Drawing.Size(219, 23);
+            this.textBoxNaamInput.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(18, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 17);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Naam";
+            // 
+            // textBoxAdresInput
+            // 
+            this.textBoxAdresInput.Location = new System.Drawing.Point(18, 89);
+            this.textBoxAdresInput.Name = "textBoxAdresInput";
+            this.textBoxAdresInput.Size = new System.Drawing.Size(219, 23);
+            this.textBoxAdresInput.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(20, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 17);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Telefoonnummer";
+            // 
+            // textBoxTelefoonInput
+            // 
+            this.textBoxTelefoonInput.Location = new System.Drawing.Point(18, 151);
+            this.textBoxTelefoonInput.Name = "textBoxTelefoonInput";
+            this.textBoxTelefoonInput.Size = new System.Drawing.Size(219, 23);
+            this.textBoxTelefoonInput.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(20, 68);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 17);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Woonadres ";
+            // 
+            // buttonUserButton
+            // 
+            this.buttonUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.buttonUserButton.FlatAppearance.BorderSize = 0;
+            this.buttonUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUserButton.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonUserButton.ForeColor = System.Drawing.Color.White;
+            this.buttonUserButton.Location = new System.Drawing.Point(62, 459);
+            this.buttonUserButton.Name = "buttonUserButton";
+            this.buttonUserButton.Size = new System.Drawing.Size(153, 48);
+            this.buttonUserButton.TabIndex = 14;
+            this.buttonUserButton.UseVisualStyleBackColor = false;
+            this.buttonUserButton.Click += new System.EventHandler(this.buttonUserButton_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(59)))));
+            this.panel7.Controls.Add(this.radioButtonVerwijderUser);
+            this.panel7.Controls.Add(this.radioButtonAddUser);
+            this.panel7.Controls.Add(this.radioButtonWijzigUser);
+            this.panel7.Location = new System.Drawing.Point(12, 28);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(301, 52);
+            this.panel7.TabIndex = 8;
+            // 
+            // radioButtonVerwijderUser
+            // 
+            this.radioButtonVerwijderUser.AutoSize = true;
+            this.radioButtonVerwijderUser.ForeColor = System.Drawing.Color.White;
+            this.radioButtonVerwijderUser.Location = new System.Drawing.Point(186, 21);
+            this.radioButtonVerwijderUser.Name = "radioButtonVerwijderUser";
+            this.radioButtonVerwijderUser.Size = new System.Drawing.Size(86, 19);
+            this.radioButtonVerwijderUser.TabIndex = 5;
+            this.radioButtonVerwijderUser.Text = "Verwijderen";
+            this.radioButtonVerwijderUser.UseVisualStyleBackColor = true;
+            this.radioButtonVerwijderUser.CheckedChanged += new System.EventHandler(this.radioButtonVerwijderUser_CheckedChanged);
+            // 
+            // radioButtonAddUser
+            // 
+            this.radioButtonAddUser.AutoSize = true;
+            this.radioButtonAddUser.ForeColor = System.Drawing.Color.White;
+            this.radioButtonAddUser.Location = new System.Drawing.Point(94, 18);
+            this.radioButtonAddUser.Name = "radioButtonAddUser";
+            this.radioButtonAddUser.Size = new System.Drawing.Size(82, 19);
+            this.radioButtonAddUser.TabIndex = 4;
+            this.radioButtonAddUser.Text = "Toevoegen";
+            this.radioButtonAddUser.UseVisualStyleBackColor = true;
+            this.radioButtonAddUser.CheckedChanged += new System.EventHandler(this.radioButtonAddUser_CheckedChanged);
+            // 
+            // radioButtonWijzigUser
+            // 
+            this.radioButtonWijzigUser.AutoSize = true;
+            this.radioButtonWijzigUser.Checked = true;
+            this.radioButtonWijzigUser.ForeColor = System.Drawing.Color.White;
+            this.radioButtonWijzigUser.Location = new System.Drawing.Point(14, 18);
+            this.radioButtonWijzigUser.Name = "radioButtonWijzigUser";
+            this.radioButtonWijzigUser.Size = new System.Drawing.Size(57, 19);
+            this.radioButtonWijzigUser.TabIndex = 3;
+            this.radioButtonWijzigUser.TabStop = true;
+            this.radioButtonWijzigUser.Text = "Wijzig";
+            this.radioButtonWijzigUser.UseVisualStyleBackColor = true;
+            this.radioButtonWijzigUser.CheckedChanged += new System.EventHandler(this.radioButtonWijzigUser_CheckedChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label11.Location = new System.Drawing.Point(27, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(290, 38);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Personeel beheer";
+            // 
+            // listViewWerknemers
+            // 
+            this.listViewWerknemers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.werknemersnummer,
+            this.werknemerNaam,
+            this.werknemersAdres,
+            this.werknemersTelefoon,
+            this.columnHeader5});
+            this.listViewWerknemers.FullRowSelect = true;
+            this.listViewWerknemers.GridLines = true;
+            this.listViewWerknemers.HideSelection = false;
+            this.listViewWerknemers.Location = new System.Drawing.Point(27, 68);
+            this.listViewWerknemers.MultiSelect = false;
+            this.listViewWerknemers.Name = "listViewWerknemers";
+            this.listViewWerknemers.Size = new System.Drawing.Size(740, 505);
+            this.listViewWerknemers.TabIndex = 0;
+            this.listViewWerknemers.UseCompatibleStateImageBehavior = false;
+            this.listViewWerknemers.View = System.Windows.Forms.View.Details;
+            this.listViewWerknemers.SelectedIndexChanged += new System.EventHandler(this.listViewWerknemers_SelectedIndexChanged);
+            // 
+            // werknemersnummer
+            // 
+            this.werknemersnummer.Text = "werknemersnummer";
+            this.werknemersnummer.Width = 130;
+            // 
+            // werknemerNaam
+            // 
+            this.werknemerNaam.Text = "Naam";
+            this.werknemerNaam.Width = 180;
+            // 
+            // werknemersAdres
+            // 
+            this.werknemersAdres.Text = "Adres";
+            this.werknemersAdres.Width = 165;
+            // 
+            // werknemersTelefoon
+            // 
+            this.werknemersTelefoon.Text = "Telefoonnummer";
+            this.werknemersTelefoon.Width = 150;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Functie";
+            this.columnHeader5.Width = 110;
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1399, 699);
+            this.Controls.Add(this.panelPersoneelbeheer);
             this.Controls.Add(this.panelStockManagement);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -797,6 +1125,17 @@ namespace ChapooUI
             this.panelModifySelection.PerformLayout();
             this.panelItemSorteerMenu.ResumeLayout(false);
             this.panelItemSorteerMenu.PerformLayout();
+            this.panelPersoneelbeheer.ResumeLayout(false);
+            this.panelPersoneelbeheer.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBoxpersoonsgegevens.ResumeLayout(false);
+            this.groupBoxpersoonsgegevens.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -861,6 +1200,35 @@ namespace ChapooUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelPersoneelbeheer;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox comboBoxFuncties;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxPincodeHerhaal;
+        private System.Windows.Forms.TextBox textBoxPincode;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBoxpersoonsgegevens;
+        private System.Windows.Forms.TextBox textBoxNaamInput;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxAdresInput;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxTelefoonInput;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonUserButton;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.RadioButton radioButtonVerwijderUser;
+        private System.Windows.Forms.RadioButton radioButtonAddUser;
+        private System.Windows.Forms.RadioButton radioButtonWijzigUser;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListView listViewWerknemers;
+        private System.Windows.Forms.ColumnHeader werknemersnummer;
+        private System.Windows.Forms.ColumnHeader werknemerNaam;
+        private System.Windows.Forms.ColumnHeader werknemersAdres;
+        private System.Windows.Forms.ColumnHeader werknemersTelefoon;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 

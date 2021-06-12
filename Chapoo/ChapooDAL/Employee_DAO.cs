@@ -36,10 +36,10 @@ namespace ChapooDAL
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@Position_ID", SqlDbType.Int) { Value = ((int)employee.position) },
-                new SqlParameter("@Employee_Name", SqlDbType.Int) { Value = employee.name },
-                new SqlParameter("@Employee_Address", SqlDbType.Int) { Value = employee.adres },
-                new SqlParameter("@Employee_Phone", SqlDbType.Int) { Value = employee.phone },
-                new SqlParameter("@Employee_Pincode", SqlDbType.Int) { Value = employee.pin }
+                new SqlParameter("@Employee_Name", SqlDbType.NVarChar) { Value = employee.name },
+                new SqlParameter("@Employee_Address", SqlDbType.NVarChar) { Value = employee.adres },
+                new SqlParameter("@Employee_Phone", SqlDbType.NVarChar) { Value = employee.phone },
+                new SqlParameter("@Employee_Pincode", SqlDbType.NVarChar) { Value = employee.pin }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -61,10 +61,10 @@ namespace ChapooDAL
             {
                 new SqlParameter("@Employee_ID", SqlDbType.Int) { Value = employee.employee_id },
                 new SqlParameter("@Position_ID", SqlDbType.Int) { Value = ((int)employee.position) },
-                new SqlParameter("@Employee_Name", SqlDbType.Int) { Value = employee.name },
-                new SqlParameter("@Employee_Address", SqlDbType.Int) { Value = employee.adres },
-                new SqlParameter("@Employee_Phone", SqlDbType.Int) { Value = employee.phone },
-                new SqlParameter("@Employee_Pincode", SqlDbType.Int) { Value = employee.pin }
+                new SqlParameter("@Employee_Name", SqlDbType.NVarChar) { Value = employee.name },
+                new SqlParameter("@Employee_Address", SqlDbType.NVarChar) { Value = employee.adres },
+                new SqlParameter("@Employee_Phone", SqlDbType.NVarChar) { Value = employee.phone },
+                new SqlParameter("@Employee_Pincode", SqlDbType.NVarChar) { Value = employee.pin }
             };
             ExecuteEditQuery(query, sqlParameters);
         }

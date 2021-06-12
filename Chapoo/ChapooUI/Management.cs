@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -57,6 +59,8 @@ namespace ChapooUI
             panelDinerSetting.Hide();
             panelDrankSetting.Hide();
             CurrentUserProfile();
+            panelPersoneelbeheer.Hide();
+            panelStockManagement.Hide();
             Stock_Service = new ChapooLogic.Stock_Service();
         }
 
@@ -72,13 +76,16 @@ namespace ChapooUI
             switch(menu)
             {
                 case "UserMangement":
-
+                    panelPersoneelbeheer.Show();
+                    panelStockManagement.Hide();
                     break;
                 case "StockManagement":
-
+                    panelPersoneelbeheer.Hide();
+                    panelStockManagement.Show();
                     break;
                 case "FinancialOverview":
-
+                    panelPersoneelbeheer.Hide();
+                    panelStockManagement.Hide();
                     break;
             }
         }
@@ -480,17 +487,18 @@ namespace ChapooUI
 
         private void BtnStockManagement_Click(object sender, EventArgs e)
         {
-
+            ManagementMenu("StockManagement");
         }
 
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-
+            ManagementMenu("UserMangement");
+            LoadPersoneelBeheerpaneel();
         }
 
         private void btnFinancialOverview_Click(object sender, EventArgs e)
         {
-
+            ManagementMenu("FinancialOverview");
         }
 
         private void BtnAfmelden_Click(object sender, EventArgs e)
@@ -567,7 +575,289 @@ namespace ChapooUI
                 RemoveMenuItem();
             }
         }
-
         // ---------------------
+        
+
+        // user management area
+
+        private Employee _CurrentSelectedEmployee;
+        private List<Employee> ListOfEmployees;
+        private ChapooLogic.Employees_Service Employees_Service;
+
+        private void LoadPersoneelBeheerpaneel()
+        {
+            Employees_Service = new ChapooLogic.Employees_Service();
+            textBoxPincodeHerhaal.Enabled = false;
+            textBoxNaamInput.Enabled = false;
+            textBoxAdresInput.Enabled = false;
+            textBoxTelefoonInput.Enabled = false;
+            comboBoxFuncties.Enabled = false;
+            textBoxPincode.Enabled = false;
+            textBoxPincodeHerhaal.Enabled = false;
+            buttonUserButton.Enabled = false;
+            comboBoxFuncties.DataSource = Enum.GetValues(typeof(Position));
+            FillEmployeeList();
+            FillListviewWithEmployees();
+            RadioButtonSetting("Update");
+        }
+
+        private void FillEmployeeList()
+        {
+            ListOfEmployees = Employees_Service.DB_Get_Employees();
+
+
+        }
+
+        private void FillListviewWithEmployees()
+        {
+            listViewWerknemers.Items.Clear();
+            foreach (ChapooModel.Employee employee  in ListOfEmployees)
+            {
+                listViewWerknemers.Items.Add(new ListViewItem(new string[] { $"{employee.employee_id}", $"{employee.name}", $"{employee.adres}", $"{employee.phone}", $"{employee.position}" }));
+            }
+
+        }
+
+        private void listViewWerknemers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewWerknemers.SelectedItems.Count is not 0)
+            {
+
+                _CurrentSelectedEmployee = ListOfEmployees[listViewWerknemers.SelectedIndices[0]];
+                LoadUserDetails();
+                textBoxNaamInput.Enabled = true;
+                textBoxAdresInput.Enabled = true;
+                textBoxTelefoonInput.Enabled = true;
+                comboBoxFuncties.Enabled = true;
+                textBoxPincode.Enabled = true;
+                textBoxPincodeHerhaal.Enabled = true;
+                buttonUserButton.Enabled = true;
+            }
+            else
+            {
+                textBoxPincodeHerhaal.Enabled = false;
+                textBoxNaamInput.Enabled = false;
+                textBoxAdresInput.Enabled = false;
+                textBoxTelefoonInput.Enabled = false;
+                comboBoxFuncties.Enabled = false;
+                textBoxPincode.Enabled = false;
+                textBoxPincodeHerhaal.Enabled = false;
+                buttonUserButton.Enabled = false;
+            }
+        }
+
+        private void RadioButtonSetting(string modifySetting)
+        {
+            switch(modifySetting)
+            {
+                case "Add":
+                    textBoxNaamInput.Enabled = true;
+                    textBoxAdresInput.Enabled = true;
+                    textBoxTelefoonInput.Enabled = true;
+                    comboBoxFuncties.Enabled = true;
+                    textBoxPincode.Enabled = true;
+                    textBoxPincodeHerhaal.Enabled = true;
+                    buttonUserButton.Enabled = true;
+                    buttonUserButton.BackColor = Color.DarkGreen;
+                    buttonUserButton.ForeColor = Color.White;
+                    buttonUserButton.Text = "Toevoegen";
+                    break;
+                case "Delete":
+                    textBoxNaamInput.Enabled = false;
+                    textBoxAdresInput.Enabled = false;
+                    textBoxTelefoonInput.Enabled = false;
+                    comboBoxFuncties.Enabled = false;
+                    textBoxPincode.Enabled = false;
+                    textBoxPincodeHerhaal.Enabled = false;
+                    buttonUserButton.BackColor = Color.DarkRed;
+                    buttonUserButton.ForeColor = Color.White;
+                    buttonUserButton.Text = "Verwijder"; 
+                    break;
+                case "Update":
+                    textBoxNaamInput.Enabled = true;
+                    textBoxAdresInput.Enabled = true;
+                    textBoxTelefoonInput.Enabled = true;
+                    comboBoxFuncties.Enabled = true;
+                    textBoxPincode.Enabled = true;
+                    textBoxPincodeHerhaal.Enabled = true;
+                    buttonUserButton.BackColor = Color.DarkOrange;
+                    buttonUserButton.ForeColor = Color.White;
+                    buttonUserButton.Text = "Wijzig";
+                    break;
+            }
+
+        }
+
+
+        private void LoadUserDetails()
+        {
+            textBoxNaamInput.Text = _CurrentSelectedEmployee.name;
+            textBoxAdresInput.Text = _CurrentSelectedEmployee.adres;
+            textBoxTelefoonInput.Text = _CurrentSelectedEmployee.phone;
+            comboBoxFuncties.SelectedItem = _CurrentSelectedEmployee.position;
+            textBoxPincode.Text = Decrypt(_CurrentSelectedEmployee.pin);
+        }
+
+        private void ModifyUserDatabase()
+        {
+
+            if ((radioButtonAddUser.Checked == true) && (radioButtonWijzigUser.Checked == false))
+            {
+                Employee employee = new Employee()
+                {
+                    name = textBoxNaamInput.Text,
+                    adres = textBoxAdresInput.Text,
+                    phone = textBoxTelefoonInput.Text,
+                    pin = Encrypt(textBoxPincode.Text),
+                    position = (Position)comboBoxFuncties.SelectedItem,
+                };
+                Employees_Service.DB_Add_Employee(employee);
+                DialogResult dialogResult = MessageBox.Show("Werknemer is succesvol toegevoegd", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if ((radioButtonWijzigUser.Checked == true) && (radioButtonAddUser.Checked == false))
+            {
+                Employee employee = new Employee()
+                {
+                    employee_id = _CurrentSelectedEmployee.employee_id,
+                    name = textBoxNaamInput.Text,
+                    adres = textBoxAdresInput.Text,
+                    phone = textBoxTelefoonInput.Text,
+                    pin = Encrypt(textBoxPincode.Text),
+                    position = (Position)comboBoxFuncties.SelectedItem,
+                };
+                Employees_Service.DB_Update_Employee(employee);
+                DialogResult dialogResult = MessageBox.Show("Werknemer is succesvol gewijzigd", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Employee employee = new Employee()
+                {
+                    employee_id = _CurrentSelectedEmployee.employee_id,
+                    name = textBoxNaamInput.Text,
+                    adres = textBoxAdresInput.Text,
+                    phone = textBoxTelefoonInput.Text,
+                    pin = Encrypt(textBoxPincode.Text),
+                    position = (Position)comboBoxFuncties.SelectedItem,
+                };
+                Employees_Service.DB_Delete_Employee(employee);
+                DialogResult dialogResult = MessageBox.Show("Werknemer is succesvol verwijderd", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+            FillEmployeeList();
+            FillListviewWithEmployees();
+        }
+
+
+
+
+
+        public static string Encrypt(string clearText)
+        {
+            string EncryptionKey = "lifefindsaway";
+            byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+            using (Aes encryptor = Aes.Create())
+            {
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(clearBytes, 0, clearBytes.Length);
+                        cs.Close();
+                    }
+                    clearText = Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return clearText;
+        }
+
+        private static string Decrypt(string EncryptPincode)
+        {
+            string EncryptionKey = "lifefindsaway";
+            EncryptPincode = EncryptPincode.Replace(" ", "+");
+            try
+            {
+                byte[] cipherBytes = Convert.FromBase64String(EncryptPincode);
+                using (Aes encryptor = Aes.Create())
+                {
+                    Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                    encryptor.Key = pdb.GetBytes(32);
+                    encryptor.IV = pdb.GetBytes(16);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                        {
+                            cs.Write(cipherBytes, 0, cipherBytes.Length);
+                            cs.Close();
+                        }
+                        EncryptPincode = Encoding.Unicode.GetString(ms.ToArray());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return EncryptPincode;
+        }
+
+        private void radioButtonWijzigUser_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButtonSetting("Update");
+        }
+
+        private void radioButtonAddUser_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButtonSetting("Add");
+        }
+
+        private void radioButtonVerwijderUser_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButtonSetting("Delete");
+        }
+
+        private void buttonUserButton_Click(object sender, EventArgs e)
+        {
+            if ((radioButtonAddUser.Checked == true) && (radioButtonWijzigUser.Checked == false))
+            {
+                DialogResult dialogResult = MessageBox.Show("U gaat een werknemer toevoegen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ModifyUserDatabase();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
+            else if ((radioButtonWijzigUser.Checked == true) && (radioButtonAddUser.Checked == false))
+            {
+                DialogResult dialogResult = MessageBox.Show("U gaat een werknemer wijzigen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ModifyUserDatabase();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("U gaat een werknemer verwijderen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ModifyUserDatabase();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
+        }
     }
 }
