@@ -56,12 +56,10 @@ namespace ChapooUI
             this.Quantity = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -101,10 +99,10 @@ namespace ChapooUI
             this.buttonFrisdranken = new System.Windows.Forms.Button();
             this.buttonNagerechtDiner = new System.Windows.Forms.Button();
             this.buttonHoofdgerechtDiner = new System.Windows.Forms.Button();
-            this.buttonVoorgerechtDiner = new System.Windows.Forms.Button();
+            this.buttonTussengerechtDiner = new System.Windows.Forms.Button();
             this.buttonNagerechtLunch = new System.Windows.Forms.Button();
             this.buttonHoofdgerechtLunch = new System.Windows.Forms.Button();
-            this.buttonTussengerechtDiner = new System.Windows.Forms.Button();
+            this.buttonVoorgerechtDiner = new System.Windows.Forms.Button();
             this.buttonVoorgerechtLunch = new System.Windows.Forms.Button();
             this.labelAfrekenen = new System.Windows.Forms.Label();
             this.panelWijzigOrder = new System.Windows.Forms.Panel();
@@ -113,8 +111,11 @@ namespace ChapooUI
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownWijzigHoeveelheid = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.richTextBoxWijzigHoeveelheid = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxWijzigCommentaar = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.labelBonnummerinput = new System.Windows.Forms.Label();
+            this.labelTafelnummerInput = new System.Windows.Forms.Label();
+            this.labelAantalItemsInput = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -443,30 +444,23 @@ namespace ChapooUI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.panel6);
+            this.groupBox2.Controls.Add(this.labelAantalItemsInput);
+            this.groupBox2.Controls.Add(this.labelTafelnummerInput);
+            this.groupBox2.Controls.Add(this.labelBonnummerinput);
             this.groupBox2.Controls.Add(this.panel5);
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(16, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(342, 195);
+            this.groupBox2.Size = new System.Drawing.Size(342, 163);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Current Order Info";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.panel6.Location = new System.Drawing.Point(15, 172);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(307, 10);
-            this.panel6.TabIndex = 12;
             // 
             // panel5
             // 
@@ -502,17 +496,6 @@ namespace ChapooUI
             this.label4.Size = new System.Drawing.Size(170, 21);
             this.label4.TabIndex = 6;
             this.label4.Text = "Aantal bestelden items:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(15, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(210, 21);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Totaalprijs huidige bestelling:";
             // 
             // label2
             // 
@@ -717,7 +700,7 @@ namespace ChapooUI
             this.panelMenuOverview.Controls.Add(this.panelMenuItemOptions);
             this.panelMenuOverview.Controls.Add(this.listViewMenuOverviewList);
             this.panelMenuOverview.Controls.Add(this.panel8);
-            this.panelMenuOverview.Location = new System.Drawing.Point(445, 43);
+            this.panelMenuOverview.Location = new System.Drawing.Point(445, 12);
             this.panelMenuOverview.Name = "panelMenuOverview";
             this.panelMenuOverview.Size = new System.Drawing.Size(942, 638);
             this.panelMenuOverview.TabIndex = 8;
@@ -892,10 +875,10 @@ namespace ChapooUI
             this.panel9.Controls.Add(this.buttonFrisdranken);
             this.panel9.Controls.Add(this.buttonNagerechtDiner);
             this.panel9.Controls.Add(this.buttonHoofdgerechtDiner);
-            this.panel9.Controls.Add(this.buttonVoorgerechtDiner);
+            this.panel9.Controls.Add(this.buttonTussengerechtDiner);
             this.panel9.Controls.Add(this.buttonNagerechtLunch);
             this.panel9.Controls.Add(this.buttonHoofdgerechtLunch);
-            this.panel9.Controls.Add(this.buttonTussengerechtDiner);
+            this.panel9.Controls.Add(this.buttonVoorgerechtDiner);
             this.panel9.Controls.Add(this.buttonVoorgerechtLunch);
             this.panel9.Location = new System.Drawing.Point(3, 12);
             this.panel9.Name = "panel9";
@@ -1030,21 +1013,21 @@ namespace ChapooUI
             this.buttonHoofdgerechtDiner.UseVisualStyleBackColor = false;
             this.buttonHoofdgerechtDiner.Click += new System.EventHandler(this.buttonHoofdgerechtDiner_Click);
             // 
-            // buttonVoorgerechtDiner
+            // buttonTussengerechtDiner
             // 
-            this.buttonVoorgerechtDiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.buttonVoorgerechtDiner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonVoorgerechtDiner.FlatAppearance.BorderSize = 0;
-            this.buttonVoorgerechtDiner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVoorgerechtDiner.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonVoorgerechtDiner.ForeColor = System.Drawing.Color.White;
-            this.buttonVoorgerechtDiner.Location = new System.Drawing.Point(0, 192);
-            this.buttonVoorgerechtDiner.Name = "buttonVoorgerechtDiner";
-            this.buttonVoorgerechtDiner.Size = new System.Drawing.Size(203, 48);
-            this.buttonVoorgerechtDiner.TabIndex = 12;
-            this.buttonVoorgerechtDiner.Text = "Voorgerechten";
-            this.buttonVoorgerechtDiner.UseVisualStyleBackColor = false;
-            this.buttonVoorgerechtDiner.Click += new System.EventHandler(this.buttonVoorgerechtDiner_Click);
+            this.buttonTussengerechtDiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.buttonTussengerechtDiner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTussengerechtDiner.FlatAppearance.BorderSize = 0;
+            this.buttonTussengerechtDiner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTussengerechtDiner.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonTussengerechtDiner.ForeColor = System.Drawing.Color.White;
+            this.buttonTussengerechtDiner.Location = new System.Drawing.Point(0, 192);
+            this.buttonTussengerechtDiner.Name = "buttonTussengerechtDiner";
+            this.buttonTussengerechtDiner.Size = new System.Drawing.Size(203, 48);
+            this.buttonTussengerechtDiner.TabIndex = 12;
+            this.buttonTussengerechtDiner.Text = "Tussengerechten";
+            this.buttonTussengerechtDiner.UseVisualStyleBackColor = false;
+            this.buttonTussengerechtDiner.Click += new System.EventHandler(this.buttonVoorgerechtDiner_Click);
             // 
             // buttonNagerechtLunch
             // 
@@ -1078,21 +1061,21 @@ namespace ChapooUI
             this.buttonHoofdgerechtLunch.UseVisualStyleBackColor = false;
             this.buttonHoofdgerechtLunch.Click += new System.EventHandler(this.buttonHoofdgerechtLunch_Click);
             // 
-            // buttonTussengerechtDiner
+            // buttonVoorgerechtDiner
             // 
-            this.buttonTussengerechtDiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.buttonTussengerechtDiner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonTussengerechtDiner.FlatAppearance.BorderSize = 0;
-            this.buttonTussengerechtDiner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTussengerechtDiner.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonTussengerechtDiner.ForeColor = System.Drawing.Color.White;
-            this.buttonTussengerechtDiner.Location = new System.Drawing.Point(0, 48);
-            this.buttonTussengerechtDiner.Name = "buttonTussengerechtDiner";
-            this.buttonTussengerechtDiner.Size = new System.Drawing.Size(203, 48);
-            this.buttonTussengerechtDiner.TabIndex = 9;
-            this.buttonTussengerechtDiner.Text = "Tussengerechten";
-            this.buttonTussengerechtDiner.UseVisualStyleBackColor = false;
-            this.buttonTussengerechtDiner.Click += new System.EventHandler(this.buttonTussengerechtDiner_Click);
+            this.buttonVoorgerechtDiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.buttonVoorgerechtDiner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonVoorgerechtDiner.FlatAppearance.BorderSize = 0;
+            this.buttonVoorgerechtDiner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVoorgerechtDiner.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonVoorgerechtDiner.ForeColor = System.Drawing.Color.White;
+            this.buttonVoorgerechtDiner.Location = new System.Drawing.Point(0, 48);
+            this.buttonVoorgerechtDiner.Name = "buttonVoorgerechtDiner";
+            this.buttonVoorgerechtDiner.Size = new System.Drawing.Size(203, 48);
+            this.buttonVoorgerechtDiner.TabIndex = 9;
+            this.buttonVoorgerechtDiner.Text = "Voorgerechten";
+            this.buttonVoorgerechtDiner.UseVisualStyleBackColor = false;
+            this.buttonVoorgerechtDiner.Click += new System.EventHandler(this.buttonTussengerechtDiner_Click);
             // 
             // buttonVoorgerechtLunch
             // 
@@ -1129,9 +1112,9 @@ namespace ChapooUI
             this.panelWijzigOrder.Controls.Add(this.label7);
             this.panelWijzigOrder.Controls.Add(this.numericUpDownWijzigHoeveelheid);
             this.panelWijzigOrder.Controls.Add(this.label8);
-            this.panelWijzigOrder.Controls.Add(this.richTextBoxWijzigHoeveelheid);
+            this.panelWijzigOrder.Controls.Add(this.richTextBoxWijzigCommentaar);
             this.panelWijzigOrder.Controls.Add(this.label9);
-            this.panelWijzigOrder.Location = new System.Drawing.Point(278, 134);
+            this.panelWijzigOrder.Location = new System.Drawing.Point(265, 111);
             this.panelWijzigOrder.Name = "panelWijzigOrder";
             this.panelWijzigOrder.Size = new System.Drawing.Size(426, 419);
             this.panelWijzigOrder.TabIndex = 10;
@@ -1201,13 +1184,13 @@ namespace ChapooUI
             this.label8.TabIndex = 10;
             this.label8.Text = "Opmerking";
             // 
-            // richTextBoxWijzigHoeveelheid
+            // richTextBoxWijzigCommentaar
             // 
-            this.richTextBoxWijzigHoeveelheid.Location = new System.Drawing.Point(37, 189);
-            this.richTextBoxWijzigHoeveelheid.Name = "richTextBoxWijzigHoeveelheid";
-            this.richTextBoxWijzigHoeveelheid.Size = new System.Drawing.Size(313, 144);
-            this.richTextBoxWijzigHoeveelheid.TabIndex = 9;
-            this.richTextBoxWijzigHoeveelheid.Text = "";
+            this.richTextBoxWijzigCommentaar.Location = new System.Drawing.Point(37, 189);
+            this.richTextBoxWijzigCommentaar.Name = "richTextBoxWijzigCommentaar";
+            this.richTextBoxWijzigCommentaar.Size = new System.Drawing.Size(313, 144);
+            this.richTextBoxWijzigCommentaar.TabIndex = 9;
+            this.richTextBoxWijzigCommentaar.Text = "";
             // 
             // label9
             // 
@@ -1220,6 +1203,39 @@ namespace ChapooUI
             this.label9.TabIndex = 8;
             this.label9.Text = "Order Wijzigen";
             // 
+            // labelBonnummerinput
+            // 
+            this.labelBonnummerinput.AutoSize = true;
+            this.labelBonnummerinput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBonnummerinput.ForeColor = System.Drawing.Color.White;
+            this.labelBonnummerinput.Location = new System.Drawing.Point(121, 38);
+            this.labelBonnummerinput.Name = "labelBonnummerinput";
+            this.labelBonnummerinput.Size = new System.Drawing.Size(22, 21);
+            this.labelBonnummerinput.TabIndex = 13;
+            this.labelBonnummerinput.Text = "....";
+            // 
+            // labelTafelnummerInput
+            // 
+            this.labelTafelnummerInput.AutoSize = true;
+            this.labelTafelnummerInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTafelnummerInput.ForeColor = System.Drawing.Color.White;
+            this.labelTafelnummerInput.Location = new System.Drawing.Point(125, 74);
+            this.labelTafelnummerInput.Name = "labelTafelnummerInput";
+            this.labelTafelnummerInput.Size = new System.Drawing.Size(22, 21);
+            this.labelTafelnummerInput.TabIndex = 14;
+            this.labelTafelnummerInput.Text = "....";
+            // 
+            // labelAantalItemsInput
+            // 
+            this.labelAantalItemsInput.AutoSize = true;
+            this.labelAantalItemsInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAantalItemsInput.ForeColor = System.Drawing.Color.White;
+            this.labelAantalItemsInput.Location = new System.Drawing.Point(191, 111);
+            this.labelAantalItemsInput.Name = "labelAantalItemsInput";
+            this.labelAantalItemsInput.Size = new System.Drawing.Size(22, 21);
+            this.labelAantalItemsInput.TabIndex = 15;
+            this.labelAantalItemsInput.Text = "....";
+            // 
             // x
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1227,12 +1243,12 @@ namespace ChapooUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1399, 699);
             this.Controls.Add(this.panelWijzigOrder);
-            this.Controls.Add(this.panelMenuOverview);
             this.Controls.Add(this.labelAfrekenen);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listViewCurrentOrderList);
             this.Controls.Add(this.MenuBarPanel);
+            this.Controls.Add(this.panelMenuOverview);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "x";
@@ -1297,14 +1313,12 @@ namespace ChapooUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelTableInvoer;
         private System.Windows.Forms.Label labelTable;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
@@ -1321,7 +1335,7 @@ namespace ChapooUI
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button buttonNagerechtLunch;
         private System.Windows.Forms.Button buttonHoofdgerechtLunch;
-        private System.Windows.Forms.Button buttonTussengerechtDiner;
+        private System.Windows.Forms.Button buttonVoorgerechtDiner;
         private System.Windows.Forms.Button buttonVoorgerechtLunch;
         private System.Windows.Forms.Button buttonWarmeDranken;
         private System.Windows.Forms.Button buttonGedistilleerdeDranken;
@@ -1330,7 +1344,7 @@ namespace ChapooUI
         private System.Windows.Forms.Button buttonFrisdranken;
         private System.Windows.Forms.Button buttonNagerechtDiner;
         private System.Windows.Forms.Button buttonHoofdgerechtDiner;
-        private System.Windows.Forms.Button buttonVoorgerechtDiner;
+        private System.Windows.Forms.Button buttonTussengerechtDiner;
         private System.Windows.Forms.ListView listViewMenuOverviewList;
         private System.Windows.Forms.ColumnHeader ItemHeader;
         private System.Windows.Forms.ColumnHeader PrijsHeader;
@@ -1353,8 +1367,11 @@ namespace ChapooUI
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDownWijzigHoeveelheid;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox richTextBoxWijzigHoeveelheid;
+        private System.Windows.Forms.RichTextBox richTextBoxWijzigCommentaar;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelAantalItemsInput;
+        private System.Windows.Forms.Label labelTafelnummerInput;
+        private System.Windows.Forms.Label labelBonnummerinput;
     }
 }
 

@@ -84,8 +84,8 @@ namespace ChapooUI
                     buttonHoofdgerechtLunch.Show();
                     buttonNagerechtLunch.Show();
 
-                    buttonVoorgerechtDiner.Hide();
                     buttonTussengerechtDiner.Hide();
+                    buttonVoorgerechtDiner.Hide();
                     buttonHoofdgerechtDiner.Hide();
                     buttonNagerechtDiner.Hide();
 
@@ -100,8 +100,8 @@ namespace ChapooUI
                     listViewMenuOverviewList.Items.Clear();
                     panelMenuOverview.Show();
 
-                    buttonVoorgerechtDiner.Show();
                     buttonTussengerechtDiner.Show();
+                    buttonVoorgerechtDiner.Show();
                     buttonHoofdgerechtDiner.Show();
                     buttonNagerechtDiner.Show();
 
@@ -128,14 +128,13 @@ namespace ChapooUI
                     buttonVoorgerechtLunch.Hide();
                     buttonHoofdgerechtLunch.Hide();
                     buttonNagerechtLunch.Hide();
-                    buttonVoorgerechtDiner.Hide();
                     buttonTussengerechtDiner.Hide();
+                    buttonVoorgerechtDiner.Hide();
                     buttonHoofdgerechtDiner.Hide();
                     buttonNagerechtDiner.Hide();
                     break;
             }
         }
-
 
         private void GetSpecificMenuItemsList(int MenuID, int MenuGroupID)
         {
@@ -159,6 +158,19 @@ namespace ChapooUI
             {
                 listViewCurrentOrderList.Items.Add(new ListViewItem(new string[] { $"{orderDetail.item.MenuGroup}", $"{orderDetail.item.item_Name}", $"{orderDetail.item.item_Price.ToString("€ 0.00")}", $"{orderDetail.quantity}" }));
             }
+
+            if(_CurrentOrderList.Count > 0)
+            {
+                buttonBestelOrder.Enabled = true;
+                buttonBestelBewerk.Enabled = true;
+                buttonBestelVerwijder.Enabled = true;
+            }
+            else
+            {
+                buttonBestelOrder.Enabled = false;
+                buttonBestelBewerk.Enabled = false;
+                buttonBestelVerwijder.Enabled = false;
+            }
         }
 
 
@@ -166,7 +178,6 @@ namespace ChapooUI
         {
             _CurrentOrderID = Order_Service.DB_Add_Order(TableNumber);
         }
-
 
         private void listViewMenuOverviewList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -205,11 +216,6 @@ namespace ChapooUI
             }
         }
 
-        private void EditOrderDetail()
-        {
-
-        }
-
         private void CreateOrderDetail()
         {
             OrderDetail orderDetail = new OrderDetail()
@@ -226,6 +232,20 @@ namespace ChapooUI
             };
             _CurrentOrderList.Add(orderDetail);
             FillCurrentOrderListOverview();
+        }
+
+        private void FillEditForm()
+        {
+            numericUpDownWijzigHoeveelheid.Value = 0;
+            richTextBoxWijzigCommentaar.Text = "";
+            numericUpDownWijzigHoeveelheid.Value = _CurrentSelectedOrderDetail.quantity;
+            richTextBoxWijzigCommentaar.Text = _CurrentSelectedOrderDetail.comment;
+        }
+
+        private void editorderdetail()
+        {
+            _CurrentSelectedOrderDetail.quantity = (int)numericUpDownWijzigHoeveelheid.Value;
+            _CurrentSelectedOrderDetail.comment = richTextBoxWijzigCommentaar.Text;
         }
 
         // Button area
@@ -257,11 +277,16 @@ namespace ChapooUI
             panelMenuItemOptions.Hide();
         }
 
-        
-
         private void buttonVoorgerechtLunch_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(1, 1);
+            FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
+        }
+
+        private void buttonTussengerechtDiner_Click(object sender, EventArgs e)
+        {
+            GetSpecificMenuItemsList(2, 5);
             FillMenuOverviewList();
             panelMenuItemOptions.Hide();
         }
@@ -287,13 +312,6 @@ namespace ChapooUI
             panelMenuItemOptions.Hide();
         }
 
-        private void buttonTussengerechtDiner_Click(object sender, EventArgs e)
-        {
-            GetSpecificMenuItemsList(2, 5);
-            FillMenuOverviewList();
-            panelMenuItemOptions.Hide();
-        }
-
         private void buttonHoofdgerechtDiner_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(2, 6);
@@ -307,6 +325,8 @@ namespace ChapooUI
             FillMenuOverviewList();
             panelMenuItemOptions.Hide();
         }
+
+
 
         private void buttonFrisdranken_Click(object sender, EventArgs e)
         {
@@ -356,32 +376,32 @@ namespace ChapooUI
 
         private void buttonBestelVerwijder_Click(object sender, EventArgs e)
         {
-            //if (listViewCurrentOrderList.SelectedItems.Count != 0)
-            //{
-                _CurrentOrderList.Remove(_CurrentOrderList[listViewCurrentOrderList.SelectedIndices[0]]);
-                FillCurrentOrderListOverview();
-            //}
+
+            _CurrentOrderList.Remove(_CurrentOrderList[listViewCurrentOrderList.SelectedIndices[0]]);
+            FillCurrentOrderListOverview();
         }
 
         private void buttonBestelBewerk_Click(object sender, EventArgs e)
         {
             panelWijzigOrder.Show();
-            EditOrderDetail();
-        }
-
-        private void buttonBestelOrder_Click(object sender, EventArgs e)
-        {
-
+            FillEditForm();
         }
 
         private void buttonWijzigOrder_Click(object sender, EventArgs e)
         {
-            
+            editorderdetail();
+            FillCurrentOrderListOverview();
+            panelWijzigOrder.Hide();
         }
 
         private void buttonAnnuleerWijzig_Click(object sender, EventArgs e)
         {
             panelWijzigOrder.Hide();
+        }
+
+        private void buttonBestelOrder_Click(object sender, EventArgs e)
+        {
+
         }
 
 
