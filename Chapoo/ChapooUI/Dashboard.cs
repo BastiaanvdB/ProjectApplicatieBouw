@@ -46,6 +46,8 @@ namespace ChapooUI
             _CurrentEmployee = CurrentEmployee;
             CurrentUserProfile();
             CorrectMenuForUser();
+            string[] firstname = _CurrentEmployee.name.Split(' ');
+            labelWelkom.Text = $"Welkom {firstname[0]}";
         }
 
         private void CurrentUserProfile()

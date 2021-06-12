@@ -50,7 +50,6 @@ namespace ChapooUI
             this.buttonNumber2 = new System.Windows.Forms.Button();
             this.buttonNumber1 = new System.Windows.Forms.Button();
             this.listViewCurrentOrderList = new System.Windows.Forms.ListView();
-            this.Menu = new System.Windows.Forms.ColumnHeader();
             this.MenuGroup = new System.Windows.Forms.ColumnHeader();
             this.Item = new System.Windows.Forms.ColumnHeader();
             this.Price = new System.Windows.Forms.ColumnHeader();
@@ -69,16 +68,26 @@ namespace ChapooUI
             this.labelTableInvoer = new System.Windows.Forms.Label();
             this.labelTable = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.buttonBestelOrder = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonBestelVerwijder = new System.Windows.Forms.Button();
+            this.buttonBestelBewerk = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonDrankenMenu = new System.Windows.Forms.Button();
             this.buttonLunchMenu = new System.Windows.Forms.Button();
             this.ButtonDinnerMenu = new System.Windows.Forms.Button();
-            this.labelAfrekenen = new System.Windows.Forms.Label();
             this.panelMenuOverview = new System.Windows.Forms.Panel();
+            this.panelMenuItemOptions = new System.Windows.Forms.Panel();
+            this.groupBoxLegitimatie = new System.Windows.Forms.GroupBox();
+            this.labelIDInput = new System.Windows.Forms.Label();
+            this.buttonAnnuleren = new System.Windows.Forms.Button();
+            this.buttonToevoegen = new System.Windows.Forms.Button();
+            this.labelHoeveelheid = new System.Windows.Forms.Label();
+            this.numericUpDownHoeveelheid = new System.Windows.Forms.NumericUpDown();
+            this.labelOpmerking = new System.Windows.Forms.Label();
+            this.richTextBoxOpmerking = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.listViewMenuOverviewList = new System.Windows.Forms.ListView();
             this.ItemHeader = new System.Windows.Forms.ColumnHeader();
             this.PrijsHeader = new System.Windows.Forms.ColumnHeader();
@@ -97,6 +106,15 @@ namespace ChapooUI
             this.buttonHoofdgerechtLunch = new System.Windows.Forms.Button();
             this.buttonTussengerechtDiner = new System.Windows.Forms.Button();
             this.buttonVoorgerechtLunch = new System.Windows.Forms.Button();
+            this.labelAfrekenen = new System.Windows.Forms.Label();
+            this.panelWijzigOrder = new System.Windows.Forms.Panel();
+            this.buttonAnnuleerWijzig = new System.Windows.Forms.Button();
+            this.buttonWijzigOrder = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDownWijzigHoeveelheid = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.richTextBoxWijzigHoeveelheid = new System.Windows.Forms.RichTextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,11 +123,17 @@ namespace ChapooUI
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panelMenuOverview.SuspendLayout();
+            this.panelMenuItemOptions.SuspendLayout();
+            this.groupBoxLegitimatie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoeveelheid)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panelWijzigOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWijzigHoeveelheid)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuBarPanel
@@ -372,7 +396,6 @@ namespace ChapooUI
             // listViewCurrentOrderList
             // 
             this.listViewCurrentOrderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Menu,
             this.MenuGroup,
             this.Item,
             this.Price,
@@ -382,34 +405,31 @@ namespace ChapooUI
             this.listViewCurrentOrderList.HideSelection = false;
             this.listViewCurrentOrderList.Location = new System.Drawing.Point(209, 43);
             this.listViewCurrentOrderList.Name = "listViewCurrentOrderList";
-            this.listViewCurrentOrderList.Size = new System.Drawing.Size(543, 598);
+            this.listViewCurrentOrderList.Size = new System.Drawing.Size(533, 598);
             this.listViewCurrentOrderList.TabIndex = 2;
             this.listViewCurrentOrderList.UseCompatibleStateImageBehavior = false;
             this.listViewCurrentOrderList.View = System.Windows.Forms.View.Details;
-            // 
-            // Menu
-            // 
-            this.Menu.Text = "Menu";
-            this.Menu.Width = 80;
+            this.listViewCurrentOrderList.SelectedIndexChanged += new System.EventHandler(this.listViewCurrentOrderList_SelectedIndexChanged);
             // 
             // MenuGroup
             // 
             this.MenuGroup.Text = "MenuGroep";
-            this.MenuGroup.Width = 90;
+            this.MenuGroup.Width = 100;
             // 
             // Item
             // 
             this.Item.Text = "Gerecht/Drank";
-            this.Item.Width = 223;
+            this.Item.Width = 264;
             // 
             // Price
             // 
             this.Price.Text = "Prijs";
+            this.Price.Width = 70;
             // 
             // Quantity
             // 
             this.Quantity.Text = "Hoeveelheid";
-            this.Quantity.Width = 85;
+            this.Quantity.Width = 95;
             // 
             // panel1
             // 
@@ -555,6 +575,7 @@ namespace ChapooUI
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.groupBox5);
             this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Location = new System.Drawing.Point(767, 43);
@@ -562,61 +583,75 @@ namespace ChapooUI
             this.panel2.Size = new System.Drawing.Size(209, 598);
             this.panel2.TabIndex = 6;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.buttonBestelOrder);
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
+            this.groupBox5.Location = new System.Drawing.Point(13, 434);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(184, 154);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Rond bestelling af";
+            // 
+            // buttonBestelOrder
+            // 
+            this.buttonBestelOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonBestelOrder.FlatAppearance.BorderSize = 0;
+            this.buttonBestelOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBestelOrder.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonBestelOrder.ForeColor = System.Drawing.Color.White;
+            this.buttonBestelOrder.Location = new System.Drawing.Point(15, 56);
+            this.buttonBestelOrder.Name = "buttonBestelOrder";
+            this.buttonBestelOrder.Size = new System.Drawing.Size(153, 67);
+            this.buttonBestelOrder.TabIndex = 2;
+            this.buttonBestelOrder.Text = "Bestel";
+            this.buttonBestelOrder.UseVisualStyleBackColor = false;
+            this.buttonBestelOrder.Click += new System.EventHandler(this.buttonBestelOrder_Click);
+            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.buttonBestelVerwijder);
+            this.groupBox4.Controls.Add(this.buttonBestelBewerk);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(13, 291);
+            this.groupBox4.Location = new System.Drawing.Point(13, 259);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(184, 212);
+            this.groupBox4.Size = new System.Drawing.Size(184, 154);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Bestellinglijst control";
             // 
-            // button3
+            // buttonBestelVerwijder
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(15, 139);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 48);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Verminder hoeveelheid";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonBestelVerwijder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonBestelVerwijder.FlatAppearance.BorderSize = 0;
+            this.buttonBestelVerwijder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBestelVerwijder.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonBestelVerwijder.ForeColor = System.Drawing.Color.White;
+            this.buttonBestelVerwijder.Location = new System.Drawing.Point(15, 31);
+            this.buttonBestelVerwijder.Name = "buttonBestelVerwijder";
+            this.buttonBestelVerwijder.Size = new System.Drawing.Size(153, 48);
+            this.buttonBestelVerwijder.TabIndex = 2;
+            this.buttonBestelVerwijder.Text = "Verwijder item";
+            this.buttonBestelVerwijder.UseVisualStyleBackColor = false;
+            this.buttonBestelVerwijder.Click += new System.EventHandler(this.buttonBestelVerwijder_Click);
             // 
-            // button4
+            // buttonBestelBewerk
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(15, 31);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 48);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Verwijder Item";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(15, 85);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(153, 48);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Vermenigvuldig hoeveelheid";
-            this.button5.UseVisualStyleBackColor = false;
+            this.buttonBestelBewerk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonBestelBewerk.FlatAppearance.BorderSize = 0;
+            this.buttonBestelBewerk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBestelBewerk.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonBestelBewerk.ForeColor = System.Drawing.Color.White;
+            this.buttonBestelBewerk.Location = new System.Drawing.Point(15, 85);
+            this.buttonBestelBewerk.Name = "buttonBestelBewerk";
+            this.buttonBestelBewerk.Size = new System.Drawing.Size(153, 48);
+            this.buttonBestelBewerk.TabIndex = 3;
+            this.buttonBestelBewerk.Text = "Bewerk item";
+            this.buttonBestelBewerk.UseVisualStyleBackColor = false;
+            this.buttonBestelBewerk.Click += new System.EventHandler(this.buttonBestelBewerk_Click);
             // 
             // groupBox3
             // 
@@ -677,25 +712,138 @@ namespace ChapooUI
             this.ButtonDinnerMenu.UseVisualStyleBackColor = false;
             this.ButtonDinnerMenu.Click += new System.EventHandler(this.ButtonDinnerMenu_Click);
             // 
-            // labelAfrekenen
-            // 
-            this.labelAfrekenen.AutoSize = true;
-            this.labelAfrekenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAfrekenen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.labelAfrekenen.Location = new System.Drawing.Point(216, 2);
-            this.labelAfrekenen.Name = "labelAfrekenen";
-            this.labelAfrekenen.Size = new System.Drawing.Size(255, 38);
-            this.labelAfrekenen.TabIndex = 7;
-            this.labelAfrekenen.Text = "Besteloverzicht";
-            // 
             // panelMenuOverview
             // 
+            this.panelMenuOverview.Controls.Add(this.panelMenuItemOptions);
             this.panelMenuOverview.Controls.Add(this.listViewMenuOverviewList);
             this.panelMenuOverview.Controls.Add(this.panel8);
-            this.panelMenuOverview.Location = new System.Drawing.Point(445, 26);
+            this.panelMenuOverview.Location = new System.Drawing.Point(445, 43);
             this.panelMenuOverview.Name = "panelMenuOverview";
             this.panelMenuOverview.Size = new System.Drawing.Size(942, 638);
             this.panelMenuOverview.TabIndex = 8;
+            // 
+            // panelMenuItemOptions
+            // 
+            this.panelMenuItemOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panelMenuItemOptions.Controls.Add(this.groupBoxLegitimatie);
+            this.panelMenuItemOptions.Controls.Add(this.buttonAnnuleren);
+            this.panelMenuItemOptions.Controls.Add(this.buttonToevoegen);
+            this.panelMenuItemOptions.Controls.Add(this.labelHoeveelheid);
+            this.panelMenuItemOptions.Controls.Add(this.numericUpDownHoeveelheid);
+            this.panelMenuItemOptions.Controls.Add(this.labelOpmerking);
+            this.panelMenuItemOptions.Controls.Add(this.richTextBoxOpmerking);
+            this.panelMenuItemOptions.Controls.Add(this.label5);
+            this.panelMenuItemOptions.Location = new System.Drawing.Point(355, 101);
+            this.panelMenuItemOptions.Name = "panelMenuItemOptions";
+            this.panelMenuItemOptions.Size = new System.Drawing.Size(426, 465);
+            this.panelMenuItemOptions.TabIndex = 9;
+            // 
+            // groupBoxLegitimatie
+            // 
+            this.groupBoxLegitimatie.Controls.Add(this.labelIDInput);
+            this.groupBoxLegitimatie.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxLegitimatie.ForeColor = System.Drawing.Color.White;
+            this.groupBoxLegitimatie.Location = new System.Drawing.Point(212, 87);
+            this.groupBoxLegitimatie.Name = "groupBoxLegitimatie";
+            this.groupBoxLegitimatie.Size = new System.Drawing.Size(138, 81);
+            this.groupBoxLegitimatie.TabIndex = 15;
+            this.groupBoxLegitimatie.TabStop = false;
+            this.groupBoxLegitimatie.Text = "Legitimatie";
+            // 
+            // labelIDInput
+            // 
+            this.labelIDInput.AutoSize = true;
+            this.labelIDInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelIDInput.ForeColor = System.Drawing.Color.White;
+            this.labelIDInput.Location = new System.Drawing.Point(15, 36);
+            this.labelIDInput.Name = "labelIDInput";
+            this.labelIDInput.Size = new System.Drawing.Size(106, 24);
+            this.labelIDInput.TabIndex = 16;
+            this.labelIDInput.Text = "Niet nodig";
+            // 
+            // buttonAnnuleren
+            // 
+            this.buttonAnnuleren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonAnnuleren.FlatAppearance.BorderSize = 0;
+            this.buttonAnnuleren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnnuleren.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAnnuleren.ForeColor = System.Drawing.Color.White;
+            this.buttonAnnuleren.Location = new System.Drawing.Point(37, 391);
+            this.buttonAnnuleren.Name = "buttonAnnuleren";
+            this.buttonAnnuleren.Size = new System.Drawing.Size(153, 48);
+            this.buttonAnnuleren.TabIndex = 14;
+            this.buttonAnnuleren.Text = "Annuleren";
+            this.buttonAnnuleren.UseVisualStyleBackColor = false;
+            this.buttonAnnuleren.Click += new System.EventHandler(this.buttonAnnuleren_Click);
+            // 
+            // buttonToevoegen
+            // 
+            this.buttonToevoegen.BackColor = System.Drawing.Color.Green;
+            this.buttonToevoegen.FlatAppearance.BorderSize = 0;
+            this.buttonToevoegen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonToevoegen.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonToevoegen.ForeColor = System.Drawing.Color.White;
+            this.buttonToevoegen.Location = new System.Drawing.Point(242, 391);
+            this.buttonToevoegen.Name = "buttonToevoegen";
+            this.buttonToevoegen.Size = new System.Drawing.Size(153, 48);
+            this.buttonToevoegen.TabIndex = 13;
+            this.buttonToevoegen.Text = "Toevoegen";
+            this.buttonToevoegen.UseVisualStyleBackColor = false;
+            this.buttonToevoegen.Click += new System.EventHandler(this.buttonToevoegen_Click);
+            // 
+            // labelHoeveelheid
+            // 
+            this.labelHoeveelheid.AutoSize = true;
+            this.labelHoeveelheid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelHoeveelheid.ForeColor = System.Drawing.Color.White;
+            this.labelHoeveelheid.Location = new System.Drawing.Point(34, 87);
+            this.labelHoeveelheid.Name = "labelHoeveelheid";
+            this.labelHoeveelheid.Size = new System.Drawing.Size(108, 20);
+            this.labelHoeveelheid.TabIndex = 12;
+            this.labelHoeveelheid.Text = "Hoeveelheid";
+            // 
+            // numericUpDownHoeveelheid
+            // 
+            this.numericUpDownHoeveelheid.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericUpDownHoeveelheid.Location = new System.Drawing.Point(37, 110);
+            this.numericUpDownHoeveelheid.Name = "numericUpDownHoeveelheid";
+            this.numericUpDownHoeveelheid.Size = new System.Drawing.Size(120, 43);
+            this.numericUpDownHoeveelheid.TabIndex = 11;
+            this.numericUpDownHoeveelheid.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // labelOpmerking
+            // 
+            this.labelOpmerking.AutoSize = true;
+            this.labelOpmerking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelOpmerking.ForeColor = System.Drawing.Color.White;
+            this.labelOpmerking.Location = new System.Drawing.Point(37, 186);
+            this.labelOpmerking.Name = "labelOpmerking";
+            this.labelOpmerking.Size = new System.Drawing.Size(95, 20);
+            this.labelOpmerking.TabIndex = 10;
+            this.labelOpmerking.Text = "Opmerking";
+            // 
+            // richTextBoxOpmerking
+            // 
+            this.richTextBoxOpmerking.Location = new System.Drawing.Point(37, 219);
+            this.richTextBoxOpmerking.Name = "richTextBoxOpmerking";
+            this.richTextBoxOpmerking.Size = new System.Drawing.Size(313, 144);
+            this.richTextBoxOpmerking.TabIndex = 9;
+            this.richTextBoxOpmerking.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(13, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(260, 29);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Gerecht/Drank opties";
             // 
             // listViewMenuOverviewList
             // 
@@ -962,12 +1110,123 @@ namespace ChapooUI
             this.buttonVoorgerechtLunch.UseVisualStyleBackColor = false;
             this.buttonVoorgerechtLunch.Click += new System.EventHandler(this.buttonVoorgerechtLunch_Click);
             // 
+            // labelAfrekenen
+            // 
+            this.labelAfrekenen.AutoSize = true;
+            this.labelAfrekenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelAfrekenen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelAfrekenen.Location = new System.Drawing.Point(216, 2);
+            this.labelAfrekenen.Name = "labelAfrekenen";
+            this.labelAfrekenen.Size = new System.Drawing.Size(255, 38);
+            this.labelAfrekenen.TabIndex = 7;
+            this.labelAfrekenen.Text = "Besteloverzicht";
+            // 
+            // panelWijzigOrder
+            // 
+            this.panelWijzigOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panelWijzigOrder.Controls.Add(this.buttonAnnuleerWijzig);
+            this.panelWijzigOrder.Controls.Add(this.buttonWijzigOrder);
+            this.panelWijzigOrder.Controls.Add(this.label7);
+            this.panelWijzigOrder.Controls.Add(this.numericUpDownWijzigHoeveelheid);
+            this.panelWijzigOrder.Controls.Add(this.label8);
+            this.panelWijzigOrder.Controls.Add(this.richTextBoxWijzigHoeveelheid);
+            this.panelWijzigOrder.Controls.Add(this.label9);
+            this.panelWijzigOrder.Location = new System.Drawing.Point(278, 134);
+            this.panelWijzigOrder.Name = "panelWijzigOrder";
+            this.panelWijzigOrder.Size = new System.Drawing.Size(426, 419);
+            this.panelWijzigOrder.TabIndex = 10;
+            // 
+            // buttonAnnuleerWijzig
+            // 
+            this.buttonAnnuleerWijzig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonAnnuleerWijzig.FlatAppearance.BorderSize = 0;
+            this.buttonAnnuleerWijzig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnnuleerWijzig.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAnnuleerWijzig.ForeColor = System.Drawing.Color.White;
+            this.buttonAnnuleerWijzig.Location = new System.Drawing.Point(37, 348);
+            this.buttonAnnuleerWijzig.Name = "buttonAnnuleerWijzig";
+            this.buttonAnnuleerWijzig.Size = new System.Drawing.Size(153, 48);
+            this.buttonAnnuleerWijzig.TabIndex = 14;
+            this.buttonAnnuleerWijzig.Text = "Annuleren";
+            this.buttonAnnuleerWijzig.UseVisualStyleBackColor = false;
+            this.buttonAnnuleerWijzig.Click += new System.EventHandler(this.buttonAnnuleerWijzig_Click);
+            // 
+            // buttonWijzigOrder
+            // 
+            this.buttonWijzigOrder.BackColor = System.Drawing.Color.Green;
+            this.buttonWijzigOrder.FlatAppearance.BorderSize = 0;
+            this.buttonWijzigOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWijzigOrder.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonWijzigOrder.ForeColor = System.Drawing.Color.White;
+            this.buttonWijzigOrder.Location = new System.Drawing.Point(233, 348);
+            this.buttonWijzigOrder.Name = "buttonWijzigOrder";
+            this.buttonWijzigOrder.Size = new System.Drawing.Size(153, 48);
+            this.buttonWijzigOrder.TabIndex = 13;
+            this.buttonWijzigOrder.Text = "Wijzig";
+            this.buttonWijzigOrder.UseVisualStyleBackColor = false;
+            this.buttonWijzigOrder.Click += new System.EventHandler(this.buttonWijzigOrder_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(34, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Hoeveelheid";
+            // 
+            // numericUpDownWijzigHoeveelheid
+            // 
+            this.numericUpDownWijzigHoeveelheid.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericUpDownWijzigHoeveelheid.Location = new System.Drawing.Point(37, 110);
+            this.numericUpDownWijzigHoeveelheid.Name = "numericUpDownWijzigHoeveelheid";
+            this.numericUpDownWijzigHoeveelheid.Size = new System.Drawing.Size(120, 43);
+            this.numericUpDownWijzigHoeveelheid.TabIndex = 11;
+            this.numericUpDownWijzigHoeveelheid.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(37, 166);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Opmerking";
+            // 
+            // richTextBoxWijzigHoeveelheid
+            // 
+            this.richTextBoxWijzigHoeveelheid.Location = new System.Drawing.Point(37, 189);
+            this.richTextBoxWijzigHoeveelheid.Name = "richTextBoxWijzigHoeveelheid";
+            this.richTextBoxWijzigHoeveelheid.Size = new System.Drawing.Size(313, 144);
+            this.richTextBoxWijzigHoeveelheid.TabIndex = 9;
+            this.richTextBoxWijzigHoeveelheid.Text = "";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(25, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(188, 29);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Order Wijzigen";
+            // 
             // x
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1399, 699);
+            this.Controls.Add(this.panelWijzigOrder);
             this.Controls.Add(this.panelMenuOverview);
             this.Controls.Add(this.labelAfrekenen);
             this.Controls.Add(this.panel2);
@@ -990,11 +1249,20 @@ namespace ChapooUI
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.panelMenuOverview.ResumeLayout(false);
+            this.panelMenuItemOptions.ResumeLayout(false);
+            this.panelMenuItemOptions.PerformLayout();
+            this.groupBoxLegitimatie.ResumeLayout(false);
+            this.groupBoxLegitimatie.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoeveelheid)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panelWijzigOrder.ResumeLayout(false);
+            this.panelWijzigOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWijzigHoeveelheid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1022,7 +1290,6 @@ namespace ChapooUI
         private System.Windows.Forms.Button buttonNumber2;
         private System.Windows.Forms.Button buttonNumber1;
         private System.Windows.Forms.ListView listViewCurrentOrderList;
-        private System.Windows.Forms.ColumnHeader Menu;
         private System.Windows.Forms.ColumnHeader MenuGroup;
         private System.Windows.Forms.ColumnHeader Item;
         private System.Windows.Forms.ColumnHeader Price;
@@ -1042,9 +1309,8 @@ namespace ChapooUI
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonBestelVerwijder;
+        private System.Windows.Forms.Button buttonBestelBewerk;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonDrankenMenu;
         private System.Windows.Forms.Button buttonLunchMenu;
@@ -1069,6 +1335,26 @@ namespace ChapooUI
         private System.Windows.Forms.ColumnHeader ItemHeader;
         private System.Windows.Forms.ColumnHeader PrijsHeader;
         private System.Windows.Forms.Button buttonSluitMenu;
+        private System.Windows.Forms.Panel panelMenuItemOptions;
+        private System.Windows.Forms.Button buttonAnnuleren;
+        private System.Windows.Forms.Button buttonToevoegen;
+        private System.Windows.Forms.Label labelHoeveelheid;
+        private System.Windows.Forms.NumericUpDown numericUpDownHoeveelheid;
+        private System.Windows.Forms.Label labelOpmerking;
+        private System.Windows.Forms.RichTextBox richTextBoxOpmerking;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBoxLegitimatie;
+        private System.Windows.Forms.Label labelIDInput;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button buttonBestelOrder;
+        private System.Windows.Forms.Panel panelWijzigOrder;
+        private System.Windows.Forms.Button buttonAnnuleerWijzig;
+        private System.Windows.Forms.Button buttonWijzigOrder;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDownWijzigHoeveelheid;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RichTextBox richTextBoxWijzigHoeveelheid;
+        private System.Windows.Forms.Label label9;
     }
 }
 

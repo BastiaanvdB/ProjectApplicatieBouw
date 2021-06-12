@@ -42,6 +42,7 @@ namespace ChapooUI
             this.UserFunctieLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelWelkom = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -231,12 +232,24 @@ namespace ChapooUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // labelWelkom
+            // 
+            this.labelWelkom.AutoSize = true;
+            this.labelWelkom.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelWelkom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelWelkom.Location = new System.Drawing.Point(224, 25);
+            this.labelWelkom.Name = "labelWelkom";
+            this.labelWelkom.Size = new System.Drawing.Size(203, 55);
+            this.labelWelkom.TabIndex = 8;
+            this.labelWelkom.Text = "Welkom";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1399, 699);
+            this.Controls.Add(this.labelWelkom);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -247,6 +260,7 @@ namespace ChapooUI
             this.MenuBarAccountPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -264,6 +278,7 @@ namespace ChapooUI
         private System.Windows.Forms.Button BtnBestellen;
         private System.Windows.Forms.Button BtnTafelOverzicht;
         private System.Windows.Forms.Button BtnAfmelden;
+        private System.Windows.Forms.Label labelWelkom;
     }
 }
 

@@ -18,7 +18,10 @@ namespace ChapooUI
         private Dashboard Dashboard;
         private ChapooLogic.Order_Service Order_Service;
 
-        private Order _CurrentOrder;
+        private List<OrderDetail> _CurrentOrderList;
+        private MenuItem _CurrentSelectedMenuItem;
+        private OrderDetail _CurrentSelectedOrderDetail;
+        private int _CurrentOrderID;
 
         private List<MenuItem> MenuItemsList;
 
@@ -49,12 +52,18 @@ namespace ChapooUI
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             MenuItemsList = new List<MenuItem>();
-            _CurrentOrder = new Order();
+            _CurrentOrderID = 0;
+            _CurrentOrderList = new List<OrderDetail>();
             Order_Service = new ChapooLogic.Order_Service();
             CurrentEmployee = employee;
             Dashboard = dashboard;
+            panelMenuItemOptions.Hide();
             panelMenuOverview.Hide();
             CurrentUserProfile();
+            buttonBestelVerwijder.Enabled = false;
+            buttonBestelBewerk.Enabled = false;
+            buttonBestelOrder.Enabled = false;
+            panelWijzigOrder.Hide();
         }
 
         private void CurrentUserProfile()
@@ -143,11 +152,81 @@ namespace ChapooUI
             }
         }
 
-        private void CheckExistingOrder(int TableNumber)
+        private void FillCurrentOrderListOverview()
         {
-            _CurrentOrder.order_ID = Order_Service.DB_Add_Order(TableNumber);
+            listViewCurrentOrderList.Items.Clear();
+            foreach (ChapooModel.OrderDetail orderDetail in _CurrentOrderList)
+            {
+                listViewCurrentOrderList.Items.Add(new ListViewItem(new string[] { $"{orderDetail.item.MenuGroup}", $"{orderDetail.item.item_Name}", $"{orderDetail.item.item_Price.ToString("€ 0.00")}", $"{orderDetail.quantity}" }));
+            }
         }
 
+
+        private void CheckExistingOrder(int TableNumber)
+        {
+            _CurrentOrderID = Order_Service.DB_Add_Order(TableNumber);
+        }
+
+
+        private void listViewMenuOverviewList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewMenuOverviewList.SelectedItems.Count != 0)
+            {
+                _CurrentSelectedMenuItem = MenuItemsList[listViewMenuOverviewList.SelectedIndices[0]];
+                panelMenuItemOptions.Show();
+                numericUpDownHoeveelheid.Value = 1;
+                richTextBoxOpmerking.ResetText();
+                if (_CurrentSelectedMenuItem.Alcohol_Check == true)
+                {
+                    labelIDInput.Text = "Vraag ID";
+                    labelIDInput.ForeColor = Color.Red;
+                }
+                else
+                {
+                    labelIDInput.Text = "Niet nodig";
+                    labelIDInput.ForeColor = Color.Green;
+                }
+                        
+            }
+        }
+
+        private void listViewCurrentOrderList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewCurrentOrderList.SelectedItems.Count != 0)
+            {
+                _CurrentSelectedOrderDetail = _CurrentOrderList[listViewCurrentOrderList.SelectedIndices[0]];
+                buttonBestelVerwijder.Enabled = true;
+                buttonBestelBewerk.Enabled = true;
+            }
+            else
+            {
+                buttonBestelVerwijder.Enabled = false;
+                buttonBestelBewerk.Enabled = false;
+            }
+        }
+
+        private void EditOrderDetail()
+        {
+
+        }
+
+        private void CreateOrderDetail()
+        {
+            OrderDetail orderDetail = new OrderDetail()
+            {
+                item = _CurrentSelectedMenuItem,
+                order_ID = _CurrentOrderID,
+                quantity = (int)numericUpDownHoeveelheid.Value,
+                comment = richTextBoxOpmerking.Text,
+                employee = CurrentEmployee,
+                orderStatus = OrderStatus.Besteld,
+                ordered_DateTime = DateTime.Now,
+                preparing_DateTime = DateTime.Today,
+                finished_DateTime = DateTime.Today,
+            };
+            _CurrentOrderList.Add(orderDetail);
+            FillCurrentOrderListOverview();
+        }
 
         // Button area
 
@@ -175,84 +254,139 @@ namespace ChapooUI
         private void buttonSluitMenu_Click(object sender, EventArgs e)
         {
             panelMenuOverview.Hide();
+            panelMenuItemOptions.Hide();
         }
 
-        private void listViewMenuOverviewList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void buttonVoorgerechtLunch_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(1, 1);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonHoofdgerechtLunch_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(1, 2);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonNagerechtLunch_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(1, 3);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonVoorgerechtDiner_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(2, 4);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonTussengerechtDiner_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(2, 5);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonHoofdgerechtDiner_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(2, 6);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonNagerechtDiner_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(2, 7);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonFrisdranken_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(3, 8);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonBieren_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(3, 9);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonWijnen_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(3, 10);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonGedistilleerdeDranken_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(3, 11);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
 
         private void buttonWarmeDranken_Click(object sender, EventArgs e)
         {
             GetSpecificMenuItemsList(3, 12);
             FillMenuOverviewList();
+            panelMenuItemOptions.Hide();
         }
+
+        private void buttonAnnuleren_Click(object sender, EventArgs e)
+        {
+            panelMenuItemOptions.Hide();
+        }
+
+        private void buttonToevoegen_Click(object sender, EventArgs e)
+        {
+            CreateOrderDetail();
+            panelMenuItemOptions.Hide();
+        }
+
+        private void buttonBestelVerwijder_Click(object sender, EventArgs e)
+        {
+            //if (listViewCurrentOrderList.SelectedItems.Count != 0)
+            //{
+                _CurrentOrderList.Remove(_CurrentOrderList[listViewCurrentOrderList.SelectedIndices[0]]);
+                FillCurrentOrderListOverview();
+            //}
+        }
+
+        private void buttonBestelBewerk_Click(object sender, EventArgs e)
+        {
+            panelWijzigOrder.Show();
+            EditOrderDetail();
+        }
+
+        private void buttonBestelOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonWijzigOrder_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonAnnuleerWijzig_Click(object sender, EventArgs e)
+        {
+            panelWijzigOrder.Hide();
+        }
+
+
+
+
 
         // ---------------------
     }
