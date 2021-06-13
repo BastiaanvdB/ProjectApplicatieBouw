@@ -56,6 +56,18 @@ namespace ChapooDAL
                 new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.orderStatus) }
             };
             ExecuteEditQuery(query, sqlParameters);
+            DB_Adjust_Stock(orderDetail);
+        }
+
+        private void DB_Adjust_Stock(OrderDetail orderDetail)
+        {
+            string query = "UPDATE MenuItems SET Item_Stock = @stockvalue WHERE Item_ID = @item_ID";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.item.item_ID },
+                new SqlParameter("@stockvalue", SqlDbType.Int) { Value = orderDetail.item.item_Stock - orderDetail.quantity},
+            };
+            ExecuteEditQuery(query, sqlParameters);
         }
 
         public void DB_Delete_All_OrderDetails(Order order)

@@ -56,6 +56,7 @@ namespace ChapooUI
             this.Quantity = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonResetOrder = new System.Windows.Forms.Button();
             this.labelAantalItemsInput = new System.Windows.Forms.Label();
             this.labelTafelnummerInput = new System.Windows.Forms.Label();
             this.labelBonnummerinput = new System.Windows.Forms.Label();
@@ -116,7 +117,7 @@ namespace ChapooUI
             this.label8 = new System.Windows.Forms.Label();
             this.richTextBoxWijzigCommentaar = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.buttonResetOrder = new System.Windows.Forms.Button();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -475,6 +476,21 @@ namespace ChapooUI
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Current Order Info";
+            // 
+            // buttonResetOrder
+            // 
+            this.buttonResetOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonResetOrder.FlatAppearance.BorderSize = 0;
+            this.buttonResetOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResetOrder.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonResetOrder.ForeColor = System.Drawing.Color.White;
+            this.buttonResetOrder.Location = new System.Drawing.Point(196, 143);
+            this.buttonResetOrder.Name = "buttonResetOrder";
+            this.buttonResetOrder.Size = new System.Drawing.Size(126, 42);
+            this.buttonResetOrder.TabIndex = 17;
+            this.buttonResetOrder.Text = "Reset Bestelling";
+            this.buttonResetOrder.UseVisualStyleBackColor = false;
+            this.buttonResetOrder.Click += new System.EventHandler(this.buttonResetOrder_Click);
             // 
             // labelAantalItemsInput
             // 
@@ -879,7 +895,8 @@ namespace ChapooUI
             // 
             this.listViewMenuOverviewList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ItemHeader,
-            this.PrijsHeader});
+            this.PrijsHeader,
+            this.columnHeader1});
             this.listViewMenuOverviewList.FullRowSelect = true;
             this.listViewMenuOverviewList.GridLines = true;
             this.listViewMenuOverviewList.HideSelection = false;
@@ -1250,20 +1267,10 @@ namespace ChapooUI
             this.label9.TabIndex = 8;
             this.label9.Text = "Order Wijzigen";
             // 
-            // buttonResetOrder
+            // columnHeader1
             // 
-            this.buttonResetOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonResetOrder.FlatAppearance.BorderSize = 0;
-            this.buttonResetOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonResetOrder.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonResetOrder.ForeColor = System.Drawing.Color.White;
-            this.buttonResetOrder.Location = new System.Drawing.Point(196, 143);
-            this.buttonResetOrder.Name = "buttonResetOrder";
-            this.buttonResetOrder.Size = new System.Drawing.Size(126, 42);
-            this.buttonResetOrder.TabIndex = 17;
-            this.buttonResetOrder.Text = "Reset Bestelling";
-            this.buttonResetOrder.UseVisualStyleBackColor = false;
-            this.buttonResetOrder.Click += new System.EventHandler(this.buttonResetOrder_Click);
+            this.columnHeader1.Text = "In voorraad";
+            this.columnHeader1.Width = 80;
             // 
             // x
             // 
@@ -1402,6 +1409,7 @@ namespace ChapooUI
         private System.Windows.Forms.Label labelTafelnummerInput;
         private System.Windows.Forms.Label labelBonnummerinput;
         private System.Windows.Forms.Button buttonResetOrder;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
 

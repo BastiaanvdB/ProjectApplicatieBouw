@@ -31,7 +31,7 @@ namespace ChapooDAL
 
         public List<MenuItem> DB_Get_Specific_MenuItems(int MenuID, int MenuGroupID)
         {
-            string query = "SELECT MenuItems.Item_ID, MenuGroup.MenuGroup_Name, MenuItems.Item_Name, MenuItems.Item_Price, MenuItems.Item_Taxpercentage, MenuItems.Alcohol_Check, MenuItems.Item_Stock, MenuItems.Item_Restock FROM MenuItems INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID WHERE Menu.Menu_ID = @MenuID AND MenuGroup.MenuGroup_ID = @MenuGroupID";
+            string query = "SELECT MenuItems.Item_ID, MenuGroup.MenuGroup_Name, MenuItems.Item_Name, MenuItems.Item_Price, MenuItems.Item_Taxpercentage, MenuItems.Alcohol_Check, MenuItems.Item_Stock, MenuItems.Item_Restock FROM MenuItems INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID WHERE Menu.Menu_ID = @MenuID AND MenuGroup.MenuGroup_ID = @MenuGroupID AND Item_Stock > 0";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@MenuID", SqlDbType.Int) { Value = MenuID },

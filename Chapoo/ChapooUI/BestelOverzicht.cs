@@ -151,7 +151,7 @@ namespace ChapooUI
             listViewMenuOverviewList.Items.Clear();
             foreach (ChapooModel.MenuItem item in MenuItemsList)
             {
-                listViewMenuOverviewList.Items.Add(new ListViewItem(new string[] { $"{item.item_Name}", $"{item.item_Price.ToString("€ 0.00")}" }));
+                listViewMenuOverviewList.Items.Add(new ListViewItem(new string[] { $"{item.item_Name}", $"{item.item_Price.ToString("€ 0.00")}", $"{item.item_Stock}", }));
             }
         }
 
@@ -178,11 +178,6 @@ namespace ChapooUI
             }
         }
 
-
-        private void CheckExistingOrder(int TableNumber)
-        {
-            _CurrentOrderID = Order_Service.DB_Add_Order(TableNumber);
-        }
 
         private void listViewMenuOverviewList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -235,8 +230,32 @@ namespace ChapooUI
                 preparing_DateTime = DateTime.Today,
                 finished_DateTime = DateTime.Today,
             };
-            _CurrentOrderList.Add(orderDetail);
-            FillCurrentOrderListOverview();
+            if ((_CurrentSelectedMenuItem.item_Stock - (int)numericUpDownHoeveelheid.Value) >= 0)
+            {
+                int index = 0;
+                bool contains = false;
+                foreach (OrderDetail detail in _CurrentOrderList)
+                {
+                    if (detail.item.item_ID == orderDetail.item.item_ID)
+                    {
+                        _CurrentOrderList[index].quantity += orderDetail.quantity;
+                        _CurrentOrderList[index].comment += $" || {orderDetail.comment}";
+                        contains = true;
+                    }
+                    index++;
+                }
+
+                if (contains == false)
+                {
+                    _CurrentOrderList.Add(orderDetail);
+                }
+
+                FillCurrentOrderListOverview();
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Er is niet genoeg voorraad voor deze bestelling!", "Chapoo Besteloverzicht", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void FillEditForm()

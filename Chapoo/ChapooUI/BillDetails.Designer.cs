@@ -33,6 +33,7 @@ namespace ChapooUI
             this.listViewBonDetails = new System.Windows.Forms.ListView();
             this.GerechtHeader = new System.Windows.Forms.ColumnHeader();
             this.AantalHeader = new System.Windows.Forms.ColumnHeader();
+            this.columntijd = new System.Windows.Forms.ColumnHeader();
             this.PrijsHeader = new System.Windows.Forms.ColumnHeader();
             this.PrijsTotalHeader = new System.Windows.Forms.ColumnHeader();
             this.LabelBonTafelTitel = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@ namespace ChapooUI
             this.listViewBonDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.GerechtHeader,
             this.AantalHeader,
+            this.columntijd,
             this.PrijsHeader,
             this.PrijsTotalHeader});
             this.listViewBonDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -52,7 +54,7 @@ namespace ChapooUI
             this.listViewBonDetails.HideSelection = false;
             this.listViewBonDetails.Location = new System.Drawing.Point(54, 85);
             this.listViewBonDetails.Name = "listViewBonDetails";
-            this.listViewBonDetails.Size = new System.Drawing.Size(698, 529);
+            this.listViewBonDetails.Size = new System.Drawing.Size(890, 529);
             this.listViewBonDetails.TabIndex = 0;
             this.listViewBonDetails.UseCompatibleStateImageBehavior = false;
             this.listViewBonDetails.View = System.Windows.Forms.View.Details;
@@ -60,11 +62,16 @@ namespace ChapooUI
             // GerechtHeader
             // 
             this.GerechtHeader.Text = "Gerecht/Drank";
-            this.GerechtHeader.Width = 460;
+            this.GerechtHeader.Width = 480;
             // 
             // AantalHeader
             // 
             this.AantalHeader.Text = "Aantal";
+            // 
+            // columntijd
+            // 
+            this.columntijd.Text = "Datum/Tijd";
+            this.columntijd.Width = 170;
             // 
             // PrijsHeader
             // 
@@ -103,7 +110,7 @@ namespace ChapooUI
             this.BonSluitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BonSluitButton.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BonSluitButton.ForeColor = System.Drawing.Color.White;
-            this.BonSluitButton.Location = new System.Drawing.Point(569, 642);
+            this.BonSluitButton.Location = new System.Drawing.Point(761, 637);
             this.BonSluitButton.Name = "BonSluitButton";
             this.BonSluitButton.Size = new System.Drawing.Size(183, 50);
             this.BonSluitButton.TabIndex = 3;
@@ -115,7 +122,7 @@ namespace ChapooUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 716);
+            this.ClientSize = new System.Drawing.Size(1007, 716);
             this.Controls.Add(this.BonSluitButton);
             this.Controls.Add(this.LabelBonInputTafel);
             this.Controls.Add(this.LabelBonTafelTitel);
@@ -140,5 +147,6 @@ namespace ChapooUI
         private System.Windows.Forms.ColumnHeader AantalHeader;
         private System.Windows.Forms.ColumnHeader PrijsHeader;
         private System.Windows.Forms.ColumnHeader PrijsTotalHeader;
+        private System.Windows.Forms.ColumnHeader columntijd;
     }
 }
