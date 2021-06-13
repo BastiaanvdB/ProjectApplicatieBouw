@@ -243,6 +243,7 @@ namespace ChapooUI
         private void btn_Gereed_Click(object sender, EventArgs e)
         {
             UpdateCurrentOrder();
+            UpdateAllLists();
         }
 
         private void Btn_update_bar_Click(object sender, EventArgs e)
@@ -263,6 +264,17 @@ namespace ChapooUI
         private void Btn_Keuken_gereed_Click(object sender, EventArgs e)
         {
             UpdateCurrentOrder();
+            UpdateKicthenlists();
+        }
+
+        private void RBtn_Lunch_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateKicthenlists();
+        }
+
+        private void RBtn_Diner_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateKicthenlists();
         }
 
 

@@ -291,7 +291,7 @@ namespace ChapooUI
             this.Pnl_keukenoverzicht.Controls.Add(this.listView_Keuken_besteld);
             this.Pnl_keukenoverzicht.Location = new System.Drawing.Point(222, 44);
             this.Pnl_keukenoverzicht.Name = "Pnl_keukenoverzicht";
-            this.Pnl_keukenoverzicht.Size = new System.Drawing.Size(1431, 728);
+            this.Pnl_keukenoverzicht.Size = new System.Drawing.Size(1457, 728);
             this.Pnl_keukenoverzicht.TabIndex = 5;
             // 
             // label1
@@ -318,6 +318,7 @@ namespace ChapooUI
             this.RBtn_Diner.TabStop = true;
             this.RBtn_Diner.Text = "Diner";
             this.RBtn_Diner.UseVisualStyleBackColor = true;
+            this.RBtn_Diner.CheckedChanged += new System.EventHandler(this.RBtn_Diner_CheckedChanged);
             // 
             // RBtn_Lunch
             // 
@@ -331,6 +332,7 @@ namespace ChapooUI
             this.RBtn_Lunch.TabStop = true;
             this.RBtn_Lunch.Text = "Lunch";
             this.RBtn_Lunch.UseVisualStyleBackColor = true;
+            this.RBtn_Lunch.CheckedChanged += new System.EventHandler(this.RBtn_Lunch_CheckedChanged);
             // 
             // Btn_Update_keuken
             // 
