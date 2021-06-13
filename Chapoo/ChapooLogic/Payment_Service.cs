@@ -20,5 +20,10 @@ namespace ChapooLogic
             Order_DB.DB_Set_Order_To_Paid(payment.order.order_ID);
             OrderDetail_DB.DB_Delete_All_OrderDetails(payment.order);
         }
+
+        public List<Payment> Db_Get_PaymentHistory(DateTime sD, DateTime eD)
+        {
+            return Payment_DB.Db_Get_PaymentHistory(sD, eD);
+        }
     }
 }

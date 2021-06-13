@@ -61,6 +61,7 @@ namespace ChapooUI
             CurrentUserProfile();
             panelPersoneelbeheer.Hide();
             panelStockManagement.Hide();
+            panelFinancien.Hide();
             Stock_Service = new ChapooLogic.Stock_Service();
         }
 
@@ -76,16 +77,20 @@ namespace ChapooUI
             switch(menu)
             {
                 case "UserMangement":
+                    panelFinancien.Hide();
                     panelPersoneelbeheer.Show();
                     panelStockManagement.Hide();
                     break;
                 case "StockManagement":
+                    panelFinancien.Hide();
                     panelPersoneelbeheer.Hide();
                     panelStockManagement.Show();
                     break;
                 case "FinancialOverview":
+                    panelFinancien.Show();
                     panelPersoneelbeheer.Hide();
                     panelStockManagement.Hide();
+                    LoadfinancieelOverzichtPanel();
                     break;
             }
         }
@@ -103,6 +108,11 @@ namespace ChapooUI
             foreach (ChapooModel.MenuItem menuItem  in StockList)
             {
                 string idcheck = "ID niet nodig";
+
+                if(menuItem.item_Stock < menuItem.item_Restock)
+                {
+                    DialogResult dialogResult = MessageBox.Show($"De item '{menuItem.item_Name}' raakt op, vul de voorraad aan!", "Voorraadbeheer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
                 if(menuItem.Alcohol_Check == true)
                 {
@@ -902,6 +912,50 @@ namespace ChapooUI
             {
                 DialogResult dialogResult = MessageBox.Show("Vul alle velden in", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// financeel overzicht area 
+        /// 
+        private List<Payment> paymentList;
+
+        private void LoadfinancieelOverzichtPanel()
+        {
+
+            paymentList = new List<Payment>();
+
+            //FillPaymentList();
+            //FillPaymentListview();
+        }
+
+        private void FillPaymentList()
+        {
+            ChapooLogic.Payment_Service payment_Service = new ChapooLogic.Payment_Service();
+            paymentList = payment_Service.Db_Get_PaymentHistory(monthCalendarFrom.SelectionStart, monthCalendarTill.SelectionStart);
+            FillPaymentListview();
+        }
+
+        private void FillPaymentListview()
+        {
+            listViewPayments.Items.Clear();
+            foreach (ChapooModel.Payment payment in paymentList)
+            {
+                listViewPayments.Items.Add(new ListViewItem(new string[] { $"{payment.payment_ID}", $"{payment.employee.name}", $"{payment.payMethod}", $"{payment.totalVAT.ToString("€ 0.00")}", $"{payment.tip.ToString("€ 0.00")}", $"{payment.totalPrice.ToString("€ 0.00")}", $"{payment.payment_DateTime}", $"{payment.payStatus}" }));
+            }
+        }
+
+        private void monthCalendarFrom_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            monthCalendarTill.MinDate = monthCalendarFrom.SelectionStart;
+        }
+
+        private void monthCalendarTill_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            monthCalendarFrom.MaxDate = monthCalendarTill.SelectionStart;
+        }
+
+        private void buttonPaymentZoeken_Click(object sender, EventArgs e)
+        {
+            FillPaymentList();
         }
     }
 }

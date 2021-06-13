@@ -117,6 +117,23 @@ namespace ChapooUI
             this.werknemersAdres = new System.Windows.Forms.ColumnHeader();
             this.werknemersTelefoon = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.panelFinancien = new System.Windows.Forms.Panel();
+            this.listViewPayments = new System.Windows.Forms.ListView();
+            this.PaymentID = new System.Windows.Forms.ColumnHeader();
+            this.Employee = new System.Windows.Forms.ColumnHeader();
+            this.Paymethod = new System.Windows.Forms.ColumnHeader();
+            this.VAT = new System.Windows.Forms.ColumnHeader();
+            this.Tip = new System.Windows.Forms.ColumnHeader();
+            this.TotalPrice = new System.Windows.Forms.ColumnHeader();
+            this.date = new System.Windows.Forms.ColumnHeader();
+            this.Paystatus = new System.Windows.Forms.ColumnHeader();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonPaymentZoeken = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.monthCalendarTill = new System.Windows.Forms.MonthCalendar();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.monthCalendarFrom = new System.Windows.Forms.MonthCalendar();
+            this.label19 = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -138,6 +155,10 @@ namespace ChapooUI
             this.groupBox1.SuspendLayout();
             this.groupBoxpersoonsgegevens.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panelFinancien.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBarPanel
@@ -1087,12 +1108,155 @@ namespace ChapooUI
             this.columnHeader5.Text = "Functie";
             this.columnHeader5.Width = 110;
             // 
+            // panelFinancien
+            // 
+            this.panelFinancien.Controls.Add(this.listViewPayments);
+            this.panelFinancien.Controls.Add(this.panel1);
+            this.panelFinancien.Controls.Add(this.label19);
+            this.panelFinancien.Location = new System.Drawing.Point(196, 5);
+            this.panelFinancien.Name = "panelFinancien";
+            this.panelFinancien.Size = new System.Drawing.Size(1188, 691);
+            this.panelFinancien.TabIndex = 8;
+            // 
+            // listViewPayments
+            // 
+            this.listViewPayments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.PaymentID,
+            this.Employee,
+            this.Paymethod,
+            this.VAT,
+            this.Tip,
+            this.TotalPrice,
+            this.date,
+            this.Paystatus});
+            this.listViewPayments.FullRowSelect = true;
+            this.listViewPayments.GridLines = true;
+            this.listViewPayments.HideSelection = false;
+            this.listViewPayments.Location = new System.Drawing.Point(15, 75);
+            this.listViewPayments.Name = "listViewPayments";
+            this.listViewPayments.Size = new System.Drawing.Size(665, 600);
+            this.listViewPayments.TabIndex = 10;
+            this.listViewPayments.UseCompatibleStateImageBehavior = false;
+            this.listViewPayments.View = System.Windows.Forms.View.Details;
+            // 
+            // PaymentID
+            // 
+            this.PaymentID.Text = "ID";
+            this.PaymentID.Width = 40;
+            // 
+            // Employee
+            // 
+            this.Employee.Text = "Werknemer";
+            this.Employee.Width = 100;
+            // 
+            // Paymethod
+            // 
+            this.Paymethod.Text = "Betaalmethode";
+            this.Paymethod.Width = 110;
+            // 
+            // VAT
+            // 
+            this.VAT.Text = "BTW";
+            // 
+            // Tip
+            // 
+            this.Tip.Text = "Fooi";
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.Text = "Totaalbedrag";
+            this.TotalPrice.Width = 80;
+            // 
+            // date
+            // 
+            this.date.Text = "Datum";
+            this.date.Width = 120;
+            // 
+            // Paystatus
+            // 
+            this.Paystatus.Text = "Betaalstatus";
+            this.Paystatus.Width = 90;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.buttonPaymentZoeken);
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Location = new System.Drawing.Point(689, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(486, 326);
+            this.panel1.TabIndex = 9;
+            // 
+            // buttonPaymentZoeken
+            // 
+            this.buttonPaymentZoeken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.buttonPaymentZoeken.FlatAppearance.BorderSize = 0;
+            this.buttonPaymentZoeken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPaymentZoeken.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonPaymentZoeken.ForeColor = System.Drawing.Color.White;
+            this.buttonPaymentZoeken.Location = new System.Drawing.Point(306, 264);
+            this.buttonPaymentZoeken.Name = "buttonPaymentZoeken";
+            this.buttonPaymentZoeken.Size = new System.Drawing.Size(153, 48);
+            this.buttonPaymentZoeken.TabIndex = 11;
+            this.buttonPaymentZoeken.Text = "Zoeken";
+            this.buttonPaymentZoeken.UseVisualStyleBackColor = false;
+            this.buttonPaymentZoeken.Click += new System.EventHandler(this.buttonPaymentZoeken_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.monthCalendarTill);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(259, 33);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 206);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tot datum";
+            // 
+            // monthCalendarTill
+            // 
+            this.monthCalendarTill.Location = new System.Drawing.Point(12, 28);
+            this.monthCalendarTill.Name = "monthCalendarTill";
+            this.monthCalendarTill.TabIndex = 7;
+            this.monthCalendarTill.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarTill_DateChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.monthCalendarFrom);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(46, 33);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(197, 206);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Vanaf datum";
+            // 
+            // monthCalendarFrom
+            // 
+            this.monthCalendarFrom.Location = new System.Drawing.Point(12, 28);
+            this.monthCalendarFrom.Name = "monthCalendarFrom";
+            this.monthCalendarFrom.TabIndex = 8;
+            this.monthCalendarFrom.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarFrom_DateChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label19.Location = new System.Drawing.Point(27, 9);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(326, 38);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Financieel overzicht";
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1399, 699);
+            this.Controls.Add(this.panelFinancien);
             this.Controls.Add(this.panelPersoneelbeheer);
             this.Controls.Add(this.panelStockManagement);
             this.Controls.Add(this.MenuBarPanel);
@@ -1136,6 +1300,11 @@ namespace ChapooUI
             this.groupBoxpersoonsgegevens.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panelFinancien.ResumeLayout(false);
+            this.panelFinancien.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1229,6 +1398,23 @@ namespace ChapooUI
         private System.Windows.Forms.ColumnHeader werknemersAdres;
         private System.Windows.Forms.ColumnHeader werknemersTelefoon;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Panel panelFinancien;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.MonthCalendar monthCalendarTill;
+        private System.Windows.Forms.MonthCalendar monthCalendarFrom;
+        private System.Windows.Forms.ListView listViewPayments;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button buttonPaymentZoeken;
+        private System.Windows.Forms.ColumnHeader PaymentID;
+        private System.Windows.Forms.ColumnHeader Employee;
+        private System.Windows.Forms.ColumnHeader Paymethod;
+        private System.Windows.Forms.ColumnHeader VAT;
+        private System.Windows.Forms.ColumnHeader Tip;
+        private System.Windows.Forms.ColumnHeader TotalPrice;
+        private System.Windows.Forms.ColumnHeader date;
+        private System.Windows.Forms.ColumnHeader Paystatus;
     }
 }
 

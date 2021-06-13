@@ -254,9 +254,9 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
-            "Skclusive.Material.Button": {
+            "ScottPlot.WinForms": {
               "target": "Package",
-              "version": "[5.2.0, )"
+              "version": "[4.1.16, )"
             }
           },
           "imports": [
