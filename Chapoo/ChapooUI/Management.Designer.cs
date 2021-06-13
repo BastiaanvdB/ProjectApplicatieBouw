@@ -494,7 +494,7 @@ namespace ChapooUI
             this.groupBoxAlcohol.Size = new System.Drawing.Size(103, 127);
             this.groupBoxAlcohol.TabIndex = 16;
             this.groupBoxAlcohol.TabStop = false;
-            this.groupBoxAlcohol.Text = "Alcohol check";
+            this.groupBoxAlcohol.Text = "ID legitimatie";
             // 
             // radioButtonNeedID
             // 
@@ -503,10 +503,10 @@ namespace ChapooUI
             this.radioButtonNeedID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButtonNeedID.Location = new System.Drawing.Point(25, 32);
             this.radioButtonNeedID.Name = "radioButtonNeedID";
-            this.radioButtonNeedID.Size = new System.Drawing.Size(53, 24);
+            this.radioButtonNeedID.Size = new System.Drawing.Size(40, 24);
             this.radioButtonNeedID.TabIndex = 16;
             this.radioButtonNeedID.TabStop = true;
-            this.radioButtonNeedID.Text = ">18";
+            this.radioButtonNeedID.Text = "Ja";
             this.radioButtonNeedID.UseVisualStyleBackColor = true;
             // 
             // radioButtonNoID
@@ -515,9 +515,9 @@ namespace ChapooUI
             this.radioButtonNoID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButtonNoID.Location = new System.Drawing.Point(25, 71);
             this.radioButtonNoID.Name = "radioButtonNoID";
-            this.radioButtonNoID.Size = new System.Drawing.Size(53, 24);
+            this.radioButtonNoID.Size = new System.Drawing.Size(54, 24);
             this.radioButtonNoID.TabIndex = 15;
-            this.radioButtonNoID.Text = "<18";
+            this.radioButtonNoID.Text = "Nee";
             this.radioButtonNoID.UseVisualStyleBackColor = true;
             // 
             // ButtonModifyConfirm
@@ -800,7 +800,7 @@ namespace ChapooUI
             this.panelPersoneelbeheer.Controls.Add(this.panel2);
             this.panelPersoneelbeheer.Controls.Add(this.label11);
             this.panelPersoneelbeheer.Controls.Add(this.listViewWerknemers);
-            this.panelPersoneelbeheer.Location = new System.Drawing.Point(196, 15);
+            this.panelPersoneelbeheer.Location = new System.Drawing.Point(196, 12);
             this.panelPersoneelbeheer.Name = "panelPersoneelbeheer";
             this.panelPersoneelbeheer.Size = new System.Drawing.Size(1191, 672);
             this.panelPersoneelbeheer.TabIndex = 7;

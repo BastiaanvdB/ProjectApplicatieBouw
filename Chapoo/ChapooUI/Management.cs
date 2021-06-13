@@ -102,7 +102,14 @@ namespace ChapooUI
             listViewStockManagement.Items.Clear();
             foreach (ChapooModel.MenuItem menuItem  in StockList)
             {
-                listViewStockManagement.Items.Add(new ListViewItem(new string[] { $"{menuItem.MenuGroup}", $"{menuItem.item_Name}", $"{menuItem.item_Price.ToString("€ 0.00")}", $"{menuItem.item_Taxpercentage}%", $"{menuItem.item_Restock}", $"{menuItem.item_Stock}", $"{"test"}" }));
+                string idcheck = "ID niet nodig";
+
+                if(menuItem.Alcohol_Check == true)
+                {
+                    idcheck = "ID nodig";
+                }
+
+                listViewStockManagement.Items.Add(new ListViewItem(new string[] { $"{menuItem.MenuGroup}", $"{menuItem.item_Name}", $"{menuItem.item_Price.ToString("€ 0.00")}", $"{menuItem.item_Taxpercentage}%", $"{menuItem.item_Restock}", $"{menuItem.item_Stock}", $"{idcheck}" }));
             }
         }
 
@@ -510,7 +517,7 @@ namespace ChapooUI
         private void radioButtonLunchVoorraad_CheckedChanged(object sender, EventArgs e)
         {
             CurrentMenuCode = 1;
-            groupBoxAlcohol.Hide();
+            groupBoxAlcohol.Show();
             panelModifySelection.Show();
             panelLunchSetting.Show();
             UpdateStockList();
@@ -521,7 +528,7 @@ namespace ChapooUI
         private void radioButtonDinerVoorraad_CheckedChanged(object sender, EventArgs e)
         {
             CurrentMenuCode = 2;
-            groupBoxAlcohol.Hide();
+            groupBoxAlcohol.Show();
             panelModifySelection.Show();
             panelDinerSetting.Show();
             UpdateStockList();
@@ -596,6 +603,7 @@ namespace ChapooUI
             textBoxPincodeHerhaal.Enabled = false;
             buttonUserButton.Enabled = false;
             comboBoxFuncties.DataSource = Enum.GetValues(typeof(Position));
+            ClearFields();
             FillEmployeeList();
             FillListviewWithEmployees();
             RadioButtonSetting("Update");
@@ -635,6 +643,7 @@ namespace ChapooUI
             }
             else
             {
+                ClearFields();
                 textBoxPincodeHerhaal.Enabled = false;
                 textBoxNaamInput.Enabled = false;
                 textBoxAdresInput.Enabled = false;
@@ -651,6 +660,7 @@ namespace ChapooUI
             switch(modifySetting)
             {
                 case "Add":
+                    ClearFields();
                     textBoxNaamInput.Enabled = true;
                     textBoxAdresInput.Enabled = true;
                     textBoxTelefoonInput.Enabled = true;
@@ -663,6 +673,10 @@ namespace ChapooUI
                     buttonUserButton.Text = "Toevoegen";
                     break;
                 case "Delete":
+                    if (listViewWerknemers.SelectedItems.Count is 0)
+                    {
+                        buttonUserButton.Enabled = false;
+                    }
                     textBoxNaamInput.Enabled = false;
                     textBoxAdresInput.Enabled = false;
                     textBoxTelefoonInput.Enabled = false;
@@ -674,6 +688,10 @@ namespace ChapooUI
                     buttonUserButton.Text = "Verwijder"; 
                     break;
                 case "Update":
+                    if (listViewWerknemers.SelectedItems.Count is 0)
+                    {
+                        buttonUserButton.Enabled = false;
+                    }
                     textBoxNaamInput.Enabled = true;
                     textBoxAdresInput.Enabled = true;
                     textBoxTelefoonInput.Enabled = true;
@@ -688,7 +706,6 @@ namespace ChapooUI
 
         }
 
-
         private void LoadUserDetails()
         {
             textBoxNaamInput.Text = _CurrentSelectedEmployee.name;
@@ -698,9 +715,17 @@ namespace ChapooUI
             textBoxPincode.Text = Decrypt(_CurrentSelectedEmployee.pin);
         }
 
+        private void ClearFields()
+        {
+            textBoxNaamInput.Clear();
+            textBoxAdresInput.Clear();
+            textBoxTelefoonInput.Clear();
+            textBoxPincode.Clear();
+            textBoxPincodeHerhaal.Clear();
+        }
+
         private void ModifyUserDatabase()
         {
-
             if ((radioButtonAddUser.Checked == true) && (radioButtonWijzigUser.Checked == false))
             {
                 Employee employee = new Employee()
@@ -712,6 +737,7 @@ namespace ChapooUI
                     position = (Position)comboBoxFuncties.SelectedItem,
                 };
                 Employees_Service.DB_Add_Employee(employee);
+                ClearFields();
                 DialogResult dialogResult = MessageBox.Show("Werknemer is succesvol toegevoegd", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if ((radioButtonWijzigUser.Checked == true) && (radioButtonAddUser.Checked == false))
@@ -726,6 +752,7 @@ namespace ChapooUI
                     position = (Position)comboBoxFuncties.SelectedItem,
                 };
                 Employees_Service.DB_Update_Employee(employee);
+                ClearFields();
                 DialogResult dialogResult = MessageBox.Show("Werknemer is succesvol gewijzigd", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -740,17 +767,13 @@ namespace ChapooUI
                     position = (Position)comboBoxFuncties.SelectedItem,
                 };
                 Employees_Service.DB_Delete_Employee(employee);
+                ClearFields();
                 DialogResult dialogResult = MessageBox.Show("Werknemer is succesvol verwijderd", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
 
             FillEmployeeList();
             FillListviewWithEmployees();
         }
-
-
-
-
 
         public static string Encrypt(string clearText)
         {
@@ -821,42 +844,63 @@ namespace ChapooUI
         }
 
         private void buttonUserButton_Click(object sender, EventArgs e)
-        {
-            if ((radioButtonAddUser.Checked == true) && (radioButtonWijzigUser.Checked == false))
+        {   
+            if ((textBoxNaamInput.Text.Length > 0) && (textBoxAdresInput.Text.Length > 0) && (textBoxTelefoonInput.Text.Length > 0) || (radioButtonVerwijderUser.Checked == true))
             {
-                DialogResult dialogResult = MessageBox.Show("U gaat een werknemer toevoegen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
+                if ((textBoxPincode.Text == textBoxPincodeHerhaal.Text) || (radioButtonVerwijderUser.Checked == true))
                 {
-                    ModifyUserDatabase();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
+                    if ((radioButtonAddUser.Checked == true) && (radioButtonWijzigUser.Checked == false))
+                    {
+                        DialogResult dialogResult = MessageBox.Show("U gaat een werknemer toevoegen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            ModifyUserDatabase();
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
 
-                }
-            }
-            else if ((radioButtonWijzigUser.Checked == true) && (radioButtonAddUser.Checked == false))
-            {
-                DialogResult dialogResult = MessageBox.Show("U gaat een werknemer wijzigen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    ModifyUserDatabase();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
+                        }
+                    }
+                    else if ((radioButtonWijzigUser.Checked == true) && (radioButtonAddUser.Checked == false))
+                    {
+                        DialogResult dialogResult = MessageBox.Show("U gaat een werknemer wijzigen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            ModifyUserDatabase();
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
 
+                        }
+                    }
+                    else
+                    {
+                        if (listViewWerknemers.SelectedItems.Count is not 0)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("U gaat een werknemer verwijderen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                ModifyUserDatabase();
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+
+                            }
+                        }
+                        else
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Selecteer een werknemer om te verwijderen", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("De twee ingevoerde pincodes komen niet overeen", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("U gaat een werknemer verwijderen, Weet u het zeker?", "Voorraadbeheer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    ModifyUserDatabase();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-
-                }
+                DialogResult dialogResult = MessageBox.Show("Vul alle velden in", "Personeel beheer", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -56,15 +56,15 @@ namespace ChapooDAL
 
         public void DB_Update_Employee(Employee employee)
         {
-            string query = "UPDATE Employees SET Employees.Position_ID = @Position_ID, Employees.Employee_Name = @Employee_Name, Employees.Employee_Address = @Employee_Address, Employees.Employee_Phone = @Employee_Phone, Employees.Employee_Pincode = @Employee_Pincode WHERE Employees.Employee_ID = @Employee_ID)";
+            string query = "UPDATE Employees SET Position_ID = @PositionID, Employee_Name = @EmployeeName, Employee_Address = @EmployeeAddress, Employee_Phone = @EmployeePhone, Employee_Pincode = @EmployeePincode WHERE Employee_ID = @EmployeeID";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@Employee_ID", SqlDbType.Int) { Value = employee.employee_id },
-                new SqlParameter("@Position_ID", SqlDbType.Int) { Value = ((int)employee.position) },
-                new SqlParameter("@Employee_Name", SqlDbType.NVarChar) { Value = employee.name },
-                new SqlParameter("@Employee_Address", SqlDbType.NVarChar) { Value = employee.adres },
-                new SqlParameter("@Employee_Phone", SqlDbType.NVarChar) { Value = employee.phone },
-                new SqlParameter("@Employee_Pincode", SqlDbType.NVarChar) { Value = employee.pin }
+                new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = employee.employee_id },
+                new SqlParameter("@PositionID", SqlDbType.Int) { Value = ((int)employee.position) },
+                new SqlParameter("@EmployeeName", SqlDbType.NVarChar) { Value = employee.name },
+                new SqlParameter("@EmployeeAddress", SqlDbType.NVarChar) { Value = employee.adres },
+                new SqlParameter("@EmployeePhone", SqlDbType.NVarChar) { Value = employee.phone },
+                new SqlParameter("@EmployeePincode", SqlDbType.NVarChar) { Value = employee.pin }
             };
             ExecuteEditQuery(query, sqlParameters);
         }

@@ -90,6 +90,7 @@ namespace ChapooUI
         private void BtnTerug_Click(object sender, EventArgs e)
         {
             this.Close();
+            //BillDetails.clo
             _Dashboard.Show();
         }
 
