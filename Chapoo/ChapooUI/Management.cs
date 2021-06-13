@@ -530,9 +530,12 @@ namespace ChapooUI
             groupBoxAlcohol.Show();
             panelModifySelection.Show();
             panelLunchSetting.Show();
-            UpdateStockList();
-            UpdateStockViewList();
-            AdjustMenuGroupSetting(1);
+            if (radioButtonLunchVoorraad.Checked == true)
+            {
+                UpdateStockList();
+                UpdateStockViewList();
+                AdjustMenuGroupSetting(1);
+            }
         }
 
         private void radioButtonDinerVoorraad_CheckedChanged(object sender, EventArgs e)
@@ -541,9 +544,12 @@ namespace ChapooUI
             groupBoxAlcohol.Show();
             panelModifySelection.Show();
             panelDinerSetting.Show();
-            UpdateStockList();
-            UpdateStockViewList();
-            AdjustMenuGroupSetting(2);
+            if (radioButtonDinerVoorraad.Checked == true)
+            {
+                UpdateStockList();
+                AdjustMenuGroupSetting(2);
+                UpdateStockViewList();
+            }
         }
 
         private void radioButtonDrankVoorraad_CheckedChanged(object sender, EventArgs e)
@@ -552,9 +558,12 @@ namespace ChapooUI
             panelModifySelection.Show();
             panelDrankSetting.Show();
             groupBoxAlcohol.Show();
-            UpdateStockList();
-            UpdateStockViewList();
-            AdjustMenuGroupSetting(3);
+            if (radioButtonDrankVoorraad.Checked == true)
+            {
+                UpdateStockList();
+                UpdateStockViewList();
+                AdjustMenuGroupSetting(3);
+            }
         }
 
         private void radioButtonWijzigen_CheckedChanged(object sender, EventArgs e)
