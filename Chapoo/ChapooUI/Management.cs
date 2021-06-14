@@ -537,7 +537,8 @@ namespace ChapooUI
             ManagementMenu("StockManagement");
         }
 
-        private void BtnUserManagement_Click(object sender, EventArgs e)
+
+        private void btnUserManagement_Click_1(object sender, EventArgs e)
         {
             ManagementMenu("UserMangement");
             LoadPersoneelBeheerpaneel();
@@ -996,5 +997,7 @@ namespace ChapooUI
         {
             FillFinancialsList();
         }
+
+        
     }
 }

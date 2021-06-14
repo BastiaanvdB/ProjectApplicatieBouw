@@ -227,7 +227,7 @@ namespace ChapooUI
             this.btnUserManagement.Text = "Personeel beheer";
             this.btnUserManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnUserManagement.UseVisualStyleBackColor = true;
-            this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagement_Click);
+            this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagement_Click_1);
             // 
             // BtnStockManagement
             // 
