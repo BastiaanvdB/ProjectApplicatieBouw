@@ -18,7 +18,7 @@ namespace ChapooDAL
             {
                 new SqlParameter("@id", SqlDbType.Int) {Value = order_id}
             };
-            return ReadOrderDetails(ExecuteSelectQuery(query, sqlParameters));
+            return ReadOrderDetailsNoTable(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public void DB_Update_OrderDetails(OrderDetail orderDetail)
@@ -82,7 +82,7 @@ namespace ChapooDAL
 
         public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus(string MenuName, string OrderStatus)
         {
-            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE Menu.Menu_Name = @MenuName AND OrderStatus.OrderStatus_status = @OrderStatus";
+            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE Menu.Menu_Name = @MenuName AND OrderStatus.OrderStatus_status = @OrderStatus";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@MenuName", SqlDbType.NVarChar) { Value = MenuName },
@@ -92,6 +92,30 @@ namespace ChapooDAL
         }
 
         private List<OrderDetail> ReadOrderDetails(DataTable dataTable)
+        {
+            Employee_DAO employee_DAO = new Employee_DAO();
+            MenuItem_DAO Menuitem_DAO = new MenuItem_DAO();
+            List<OrderDetail> orderDetails = new List<OrderDetail>();
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.OrderDetails_ID = (int)dr["OrderDetails_ID"];
+                orderDetail.Item = Menuitem_DAO.DB_Get_MenuItem((int)dr["Item_ID"]);
+                orderDetail.Order_ID = (int)dr["Order_ID"];
+                orderDetail.Table_ID = (int)dr["Table_ID"];
+                orderDetail.Quantity = (int)dr["OrderDetails_Quantity"];
+                orderDetail.Comment = (string)dr["OrderDetails_Comment"];
+                orderDetail.Employee = employee_DAO.DB_Get_Employee((int)dr["Employee_ID"]);
+                orderDetail.OrderStatus = (OrderStatus)((int)dr["OrderDetails_OrderStatus"]);
+                orderDetail.Ordered_DateTime = (DateTime)dr["OrderDetails_Ordered_DateTime"];
+                orderDetail.Preparing_DateTime = (DateTime)dr["OrderDetails_Preparing_DateTime"];
+                orderDetail.Finished_DateTime = (DateTime)dr["OrderDetails_Finished_DateTime"];
+                orderDetails.Add(orderDetail);
+            }
+            return orderDetails;
+        }
+
+        private List<OrderDetail> ReadOrderDetailsNoTable(DataTable dataTable)
         {
             Employee_DAO employee_DAO = new Employee_DAO();
             MenuItem_DAO Menuitem_DAO = new MenuItem_DAO();

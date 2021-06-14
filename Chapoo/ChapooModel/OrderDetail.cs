@@ -11,6 +11,7 @@ namespace ChapooModel
         public int OrderDetails_ID { get; set; }
         public MenuItem Item { get; set; }
         public int Order_ID { get; set; }
+        public int Table_ID { get; set; }
         public int Quantity { get; set; }
         public string Comment { get; set; }
         public Employee Employee { get; set; }
