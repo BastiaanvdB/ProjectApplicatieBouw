@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kwE9msabhyVOEKTXBfvbMQoi43IN2DvzsxsP58hDZtgrAtd3/WIqBeW/91KW9Qx49r2iBeVz+O6o1uYVS9x7AQ==",
+  "dgSpecHash": "5+c9K4aRrq6vOWKkKZZk6bKBMoKDtarXI2Q9HhpN0OaqySVGmxxusMgFRq+7Mwn57RDZEOkNHZ0ybNZdyH/Btg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\basti\\Desktop\\Chapoo 2.0\\ChapooLogic\\ChapooLogic.csproj",
+  "projectFilePath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooLogic\\ChapooLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\basti\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
