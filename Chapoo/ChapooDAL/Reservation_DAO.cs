@@ -23,9 +23,9 @@ namespace ChapooDAL
             string query = "INSERT INTO Reservation VALUES (@reservation_table_id, @reservation_customer_id, @reservation_datetime)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@reservation_table_id", SqlDbType.Int) { Value = reservation.table.table_ID },
-                new SqlParameter("@reservation_customer_id", SqlDbType.Int) { Value = reservation.customer.customer_ID },
-                new SqlParameter("@reservation_datetime", SqlDbType.Int) { Value = reservation.reservation_DateTime }
+                new SqlParameter("@reservation_table_id", SqlDbType.Int) { Value = reservation.Table.Table_ID },
+                new SqlParameter("@reservation_customer_id", SqlDbType.Int) { Value = reservation.Customer.Customer_ID },
+                new SqlParameter("@reservation_datetime", SqlDbType.Int) { Value = reservation.Reservation_DateTime }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -35,7 +35,7 @@ namespace ChapooDAL
             string query = "DELETE FROM Reser WHERE MenuItems.Item_ID = @reservation_id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@reservation_id", SqlDbType.Int) { Value = reservation.reservation_ID }
+                new SqlParameter("@reservation_id", SqlDbType.Int) { Value = reservation.Reservation_ID }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -45,10 +45,10 @@ namespace ChapooDAL
             string query = "UPDATE Reservation SET Reservation.Table_ID = @table_id, Reservation.Customer_ID = @customer_id, Reservation.Reservation_DateTime = @reservation_datetime WHERE Reservation.Reservation_ID = @reservation_id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@reservation_id", SqlDbType.Int) { Value = reservation.reservation_ID },
-                new SqlParameter("@table_id", SqlDbType.Int) { Value = reservation.table.table_ID },
-                new SqlParameter("@customer_id", SqlDbType.Int) { Value = reservation.customer.customer_ID },
-                new SqlParameter("@reservation_datetime", SqlDbType.Int) { Value = reservation.reservation_DateTime }
+                new SqlParameter("@reservation_id", SqlDbType.Int) { Value = reservation.Reservation_ID },
+                new SqlParameter("@table_id", SqlDbType.Int) { Value = reservation.Table.Table_ID },
+                new SqlParameter("@customer_id", SqlDbType.Int) { Value = reservation.Customer.Customer_ID },
+                new SqlParameter("@reservation_datetime", SqlDbType.Int) { Value = reservation.Reservation_DateTime }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -62,10 +62,10 @@ namespace ChapooDAL
             {
                 Reservation reservation = new Reservation()
                 {
-                    reservation_ID = (int)dr["Reservation_ID"],
-                    table = diningTable_DB.DB_Get_DiningTable((int)dr["Table_ID"]),
-                    customer = customer_DB.DB_Get_Customer((int)dr["Customer_ID"]),
-                    reservation_DateTime = (DateTime)dr["Reservation_DateTime"]
+                    Reservation_ID = (int)dr["Reservation_ID"],
+                    Table = diningTable_DB.DB_Get_DiningTable((int)dr["Table_ID"]),
+                    Customer = customer_DB.DB_Get_Customer((int)dr["Customer_ID"]),
+                    Reservation_DateTime = (DateTime)dr["Reservation_DateTime"]
                 };
                 reservations.Add(reservation);
             }

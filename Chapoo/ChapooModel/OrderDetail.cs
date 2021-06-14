@@ -8,15 +8,15 @@ namespace ChapooModel
 {
     public class OrderDetail
     {
-        public int orderDetails_ID { get; set; }
-        public MenuItem item { get; set; }
-        public int order_ID { get; set; }
-        public int quantity { get; set; }
-        public string comment { get; set; }
-        public Employee employee { get; set; }
-        public OrderStatus orderStatus { get; set; }
-        public DateTime ordered_DateTime { get; set; }
-        public DateTime preparing_DateTime { get; set; }
-        public DateTime finished_DateTime { get; set; }
+        public int OrderDetails_ID { get; set; }
+        public MenuItem Item { get; set; }
+        public int Order_ID { get; set; }
+        public int Quantity { get; set; }
+        public string Comment { get; set; }
+        public Employee Employee { get; set; }
+        public OrderStatus OrderStatus { get; set; }
+        public DateTime Ordered_DateTime { get; set; }
+        public DateTime Preparing_DateTime { get; set; }
+        public DateTime Finished_DateTime { get; set; }
     }
 }

@@ -24,11 +24,11 @@ namespace ChapooDAL
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@menugroup", SqlDbType.Int) { Value = int.Parse(menuItem.MenuGroup) },
-                new SqlParameter("@item_name", SqlDbType.NVarChar) { Value = menuItem.item_Name },
-                new SqlParameter("@itemprice", SqlDbType.Money) { Value = menuItem.item_Price },
-                new SqlParameter("@tax", SqlDbType.Int) { Value = menuItem.item_Taxpercentage },
-                new SqlParameter("@stock", SqlDbType.Int) { Value = menuItem.item_Stock },
-                new SqlParameter("@restock", SqlDbType.Int) { Value = menuItem.item_Restock },
+                new SqlParameter("@item_name", SqlDbType.NVarChar) { Value = menuItem.Item_Name },
+                new SqlParameter("@itemprice", SqlDbType.Money) { Value = menuItem.Item_Price },
+                new SqlParameter("@tax", SqlDbType.Int) { Value = menuItem.Item_Taxpercentage },
+                new SqlParameter("@stock", SqlDbType.Int) { Value = menuItem.Item_Stock },
+                new SqlParameter("@restock", SqlDbType.Int) { Value = menuItem.Item_Restock },
                 new SqlParameter("@alcoholcheck", SqlDbType.Bit) { Value = menuItem.Alcohol_Check }
             };
             ExecuteEditQuery(query, sqlParameters);
@@ -49,7 +49,7 @@ namespace ChapooDAL
             string query = "DELETE FROM MenuItems WHERE MenuItems.Item_ID = @item_id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@item_id", SqlDbType.Int) { Value = menuItem.item_ID }
+                new SqlParameter("@item_id", SqlDbType.Int) { Value = menuItem.Item_ID }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -59,13 +59,13 @@ namespace ChapooDAL
             string query = "UPDATE MenuItems SET MenuGroup_ID = @menugroup, Item_Name = @item_name, Item_Price = @price, Item_Taxpercentage = @tax, Item_Stock = @stock, Item_Restock = @restock, Alcohol_Check = @alcoholcheck WHERE MenuItems.Item_ID = @item_id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@item_id", SqlDbType.Int) { Value = menuItem.item_ID },
+                new SqlParameter("@item_id", SqlDbType.Int) { Value = menuItem.Item_ID },
                 new SqlParameter("@menugroup", SqlDbType.Int) { Value = int.Parse(menuItem.MenuGroup) },
-                new SqlParameter("@item_name", SqlDbType.NVarChar) { Value = menuItem.item_Name },
-                new SqlParameter("@price", SqlDbType.Money) { Value = menuItem.item_Price },
-                new SqlParameter("@tax", SqlDbType.Int) { Value = menuItem.item_Taxpercentage },
-                new SqlParameter("@stock", SqlDbType.Int) { Value = menuItem.item_Stock },
-                new SqlParameter("@restock", SqlDbType.Int) { Value = menuItem.item_Restock },
+                new SqlParameter("@item_name", SqlDbType.NVarChar) { Value = menuItem.Item_Name },
+                new SqlParameter("@price", SqlDbType.Money) { Value = menuItem.Item_Price },
+                new SqlParameter("@tax", SqlDbType.Int) { Value = menuItem.Item_Taxpercentage },
+                new SqlParameter("@stock", SqlDbType.Int) { Value = menuItem.Item_Stock },
+                new SqlParameter("@restock", SqlDbType.Int) { Value = menuItem.Item_Restock },
                 new SqlParameter("@alcoholcheck", SqlDbType.Bit) { Value = menuItem.Alcohol_Check }
             };
             ExecuteEditQuery(query, sqlParameters);
@@ -78,13 +78,13 @@ namespace ChapooDAL
             {
                 MenuItem item = new MenuItem()
                 {
-                    item_ID = (int)dr["Item_ID"],
+                    Item_ID = (int)dr["Item_ID"],
                     MenuGroup = (string)dr["MenuGroup_Name"],
-                    item_Name = (string)dr["Item_Name"],
-                    item_Price = (decimal)dr["Item_Price"],
-                    item_Taxpercentage = (int)dr["Item_Taxpercentage"],
-                    item_Stock = (int)dr["Item_Stock"],
-                    item_Restock = (int)dr["Item_Restock"],
+                    Item_Name = (string)dr["Item_Name"],
+                    Item_Price = (decimal)dr["Item_Price"],
+                    Item_Taxpercentage = (int)dr["Item_Taxpercentage"],
+                    Item_Stock = (int)dr["Item_Stock"],
+                    Item_Restock = (int)dr["Item_Restock"],
                     Alcohol_Check = (bool)dr["Alcohol_Check"]
                 };
                 Items.Add(item);

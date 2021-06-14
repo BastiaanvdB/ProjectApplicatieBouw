@@ -45,13 +45,13 @@ namespace ChapooDAL
             MenuItem menuItem = new MenuItem();
             foreach (DataRow dr in dataTable.Rows)
             {
-                menuItem.item_ID = (int)dr["Item_ID"];
+                menuItem.Item_ID = (int)dr["Item_ID"];
                 menuItem.MenuGroup = (string)dr["MenuGroup_Name"];
-                menuItem.item_Name = (string)dr["Item_Name"];
-                menuItem.item_Price = (decimal)dr["Item_Price"];
-                menuItem.item_Taxpercentage = (int)dr["Item_Taxpercentage"];
-                menuItem.item_Stock = (int)dr["Item_Stock"];
-                menuItem.item_Restock = (int)dr["Item_Restock"];
+                menuItem.Item_Name = (string)dr["Item_Name"];
+                menuItem.Item_Price = (decimal)dr["Item_Price"];
+                menuItem.Item_Taxpercentage = (int)dr["Item_Taxpercentage"];
+                menuItem.Item_Stock = (int)dr["Item_Stock"];
+                menuItem.Item_Restock = (int)dr["Item_Restock"];
                 menuItem.Alcohol_Check = (bool)dr["Alcohol_Check"];
             }
             return menuItem;
@@ -64,13 +64,13 @@ namespace ChapooDAL
             {
                 MenuItem MenuItem = new MenuItem()
                 {
-                    item_ID = (int)dr["Item_ID"],
+                    Item_ID = (int)dr["Item_ID"],
                     MenuGroup = (string)dr["MenuGroup_Name"],
-                    item_Name = (string)dr["Item_Name"],
-                    item_Price = (decimal)dr["Item_Price"],
-                    item_Taxpercentage = (int)dr["Item_Taxpercentage"],
-                    item_Stock = (int)dr["Item_Stock"],
-                    item_Restock = (int)dr["Item_Restock"],
+                    Item_Name = (string)dr["Item_Name"],
+                    Item_Price = (decimal)dr["Item_Price"],
+                    Item_Taxpercentage = (int)dr["Item_Taxpercentage"],
+                    Item_Stock = (int)dr["Item_Stock"],
+                    Item_Restock = (int)dr["Item_Restock"],
                     Alcohol_Check = (bool)dr["Alcohol_Check"],
                 };
                 menuItems.Add(MenuItem);

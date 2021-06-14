@@ -17,8 +17,8 @@ namespace ChapooLogic
         public void DB_Create_New_Payment(Payment payment)
         {
             Payment_DB.DB_Create_Payment(payment);
-            Order_DB.DB_Set_Order_To_Paid(payment.order.order_ID);
-            OrderDetail_DB.DB_Delete_All_OrderDetails(payment.order);
+            Order_DB.DB_Set_Order_To_Paid(payment.Order.order_ID);
+            OrderDetail_DB.DB_Delete_All_OrderDetails(payment.Order);
         }
 
         public List<Payment> Db_Get_PaymentHistory(DateTime sD, DateTime eD)

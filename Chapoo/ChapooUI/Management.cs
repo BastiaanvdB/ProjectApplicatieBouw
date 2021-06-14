@@ -67,8 +67,8 @@ namespace ChapooUI
 
         private void CurrentUserProfile()
         {
-            UsernameLabel.Text = _CurrentEmployee.name;
-            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+            UsernameLabel.Text = _CurrentEmployee.Name;
+            UserFunctieLabel.Text = _CurrentEmployee.Position.ToString();
         }
 
 
@@ -109,9 +109,9 @@ namespace ChapooUI
             {
                 string idcheck = "ID niet nodig";
 
-                if(menuItem.item_Stock < menuItem.item_Restock)
+                if(menuItem.Item_Stock < menuItem.Item_Restock)
                 {
-                    DialogResult dialogResult = MessageBox.Show($"De item '{menuItem.item_Name}' raakt op, vul de voorraad aan!", "Voorraadbeheer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DialogResult dialogResult = MessageBox.Show($"De item '{menuItem.Item_Name}' raakt op, vul de voorraad aan!", "Voorraadbeheer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
                 if(menuItem.Alcohol_Check == true)
@@ -119,7 +119,7 @@ namespace ChapooUI
                     idcheck = "ID nodig";
                 }
 
-                listViewStockManagement.Items.Add(new ListViewItem(new string[] { $"{menuItem.MenuGroup}", $"{menuItem.item_Name}", $"{menuItem.item_Price.ToString("€ 0.00")}", $"{menuItem.item_Taxpercentage}%", $"{menuItem.item_Restock}", $"{menuItem.item_Stock}", $"{idcheck}" }));
+                listViewStockManagement.Items.Add(new ListViewItem(new string[] { $"{menuItem.MenuGroup}", $"{menuItem.Item_Name}", $"{menuItem.Item_Price.ToString("€ 0.00")}", $"{menuItem.Item_Taxpercentage}%", $"{menuItem.Item_Restock}", $"{menuItem.Item_Stock}", $"{idcheck}" }));
             }
         }
 
@@ -225,11 +225,11 @@ namespace ChapooUI
 
         private void UpdateTextBoxes()
         {
-            textBoxItemNaam.Text = CurrentItem.item_Name;
-            numericBTW.Value = CurrentItem.item_Taxpercentage;
-            textBoxItemPrice.Text = CurrentItem.item_Price.ToString("€0.00");
-            numericRestock.Value = CurrentItem.item_Restock;
-            numericStock.Value = CurrentItem.item_Stock;
+            textBoxItemNaam.Text = CurrentItem.Item_Name;
+            numericBTW.Value = CurrentItem.Item_Taxpercentage;
+            textBoxItemPrice.Text = CurrentItem.Item_Price.ToString("€0.00");
+            numericRestock.Value = CurrentItem.Item_Restock;
+            numericStock.Value = CurrentItem.Item_Stock;
 
             if(CurrentItem.Alcohol_Check == true)
             {
@@ -426,11 +426,11 @@ namespace ChapooUI
                     MenuItem item = new MenuItem()
                     {
                         MenuGroup = CheckMenuGroup().ToString(),
-                        item_Name = textBoxItemNaam.Text,
-                        item_Price = decimal.Parse(textBoxItemPrice.Text.Replace("€", String.Empty)),
-                        item_Taxpercentage = int.Parse(numericBTW.Value.ToString()),
-                        item_Stock = int.Parse(numericStock.Value.ToString()),
-                        item_Restock = int.Parse(numericRestock.Value.ToString()),
+                        Item_Name = textBoxItemNaam.Text,
+                        Item_Price = decimal.Parse(textBoxItemPrice.Text.Replace("€", String.Empty)),
+                        Item_Taxpercentage = int.Parse(numericBTW.Value.ToString()),
+                        Item_Stock = int.Parse(numericStock.Value.ToString()),
+                        Item_Restock = int.Parse(numericRestock.Value.ToString()),
                         Alcohol_Check = CheckAge(),
                     };
                     Stock_Service.DB_Add_Stock(item);
@@ -478,11 +478,11 @@ namespace ChapooUI
                 if (dialogResult == DialogResult.Yes)
                 {
                     CurrentItem.MenuGroup = CheckMenuGroup().ToString();
-                    CurrentItem.item_Name = textBoxItemNaam.Text;
-                    CurrentItem.item_Price = decimal.Parse(textBoxItemPrice.Text.Replace("€", String.Empty));
-                    CurrentItem.item_Taxpercentage = int.Parse(numericBTW.Value.ToString());
-                    CurrentItem.item_Stock = int.Parse(numericStock.Value.ToString());
-                    CurrentItem.item_Restock = int.Parse(numericRestock.Value.ToString());
+                    CurrentItem.Item_Name = textBoxItemNaam.Text;
+                    CurrentItem.Item_Price = decimal.Parse(textBoxItemPrice.Text.Replace("€", String.Empty));
+                    CurrentItem.Item_Taxpercentage = int.Parse(numericBTW.Value.ToString());
+                    CurrentItem.Item_Stock = int.Parse(numericStock.Value.ToString());
+                    CurrentItem.Item_Restock = int.Parse(numericRestock.Value.ToString());
                     CurrentItem.Alcohol_Check = CheckAge();
                     Stock_Service.DB_Update_Stock(CurrentItem);
                     UpdateStockList();
@@ -640,7 +640,7 @@ namespace ChapooUI
             listViewWerknemers.Items.Clear();
             foreach (ChapooModel.Employee employee  in ListOfEmployees)
             {
-                listViewWerknemers.Items.Add(new ListViewItem(new string[] { $"{employee.employee_id}", $"{employee.name}", $"{employee.adres}", $"{employee.phone}", $"{employee.position}" }));
+                listViewWerknemers.Items.Add(new ListViewItem(new string[] { $"{employee.Employee_id}", $"{employee.Name}", $"{employee.Adres}", $"{employee.Phone}", $"{employee.Position}" }));
             }
 
         }
@@ -727,11 +727,11 @@ namespace ChapooUI
 
         private void LoadUserDetails()
         {
-            textBoxNaamInput.Text = _CurrentSelectedEmployee.name;
-            textBoxAdresInput.Text = _CurrentSelectedEmployee.adres;
-            textBoxTelefoonInput.Text = _CurrentSelectedEmployee.phone;
-            comboBoxFuncties.SelectedItem = _CurrentSelectedEmployee.position;
-            textBoxPincode.Text = Decrypt(_CurrentSelectedEmployee.pin);
+            textBoxNaamInput.Text = _CurrentSelectedEmployee.Name;
+            textBoxAdresInput.Text = _CurrentSelectedEmployee.Adres;
+            textBoxTelefoonInput.Text = _CurrentSelectedEmployee.Phone;
+            comboBoxFuncties.SelectedItem = _CurrentSelectedEmployee.Position;
+            textBoxPincode.Text = Decrypt(_CurrentSelectedEmployee.Pin);
         }
 
         private void ClearFields()
@@ -749,11 +749,11 @@ namespace ChapooUI
             {
                 Employee employee = new Employee()
                 {
-                    name = textBoxNaamInput.Text,
-                    adres = textBoxAdresInput.Text,
-                    phone = textBoxTelefoonInput.Text,
-                    pin = Encrypt(textBoxPincode.Text),
-                    position = (Position)comboBoxFuncties.SelectedItem,
+                    Name = textBoxNaamInput.Text,
+                    Adres = textBoxAdresInput.Text,
+                    Phone = textBoxTelefoonInput.Text,
+                    Pin = Encrypt(textBoxPincode.Text),
+                    Position = (Position)comboBoxFuncties.SelectedItem,
                 };
                 Employees_Service.DB_Add_Employee(employee);
                 ClearFields();
@@ -763,12 +763,12 @@ namespace ChapooUI
             {
                 Employee employee = new Employee()
                 {
-                    employee_id = _CurrentSelectedEmployee.employee_id,
-                    name = textBoxNaamInput.Text,
-                    adres = textBoxAdresInput.Text,
-                    phone = textBoxTelefoonInput.Text,
-                    pin = Encrypt(textBoxPincode.Text),
-                    position = (Position)comboBoxFuncties.SelectedItem,
+                    Employee_id = _CurrentSelectedEmployee.Employee_id,
+                    Name = textBoxNaamInput.Text,
+                    Adres = textBoxAdresInput.Text,
+                    Phone = textBoxTelefoonInput.Text,
+                    Pin = Encrypt(textBoxPincode.Text),
+                    Position = (Position)comboBoxFuncties.SelectedItem,
                 };
                 Employees_Service.DB_Update_Employee(employee);
                 ClearFields();
@@ -778,12 +778,12 @@ namespace ChapooUI
             {
                 Employee employee = new Employee()
                 {
-                    employee_id = _CurrentSelectedEmployee.employee_id,
-                    name = textBoxNaamInput.Text,
-                    adres = textBoxAdresInput.Text,
-                    phone = textBoxTelefoonInput.Text,
-                    pin = Encrypt(textBoxPincode.Text),
-                    position = (Position)comboBoxFuncties.SelectedItem,
+                    Employee_id = _CurrentSelectedEmployee.Employee_id,
+                    Name = textBoxNaamInput.Text,
+                    Adres = textBoxAdresInput.Text,
+                    Phone = textBoxTelefoonInput.Text,
+                    Pin = Encrypt(textBoxPincode.Text),
+                    Position = (Position)comboBoxFuncties.SelectedItem,
                 };
                 Employees_Service.DB_Delete_Employee(employee);
                 ClearFields();
@@ -948,7 +948,7 @@ namespace ChapooUI
             listViewPayments.Items.Clear();
             foreach (ChapooModel.Payment payment in paymentList)
             {
-                listViewPayments.Items.Add(new ListViewItem(new string[] { $"{payment.payment_ID}", $"{payment.employee.name}", $"{payment.payMethod}", $"{payment.totalVAT.ToString("€ 0.00")}", $"{payment.tip.ToString("€ 0.00")}", $"{payment.totalPrice.ToString("€ 0.00")}", $"{payment.payment_DateTime}", $"{payment.payStatus}" }));
+                listViewPayments.Items.Add(new ListViewItem(new string[] { $"{payment.Payment_ID}", $"{payment.Employee.Name}", $"{payment.PayMethod}", $"{payment.TotalVAT.ToString("€ 0.00")}", $"{payment.Tip.ToString("€ 0.00")}", $"{payment.TotalPrice.ToString("€ 0.00")}", $"{payment.Payment_DateTime}", $"{payment.PayStatus}" }));
             }
         }
 

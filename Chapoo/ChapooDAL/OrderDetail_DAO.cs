@@ -26,16 +26,16 @@ namespace ChapooDAL
             string query = "UPDATE OrderDetails SET OrderDetails.Item_ID = @item_ID, OrderDetails.Order_ID = @order_id, OrderDetails.OrderDetails_Quantity = @quantity, OrderDetails.OrderDetails_Comment = @comment, OrderDetails.Employee_ID = @employee_id, OrderDetails.OrderDetails_Ordered_DateTime = @ordered_datetime, OrderDetails.OrderDetails_Preparing_DateTime = @preparing_datetime, OrderDetails.OrderDetails_Finished_DateTime = @finished_datetime, OrderDetails.OrderDetails_OrderStatus = @orderstatus WHERE OrderDetails.OrderDetails_ID = @orderdetail_ID";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@orderdetail_ID", SqlDbType.Int) { Value = orderDetail.orderDetails_ID },
-                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.item.item_ID },
-                new SqlParameter("@order_id", SqlDbType.Int) { Value = orderDetail.order_ID },
-                new SqlParameter("@quantity", SqlDbType.Int) { Value = orderDetail.quantity },
-                new SqlParameter("@comment", SqlDbType.NVarChar) { Value = orderDetail.comment },
-                new SqlParameter("@employee_id", SqlDbType.Int) { Value = orderDetail.employee.employee_id },
-                new SqlParameter("@ordered_datetime", SqlDbType.DateTime) { Value = orderDetail.ordered_DateTime },
-                new SqlParameter("@preparing_datetime", SqlDbType.DateTime) { Value = orderDetail.preparing_DateTime },
-                new SqlParameter("@finished_datetime", SqlDbType.DateTime) { Value = orderDetail.finished_DateTime },
-                new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.orderStatus) }
+                new SqlParameter("@orderdetail_ID", SqlDbType.Int) { Value = orderDetail.OrderDetails_ID },
+                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.Item.Item_ID },
+                new SqlParameter("@order_id", SqlDbType.Int) { Value = orderDetail.Order_ID },
+                new SqlParameter("@quantity", SqlDbType.Int) { Value = orderDetail.Quantity },
+                new SqlParameter("@comment", SqlDbType.NVarChar) { Value = orderDetail.Comment },
+                new SqlParameter("@employee_id", SqlDbType.Int) { Value = orderDetail.Employee.Employee_id },
+                new SqlParameter("@ordered_datetime", SqlDbType.DateTime) { Value = orderDetail.Ordered_DateTime },
+                new SqlParameter("@preparing_datetime", SqlDbType.DateTime) { Value = orderDetail.Preparing_DateTime },
+                new SqlParameter("@finished_datetime", SqlDbType.DateTime) { Value = orderDetail.Finished_DateTime },
+                new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.OrderStatus) }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -45,15 +45,15 @@ namespace ChapooDAL
             string query = "INSERT INTO OrderDetails VALUES (@item_ID, @order_id, @quantity, @comment, @employee_id, @ordered_datetime, @preparing_datetime, @finished_datetime, @orderstatus)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.item.item_ID },
-                new SqlParameter("@order_id", SqlDbType.Int) { Value = orderDetail.order_ID },
-                new SqlParameter("@quantity", SqlDbType.Int) { Value = orderDetail.quantity },
-                new SqlParameter("@comment", SqlDbType.NVarChar) { Value = orderDetail.comment },
-                new SqlParameter("@employee_id", SqlDbType.Int) { Value = orderDetail.employee.employee_id },
-                new SqlParameter("@ordered_datetime", SqlDbType.DateTime) { Value = orderDetail.ordered_DateTime },
-                new SqlParameter("@preparing_datetime", SqlDbType.DateTime) { Value = orderDetail.preparing_DateTime },
-                new SqlParameter("@finished_datetime", SqlDbType.DateTime) { Value = orderDetail.finished_DateTime },
-                new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.orderStatus) }
+                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.Item.Item_ID },
+                new SqlParameter("@order_id", SqlDbType.Int) { Value = orderDetail.Order_ID },
+                new SqlParameter("@quantity", SqlDbType.Int) { Value = orderDetail.Quantity },
+                new SqlParameter("@comment", SqlDbType.NVarChar) { Value = orderDetail.Comment },
+                new SqlParameter("@employee_id", SqlDbType.Int) { Value = orderDetail.Employee.Employee_id },
+                new SqlParameter("@ordered_datetime", SqlDbType.DateTime) { Value = orderDetail.Ordered_DateTime },
+                new SqlParameter("@preparing_datetime", SqlDbType.DateTime) { Value = orderDetail.Preparing_DateTime },
+                new SqlParameter("@finished_datetime", SqlDbType.DateTime) { Value = orderDetail.Finished_DateTime },
+                new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.OrderStatus) }
             };
             ExecuteEditQuery(query, sqlParameters);
             DB_Adjust_Stock(orderDetail);
@@ -64,8 +64,8 @@ namespace ChapooDAL
             string query = "UPDATE MenuItems SET Item_Stock = @stockvalue WHERE Item_ID = @item_ID";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.item.item_ID },
-                new SqlParameter("@stockvalue", SqlDbType.Int) { Value = orderDetail.item.item_Stock - orderDetail.quantity},
+                new SqlParameter("@item_ID", SqlDbType.Int) { Value = orderDetail.Item.Item_ID },
+                new SqlParameter("@stockvalue", SqlDbType.Int) { Value = orderDetail.Item.Item_Stock - orderDetail.Quantity},
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -99,16 +99,16 @@ namespace ChapooDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 OrderDetail orderDetail = new OrderDetail();
-                orderDetail.orderDetails_ID = (int)dr["OrderDetails_ID"];
-                orderDetail.item = Menuitem_DAO.DB_Get_MenuItem((int)dr["Item_ID"]);
-                orderDetail.order_ID = (int)dr["Order_ID"];
-                orderDetail.quantity = (int)dr["OrderDetails_Quantity"];
-                orderDetail.comment = (string)dr["OrderDetails_Comment"];
-                orderDetail.employee = employee_DAO.DB_Get_Employee((int)dr["Employee_ID"]);
-                orderDetail.orderStatus = (OrderStatus)((int)dr["OrderDetails_OrderStatus"]);
-                orderDetail.ordered_DateTime = (DateTime)dr["OrderDetails_Ordered_DateTime"];
-                orderDetail.preparing_DateTime = (DateTime)dr["OrderDetails_Preparing_DateTime"];
-                orderDetail.finished_DateTime = (DateTime)dr["OrderDetails_Finished_DateTime"];
+                orderDetail.OrderDetails_ID = (int)dr["OrderDetails_ID"];
+                orderDetail.Item = Menuitem_DAO.DB_Get_MenuItem((int)dr["Item_ID"]);
+                orderDetail.Order_ID = (int)dr["Order_ID"];
+                orderDetail.Quantity = (int)dr["OrderDetails_Quantity"];
+                orderDetail.Comment = (string)dr["OrderDetails_Comment"];
+                orderDetail.Employee = employee_DAO.DB_Get_Employee((int)dr["Employee_ID"]);
+                orderDetail.OrderStatus = (OrderStatus)((int)dr["OrderDetails_OrderStatus"]);
+                orderDetail.Ordered_DateTime = (DateTime)dr["OrderDetails_Ordered_DateTime"];
+                orderDetail.Preparing_DateTime = (DateTime)dr["OrderDetails_Preparing_DateTime"];
+                orderDetail.Finished_DateTime = (DateTime)dr["OrderDetails_Finished_DateTime"];
                 orderDetails.Add(orderDetail);
             }
             return orderDetails;

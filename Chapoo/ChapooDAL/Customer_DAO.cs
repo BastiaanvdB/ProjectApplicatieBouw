@@ -33,9 +33,9 @@ namespace ChapooDAL
             string query = "INSERT INTO Customers VALUES (@customer_Name, @customer_phone, @customer_Address)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@customer_Name", SqlDbType.NVarChar) { Value = customer.customer_Name },
-                new SqlParameter("@customer_phone", SqlDbType.NVarChar) { Value = customer.phone_Number },
-                new SqlParameter("@customer_Address", SqlDbType.NVarChar) { Value = customer.address }
+                new SqlParameter("@customer_Name", SqlDbType.NVarChar) { Value = customer.Customer_Name },
+                new SqlParameter("@customer_phone", SqlDbType.NVarChar) { Value = customer.Phone_Number },
+                new SqlParameter("@customer_Address", SqlDbType.NVarChar) { Value = customer.Address }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -45,7 +45,7 @@ namespace ChapooDAL
             string query = "DELETE FROM Customers WHERE Customers.Customer_ID = @id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@id", SqlDbType.Int) { Value = customer.customer_ID }
+                new SqlParameter("@id", SqlDbType.Int) { Value = customer.Customer_ID }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -55,10 +55,10 @@ namespace ChapooDAL
             string query = "UPDATE Customers SET Customers.Customer_Name = @customer_name, Customers.Phone_Number = @customer_phone, Customers.Address = @customer_address WHERE Customers.Customer_ID = @customer_id)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@customer_id", SqlDbType.Int) { Value = customer.customer_ID},
-                new SqlParameter("@customer_name", SqlDbType.NVarChar) { Value = customer.customer_Name },
-                new SqlParameter("@customer_phone", SqlDbType.NVarChar) { Value = customer.phone_Number },
-                new SqlParameter("@customer_address", SqlDbType.NVarChar) { Value = customer.address }
+                new SqlParameter("@customer_id", SqlDbType.Int) { Value = customer.Customer_ID},
+                new SqlParameter("@customer_name", SqlDbType.NVarChar) { Value = customer.Customer_Name },
+                new SqlParameter("@customer_phone", SqlDbType.NVarChar) { Value = customer.Phone_Number },
+                new SqlParameter("@customer_address", SqlDbType.NVarChar) { Value = customer.Address }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -69,10 +69,10 @@ namespace ChapooDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                customer.customer_ID = (int)dr["Customer_ID"];
-                customer.customer_Name = (string)dr["Customer_Name"];
-                customer.phone_Number = (string)dr["Phone_Number"];
-                customer.address = (string)dr["Address"];
+                customer.Customer_ID = (int)dr["Customer_ID"];
+                customer.Customer_Name = (string)dr["Customer_Name"];
+                customer.Phone_Number = (string)dr["Phone_Number"];
+                customer.Address = (string)dr["Address"];
             }
             return customer;
         }
@@ -84,10 +84,10 @@ namespace ChapooDAL
             {
                 Customer customer = new Customer()
                 {
-                    customer_ID = (int)dr["Customer_ID"],
-                    customer_Name = (string)dr["Customer_Name"],
-                    phone_Number = (string)dr["Phone_Number"],
-                    address = (string)dr["Address"]
+                    Customer_ID = (int)dr["Customer_ID"],
+                    Customer_Name = (string)dr["Customer_Name"],
+                    Phone_Number = (string)dr["Phone_Number"],
+                    Address = (string)dr["Address"]
                 };
                 customers.Add(customer);
             }

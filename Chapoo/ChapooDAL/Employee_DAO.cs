@@ -35,11 +35,11 @@ namespace ChapooDAL
             string query = "INSERT INTO Employees VALUES (@Position_ID, @Employee_Name, @Employee_Address, @Employee_Phone, @Employee_Pincode)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@Position_ID", SqlDbType.Int) { Value = ((int)employee.position) },
-                new SqlParameter("@Employee_Name", SqlDbType.NVarChar) { Value = employee.name },
-                new SqlParameter("@Employee_Address", SqlDbType.NVarChar) { Value = employee.adres },
-                new SqlParameter("@Employee_Phone", SqlDbType.NVarChar) { Value = employee.phone },
-                new SqlParameter("@Employee_Pincode", SqlDbType.NVarChar) { Value = employee.pin }
+                new SqlParameter("@Position_ID", SqlDbType.Int) { Value = ((int)employee.Position) },
+                new SqlParameter("@Employee_Name", SqlDbType.NVarChar) { Value = employee.Name },
+                new SqlParameter("@Employee_Address", SqlDbType.NVarChar) { Value = employee.Adres },
+                new SqlParameter("@Employee_Phone", SqlDbType.NVarChar) { Value = employee.Phone },
+                new SqlParameter("@Employee_Pincode", SqlDbType.NVarChar) { Value = employee.Pin }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -49,7 +49,7 @@ namespace ChapooDAL
             string query = "DELETE FROM Employees WHERE Employees.Employee_ID = @id";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@id", SqlDbType.Int) { Value = employee.employee_id }
+                new SqlParameter("@id", SqlDbType.Int) { Value = employee.Employee_id }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -59,12 +59,12 @@ namespace ChapooDAL
             string query = "UPDATE Employees SET Position_ID = @PositionID, Employee_Name = @EmployeeName, Employee_Address = @EmployeeAddress, Employee_Phone = @EmployeePhone, Employee_Pincode = @EmployeePincode WHERE Employee_ID = @EmployeeID";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = employee.employee_id },
-                new SqlParameter("@PositionID", SqlDbType.Int) { Value = ((int)employee.position) },
-                new SqlParameter("@EmployeeName", SqlDbType.NVarChar) { Value = employee.name },
-                new SqlParameter("@EmployeeAddress", SqlDbType.NVarChar) { Value = employee.adres },
-                new SqlParameter("@EmployeePhone", SqlDbType.NVarChar) { Value = employee.phone },
-                new SqlParameter("@EmployeePincode", SqlDbType.NVarChar) { Value = employee.pin }
+                new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = employee.Employee_id },
+                new SqlParameter("@PositionID", SqlDbType.Int) { Value = ((int)employee.Position) },
+                new SqlParameter("@EmployeeName", SqlDbType.NVarChar) { Value = employee.Name },
+                new SqlParameter("@EmployeeAddress", SqlDbType.NVarChar) { Value = employee.Adres },
+                new SqlParameter("@EmployeePhone", SqlDbType.NVarChar) { Value = employee.Phone },
+                new SqlParameter("@EmployeePincode", SqlDbType.NVarChar) { Value = employee.Pin }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -75,12 +75,12 @@ namespace ChapooDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                employee.employee_id = (int)dr["Employee_ID"]; 
-                employee.position = (Position)((int)dr["Position_ID"]);
-                employee.name = (string)dr["Employee_Name"];
-                employee.adres = (string)dr["Employee_Address"];
-                employee.phone = (string)dr["Employee_Phone"];
-                employee.pin = (string)dr["Employee_Pincode"];
+                employee.Employee_id = (int)dr["Employee_ID"]; 
+                employee.Position = (Position)((int)dr["Position_ID"]);
+                employee.Name = (string)dr["Employee_Name"];
+                employee.Adres = (string)dr["Employee_Address"];
+                employee.Phone = (string)dr["Employee_Phone"];
+                employee.Pin = (string)dr["Employee_Pincode"];
             }
             return employee;
         }
@@ -92,12 +92,12 @@ namespace ChapooDAL
             {
                 Employee employee = new Employee()
                 {
-                    employee_id = (int)dr["Employee_ID"],
-                    position = (Position)((int)dr["Position_ID"]),
-                    name = (string)dr["Employee_Name"],
-                    adres = (string)dr["Employee_Address"],
-                    phone = (string)dr["Employee_Phone"],
-                    pin = (string)dr["Employee_Pincode"]
+                    Employee_id = (int)dr["Employee_ID"],
+                    Position = (Position)((int)dr["Position_ID"]),
+                    Name = (string)dr["Employee_Name"],
+                    Adres = (string)dr["Employee_Address"],
+                    Phone = (string)dr["Employee_Phone"],
+                    Pin = (string)dr["Employee_Pincode"]
                 };
                 employees.Add(employee);
             }

@@ -72,8 +72,8 @@ namespace ChapooUI
 
         private void CurrentUserProfile()
         {
-            UsernameLabel.Text = CurrentEmployee.name;
-            UserFunctieLabel.Text = CurrentEmployee.position.ToString();
+            UsernameLabel.Text = CurrentEmployee.Name;
+            UserFunctieLabel.Text = CurrentEmployee.Position.ToString();
         }
 
         private void MenuOverviewSettings(string MenuSetting)
@@ -151,7 +151,7 @@ namespace ChapooUI
             listViewMenuOverviewList.Items.Clear();
             foreach (ChapooModel.MenuItem item in MenuItemsList)
             {
-                listViewMenuOverviewList.Items.Add(new ListViewItem(new string[] { $"{item.item_Name}", $"{item.item_Price.ToString("€ 0.00")}", $"{item.item_Stock}", }));
+                listViewMenuOverviewList.Items.Add(new ListViewItem(new string[] { $"{item.Item_Name}", $"{item.Item_Price.ToString("€ 0.00")}", $"{item.Item_Stock}", }));
             }
         }
 
@@ -161,7 +161,7 @@ namespace ChapooUI
             listViewCurrentOrderList.Items.Clear();
             foreach (ChapooModel.OrderDetail orderDetail in _CurrentOrderList)
             {
-                listViewCurrentOrderList.Items.Add(new ListViewItem(new string[] { $"{orderDetail.item.MenuGroup}", $"{orderDetail.item.item_Name}", $"{orderDetail.item.item_Price.ToString("€ 0.00")}", $"{orderDetail.quantity}" }));
+                listViewCurrentOrderList.Items.Add(new ListViewItem(new string[] { $"{orderDetail.Item.MenuGroup}", $"{orderDetail.Item.Item_Name}", $"{orderDetail.Item.Item_Price.ToString("€ 0.00")}", $"{orderDetail.Quantity}" }));
             }
 
             if(_CurrentOrderList.Count > 0)
@@ -220,26 +220,26 @@ namespace ChapooUI
         {
             OrderDetail orderDetail = new OrderDetail()
             {
-                item = _CurrentSelectedMenuItem,
-                order_ID = _CurrentOrderID,
-                quantity = (int)numericUpDownHoeveelheid.Value,
-                comment = richTextBoxOpmerking.Text,
-                employee = CurrentEmployee,
-                orderStatus = OrderStatus.Besteld,
-                ordered_DateTime = DateTime.Now,
-                preparing_DateTime = DateTime.Today,
-                finished_DateTime = DateTime.Today,
+                Item = _CurrentSelectedMenuItem,
+                Order_ID = _CurrentOrderID,
+                Quantity = (int)numericUpDownHoeveelheid.Value,
+                Comment = richTextBoxOpmerking.Text,
+                Employee = CurrentEmployee,
+                OrderStatus = OrderStatus.Besteld,
+                Ordered_DateTime = DateTime.Now,
+                Preparing_DateTime = DateTime.Today,
+                Finished_DateTime = DateTime.Today,
             };
-            if ((_CurrentSelectedMenuItem.item_Stock - (int)numericUpDownHoeveelheid.Value) >= 0)
+            if ((_CurrentSelectedMenuItem.Item_Stock - (int)numericUpDownHoeveelheid.Value) >= 0)
             {
                 int index = 0;
                 bool contains = false;
                 foreach (OrderDetail detail in _CurrentOrderList)
                 {
-                    if (detail.item.item_ID == orderDetail.item.item_ID)
+                    if (detail.Item.Item_ID == orderDetail.Item.Item_ID)
                     {
-                        _CurrentOrderList[index].quantity += orderDetail.quantity;
-                        _CurrentOrderList[index].comment += $" || {orderDetail.comment}";
+                        _CurrentOrderList[index].Quantity += orderDetail.Quantity;
+                        _CurrentOrderList[index].Comment += $" || {orderDetail.Comment}";
                         contains = true;
                     }
                     index++;
@@ -262,14 +262,14 @@ namespace ChapooUI
         {
             numericUpDownWijzigHoeveelheid.Value = 0;
             richTextBoxWijzigCommentaar.Text = "";
-            numericUpDownWijzigHoeveelheid.Value = _CurrentSelectedOrderDetail.quantity;
-            richTextBoxWijzigCommentaar.Text = _CurrentSelectedOrderDetail.comment;
+            numericUpDownWijzigHoeveelheid.Value = _CurrentSelectedOrderDetail.Quantity;
+            richTextBoxWijzigCommentaar.Text = _CurrentSelectedOrderDetail.Comment;
         }
 
         private void editorderdetail()
         {
-            _CurrentSelectedOrderDetail.quantity = (int)numericUpDownWijzigHoeveelheid.Value;
-            _CurrentSelectedOrderDetail.comment = richTextBoxWijzigCommentaar.Text;
+            _CurrentSelectedOrderDetail.Quantity = (int)numericUpDownWijzigHoeveelheid.Value;
+            _CurrentSelectedOrderDetail.Comment = richTextBoxWijzigCommentaar.Text;
         }
 
         private void BestelOrder()
@@ -278,8 +278,8 @@ namespace ChapooUI
 
             foreach (OrderDetail orderDetail in _CurrentOrderList)
             {
-                orderDetail.order_ID = _CurrentOrderID;
-                orderDetail.employee = CurrentEmployee;
+                orderDetail.Order_ID = _CurrentOrderID;
+                orderDetail.Employee = CurrentEmployee;
                 orderDetail_Service.DB_Add_OrderDetails(orderDetail);
             }
         }

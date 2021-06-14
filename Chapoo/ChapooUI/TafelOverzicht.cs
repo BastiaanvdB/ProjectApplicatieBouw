@@ -60,8 +60,8 @@ namespace ChapooUI
 
         private void CurrentUserProfile()
         {
-            UsernameLabel.Text = _CurrentEmployee.name;
-            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+            UsernameLabel.Text = _CurrentEmployee.Name;
+            UserFunctieLabel.Text = _CurrentEmployee.Position.ToString();
         }
 
         private void EnableButtons()
@@ -82,10 +82,10 @@ namespace ChapooUI
         {
             foreach(DiningTable diningTable in _DiningTablesList)
             {
-                switch(diningTable.table_ID)
+                switch(diningTable.Table_ID)
                 {
                     case 1:
-                        switch(diningTable.table_Status)
+                        switch(diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 pictureTafel1.Image = Resources.tafelVrij;
@@ -110,7 +110,7 @@ namespace ChapooUI
                         }
                         break;
                     case 2:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 pictureTafel2.Image = Resources.tafelVrij;
@@ -135,7 +135,7 @@ namespace ChapooUI
                         }
                         break;
                     case 3:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 pictureTafel3.Image = Resources.tafelVrij;
@@ -160,7 +160,7 @@ namespace ChapooUI
                         }
                         break;
                     case 4:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 pictureTafel4.Image = Resources.tafelVrij;
@@ -185,7 +185,7 @@ namespace ChapooUI
                         }
                         break;
                     case 5:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 pictureTafel5.Image = Resources.tafelVrij;
@@ -210,7 +210,7 @@ namespace ChapooUI
                         }
                         break;
                     case 6:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 labelTafel6.BackColor = Color.White;
@@ -235,7 +235,7 @@ namespace ChapooUI
                         }
                         break;
                     case 7:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 labelTafel7.BackColor = Color.White;
@@ -260,7 +260,7 @@ namespace ChapooUI
                         }
                         break;
                     case 8:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 labelTafel8.BackColor = Color.White;
@@ -285,7 +285,7 @@ namespace ChapooUI
                         }
                         break;
                     case 9:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 labelTafel9.BackColor = Color.White;
@@ -310,7 +310,7 @@ namespace ChapooUI
                         }
                         break;
                     case 10:
-                        switch (diningTable.table_Status)
+                        switch (diningTable.Table_Status)
                         {
                             case TableStatus.Vrij:
                                 labelTafel10.BackColor = Color.White;
@@ -343,7 +343,7 @@ namespace ChapooUI
             if (_CurrentDiningTable is not null)
             {
                 ChapooLogic.DiningTable_Service table_Service = new ChapooLogic.DiningTable_Service();
-                _CurrentDiningTable.table_Status = tableStatus;
+                _CurrentDiningTable.Table_Status = tableStatus;
                 table_Service.DB_Update_DiningTable(_CurrentDiningTable);
                 CurrentUserProfile();
                 LoadDiningTableList();

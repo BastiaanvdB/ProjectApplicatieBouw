@@ -46,19 +46,19 @@ namespace ChapooUI
             _CurrentEmployee = CurrentEmployee;
             CurrentUserProfile();
             CorrectMenuForUser();
-            string[] firstname = _CurrentEmployee.name.Split(' ');
+            string[] firstname = _CurrentEmployee.Name.Split(' ');
             labelWelkom.Text = $"Welkom {firstname[0]}";
         }
 
         private void CurrentUserProfile()
         {
-            UsernameLabel.Text = _CurrentEmployee.name;
-            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+            UsernameLabel.Text = _CurrentEmployee.Name;
+            UserFunctieLabel.Text = _CurrentEmployee.Position.ToString();
         }
 
         private void CorrectMenuForUser()
         {
-            switch(_CurrentEmployee.position)
+            switch(_CurrentEmployee.Position)
             {
                 case Position.Kok:
                     // enabled buttons

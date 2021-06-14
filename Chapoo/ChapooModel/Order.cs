@@ -11,30 +11,30 @@ namespace ChapooModel
         public int order_ID { get; set; }
         public DiningTable Table { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
-        public decimal totalPrice 
+        public decimal TotalPrice 
         { 
             get
             {
                 decimal totalprice = 0;
                 foreach (OrderDetail orderDetail in OrderDetails)
                 {
-                    totalprice += orderDetail.quantity * orderDetail.item.item_Price;
+                    totalprice += orderDetail.Quantity * orderDetail.Item.Item_Price;
                 }
                 return totalprice;
             }
         }
-        public decimal totalVAT
+        public decimal TotalVAT
         { 
             get
             {
                 decimal totalvat = 0;
                 foreach (OrderDetail orderDetail in OrderDetails)
                 {
-                    totalvat += (((orderDetail.item.item_Price / 100) * orderDetail.quantity) * orderDetail.item.item_Taxpercentage);
+                    totalvat += (((orderDetail.Item.Item_Price / 100) * orderDetail.Quantity) * orderDetail.Item.Item_Taxpercentage);
                 }
                 return totalvat;
             } 
         }
-        public PayStatus paystatus { get; set; }
+        public PayStatus Paystatus { get; set; }
     }
 }

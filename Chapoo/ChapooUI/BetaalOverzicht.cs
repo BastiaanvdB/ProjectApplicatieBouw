@@ -66,8 +66,8 @@ namespace ChapooUI
 
         private void CurrentUserProfile()
         {
-            UsernameLabel.Text = _CurrentEmployee.name;
-            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+            UsernameLabel.Text = _CurrentEmployee.Name;
+            UserFunctieLabel.Text = _CurrentEmployee.Position.ToString();
         }
 
         private void FillBillList()
@@ -83,7 +83,7 @@ namespace ChapooUI
             AfrekeninglistView.Items.Clear();
             foreach (ChapooModel.Order bill in _ListOfOrders)
             {
-                AfrekeninglistView.Items.Add(new ListViewItem(new string[] { $"{bill.Table.table_ID}", $"{bill.order_ID}", $"{bill.totalPrice.ToString("€ 0.00")}", $"{bill.paystatus.ToString()}" }));
+                AfrekeninglistView.Items.Add(new ListViewItem(new string[] { $"{bill.Table.Table_ID}", $"{bill.order_ID}", $"{bill.TotalPrice.ToString("€ 0.00")}", $"{bill.Paystatus.ToString()}" }));
             }
         }
 
@@ -137,9 +137,9 @@ namespace ChapooUI
 
         private void UpdateBillPanel()
         {
-            labelBrutoInput.Text = (_currentOrder.totalPrice - _currentOrder.totalVAT).ToString("€ 0.00");
-            labelBTWinput.Text = _currentOrder.totalVAT.ToString("€ 0.00");
-            labelNettoinput.Text = (_currentOrder.totalPrice).ToString("€ 0.00");
+            labelBrutoInput.Text = (_currentOrder.TotalPrice - _currentOrder.TotalVAT).ToString("€ 0.00");
+            labelBTWinput.Text = _currentOrder.TotalVAT.ToString("€ 0.00");
+            labelNettoinput.Text = (_currentOrder.TotalPrice).ToString("€ 0.00");
             ShowTotalPrice();
         }
 
@@ -150,7 +150,7 @@ namespace ChapooUI
 
         private void ShowTotalPrice()
         {
-            labelTotaalprijsoutput.Text = (_currentOrder.totalPrice + numericUpDownFooi.Value).ToString("€ 0.00");
+            labelTotaalprijsoutput.Text = (_currentOrder.TotalPrice + numericUpDownFooi.Value).ToString("€ 0.00");
         }
 
         private void CreatePayment()
@@ -175,21 +175,21 @@ namespace ChapooUI
                 ChapooLogic.Payment_Service payment_Service = new Payment_Service();
                 Payment payment = new Payment()
                 {
-                    order = _currentOrder,
-                    table = _currentOrder.Table,
-                    payStatus = PayStatus.Betaald,
-                    payMethod = paymethod,
-                    comment = TextBoxOpmerking.Text,
-                    employee = _CurrentEmployee,
-                    totalPrice = _currentOrder.totalPrice + numericUpDownFooi.Value,
-                    tip = numericUpDownFooi.Value,
-                    totalVAT = _currentOrder.totalVAT,
-                    payment_DateTime = DateTime.Now
+                    Order = _currentOrder,
+                    Table = _currentOrder.Table,
+                    PayStatus = PayStatus.Betaald,
+                    PayMethod = paymethod,
+                    Comment = TextBoxOpmerking.Text,
+                    Employee = _CurrentEmployee,
+                    TotalPrice = _currentOrder.TotalPrice + numericUpDownFooi.Value,
+                    Tip = numericUpDownFooi.Value,
+                    TotalVAT = _currentOrder.TotalVAT,
+                    Payment_DateTime = DateTime.Now
                 };
                 payment_Service.DB_Create_New_Payment(payment);
                 FillBillList();
                 FillListview();
-                MessageBox.Show($"Betaling van tafelnummer {_currentOrder.Table.table_ID} is afgerekend", "Chapoo afrekenen",
+                MessageBox.Show($"Betaling van tafelnummer {_currentOrder.Table.Table_ID} is afgerekend", "Chapoo afrekenen",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

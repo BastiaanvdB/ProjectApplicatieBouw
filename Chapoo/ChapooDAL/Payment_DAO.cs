@@ -16,16 +16,16 @@ namespace ChapooDAL
             string query = $"INSERT INTO Payment VALUES (@order_id, @table_id, @payMethod_ID, @employee_ID, @comment, @payStatus_ID, @payment_time, @totalprice, @totalvat, @tip)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@order_id", SqlDbType.Int) { Value = payment.order.order_ID },
-                new SqlParameter("@table_id", SqlDbType.Int) { Value = payment.table.table_ID },
-                new SqlParameter("@payMethod_ID", SqlDbType.Int) { Value = ((int)payment.payMethod) },
-                new SqlParameter("@employee_ID", SqlDbType.Int) { Value = payment.employee.employee_id },
-                new SqlParameter("@comment", SqlDbType.NVarChar) {Value = payment.comment },
-                new SqlParameter("@payStatus_ID", SqlDbType.Int) { Value = ((int)payment.payStatus) },
-                new SqlParameter("@totalprice", SqlDbType.Money) { Value = payment.totalPrice },
-                new SqlParameter("@totalvat", SqlDbType.Money) { Value = payment.totalVAT },
-                new SqlParameter("@tip", SqlDbType.Money) { Value = payment.tip },
-                new SqlParameter("@payment_time", SqlDbType.DateTime) { Value = payment.payment_DateTime }
+                new SqlParameter("@order_id", SqlDbType.Int) { Value = payment.Order.order_ID },
+                new SqlParameter("@table_id", SqlDbType.Int) { Value = payment.Table.Table_ID },
+                new SqlParameter("@payMethod_ID", SqlDbType.Int) { Value = ((int)payment.PayMethod) },
+                new SqlParameter("@employee_ID", SqlDbType.Int) { Value = payment.Employee.Employee_id },
+                new SqlParameter("@comment", SqlDbType.NVarChar) {Value = payment.Comment },
+                new SqlParameter("@payStatus_ID", SqlDbType.Int) { Value = ((int)payment.PayStatus) },
+                new SqlParameter("@totalprice", SqlDbType.Money) { Value = payment.TotalPrice },
+                new SqlParameter("@totalvat", SqlDbType.Money) { Value = payment.TotalVAT },
+                new SqlParameter("@tip", SqlDbType.Money) { Value = payment.Tip },
+                new SqlParameter("@payment_time", SqlDbType.DateTime) { Value = payment.Payment_DateTime }
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -46,15 +46,15 @@ namespace ChapooDAL
             {
                 Payment payment = new Payment()
                 {
-                    payment_ID = (int)dr["Payment_ID"],
-                    payMethod = (PayMethod)dr["Payment_PayMethod"],
-                    employee = employee_DAO.DB_Get_Employee((int)dr["Employee_ID"]),
-                    comment = (string)dr["Payment_Comment"],
-                    payStatus = (PayStatus)dr["Payment_PayStatus"],
-                    totalPrice = (decimal)dr["Payment_Total"],
-                    totalVAT = (decimal)dr["Payment_VAT"],
-                    tip = (decimal)dr["Payment_Tip"],
-                    payment_DateTime = (DateTime)dr["Payment_DateTime"]
+                    Payment_ID = (int)dr["Payment_ID"],
+                    PayMethod = (PayMethod)dr["Payment_PayMethod"],
+                    Employee = employee_DAO.DB_Get_Employee((int)dr["Employee_ID"]),
+                    Comment = (string)dr["Payment_Comment"],
+                    PayStatus = (PayStatus)dr["Payment_PayStatus"],
+                    TotalPrice = (decimal)dr["Payment_Total"],
+                    TotalVAT = (decimal)dr["Payment_VAT"],
+                    Tip = (decimal)dr["Payment_Tip"],
+                    Payment_DateTime = (DateTime)dr["Payment_DateTime"]
 
                 };
                 PaymentList.Add(payment);

@@ -64,15 +64,15 @@ namespace ChapooUI
 
         private void CurrentUserProfile()
         {
-            UsernameLabel.Text = _CurrentEmployee.name;
-            UserFunctieLabel.Text = _CurrentEmployee.position.ToString();
+            UsernameLabel.Text = _CurrentEmployee.Name;
+            UserFunctieLabel.Text = _CurrentEmployee.Position.ToString();
 
-            if(_CurrentEmployee.position == Position.Kok)
+            if(_CurrentEmployee.Position == Position.Kok)
             {
                 Pnl_keukenoverzicht.Show();
                 pnl_Baroverzicht.Hide();
             }
-            else if(_CurrentEmployee.position == Position.Bardienst)
+            else if(_CurrentEmployee.Position == Position.Bardienst)
             {
                 Pnl_keukenoverzicht.Hide();
                 pnl_Baroverzicht.Show();
@@ -115,7 +115,7 @@ namespace ChapooUI
             Listview_Bar_OpenOrder.Items.Clear();
             foreach (ChapooModel.OrderDetail orderdetail in _ListOfNewOrderDetails)
             {
-                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}", $"{orderdetail.ordered_DateTime}" }));
+                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Order_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.OrderStatus.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
             }
         }
 
@@ -136,7 +136,7 @@ namespace ChapooUI
             Listview_Order_finished.Items.Clear();
             foreach (ChapooModel.OrderDetail orderdetail in _ListOfFinnishedOrderDetails)
             {
-                Listview_Order_finished.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}", $"{orderdetail.finished_DateTime}" }));
+                Listview_Order_finished.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Order_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.OrderStatus.ToString()}", $"{orderdetail.Finished_DateTime}" }));
             }
         }
         
@@ -180,7 +180,7 @@ namespace ChapooUI
             listView_Keuken_besteld.Items.Clear();
             foreach (ChapooModel.OrderDetail orderdetail in _ListOfNewkitchenOrderDetails)
             {
-                listView_Keuken_besteld.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}", $"{orderdetail.ordered_DateTime}" }));
+                listView_Keuken_besteld.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Order_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.OrderStatus.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
             }
         }
         private void FillKeukenOpgediendOrderList()
@@ -204,7 +204,7 @@ namespace ChapooUI
             listView_keuken_Opgediend.Items.Clear();
             foreach (ChapooModel.OrderDetail orderdetail in _ListOfFinnishedkitchenOrderDetails)
             {
-                listView_keuken_Opgediend.Items.Add(new ListViewItem(new string[] { $"{orderdetail.order_ID}", $"{orderdetail.item.item_Name}", $"{orderdetail.quantity}", $"{orderdetail.orderStatus.ToString()}", $"{orderdetail.ordered_DateTime}" }));
+                listView_keuken_Opgediend.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Order_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.OrderStatus.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
             }
         }
         private void listView_Keuken_besteld_SelectedIndexChanged(object sender, EventArgs e)
@@ -226,8 +226,8 @@ namespace ChapooUI
         public void UpdateCurrentOrder()
         {
             ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _CurrentOrderDetail.orderStatus = OrderStatus.Opgediend;
-            _CurrentOrderDetail.finished_DateTime = DateTime.Now;
+            _CurrentOrderDetail.OrderStatus = OrderStatus.Opgediend;
+            _CurrentOrderDetail.Finished_DateTime = DateTime.Now;
 
             orderDetail_Service.DB_Update_OrderDetails(_CurrentOrderDetail);
         }

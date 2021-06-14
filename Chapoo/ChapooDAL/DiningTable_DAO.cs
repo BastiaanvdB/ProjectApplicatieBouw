@@ -33,8 +33,8 @@ namespace ChapooDAL
             string query = $"UPDATE DiningTables SET Table_Status = @status WHERE Table_ID = @table";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@table", SqlDbType.Int) { Value = diningTable.table_ID},
-                new SqlParameter("@status", SqlDbType.Int) { Value = (int)diningTable.table_Status}
+                new SqlParameter("@table", SqlDbType.Int) { Value = diningTable.Table_ID},
+                new SqlParameter("@status", SqlDbType.Int) { Value = (int)diningTable.Table_Status}
             };
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -46,8 +46,8 @@ namespace ChapooDAL
             {
                 DiningTable diningTable = new DiningTable()
                 {
-                    table_ID = (int)dr["Table_ID"],
-                    table_Status = (TableStatus)((int)dr["Table_Status"])
+                    Table_ID = (int)dr["Table_ID"],
+                    Table_Status = (TableStatus)((int)dr["Table_Status"])
                 };
                 diningTables.Add(diningTable);
             }
@@ -59,8 +59,8 @@ namespace ChapooDAL
             DiningTable diningTable = new DiningTable();
             foreach (DataRow dr in dataTable.Rows)
             {
-                diningTable.table_ID = (int)dr["Table_ID"];
-                diningTable.table_Status = (TableStatus)((int)dr["Table_Status"]);
+                diningTable.Table_ID = (int)dr["Table_ID"];
+                diningTable.Table_Status = (TableStatus)((int)dr["Table_Status"]);
             }
             return diningTable;
         }

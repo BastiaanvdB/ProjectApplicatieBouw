@@ -62,7 +62,7 @@ namespace ChapooUI
         {
             foreach(Employee employee in _EmployeeList)
             {
-                EmployeeCombobox.Items.Add(employee.name);
+                EmployeeCombobox.Items.Add(employee.Name);
             }
             EmployeeCombobox.SelectedIndex = 0;
         }
@@ -74,7 +74,7 @@ namespace ChapooUI
 
         private void LoginCurrentEmployee()
         {
-            if(_CurrentPincode == Decrypt(_CurrentEmployee.pin))
+            if(_CurrentPincode == Decrypt(_CurrentEmployee.Pin))
             {
                 Dashboard dashboard = new Dashboard(_CurrentEmployee);
                 dashboard.Show();

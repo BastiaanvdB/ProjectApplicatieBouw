@@ -8,16 +8,16 @@ namespace ChapooModel
 {
     public class Payment
     {
-        public int payment_ID { get; set; }
-        public Order order { get; set; }
-        public DiningTable table { get; set; }
-        public PayMethod payMethod { get; set; }
-        public Employee employee { get; set; }
-        public string comment { get; set; }
-        public PayStatus payStatus { get; set; }
-        public decimal totalPrice { get; set; }
-        public decimal totalVAT { get; set; }
-        public decimal tip { get; set; }
-        public DateTime payment_DateTime { get; set; }
+        public int Payment_ID { get; set; }
+        public Order Order { get; set; }
+        public DiningTable Table { get; set; }
+        public PayMethod PayMethod { get; set; }
+        public Employee Employee { get; set; }
+        public string Comment { get; set; }
+        public PayStatus PayStatus { get; set; }
+        public decimal TotalPrice { get; set; }
+        public decimal TotalVAT { get; set; }
+        public decimal Tip { get; set; }
+        public DateTime Payment_DateTime { get; set; }
     }
 }

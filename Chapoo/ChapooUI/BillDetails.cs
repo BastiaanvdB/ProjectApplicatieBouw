@@ -51,14 +51,15 @@ namespace ChapooUI
 
         private void FillBill()
         {
-         
+
             listViewBonDetails.Items.Clear();
             foreach (ChapooModel.OrderDetail orderItem in _bill.OrderDetails)
             {
-                listViewBonDetails.Items.Add(new ListViewItem(new string[] { $"{orderItem.item.item_Name}", $"{orderItem.quantity}", $"{orderItem.ordered_DateTime}", $"{orderItem.item.item_Price.ToString("€ 0.00")}", $"{(orderItem.item.item_Price * orderItem.quantity).ToString("€ 0.00")}" }));
-                LabelBonInputTafel.Text = _bill.Table.table_ID.ToString();
-                this.Text = $"Bon tafel {_bill.Table.table_ID}";
+                listViewBonDetails.Items.Add(new ListViewItem(new string[] { $"{orderItem.Item.Item_Name}", $"{orderItem.Quantity}", $"{orderItem.Ordered_DateTime}", $"{orderItem.Item.Item_Price.ToString("€ 0.00")}", $"{(orderItem.Item.Item_Price * orderItem.Quantity).ToString("€ 0.00")}" }));
+                LabelBonInputTafel.Text = _bill.Table.Table_ID.ToString();
+                this.Text = $"Bon tafel {_bill.Table.Table_ID}";
             }
+
         }
 
         private void BonSluitButton_Click(object sender, EventArgs e)
