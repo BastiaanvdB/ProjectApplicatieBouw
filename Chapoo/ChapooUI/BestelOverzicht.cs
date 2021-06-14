@@ -12,7 +12,7 @@ using ChapooModel;
 
 namespace ChapooUI
 {
-    public partial class x : Form
+    public partial class BestelOverzicht : Form
     {
         private Employee CurrentEmployee;
         private Dashboard Dashboard;
@@ -48,7 +48,7 @@ namespace ChapooUI
                 m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        public x(Employee employee, Dashboard dashboard)
+        public BestelOverzicht(Employee employee, Dashboard dashboard)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

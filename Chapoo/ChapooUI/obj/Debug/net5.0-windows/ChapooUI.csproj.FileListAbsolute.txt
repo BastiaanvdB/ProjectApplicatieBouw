@@ -277,7 +277,6 @@ C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.LoginForm.resources
 C:\Users\basti\Desktop\Mijn chapoo\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.Management.resources
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.Management.resources
-C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.x.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.x.resources
 C:\Github\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.Management.resources
 C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\bin\Debug\net5.0-windows\ScottPlot.dll
@@ -366,3 +365,4 @@ C:\Users\basti\Desktop\Chapoo 2.0\ChapooUI\bin\Debug\net5.0-windows\ChapooModel.
 C:\Users\basti\Desktop\Chapoo 2.0\ChapooUI\bin\Debug\net5.0-windows\ChapooDAL.pdb
 C:\Users\basti\Desktop\Chapoo 2.0\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.csproj.CopyComplete
 C:\Users\basti\Desktop\Chapoo 2.0\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.genruntimeconfig.cache
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooUI\obj\Debug\net5.0-windows\ChapooUI.BestelOverzicht.resources
