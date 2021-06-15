@@ -139,6 +139,7 @@ namespace ChapooUI
             {
                 case "Betaaloverzicht":
                     BetaalOverzicht betaalOverzicht = new BetaalOverzicht(_CurrentEmployee, this);
+                    timerOber.Stop();
                     betaalOverzicht.Show();
                     this.Hide();
                     break;
@@ -154,11 +155,13 @@ namespace ChapooUI
                     break;
                 case "Besteloverzicht":
                     BestelOverzicht bestelOverzicht = new BestelOverzicht(_CurrentEmployee, this);
+                    timerOber.Stop();
                     bestelOverzicht.Show();
                     this.Hide();
                     break;
                 case "TafelOverzicht":
                     TafelOverzicht tafelOverzicht = new TafelOverzicht(_CurrentEmployee, this);
+                    timerOber.Stop();
                     tafelOverzicht.Show();
                     this.Hide();
                     break;
@@ -259,14 +262,17 @@ namespace ChapooUI
 
         private void listViewPickup_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (listViewPickup.SelectedItems.Count != 0)
-            //{
-                //buttonOpgediend.Enabled = true;
+            if (listViewPickup.SelectedItems.Count != 0)
+            {
+                buttonOpgediend.Enabled = true;
                 SelectedOrderDetail = PickupOrders[listViewPickup.SelectedIndices[0]];
-            //}
-            //{
-                //buttonOpgediend.Enabled = false;
-            //}
+            }
+            else
+            {
+
+                buttonOpgediend.Enabled = false;
+
+            }
         }
         // ---------------------
     }
