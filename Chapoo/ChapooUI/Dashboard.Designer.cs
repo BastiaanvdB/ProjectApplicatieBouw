@@ -56,6 +56,8 @@ namespace ChapooUI
             this.columnItem = new System.Windows.Forms.ColumnHeader();
             this.columnAantal = new System.Windows.Forms.ColumnHeader();
             this.timerOber = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -259,17 +261,19 @@ namespace ChapooUI
             // 
             // panelOber
             // 
+            this.panelOber.Controls.Add(this.label2);
+            this.panelOber.Controls.Add(this.label1);
             this.panelOber.Controls.Add(this.buttonOpgediend);
             this.panelOber.Controls.Add(this.listViewDone);
             this.panelOber.Controls.Add(this.listViewPickup);
-            this.panelOber.Location = new System.Drawing.Point(224, 83);
+            this.panelOber.Location = new System.Drawing.Point(224, 90);
             this.panelOber.Name = "panelOber";
-            this.panelOber.Size = new System.Drawing.Size(1145, 579);
+            this.panelOber.Size = new System.Drawing.Size(1145, 597);
             this.panelOber.TabIndex = 9;
             // 
             // buttonOpgediend
             // 
-            this.buttonOpgediend.Location = new System.Drawing.Point(520, 230);
+            this.buttonOpgediend.Location = new System.Drawing.Point(527, 256);
             this.buttonOpgediend.Name = "buttonOpgediend";
             this.buttonOpgediend.Size = new System.Drawing.Size(113, 81);
             this.buttonOpgediend.TabIndex = 2;
@@ -287,7 +291,7 @@ namespace ChapooUI
             this.listViewDone.FullRowSelect = true;
             this.listViewDone.GridLines = true;
             this.listViewDone.HideSelection = false;
-            this.listViewDone.Location = new System.Drawing.Point(648, 28);
+            this.listViewDone.Location = new System.Drawing.Point(655, 54);
             this.listViewDone.MultiSelect = false;
             this.listViewDone.Name = "listViewDone";
             this.listViewDone.Size = new System.Drawing.Size(476, 532);
@@ -323,7 +327,7 @@ namespace ChapooUI
             this.listViewPickup.FullRowSelect = true;
             this.listViewPickup.GridLines = true;
             this.listViewPickup.HideSelection = false;
-            this.listViewPickup.Location = new System.Drawing.Point(27, 28);
+            this.listViewPickup.Location = new System.Drawing.Point(34, 54);
             this.listViewPickup.MultiSelect = false;
             this.listViewPickup.Name = "listViewPickup";
             this.listViewPickup.Size = new System.Drawing.Size(476, 532);
@@ -352,6 +356,28 @@ namespace ChapooUI
             this.timerOber.Enabled = true;
             this.timerOber.Interval = 20000;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(34, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(233, 31);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Klaar voor afhalen";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(655, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 31);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Opgediend";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -370,6 +396,7 @@ namespace ChapooUI
             this.MenuBarAccountPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelOber.ResumeLayout(false);
+            this.panelOber.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,6 +429,8 @@ namespace ChapooUI
         private System.Windows.Forms.ColumnHeader columnItem;
         private System.Windows.Forms.ColumnHeader columnAantal;
         private System.Windows.Forms.Timer timerOber;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
