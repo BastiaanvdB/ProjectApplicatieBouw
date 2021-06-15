@@ -29,6 +29,7 @@ namespace ChapooUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeukenBarOverzicht));
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@ namespace ChapooUI
             this.headerhoeveelheidKeuken = new System.Windows.Forms.ColumnHeader();
             this.headerstatuskeuken = new System.Windows.Forms.ColumnHeader();
             this.Headertijdvanbestellingkeuken = new System.Windows.Forms.ColumnHeader();
+            this.timerBar = new System.Windows.Forms.Timer(this.components);
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -451,6 +453,11 @@ namespace ChapooUI
             this.Headertijdvanbestellingkeuken.Text = "Tijd van bestelling";
             this.Headertijdvanbestellingkeuken.Width = 150;
             // 
+            // timerBar
+            // 
+            this.timerBar.Enabled = true;
+            this.timerBar.Interval = 20000;
+            // 
             // KeukenBarOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -521,6 +528,7 @@ namespace ChapooUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton RBtn_Diner;
         private System.Windows.Forms.RadioButton RBtn_Lunch;
+        private System.Windows.Forms.Timer timerBar;
     }
 }
 

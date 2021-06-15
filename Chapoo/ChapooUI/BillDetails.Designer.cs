@@ -33,20 +33,19 @@ namespace ChapooUI
             this.listViewBonDetails = new System.Windows.Forms.ListView();
             this.GerechtHeader = new System.Windows.Forms.ColumnHeader();
             this.AantalHeader = new System.Windows.Forms.ColumnHeader();
-            this.columntijd = new System.Windows.Forms.ColumnHeader();
             this.PrijsHeader = new System.Windows.Forms.ColumnHeader();
             this.PrijsTotalHeader = new System.Windows.Forms.ColumnHeader();
             this.LabelBonTafelTitel = new System.Windows.Forms.Label();
             this.LabelBonInputTafel = new System.Windows.Forms.Label();
             this.BonSluitButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelTotaalPrijsInput = new System.Windows.Forms.Label();
             this.labelBrutoInput = new System.Windows.Forms.Label();
             this.labelBTWinput = new System.Windows.Forms.Label();
-            this.labelTotaalPrijsInput = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +55,6 @@ namespace ChapooUI
             this.listViewBonDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.GerechtHeader,
             this.AantalHeader,
-            this.columntijd,
             this.PrijsHeader,
             this.PrijsTotalHeader});
             this.listViewBonDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -64,7 +62,7 @@ namespace ChapooUI
             this.listViewBonDetails.HideSelection = false;
             this.listViewBonDetails.Location = new System.Drawing.Point(54, 85);
             this.listViewBonDetails.Name = "listViewBonDetails";
-            this.listViewBonDetails.Size = new System.Drawing.Size(890, 529);
+            this.listViewBonDetails.Size = new System.Drawing.Size(721, 529);
             this.listViewBonDetails.TabIndex = 0;
             this.listViewBonDetails.UseCompatibleStateImageBehavior = false;
             this.listViewBonDetails.View = System.Windows.Forms.View.Details;
@@ -78,11 +76,6 @@ namespace ChapooUI
             // 
             this.AantalHeader.Text = "Aantal";
             // 
-            // columntijd
-            // 
-            this.columntijd.Text = "Datum/Tijd";
-            this.columntijd.Width = 170;
-            // 
             // PrijsHeader
             // 
             this.PrijsHeader.Text = "Prijs";
@@ -91,7 +84,7 @@ namespace ChapooUI
             // PrijsTotalHeader
             // 
             this.PrijsTotalHeader.Text = "Totaalprijs";
-            this.PrijsTotalHeader.Width = 100;
+            this.PrijsTotalHeader.Width = 104;
             // 
             // LabelBonTafelTitel
             // 
@@ -120,7 +113,7 @@ namespace ChapooUI
             this.BonSluitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BonSluitButton.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BonSluitButton.ForeColor = System.Drawing.Color.White;
-            this.BonSluitButton.Location = new System.Drawing.Point(772, 740);
+            this.BonSluitButton.Location = new System.Drawing.Point(592, 732);
             this.BonSluitButton.Name = "BonSluitButton";
             this.BonSluitButton.Size = new System.Drawing.Size(183, 50);
             this.BonSluitButton.TabIndex = 3;
@@ -136,12 +129,44 @@ namespace ChapooUI
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(348, 633);
+            this.groupBox1.Location = new System.Drawing.Point(161, 636);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(394, 176);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prijsopgave";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.labelTotaalPrijsInput);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.Location = new System.Drawing.Point(6, 105);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(259, 71);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Te betalen";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(6, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Totaalprijs:";
+            // 
+            // labelTotaalPrijsInput
+            // 
+            this.labelTotaalPrijsInput.AutoSize = true;
+            this.labelTotaalPrijsInput.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelTotaalPrijsInput.Location = new System.Drawing.Point(116, 29);
+            this.labelTotaalPrijsInput.Name = "labelTotaalPrijsInput";
+            this.labelTotaalPrijsInput.Size = new System.Drawing.Size(32, 25);
+            this.labelTotaalPrijsInput.TabIndex = 3;
+            this.labelTotaalPrijsInput.Text = "....";
             // 
             // labelBrutoInput
             // 
@@ -163,16 +188,6 @@ namespace ChapooUI
             this.labelBTWinput.TabIndex = 4;
             this.labelBTWinput.Text = "....";
             // 
-            // labelTotaalPrijsInput
-            // 
-            this.labelTotaalPrijsInput.AutoSize = true;
-            this.labelTotaalPrijsInput.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTotaalPrijsInput.Location = new System.Drawing.Point(116, 29);
-            this.labelTotaalPrijsInput.Name = "labelTotaalPrijsInput";
-            this.labelTotaalPrijsInput.Size = new System.Drawing.Size(32, 25);
-            this.labelTotaalPrijsInput.TabIndex = 3;
-            this.labelTotaalPrijsInput.Text = "....";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -182,16 +197,6 @@ namespace ChapooUI
             this.label3.Size = new System.Drawing.Size(55, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "BTW:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(6, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Totaalprijs:";
             // 
             // label1
             // 
@@ -203,23 +208,11 @@ namespace ChapooUI
             this.label1.TabIndex = 0;
             this.label1.Text = "Bruto prijs:";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.labelTotaalPrijsInput);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(6, 105);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(259, 71);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Te betalen";
-            // 
             // BillDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 841);
+            this.ClientSize = new System.Drawing.Size(864, 841);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BonSluitButton);
             this.Controls.Add(this.LabelBonInputTafel);
@@ -249,7 +242,6 @@ namespace ChapooUI
         private System.Windows.Forms.ColumnHeader AantalHeader;
         private System.Windows.Forms.ColumnHeader PrijsHeader;
         private System.Windows.Forms.ColumnHeader PrijsTotalHeader;
-        private System.Windows.Forms.ColumnHeader columntijd;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelBrutoInput;
         private System.Windows.Forms.Label labelBTWinput;

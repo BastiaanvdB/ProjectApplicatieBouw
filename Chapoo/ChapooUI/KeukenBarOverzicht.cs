@@ -58,9 +58,28 @@ namespace ChapooUI
             _Dashboard = dashboard;
             _CurrentOrderDetail = new OrderDetail();
             btn_Gereed.Enabled = false;
-            UpdateAllLists();
+            //UpdateAllLists();
             CurrentUserProfile();
+            System.Windows.Forms.Timer timerBar = new System.Windows.Forms.Timer();
+            timerBar.Interval = 20000;//20 seconds
+            timerBar.Tick += new System.EventHandler(timerBar_Tick);
+            timerBar.Start();
         }
+
+
+        // auto timer refresh
+        private void timerBar_Tick(object sender, EventArgs e)
+        {
+            if (_CurrentEmployee.Position == Position.Kok)
+            {
+                UpdateKicthenlists();
+            }
+            else if (_CurrentEmployee.Position == Position.Bardienst)
+            {
+                UpdateAllLists();
+            }
+        }
+
 
         private void CurrentUserProfile()
         {

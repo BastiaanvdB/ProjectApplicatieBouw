@@ -108,7 +108,7 @@ namespace ChapooUI
             listViewBonDetails.Items.Clear();
             foreach (ChapooModel.OrderDetail orderItem in templist)
             {
-                listViewBonDetails.Items.Add(new ListViewItem(new string[] { $"{orderItem.Item.Item_Name}", $"{orderItem.Quantity}", $"{orderItem.Ordered_DateTime}", $"{orderItem.Item.Item_Price.ToString("€ 0.00")}", $"{(orderItem.Item.Item_Price * orderItem.Quantity).ToString("€ 0.00")}" }));
+                listViewBonDetails.Items.Add(new ListViewItem(new string[] { $"{orderItem.Item.Item_Name}", $"{orderItem.Quantity}", $"{orderItem.Item.Item_Price.ToString("€ 0.00")}", $"{(orderItem.Item.Item_Price * orderItem.Quantity).ToString("€ 0.00")}" }));
                 LabelBonInputTafel.Text = _bill.Table.Table_ID.ToString();
                 this.Text = $"Bon tafel {_bill.Table.Table_ID}";
             }
