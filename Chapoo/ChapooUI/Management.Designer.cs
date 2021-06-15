@@ -36,8 +36,6 @@ namespace ChapooUI
             this.btnUserManagement = new System.Windows.Forms.Button();
             this.BtnStockManagement = new System.Windows.Forms.Button();
             this.MenuBarAccountPanel = new System.Windows.Forms.Panel();
-            this.UserFunctieLabel = new System.Windows.Forms.Label();
-            this.UsernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelStockManagement = new System.Windows.Forms.Panel();
             this.panelVoorraadbeheer = new System.Windows.Forms.Panel();
@@ -134,6 +132,8 @@ namespace ChapooUI
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.monthCalendarFrom = new System.Windows.Forms.MonthCalendar();
             this.label19 = new System.Windows.Forms.Label();
+            this.UserFunctieLabel = new System.Windows.Forms.Label();
+            this.UsernameLabel = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -257,28 +257,6 @@ namespace ChapooUI
             this.MenuBarAccountPanel.Name = "MenuBarAccountPanel";
             this.MenuBarAccountPanel.Size = new System.Drawing.Size(190, 144);
             this.MenuBarAccountPanel.TabIndex = 0;
-            // 
-            // UserFunctieLabel
-            // 
-            this.UserFunctieLabel.AutoSize = true;
-            this.UserFunctieLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UserFunctieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.UserFunctieLabel.Location = new System.Drawing.Point(66, 111);
-            this.UserFunctieLabel.Name = "UserFunctieLabel";
-            this.UserFunctieLabel.Size = new System.Drawing.Size(48, 17);
-            this.UserFunctieLabel.TabIndex = 2;
-            this.UserFunctieLabel.Text = "Functie";
-            // 
-            // UsernameLabel
-            // 
-            this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.UsernameLabel.Location = new System.Drawing.Point(54, 90);
-            this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(81, 21);
-            this.UsernameLabel.TabIndex = 1;
-            this.UsernameLabel.Text = "Username";
             // 
             // pictureBox1
             // 
@@ -1250,6 +1228,28 @@ namespace ChapooUI
             this.label19.TabIndex = 5;
             this.label19.Text = "Financieel overzicht";
             // 
+            // UserFunctieLabel
+            // 
+            this.UserFunctieLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UserFunctieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
+            this.UserFunctieLabel.Location = new System.Drawing.Point(3, 113);
+            this.UserFunctieLabel.Name = "UserFunctieLabel";
+            this.UserFunctieLabel.Size = new System.Drawing.Size(184, 14);
+            this.UserFunctieLabel.TabIndex = 4;
+            this.UserFunctieLabel.Text = "Functie";
+            this.UserFunctieLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // UsernameLabel
+            // 
+            this.UsernameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.UsernameLabel.Location = new System.Drawing.Point(0, 92);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(187, 21);
+            this.UsernameLabel.TabIndex = 3;
+            this.UsernameLabel.Text = "Username";
+            this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1267,7 +1267,6 @@ namespace ChapooUI
             this.Text = "Chapoo Voorraad overzicht";
             this.MenuBarPanel.ResumeLayout(false);
             this.MenuBarAccountPanel.ResumeLayout(false);
-            this.MenuBarAccountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelStockManagement.ResumeLayout(false);
             this.panelStockManagement.PerformLayout();
@@ -1313,9 +1312,7 @@ namespace ChapooUI
 
         private System.Windows.Forms.Panel MenuBarPanel;
         private System.Windows.Forms.Panel MenuBarAccountPanel;
-        private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label UserFunctieLabel;
         private System.Windows.Forms.Button BtnStockManagement;
         private System.Windows.Forms.Button BtnAfmelden;
         private System.Windows.Forms.Button btnFinancialOverview;
@@ -1415,6 +1412,8 @@ namespace ChapooUI
         private System.Windows.Forms.ColumnHeader TotalPrice;
         private System.Windows.Forms.ColumnHeader date;
         private System.Windows.Forms.ColumnHeader Paystatus;
+        private System.Windows.Forms.Label UserFunctieLabel;
+        private System.Windows.Forms.Label UsernameLabel;
     }
 }
 

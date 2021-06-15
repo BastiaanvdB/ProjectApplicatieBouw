@@ -134,7 +134,7 @@ namespace ChapooUI
             Listview_Bar_OpenOrder.Items.Clear();
             foreach (ChapooModel.OrderDetail orderdetail in _ListOfNewOrderDetails)
             {
-                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Table_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.OrderStatus.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
+                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Table_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.Comment.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
             }
         }
 
@@ -199,7 +199,7 @@ namespace ChapooUI
             listView_Keuken_besteld.Items.Clear();
             foreach (ChapooModel.OrderDetail orderdetail in _ListOfNewkitchenOrderDetails)
             {
-                listView_Keuken_besteld.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Table_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.OrderStatus.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
+                listView_Keuken_besteld.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Table_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.Comment.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
             }
         }
         private void FillKeukenOpgediendOrderList()
@@ -258,6 +258,7 @@ namespace ChapooUI
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
             _Dashboard.Show();
+            timerBar.Stop();
             this.Close();
         }
 

@@ -33,8 +33,6 @@ namespace ChapooUI
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
             this.MenuBarAccountPanel = new System.Windows.Forms.Panel();
-            this.UserFunctieLabel = new System.Windows.Forms.Label();
-            this.UsernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTableKeypad = new System.Windows.Forms.Panel();
             this.buttonNumber9 = new System.Windows.Forms.Button();
@@ -93,6 +91,7 @@ namespace ChapooUI
             this.listViewMenuOverviewList = new System.Windows.Forms.ListView();
             this.ItemHeader = new System.Windows.Forms.ColumnHeader();
             this.PrijsHeader = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.buttonSluitMenu = new System.Windows.Forms.Button();
@@ -117,7 +116,8 @@ namespace ChapooUI
             this.label8 = new System.Windows.Forms.Label();
             this.richTextBoxWijzigCommentaar = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.UserFunctieLabel = new System.Windows.Forms.Label();
+            this.UsernameLabel = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -178,28 +178,6 @@ namespace ChapooUI
             this.MenuBarAccountPanel.Name = "MenuBarAccountPanel";
             this.MenuBarAccountPanel.Size = new System.Drawing.Size(190, 144);
             this.MenuBarAccountPanel.TabIndex = 0;
-            // 
-            // UserFunctieLabel
-            // 
-            this.UserFunctieLabel.AutoSize = true;
-            this.UserFunctieLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UserFunctieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.UserFunctieLabel.Location = new System.Drawing.Point(66, 111);
-            this.UserFunctieLabel.Name = "UserFunctieLabel";
-            this.UserFunctieLabel.Size = new System.Drawing.Size(48, 17);
-            this.UserFunctieLabel.TabIndex = 2;
-            this.UserFunctieLabel.Text = "Functie";
-            // 
-            // UsernameLabel
-            // 
-            this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.UsernameLabel.Location = new System.Drawing.Point(54, 90);
-            this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(81, 21);
-            this.UsernameLabel.TabIndex = 1;
-            this.UsernameLabel.Text = "Username";
             // 
             // pictureBox1
             // 
@@ -918,6 +896,11 @@ namespace ChapooUI
             // 
             this.PrijsHeader.Text = "Prijs";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "In voorraad";
+            this.columnHeader1.Width = 80;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
@@ -1267,12 +1250,29 @@ namespace ChapooUI
             this.label9.TabIndex = 8;
             this.label9.Text = "Order Wijzigen";
             // 
-            // columnHeader1
+            // UserFunctieLabel
             // 
-            this.columnHeader1.Text = "In voorraad";
-            this.columnHeader1.Width = 80;
+            this.UserFunctieLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UserFunctieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
+            this.UserFunctieLabel.Location = new System.Drawing.Point(6, 111);
+            this.UserFunctieLabel.Name = "UserFunctieLabel";
+            this.UserFunctieLabel.Size = new System.Drawing.Size(184, 14);
+            this.UserFunctieLabel.TabIndex = 4;
+            this.UserFunctieLabel.Text = "Functie";
+            this.UserFunctieLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // x
+            // UsernameLabel
+            // 
+            this.UsernameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.UsernameLabel.Location = new System.Drawing.Point(3, 90);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(187, 21);
+            this.UsernameLabel.TabIndex = 3;
+            this.UsernameLabel.Text = "Username";
+            this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BestelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1287,12 +1287,11 @@ namespace ChapooUI
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "x";
+            this.Name = "BestelOverzicht";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chapoo Voorraad overzicht";
             this.MenuBarPanel.ResumeLayout(false);
             this.MenuBarAccountPanel.ResumeLayout(false);
-            this.MenuBarAccountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTableKeypad.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1324,9 +1323,7 @@ namespace ChapooUI
 
         private System.Windows.Forms.Panel MenuBarPanel;
         private System.Windows.Forms.Panel MenuBarAccountPanel;
-        private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label UserFunctieLabel;
         private System.Windows.Forms.Button BtnAfmelden;
         private System.Windows.Forms.Panel panelTableKeypad;
         private System.Windows.Forms.Button buttonNumber9;
@@ -1410,6 +1407,8 @@ namespace ChapooUI
         private System.Windows.Forms.Label labelBonnummerinput;
         private System.Windows.Forms.Button buttonResetOrder;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label UserFunctieLabel;
+        private System.Windows.Forms.Label UsernameLabel;
     }
 }
 
