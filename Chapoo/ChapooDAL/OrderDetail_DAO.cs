@@ -21,6 +21,16 @@ namespace ChapooDAL
             return ReadOrderDetailsNoTable(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public List<OrderDetail> DB_Get_All_OrderDetails_On_Specific_OrderStatus(string OrderStatus)
+        {
+            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE OrderStatus.OrderStatus_status = @status ORDER BY OrderDetails_Finished_DateTime DESC";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@status", SqlDbType.NVarChar) {Value = OrderStatus}
+            };
+            return ReadOrderDetails(ExecuteSelectQuery(query, sqlParameters));
+        }
+
         public void DB_Update_OrderDetails(OrderDetail orderDetail)
         {
             string query = "UPDATE OrderDetails SET OrderDetails.Item_ID = @item_ID, OrderDetails.Order_ID = @order_id, OrderDetails.OrderDetails_Quantity = @quantity, OrderDetails.OrderDetails_Comment = @comment, OrderDetails.Employee_ID = @employee_id, OrderDetails.OrderDetails_Ordered_DateTime = @ordered_datetime, OrderDetails.OrderDetails_Preparing_DateTime = @preparing_datetime, OrderDetails.OrderDetails_Finished_DateTime = @finished_datetime, OrderDetails.OrderDetails_OrderStatus = @orderstatus WHERE OrderDetails.OrderDetails_ID = @orderdetail_ID";
@@ -80,9 +90,20 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus(string MenuName, string OrderStatus)
+        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime(string MenuName, string OrderStatus)
         {
-            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE Menu.Menu_Name = @MenuName AND OrderStatus.OrderStatus_status = @OrderStatus";
+            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE Menu.Menu_Name = @MenuName AND OrderStatus.OrderStatus_status = @OrderStatus ORDER BY OrderDetails_Finished_DateTime DESC";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@MenuName", SqlDbType.NVarChar) { Value = MenuName },
+                new SqlParameter("@OrderStatus", SqlDbType.NVarChar) { Value = OrderStatus }
+            };
+            return ReadOrderDetails(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime(string MenuName, string OrderStatus)
+        {
+            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE Menu.Menu_Name = @MenuName AND OrderStatus.OrderStatus_status = @OrderStatus ORDER BY OrderDetails_Ordered_DateTime DESC";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@MenuName", SqlDbType.NVarChar) { Value = MenuName },

@@ -29,6 +29,7 @@ namespace ChapooUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.BtnAfmelden = new System.Windows.Forms.Button();
@@ -43,9 +44,22 @@ namespace ChapooUI
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelWelkom = new System.Windows.Forms.Label();
+            this.panelOber = new System.Windows.Forms.Panel();
+            this.buttonOpgediend = new System.Windows.Forms.Button();
+            this.listViewDone = new System.Windows.Forms.ListView();
+            this.columnHeadertafel = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnaanta = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.listViewPickup = new System.Windows.Forms.ListView();
+            this.columnTable = new System.Windows.Forms.ColumnHeader();
+            this.columnItem = new System.Windows.Forms.ColumnHeader();
+            this.columnAantal = new System.Windows.Forms.ColumnHeader();
+            this.timerOber = new System.Windows.Forms.Timer(this.components);
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelOber.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBarPanel
@@ -243,12 +257,108 @@ namespace ChapooUI
             this.labelWelkom.TabIndex = 8;
             this.labelWelkom.Text = "Welkom";
             // 
+            // panelOber
+            // 
+            this.panelOber.Controls.Add(this.buttonOpgediend);
+            this.panelOber.Controls.Add(this.listViewDone);
+            this.panelOber.Controls.Add(this.listViewPickup);
+            this.panelOber.Location = new System.Drawing.Point(224, 83);
+            this.panelOber.Name = "panelOber";
+            this.panelOber.Size = new System.Drawing.Size(1145, 579);
+            this.panelOber.TabIndex = 9;
+            // 
+            // buttonOpgediend
+            // 
+            this.buttonOpgediend.Location = new System.Drawing.Point(520, 230);
+            this.buttonOpgediend.Name = "buttonOpgediend";
+            this.buttonOpgediend.Size = new System.Drawing.Size(113, 81);
+            this.buttonOpgediend.TabIndex = 2;
+            this.buttonOpgediend.Text = "Opgediend";
+            this.buttonOpgediend.UseVisualStyleBackColor = true;
+            this.buttonOpgediend.Click += new System.EventHandler(this.buttonOpgediend_Click);
+            // 
+            // listViewDone
+            // 
+            this.listViewDone.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeadertafel,
+            this.columnHeader2,
+            this.columnaanta,
+            this.columnHeader3});
+            this.listViewDone.FullRowSelect = true;
+            this.listViewDone.GridLines = true;
+            this.listViewDone.HideSelection = false;
+            this.listViewDone.Location = new System.Drawing.Point(648, 28);
+            this.listViewDone.MultiSelect = false;
+            this.listViewDone.Name = "listViewDone";
+            this.listViewDone.Size = new System.Drawing.Size(476, 532);
+            this.listViewDone.TabIndex = 1;
+            this.listViewDone.UseCompatibleStateImageBehavior = false;
+            this.listViewDone.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeadertafel
+            // 
+            this.columnHeadertafel.Text = "Tafel";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Gerecht/Drank";
+            this.columnHeader2.Width = 220;
+            // 
+            // columnaanta
+            // 
+            this.columnaanta.Text = "Aantal";
+            this.columnaanta.Width = 50;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Datum/Tijd";
+            this.columnHeader3.Width = 140;
+            // 
+            // listViewPickup
+            // 
+            this.listViewPickup.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnTable,
+            this.columnItem,
+            this.columnAantal});
+            this.listViewPickup.FullRowSelect = true;
+            this.listViewPickup.GridLines = true;
+            this.listViewPickup.HideSelection = false;
+            this.listViewPickup.Location = new System.Drawing.Point(27, 28);
+            this.listViewPickup.MultiSelect = false;
+            this.listViewPickup.Name = "listViewPickup";
+            this.listViewPickup.Size = new System.Drawing.Size(476, 532);
+            this.listViewPickup.TabIndex = 0;
+            this.listViewPickup.UseCompatibleStateImageBehavior = false;
+            this.listViewPickup.View = System.Windows.Forms.View.Details;
+            this.listViewPickup.SelectedIndexChanged += new System.EventHandler(this.listViewPickup_SelectedIndexChanged);
+            // 
+            // columnTable
+            // 
+            this.columnTable.Text = "Tafel";
+            this.columnTable.Width = 50;
+            // 
+            // columnItem
+            // 
+            this.columnItem.Text = "Gerecht/Drank";
+            this.columnItem.Width = 370;
+            // 
+            // columnAantal
+            // 
+            this.columnAantal.Text = "Aantal";
+            this.columnAantal.Width = 50;
+            // 
+            // timerOber
+            // 
+            this.timerOber.Enabled = true;
+            this.timerOber.Interval = 20000;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1399, 699);
+            this.Controls.Add(this.panelOber);
             this.Controls.Add(this.labelWelkom);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -259,6 +369,7 @@ namespace ChapooUI
             this.MenuBarPanel.ResumeLayout(false);
             this.MenuBarAccountPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelOber.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,6 +390,18 @@ namespace ChapooUI
         private System.Windows.Forms.Button BtnTafelOverzicht;
         private System.Windows.Forms.Button BtnAfmelden;
         private System.Windows.Forms.Label labelWelkom;
+        private System.Windows.Forms.Panel panelOber;
+        private System.Windows.Forms.Button buttonOpgediend;
+        private System.Windows.Forms.ListView listViewDone;
+        private System.Windows.Forms.ColumnHeader columnHeadertafel;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnaanta;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ListView listViewPickup;
+        private System.Windows.Forms.ColumnHeader columnTable;
+        private System.Windows.Forms.ColumnHeader columnItem;
+        private System.Windows.Forms.ColumnHeader columnAantal;
+        private System.Windows.Forms.Timer timerOber;
     }
 }
 

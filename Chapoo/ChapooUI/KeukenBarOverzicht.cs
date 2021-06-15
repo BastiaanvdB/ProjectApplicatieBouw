@@ -123,7 +123,7 @@ namespace ChapooUI
         {
             // fill the the order list with open/bestelde orders
             ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _ListOfNewOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Besteld");
+            _ListOfNewOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Dranken", "Besteld");
         }
 
 
@@ -144,7 +144,8 @@ namespace ChapooUI
         {
             // fill the the order list with finished/gereed orders
             ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _ListOfFinnishedOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Dranken", "Opgediend");
+            _ListOfFinnishedOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Dranken", "Afhalen");
+            _ListOfFinnishedOrderDetails.AddRange(orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Dranken", "Opgediend"));
         }
 
         //Mehtod for filling the bar listview with the finished/Opgediend orders
@@ -184,11 +185,11 @@ namespace ChapooUI
             _ListOfNewkitchenOrderDetails = new List<OrderDetail>();
             if ((RBtn_Diner.Checked == true) && (RBtn_Lunch.Checked == false))
             {
-                _ListOfNewkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Diner", "Besteld");
+                _ListOfNewkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Diner", "Besteld");
             }
             else if ((RBtn_Diner.Checked == false) && (RBtn_Lunch.Checked == true))
             {
-                _ListOfNewkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Lunch", "Besteld");
+                _ListOfNewkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Lunch", "Besteld");
             }
         }
         //filling the bar list view with open/bestelde orders
@@ -208,11 +209,13 @@ namespace ChapooUI
             _ListOfFinnishedkitchenOrderDetails = new List<OrderDetail>();
             if ((RBtn_Diner.Checked == true) && (RBtn_Lunch.Checked == false))
             {
-                _ListOfFinnishedkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Diner", "Opgediend");
+                _ListOfFinnishedkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Diner", "Afhalen");
+                _ListOfFinnishedkitchenOrderDetails.AddRange(orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Diner", "Opgediend"));
             }
             else if ((RBtn_Diner.Checked == false) && (RBtn_Lunch.Checked == true))
             {
-                _ListOfFinnishedkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus("Lunch", "Opgediend");
+                _ListOfFinnishedkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Lunch", "Afhalen");
+                _ListOfFinnishedkitchenOrderDetails.AddRange(orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Lunch", "Opgediend"));
             }
         }
         //filling the bar list view with open/bestelde orders
@@ -244,7 +247,7 @@ namespace ChapooUI
         public void UpdateCurrentOrder()
         {
             ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _CurrentOrderDetail.OrderStatus = OrderStatus.Opgediend;
+            _CurrentOrderDetail.OrderStatus = OrderStatus.Afhalen;
             _CurrentOrderDetail.Finished_DateTime = DateTime.Now;
 
             orderDetail_Service.DB_Update_OrderDetails(_CurrentOrderDetail);

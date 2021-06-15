@@ -22,15 +22,26 @@ namespace ChapooLogic
             OrderDetail_DB.DB_Add_OrderDetails(orderDetail);
         }
 
+        public List<OrderDetail> DB_Get_All_OrderDetails_On_Specific_OrderStatus(string OrderStatus)
+        {
+            return OrderDetail_DB.DB_Get_All_OrderDetails_On_Specific_OrderStatus(OrderStatus);
+        }
+
+
         public void DB_Update_OrderDetails(OrderDetail orderDetail)
         {
             OrderDetail_DB.DB_Update_OrderDetails(orderDetail);
         }
 
 
-        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus(string MenuName, string OrderStatus)
+        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime(string MenuName, string OrderStatus)
         {
-            return OrderDetail_DB.DB_Get_All_Orders_By_MenuName_And_OrderStatus(MenuName, OrderStatus);
+            return OrderDetail_DB.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime(MenuName, OrderStatus);
+        }
+
+        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime(string MenuName, string OrderStatus)
+        {
+            return OrderDetail_DB.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime(MenuName, OrderStatus);
         }
 
         public void DB_Delete_All_OrderDetails(Order order)
