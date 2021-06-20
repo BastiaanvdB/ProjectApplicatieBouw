@@ -1,0 +1,17 @@
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Release\net5.0\ChapooLogic.deps.json
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Release\net5.0\ChapooLogic.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Release\net5.0\ref\ChapooLogic.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Release\net5.0\ChapooLogic.pdb
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Release\net5.0\ChapooDAL.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Release\net5.0\ChapooModel.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Release\net5.0\ChapooDAL.pdb
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\bin\Release\net5.0\ChapooModel.pdb
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ChapooLogic.csproj.AssemblyReference.cache
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ChapooLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ChapooLogic.AssemblyInfoInputs.cache
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ChapooLogic.AssemblyInfo.cs
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ChapooLogic.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ChapooLogic.csproj.CopyComplete
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ChapooLogic.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ref\ChapooLogic.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooLogic\obj\Release\net5.0\ChapooLogic.pdb
