@@ -38,6 +38,8 @@ namespace ChapooUI
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_Baroverzicht = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Btn_update_bar = new System.Windows.Forms.Button();
             this.lbl_Baroverzicht = new System.Windows.Forms.Label();
             this.btn_Gereed = new System.Windows.Forms.Button();
@@ -54,6 +56,8 @@ namespace ChapooUI
             this.HeaderStatus = new System.Windows.Forms.ColumnHeader();
             this.HeaderTijdBesteld = new System.Windows.Forms.ColumnHeader();
             this.Pnl_keukenoverzicht = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.RBtn_Diner = new System.Windows.Forms.RadioButton();
             this.RBtn_Lunch = new System.Windows.Forms.RadioButton();
@@ -73,15 +77,19 @@ namespace ChapooUI
             this.headerstatuskeuken = new System.Windows.Forms.ColumnHeader();
             this.Headertijdvanbestellingkeuken = new System.Windows.Forms.ColumnHeader();
             this.timerBar = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.PanelAfrekenOverzicht = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.MenuBarPanel.SuspendLayout();
             this.MenuBarAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Baroverzicht.SuspendLayout();
             this.Pnl_keukenoverzicht.SuspendLayout();
+            this.PanelAfrekenOverzicht.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBarPanel
@@ -158,26 +166,51 @@ namespace ChapooUI
             // 
             // pnl_Baroverzicht
             // 
-            this.pnl_Baroverzicht.Controls.Add(this.label5);
-            this.pnl_Baroverzicht.Controls.Add(this.label4);
+            this.pnl_Baroverzicht.Controls.Add(this.panel3);
+            this.pnl_Baroverzicht.Controls.Add(this.panel2);
             this.pnl_Baroverzicht.Controls.Add(this.Btn_update_bar);
             this.pnl_Baroverzicht.Controls.Add(this.lbl_Baroverzicht);
             this.pnl_Baroverzicht.Controls.Add(this.btn_Gereed);
-            this.pnl_Baroverzicht.Controls.Add(this.Listview_Order_finished);
-            this.pnl_Baroverzicht.Controls.Add(this.Listview_Bar_OpenOrder);
-            this.pnl_Baroverzicht.Location = new System.Drawing.Point(248, 44);
+            this.pnl_Baroverzicht.Location = new System.Drawing.Point(224, 60);
             this.pnl_Baroverzicht.Name = "pnl_Baroverzicht";
-            this.pnl_Baroverzicht.Size = new System.Drawing.Size(1434, 731);
+            this.pnl_Baroverzicht.Size = new System.Drawing.Size(1464, 731);
             this.pnl_Baroverzicht.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(9, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(246, 28);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Afgeronden bestellingen";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(399, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(206, 28);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Nieuwe bestellingen";
             // 
             // Btn_update_bar
             // 
-            this.Btn_update_bar.Location = new System.Drawing.Point(645, 67);
+            this.Btn_update_bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.Btn_update_bar.FlatAppearance.BorderSize = 0;
+            this.Btn_update_bar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_update_bar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Btn_update_bar.ForeColor = System.Drawing.Color.White;
+            this.Btn_update_bar.Location = new System.Drawing.Point(639, 67);
             this.Btn_update_bar.Name = "Btn_update_bar";
             this.Btn_update_bar.Size = new System.Drawing.Size(168, 55);
             this.Btn_update_bar.TabIndex = 4;
             this.Btn_update_bar.Text = "Update";
-            this.Btn_update_bar.UseVisualStyleBackColor = true;
+            this.Btn_update_bar.UseVisualStyleBackColor = false;
             this.Btn_update_bar.Click += new System.EventHandler(this.Btn_update_bar_Click);
             // 
             // lbl_Baroverzicht
@@ -193,12 +226,17 @@ namespace ChapooUI
             // 
             // btn_Gereed
             // 
-            this.btn_Gereed.Location = new System.Drawing.Point(645, 317);
+            this.btn_Gereed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Gereed.FlatAppearance.BorderSize = 0;
+            this.btn_Gereed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Gereed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Gereed.ForeColor = System.Drawing.Color.White;
+            this.btn_Gereed.Location = new System.Drawing.Point(639, 315);
             this.btn_Gereed.Name = "btn_Gereed";
             this.btn_Gereed.Size = new System.Drawing.Size(168, 55);
             this.btn_Gereed.TabIndex = 2;
             this.btn_Gereed.Text = "Gereed";
-            this.btn_Gereed.UseVisualStyleBackColor = true;
+            this.btn_Gereed.UseVisualStyleBackColor = false;
             this.btn_Gereed.Click += new System.EventHandler(this.btn_Gereed_Click);
             // 
             // Listview_Order_finished
@@ -211,9 +249,9 @@ namespace ChapooUI
             this.HeaderTijdOpgediend});
             this.Listview_Order_finished.GridLines = true;
             this.Listview_Order_finished.HideSelection = false;
-            this.Listview_Order_finished.Location = new System.Drawing.Point(846, 67);
+            this.Listview_Order_finished.Location = new System.Drawing.Point(9, 35);
             this.Listview_Order_finished.Name = "Listview_Order_finished";
-            this.Listview_Order_finished.Size = new System.Drawing.Size(568, 643);
+            this.Listview_Order_finished.Size = new System.Drawing.Size(590, 643);
             this.Listview_Order_finished.TabIndex = 1;
             this.Listview_Order_finished.UseCompatibleStateImageBehavior = false;
             this.Listview_Order_finished.View = System.Windows.Forms.View.Details;
@@ -254,9 +292,9 @@ namespace ChapooUI
             this.Listview_Bar_OpenOrder.FullRowSelect = true;
             this.Listview_Bar_OpenOrder.GridLines = true;
             this.Listview_Bar_OpenOrder.HideSelection = false;
-            this.Listview_Bar_OpenOrder.Location = new System.Drawing.Point(40, 67);
+            this.Listview_Bar_OpenOrder.Location = new System.Drawing.Point(22, 35);
             this.Listview_Bar_OpenOrder.Name = "Listview_Bar_OpenOrder";
-            this.Listview_Bar_OpenOrder.Size = new System.Drawing.Size(568, 643);
+            this.Listview_Bar_OpenOrder.Size = new System.Drawing.Size(583, 643);
             this.Listview_Bar_OpenOrder.TabIndex = 0;
             this.Listview_Bar_OpenOrder.UseCompatibleStateImageBehavior = false;
             this.Listview_Bar_OpenOrder.View = System.Windows.Forms.View.Details;
@@ -289,20 +327,40 @@ namespace ChapooUI
             // 
             // Pnl_keukenoverzicht
             // 
-            this.Pnl_keukenoverzicht.Controls.Add(this.label3);
-            this.Pnl_keukenoverzicht.Controls.Add(this.label2);
+            this.Pnl_keukenoverzicht.Controls.Add(this.panel1);
+            this.Pnl_keukenoverzicht.Controls.Add(this.PanelAfrekenOverzicht);
             this.Pnl_keukenoverzicht.Controls.Add(this.label1);
             this.Pnl_keukenoverzicht.Controls.Add(this.RBtn_Diner);
             this.Pnl_keukenoverzicht.Controls.Add(this.RBtn_Lunch);
             this.Pnl_keukenoverzicht.Controls.Add(this.Btn_Update_keuken);
             this.Pnl_keukenoverzicht.Controls.Add(this.lblKeukenoverzicht);
             this.Pnl_keukenoverzicht.Controls.Add(this.Btn_Keuken_gereed);
-            this.Pnl_keukenoverzicht.Controls.Add(this.listView_keuken_Opgediend);
-            this.Pnl_keukenoverzicht.Controls.Add(this.listView_Keuken_besteld);
-            this.Pnl_keukenoverzicht.Location = new System.Drawing.Point(233, 44);
+            this.Pnl_keukenoverzicht.Location = new System.Drawing.Point(221, 64);
             this.Pnl_keukenoverzicht.Name = "Pnl_keukenoverzicht";
             this.Pnl_keukenoverzicht.Size = new System.Drawing.Size(1461, 746);
             this.Pnl_keukenoverzicht.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(348, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(246, 28);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Afgeronden bestellingen";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(387, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(206, 28);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Nieuwe bestellingen";
             // 
             // label1
             // 
@@ -346,12 +404,17 @@ namespace ChapooUI
             // 
             // Btn_Update_keuken
             // 
+            this.Btn_Update_keuken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.Btn_Update_keuken.FlatAppearance.BorderSize = 0;
+            this.Btn_Update_keuken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Update_keuken.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Btn_Update_keuken.ForeColor = System.Drawing.Color.White;
             this.Btn_Update_keuken.Location = new System.Drawing.Point(645, 67);
             this.Btn_Update_keuken.Name = "Btn_Update_keuken";
             this.Btn_Update_keuken.Size = new System.Drawing.Size(168, 55);
             this.Btn_Update_keuken.TabIndex = 4;
             this.Btn_Update_keuken.Text = "Update";
-            this.Btn_Update_keuken.UseVisualStyleBackColor = true;
+            this.Btn_Update_keuken.UseVisualStyleBackColor = false;
             this.Btn_Update_keuken.Click += new System.EventHandler(this.Btn_Update_keuken_Click);
             // 
             // lblKeukenoverzicht
@@ -367,12 +430,17 @@ namespace ChapooUI
             // 
             // Btn_Keuken_gereed
             // 
+            this.Btn_Keuken_gereed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Btn_Keuken_gereed.FlatAppearance.BorderSize = 0;
+            this.Btn_Keuken_gereed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Keuken_gereed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Btn_Keuken_gereed.ForeColor = System.Drawing.Color.White;
             this.Btn_Keuken_gereed.Location = new System.Drawing.Point(645, 472);
             this.Btn_Keuken_gereed.Name = "Btn_Keuken_gereed";
             this.Btn_Keuken_gereed.Size = new System.Drawing.Size(168, 55);
             this.Btn_Keuken_gereed.TabIndex = 2;
             this.Btn_Keuken_gereed.Text = "Gereed";
-            this.Btn_Keuken_gereed.UseVisualStyleBackColor = true;
+            this.Btn_Keuken_gereed.UseVisualStyleBackColor = false;
             this.Btn_Keuken_gereed.Click += new System.EventHandler(this.Btn_Keuken_gereed_Click);
             // 
             // listView_keuken_Opgediend
@@ -385,9 +453,9 @@ namespace ChapooUI
             this.fintijdvanopdieningheader});
             this.listView_keuken_Opgediend.GridLines = true;
             this.listView_keuken_Opgediend.HideSelection = false;
-            this.listView_keuken_Opgediend.Location = new System.Drawing.Point(846, 67);
+            this.listView_keuken_Opgediend.Location = new System.Drawing.Point(15, 38);
             this.listView_keuken_Opgediend.Name = "listView_keuken_Opgediend";
-            this.listView_keuken_Opgediend.Size = new System.Drawing.Size(568, 643);
+            this.listView_keuken_Opgediend.Size = new System.Drawing.Size(579, 643);
             this.listView_keuken_Opgediend.TabIndex = 1;
             this.listView_keuken_Opgediend.UseCompatibleStateImageBehavior = false;
             this.listView_keuken_Opgediend.View = System.Windows.Forms.View.Details;
@@ -428,9 +496,9 @@ namespace ChapooUI
             this.listView_Keuken_besteld.FullRowSelect = true;
             this.listView_Keuken_besteld.GridLines = true;
             this.listView_Keuken_besteld.HideSelection = false;
-            this.listView_Keuken_besteld.Location = new System.Drawing.Point(40, 67);
+            this.listView_Keuken_besteld.Location = new System.Drawing.Point(12, 39);
             this.listView_Keuken_besteld.Name = "listView_Keuken_besteld";
-            this.listView_Keuken_besteld.Size = new System.Drawing.Size(568, 643);
+            this.listView_Keuken_besteld.Size = new System.Drawing.Size(596, 643);
             this.listView_Keuken_besteld.TabIndex = 0;
             this.listView_Keuken_besteld.UseCompatibleStateImageBehavior = false;
             this.listView_Keuken_besteld.View = System.Windows.Forms.View.Details;
@@ -465,49 +533,45 @@ namespace ChapooUI
             this.timerBar.Enabled = true;
             this.timerBar.Interval = 20000;
             // 
-            // label2
+            // PanelAfrekenOverzicht
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(402, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 28);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Nieuwe bestellingen";
+            this.PanelAfrekenOverzicht.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.PanelAfrekenOverzicht.Controls.Add(this.listView_Keuken_besteld);
+            this.PanelAfrekenOverzicht.Controls.Add(this.label2);
+            this.PanelAfrekenOverzicht.Location = new System.Drawing.Point(15, 46);
+            this.PanelAfrekenOverzicht.Name = "PanelAfrekenOverzicht";
+            this.PanelAfrekenOverzicht.Size = new System.Drawing.Size(621, 692);
+            this.PanelAfrekenOverzicht.TabIndex = 10;
             // 
-            // label3
+            // panel1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1168, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 28);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Afgeronden bestellingen";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.listView_keuken_Opgediend);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(819, 46);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(610, 692);
+            this.panel1.TabIndex = 11;
             // 
-            // label4
+            // panel2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(402, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 28);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Nieuwe bestellingen";
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.Listview_Bar_OpenOrder);
+            this.panel2.Location = new System.Drawing.Point(15, 34);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(618, 694);
+            this.panel2.TabIndex = 11;
             // 
-            // label5
+            // panel3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1168, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(246, 28);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Afgeronden bestellingen";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.Listview_Order_finished);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(811, 34);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(615, 697);
+            this.panel3.TabIndex = 12;
             // 
             // KeukenBarOverzicht
             // 
@@ -515,8 +579,8 @@ namespace ChapooUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1694, 839);
-            this.Controls.Add(this.Pnl_keukenoverzicht);
             this.Controls.Add(this.pnl_Baroverzicht);
+            this.Controls.Add(this.Pnl_keukenoverzicht);
             this.Controls.Add(this.MenuBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -530,6 +594,14 @@ namespace ChapooUI
             this.pnl_Baroverzicht.PerformLayout();
             this.Pnl_keukenoverzicht.ResumeLayout(false);
             this.Pnl_keukenoverzicht.PerformLayout();
+            this.PanelAfrekenOverzicht.ResumeLayout(false);
+            this.PanelAfrekenOverzicht.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -583,6 +655,10 @@ namespace ChapooUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelAfrekenOverzicht;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
