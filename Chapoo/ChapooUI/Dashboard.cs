@@ -52,6 +52,7 @@ namespace ChapooUI
             CurrentUserProfile();
             string[] firstname = _CurrentEmployee.Name.Split(' ');
             labelWelkom.Text = $"Welkom {firstname[0]}";
+            buttonOpgediend.Enabled = false;
             CorrectMenuForUser();
         }
 
@@ -105,7 +106,6 @@ namespace ChapooUI
                     break;
                 case Position.Bediening:
                     // enabled buttons
-                   // buttonOpgediend.Enabled = false;
                     BtnAfrekenen.Show();
                     BtnTafelOverzicht.Show();
                     BtnBestellen.Show();
@@ -257,7 +257,7 @@ namespace ChapooUI
 
             UpdateSelectedOrder();
             RefreshLists();
-
+            buttonOpgediend.Enabled = false;
         }
 
         private void listViewPickup_SelectedIndexChanged(object sender, EventArgs e)
