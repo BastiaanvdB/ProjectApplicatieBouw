@@ -50,6 +50,18 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        public void DB_Update_OrderStatus(OrderDetail orderDetail)
+        {
+            string query = "UPDATE OrderDetails SET OrderDetails.OrderDetails_OrderStatus = @orderstatus WHERE OrderDetails.OrderDetails_ID = @orderdetail_ID";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@orderdetail_ID", SqlDbType.Int) { Value = orderDetail.OrderDetails_ID },
+                new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.OrderStatus) }
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+
         public void DB_Add_OrderDetails(OrderDetail orderDetail)
         {
             string query = "INSERT INTO OrderDetails VALUES (@item_ID, @order_id, @quantity, @comment, @employee_id, @ordered_datetime, @preparing_datetime, @finished_datetime, @orderstatus)";
@@ -90,23 +102,25 @@ namespace ChapooDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime(string MenuName, string OrderStatus)
+        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime(string MenuName1, string MenuName2, string OrderStatus)
         {
-            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE Menu.Menu_Name = @MenuName AND OrderStatus.OrderStatus_status = @OrderStatus AND CAST(OrderDetails_Ordered_DateTime AS DATE) = CAST(GETDATE() AS DATE) ORDER BY OrderDetails_Finished_DateTime DESC";
+            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE (Menu.Menu_Name = @MenuName1 OR Menu.Menu_Name = @MenuName2) AND OrderStatus.OrderStatus_status = @OrderStatus AND CAST(OrderDetails_Ordered_DateTime AS DATE) = CAST(GETDATE() AS DATE) ORDER BY OrderDetails_Finished_DateTime DESC";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@MenuName", SqlDbType.NVarChar) { Value = MenuName },
+                new SqlParameter("@MenuName1", SqlDbType.NVarChar) { Value = MenuName1 },
+                new SqlParameter("@MenuName2", SqlDbType.NVarChar) { Value = MenuName2 },
                 new SqlParameter("@OrderStatus", SqlDbType.NVarChar) { Value = OrderStatus }
             };
             return ReadOrderDetails(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime(string MenuName, string OrderStatus)
+        public List<OrderDetail> DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime(string MenuName1, string MenuName2, string OrderStatus)
         {
-            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE Menu.Menu_Name = @MenuName AND OrderStatus.OrderStatus_status = @OrderStatus AND CAST(OrderDetails_Ordered_DateTime AS DATE) = CAST(GETDATE() AS DATE) ORDER BY OrderDetails_Ordered_DateTime DESC";
+            string query = "SELECT o.OrderDetails_ID, o.Item_ID, o.Order_ID, Orders.Table_ID, o.OrderDetails_Quantity, o.OrderDetails_Comment, o.Employee_ID, o.OrderDetails_Ordered_DateTime, o.OrderDetails_Preparing_DateTime, o.OrderDetails_Finished_DateTime, o.OrderDetails_OrderStatus FROM OrderDetails AS o INNER JOIN Orders ON o.Order_ID = Orders.Order_ID  INNER JOIN OrderStatus ON OrderDetails_OrderStatus = OrderStatus.OrderStatus_ID  INNER JOIN MenuItems ON o.Item_ID = MenuItems.Item_ID  INNER JOIN MenuGroup ON MenuItems.MenuGroup_ID = MenuGroup.MenuGroup_ID  INNER JOIN Menu ON MenuGroup.Menu_ID = Menu.Menu_ID  WHERE (Menu.Menu_Name = @MenuName1 OR Menu.Menu_Name = @MenuName2) AND OrderStatus.OrderStatus_status = @OrderStatus AND CAST(OrderDetails_Ordered_DateTime AS DATE) = CAST(GETDATE() AS DATE) ORDER BY OrderDetails_Ordered_DateTime DESC";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@MenuName", SqlDbType.NVarChar) { Value = MenuName },
+                new SqlParameter("@MenuName1", SqlDbType.NVarChar) { Value = MenuName1 },
+                new SqlParameter("@MenuName2", SqlDbType.NVarChar) { Value = MenuName2 },
                 new SqlParameter("@OrderStatus", SqlDbType.NVarChar) { Value = OrderStatus }
             };
             return ReadOrderDetails(ExecuteSelectQuery(query, sqlParameters));

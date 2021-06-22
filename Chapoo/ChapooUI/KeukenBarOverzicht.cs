@@ -9,21 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapooModel;
+using ChapooLogic;
 
 namespace ChapooUI
 {
     public partial class KeukenBarOverzicht : Form
     {
         //List of bar_orders_finished
-        private List<OrderDetail> _ListOfFinnishedOrderDetails;
-        //List of bar orders_open
-        private List<OrderDetail> _ListOfNewOrderDetails;
-        //List of Open Kitchenorders
-        private List<OrderDetail> _ListOfNewkitchenOrderDetails;
-        //List of finished kitchen order
-        private List<OrderDetail> _ListOfFinnishedkitchenOrderDetails;
+        private List<OrderDetail> NewOrders;
+        
         //object for storing the curront order
-        private OrderDetail _CurrentOrderDetail;
+        private OrderDetail SelectedOrder;
+
+        private OrderDetail_Service orderDetail_Service;
 
         private Employee _CurrentEmployee;
         private Dashboard _Dashboard;
@@ -56,12 +54,14 @@ namespace ChapooUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             _CurrentEmployee = currentEmployee;
             _Dashboard = dashboard;
-            _CurrentOrderDetail = new OrderDetail();
-            btn_Gereed.Enabled = false;
-            //UpdateAllLists();
+            NewOrders = new List<OrderDetail>();
+            orderDetail_Service = new OrderDetail_Service();
+
+
+            //SetCorrectSettingForUser();
             CurrentUserProfile();
             System.Windows.Forms.Timer timerBar = new System.Windows.Forms.Timer();
-            timerBar.Interval = 20000;//20 seconds
+            timerBar.Interval = 30000;//30 seconds
             timerBar.Tick += new System.EventHandler(timerBar_Tick);
             timerBar.Start();
         }
@@ -70,237 +70,94 @@ namespace ChapooUI
         // auto timer refresh
         private void timerBar_Tick(object sender, EventArgs e)
         {
-            if (_CurrentEmployee.Position == Position.Kok)
-            {
-                UpdateKicthenlists();
-            }
-            else if (_CurrentEmployee.Position == Position.Bardienst)
-            {
-                UpdateAllLists();
-            }
+            FillAndDisplay();
         }
-
 
         private void CurrentUserProfile()
         {
             UsernameLabel.Text = _CurrentEmployee.Name;
             UserFunctieLabel.Text = _CurrentEmployee.Position.ToString();
-
-            if(_CurrentEmployee.Position == Position.Kok)
+            BtnGereed.Enabled = false;
+            if (_CurrentEmployee.Position == Position.Kok)
             {
-                Pnl_keukenoverzicht.Show();
-                pnl_Baroverzicht.Hide();
+                lbloverzicht.Text = "Keukenoverzicht";
             }
             else if(_CurrentEmployee.Position == Position.Bardienst)
             {
-                Pnl_keukenoverzicht.Hide();
-                pnl_Baroverzicht.Show();
+                lbloverzicht.Text = "Baroverzicht";
             }
-
+            FillAndDisplay();
         }
 
-        //method for updating all the listview
-        private void UpdateAllLists()
+        private void FillAndDisplay()
         {
-            FillBarOpenOrderList();
-            Fillbarfinishedlist();
+            FillList();
             FillListview();
-            Fillfinishedlistview();
         }
-        private void UpdateKicthenlists()
+
+        private void FillList()
         {
-            FillKeukenOpenOrderList();
-            FillKeukenOpgediendOrderList();
-            FillKeukenOpenListview();
-            FillKeukenOpgediendListview();
+            if (_CurrentEmployee.Position == Position.Kok)
+            {
+
+                NewOrders = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Lunch", "Diner", "Besteld");
+                
+            }
+            else if (_CurrentEmployee.Position == Position.Bardienst)
+            {
+                NewOrders = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Dranken", "", "Besteld");
+            }
         }
 
-        //...
-        //Baroverzicht
-        //..
-        //method for filling the list for the openorders
-        private void FillBarOpenOrderList()
-        {
-            // fill the the order list with open/bestelde orders
-            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _ListOfNewOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Dranken", "Besteld");
-        }
-
-
-        //filling the bar list view with open/bestelde orders
         private void FillListview()
         {
-            // fill the the order list with open/bestelde orders
-            Listview_Bar_OpenOrder.Items.Clear();
-            foreach (ChapooModel.OrderDetail orderdetail in _ListOfNewOrderDetails)
+            listViewNewOrders.Items.Clear();
+            foreach(OrderDetail order in NewOrders)
             {
-                Listview_Bar_OpenOrder.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Table_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.Comment.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
+                listViewNewOrders.Items.Add(new ListViewItem(new string[] { $"{order.Table_ID}", $"{order.Item.Item_Name}", $"{order.Quantity}", $"{order.Comment}", $"{order.Ordered_DateTime}" }));
             }
         }
 
-
-        //Method for filling the list with finished/opgediend orders
-        private void Fillbarfinishedlist()
+        private void listViewNewOrders_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // fill the the order list with finished/gereed orders
-            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _ListOfFinnishedOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Dranken", "Afhalen");
-            _ListOfFinnishedOrderDetails.AddRange(orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Dranken", "Opgediend"));
-        }
-
-        //Mehtod for filling the bar listview with the finished/Opgediend orders
-        private void Fillfinishedlistview()
-        {
-            // fill the the order list with finished/opgediend orders
-            Listview_Order_finished.Items.Clear();
-            foreach (ChapooModel.OrderDetail orderdetail in _ListOfFinnishedOrderDetails)
+            if (listViewNewOrders.SelectedItems.Count != 0)
             {
-                Listview_Order_finished.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Table_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.OrderStatus.ToString()}", $"{orderdetail.Finished_DateTime}" }));
-            }
-        }
-        
-        private void Listview_Bar_OpenOrder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Listview_Bar_OpenOrder.SelectedItems.Count is not 0)
-            {
-                _CurrentOrderDetail = _ListOfNewOrderDetails[Listview_Bar_OpenOrder.SelectedIndices[0]];
-                btn_Gereed.Enabled = true;
+                BtnGereed.Enabled = true;
+                SelectedOrder = NewOrders[listViewNewOrders.SelectedIndices[0]];
             }
             else
             {
-                _CurrentOrderDetail = null;
-                btn_Gereed.Enabled = false;
+                BtnGereed.Enabled = false;
+                SelectedOrder = null;
             }
-        }
-        //...
-        //Einde Baroverzicht
-        //...
-        //...
-        //Keukenoverzicht
-        //...
-        private void FillKeukenOpenOrderList()
-        {
-            // fill the the order list with open/bestelde orders
-            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _ListOfNewkitchenOrderDetails = new List<OrderDetail>();
-            if ((RBtn_Diner.Checked == true) && (RBtn_Lunch.Checked == false))
-            {
-                _ListOfNewkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Diner", "Besteld");
-            }
-            else if ((RBtn_Diner.Checked == false) && (RBtn_Lunch.Checked == true))
-            {
-                _ListOfNewkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Lunch", "Besteld");
-            }
-        }
-        //filling the bar list view with open/bestelde orders
-        private void FillKeukenOpenListview()
-        {
-            // fill the the order list with open/bestelde orders
-            listView_Keuken_besteld.Items.Clear();
-            foreach (ChapooModel.OrderDetail orderdetail in _ListOfNewkitchenOrderDetails)
-            {
-                listView_Keuken_besteld.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Table_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.Comment.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
-            }
-        }
-        private void FillKeukenOpgediendOrderList()
-        {
-            // fill the the order list with open/bestelde orders
-            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _ListOfFinnishedkitchenOrderDetails = new List<OrderDetail>();
-            if ((RBtn_Diner.Checked == true) && (RBtn_Lunch.Checked == false))
-            {
-                _ListOfFinnishedkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Diner", "Afhalen");
-                _ListOfFinnishedkitchenOrderDetails.AddRange(orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Diner", "Opgediend"));
-            }
-            else if ((RBtn_Diner.Checked == false) && (RBtn_Lunch.Checked == true))
-            {
-                _ListOfFinnishedkitchenOrderDetails = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Lunch", "Afhalen");
-                _ListOfFinnishedkitchenOrderDetails.AddRange(orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_finnishTime("Lunch", "Opgediend"));
-            }
-        }
-        //filling the bar list view with open/bestelde orders
-        private void FillKeukenOpgediendListview()
-        {
-            // fill the the order list with open/bestelde orders
-            listView_keuken_Opgediend.Items.Clear();
-            foreach (ChapooModel.OrderDetail orderdetail in _ListOfFinnishedkitchenOrderDetails)
-            {
-                listView_keuken_Opgediend.Items.Add(new ListViewItem(new string[] { $"{orderdetail.Table_ID}", $"{orderdetail.Item.Item_Name}", $"{orderdetail.Quantity}", $"{orderdetail.OrderStatus.ToString()}", $"{orderdetail.Ordered_DateTime}" }));
-            }
-        }
-        private void listView_Keuken_besteld_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView_Keuken_besteld.SelectedItems.Count is not 0)
-            {
-                _CurrentOrderDetail = _ListOfNewkitchenOrderDetails[listView_Keuken_besteld.SelectedIndices[0]];
-                btn_Gereed.Enabled = true;
-            }
-            else
-            {
-                _CurrentOrderDetail = null;
-                btn_Gereed.Enabled = false;
-            }
-        }
-        //...
-        //Einde Keukenoverzicht
-        //...
-        public void UpdateCurrentOrder()
-        {
-            ChapooLogic.OrderDetail_Service orderDetail_Service = new ChapooLogic.OrderDetail_Service();
-            _CurrentOrderDetail.OrderStatus = OrderStatus.Afhalen;
-            _CurrentOrderDetail.Finished_DateTime = DateTime.Now;
-
-            orderDetail_Service.DB_Update_OrderDetails(_CurrentOrderDetail);
         }
 
+        private void UpdateSelectedOrder()
+        {
+            SelectedOrder.OrderStatus = OrderStatus.Afhalen;
+            orderDetail_Service.DB_Update_OrderStatus(SelectedOrder);
+        }
 
         // Button area
         private void BtnAfmelden_Click(object sender, EventArgs e)
         {
             _Dashboard.Show();
-            timerBar.Stop();
             this.Close();
         }
 
-        private void btn_Gereed_Click(object sender, EventArgs e)
+        private void BtnGereed_Click(object sender, EventArgs e)
         {
-            UpdateCurrentOrder();
-            UpdateAllLists();
+            if (listViewNewOrders.SelectedItems.Count != 0)
+            {
+                UpdateSelectedOrder();
+                FillAndDisplay();
+            }
         }
 
-        private void Btn_update_bar_Click(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateAllLists();
+            FillAndDisplay();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Update_keuken_Click(object sender, EventArgs e)
-        {
-            UpdateKicthenlists();
-        }
-
-        private void Btn_Keuken_gereed_Click(object sender, EventArgs e)
-        {
-            UpdateCurrentOrder();
-            UpdateKicthenlists();
-        }
-
-        private void RBtn_Lunch_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateKicthenlists();
-        }
-
-        private void RBtn_Diner_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateKicthenlists();
-        }
-
-
-
 
         // ---------------------
     }
