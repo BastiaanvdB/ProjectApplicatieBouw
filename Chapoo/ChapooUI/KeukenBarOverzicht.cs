@@ -57,7 +57,6 @@ namespace ChapooUI
             NewOrders = new List<OrderDetail>();
             orderDetail_Service = new OrderDetail_Service();
 
-
             //SetCorrectSettingForUser();
             CurrentUserProfile();
             System.Windows.Forms.Timer timerBar = new System.Windows.Forms.Timer();
@@ -65,7 +64,6 @@ namespace ChapooUI
             timerBar.Tick += new System.EventHandler(timerBar_Tick);
             timerBar.Start();
         }
-
 
         // auto timer refresh
         private void timerBar_Tick(object sender, EventArgs e)
@@ -99,9 +97,7 @@ namespace ChapooUI
         {
             if (_CurrentEmployee.Position == Position.Kok)
             {
-
                 NewOrders = orderDetail_Service.DB_Get_All_Orders_By_MenuName_And_OrderStatus_OrderTime("Lunch", "Diner", "Besteld");
-                
             }
             else if (_CurrentEmployee.Position == Position.Bardienst)
             {
@@ -135,6 +131,7 @@ namespace ChapooUI
         private void UpdateSelectedOrder()
         {
             SelectedOrder.OrderStatus = OrderStatus.Afhalen;
+            SelectedOrder.Finished_DateTime = DateTime.Now;
             orderDetail_Service.DB_Update_OrderStatus(SelectedOrder);
         }
 

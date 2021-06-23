@@ -52,10 +52,11 @@ namespace ChapooDAL
 
         public void DB_Update_OrderStatus(OrderDetail orderDetail)
         {
-            string query = "UPDATE OrderDetails SET OrderDetails.OrderDetails_OrderStatus = @orderstatus WHERE OrderDetails.OrderDetails_ID = @orderdetail_ID";
+            string query = "UPDATE OrderDetails SET OrderDetails.OrderDetails_OrderStatus = @orderstatus, OrderDetails.OrderDetails_Finished_DateTime = @finished_datetime WHERE OrderDetails.OrderDetails_ID = @orderdetail_ID";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@orderdetail_ID", SqlDbType.Int) { Value = orderDetail.OrderDetails_ID },
+                new SqlParameter("@finished_datetime", SqlDbType.DateTime) { Value = orderDetail.Finished_DateTime },
                 new SqlParameter("@orderstatus", SqlDbType.Int) { Value = ((int)orderDetail.OrderStatus) }
             };
             ExecuteEditQuery(query, sqlParameters);
