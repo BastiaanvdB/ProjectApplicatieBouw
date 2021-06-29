@@ -260,7 +260,7 @@
       },
       "ChapooDAL/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "ChapooModel": "1.0.0",
           "System.Configuration.ConfigurationManager": "5.0.0",
@@ -275,7 +275,7 @@
       },
       "ChapooLogic/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "ChapooDAL": "1.0.0",
           "ChapooModel": "1.0.0"
@@ -289,7 +289,7 @@
       },
       "ChapooModel/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v2.0",
         "compile": {
           "bin/placeholder/ChapooModel.dll": {}
         },
@@ -900,6 +900,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\basti\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

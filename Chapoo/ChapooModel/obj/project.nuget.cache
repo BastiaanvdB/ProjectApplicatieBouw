@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "vJ1jzGG+YU7v3GKHwgvGdvIqfSZXja8JxlPY04+tTyZ8FdDBghpWIiFZYCw1N/OlVhWyiXo4qLgUeZJmGdsbGg==",
+  "dgSpecHash": "jFmllA1Rrxj23bzK1mDgH2zicP8d02MrVS5QkLW2u6KM/eJKktVkc5DtJ/+Z0e67MXp3fURyeZMJ4ySJjka4HA==",
   "success": true,
   "projectFilePath": "C:\\Users\\basti\\Desktop\\Project Chapoo\\Github\\Chapoo\\ProjectApplicatieBouw\\Chapoo\\ChapooModel\\ChapooModel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.0.0\\microsoft.netcore.dotnethostpolicy.2.0.0.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.0.0\\microsoft.netcore.dotnethostresolver.2.0.0.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

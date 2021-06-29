@@ -1,0 +1,12 @@
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Release\netcoreapp2.0\ChapooDAL.deps.json
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Release\netcoreapp2.0\ChapooDAL.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Release\netcoreapp2.0\ChapooDAL.pdb
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Release\netcoreapp2.0\ChapooModel.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\bin\Release\netcoreapp2.0\ChapooModel.pdb
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Release\netcoreapp2.0\ChapooDAL.csproj.AssemblyReference.cache
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Release\netcoreapp2.0\ChapooDAL.AssemblyInfoInputs.cache
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Release\netcoreapp2.0\ChapooDAL.AssemblyInfo.cs
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Release\netcoreapp2.0\ChapooDAL.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Release\netcoreapp2.0\ChapooDAL.csproj.CopyComplete
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Release\netcoreapp2.0\ChapooDAL.dll
+C:\Users\basti\Desktop\Project Chapoo\Github\Chapoo\ProjectApplicatieBouw\Chapoo\ChapooDAL\obj\Release\netcoreapp2.0\ChapooDAL.pdb
